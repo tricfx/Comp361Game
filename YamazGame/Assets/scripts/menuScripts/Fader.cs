@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Fader : MonoBehaviour
 {
-    public float fadeDuration = 1f;
+    public float fadeDuration = 5f;
     private CanvasGroup next;
     bool running;
 
