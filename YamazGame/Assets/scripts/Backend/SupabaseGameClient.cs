@@ -1,90 +1,95 @@
 using System.Collections;
-using System.Text.Json;
 using UnityEngine;
 
 public class SupabaseGameClient
 {
     private readonly string baseUrl;
-    public SupabaseGameClient(string supabaseUrl)
+    private readonly string apikey;
+    public SupabaseGameClient(string supabaseUrl, string apikey)
     {
-        baseUrl = supabaseUrl;
+        baseUrl = $"{supabaseUrl}/rest/v1/rpc";
+        this.apikey = apikey;
     }
 
     public IEnumerator GetPlayerState(string accessToken, System.Action<PlayerState> onSuccess, System.Action<string> onError)
     {
-        string url = $"{baseUrl}/rest/v1/rpc/get_player_state";
+        string url = $"{baseUrl}/get_player_state";
 
-        yield return SupabaseHttp.SendRequest(url, "POST", null,
+        yield return SupabaseHttp.SendRequest(url, "POST", null, apikey, accessToken,
             response =>
             {
-                var array = JsonSerializer.Deserialize<PlayerState[]>(response);
-                var state = array.Length > 0 ? array[0] : new PlayxerState
+                var wrapper = JsonUtility.FromJson<Wrapper<PlayerState>>("{\"items\":" + response + "}");
+                var array = wrapper.items;
+                var state = array.Length > 0 ? array[0] : new PlayerState
                 {
-                    scene_number = 0,
-                    gems_amount = 0,
-                    abilities = new string[0],
-                    left_during_combat = false,
-                    updated_at = System.DateTime.UtcNow.ToString("o")
+                    new_scene_number = 0,
+                    new_gems_amount = 0,
+                    new_abilities = new string[0],
+                    new_left_during_combat = false,
                 };
                 onSuccess?.Invoke(state);
             },
-            onError,
-            accessToken
+            onError
         );
     }
 
     public IEnumerator UpdatePlayerState(string accessToken, PlayerState newState, System.Action<PlayerState> onSuccess, System.Action<string> onError)
     {
-        string url = $"{baseUrl}/rest/v1/rpc/update_player_state";
-        string body = JsonSerializer.Serialize(new
+        string url = $"{baseUrl}/update_player_state";
+        string body = JsonUtility.ToJson(new PlayerState
         {
-            new_scene_number = newState.scene_number,
-            new_gems_amount = newState.gems_amount,
-            new_abilities = newState.abilities,
-            new_left_during_combat = newState.left_during_combat
+            new_scene_number = newState.new_scene_number,
+            new_gems_amount = newState.new_gems_amount,
+            new_abilities = newState.new_abilities,
+            new_left_during_combat = newState.new_left_during_combat
         });
 
-        yield return SupabaseHttp.SendRequest(url, "POST", body,
+        yield return SupabaseHttp.SendRequest(url, "POST", body, apikey, accessToken,
             response =>
             {
-                var array = JsonSerializer.Deserialize<PlayerState[]>(response);
-                onSuccess?.Invoke(array[0]);
+                var wrapper = JsonUtility.FromJson<Wrapper<PlayerState>>("{\"items\":" + response + "}");
+                var state = wrapper.items.Length > 0 ? wrapper.items[0] : null;
+                if (state != null) {
+                    onSuccess?.Invoke(state);
+                }
+                else {
+                     onError?.Invoke("No player state returned");
+                }
             },
-            onError,
-            accessToken
+            onError
         );
     }
 
-    public IEnumerator SubmitRun(string accessToken, long timeMs, bool completed, System.Action<PlayerRun> onSuccess, System.Action<string> onError)
+    public IEnumerator SubmitRun(string accessToken, long timeMs, bool isCompleted, System.Action<PlayerRun> onSuccess, System.Action<string> onError)
     {
-        string url = $"{baseUrl}/rest/v1/rpc/submit_run";
-        string body = JsonSerializer.Serialize(new { run_time = timeMs, completed });
+        string url = $"{baseUrl}/submit_run";
+        string body = JsonUtility.ToJson(new PlayerRun { run_time = timeMs, iscompleted = isCompleted });
 
-        yield return SupabaseHttp.SendRequest(url, "POST", body,
+        yield return SupabaseHttp.SendRequest(url, "POST", body, apikey, accessToken,
             response =>
             {
-                var array = JsonSerializer.Deserialize<PlayerRun[]>(response);
+                var wrapper = JsonUtility.FromJson<Wrapper<PlayerRun>>("{\"items\":" + response + "}");
+                var array = wrapper.items;
                 onSuccess?.Invoke(array[0]);
             },
-            onError,
-            accessToken
+            onError
         );
     }
 
     public IEnumerator GetBestRuns(string accessToken, System.Action<BestRun[]> onSuccess, System.Action<string> onError)
     {
-        string url = $"{baseUrl}/rest/v1/bestcompletiontime?select=username,time&order=time.asc&limit=10";
+        string url = $"{baseUrl.Replace("/rpc", "")}/bestcompletiontime?select=username,time&order=time.asc&limit=10";
 
-        yield return SupabaseHttp.SendRequest(url, "GET", null,
+        yield return SupabaseHttp.SendRequest(url, "GET", null, apikey, accessToken,
             response =>
             {
-                var array = JsonSerializer.Deserialize<BestRun[]>(response);
+                var wrapper = JsonUtility.FromJson<Wrapper<BestRun>>("{\"items\":" + response + "}");
+                var array = wrapper.items;
                 for (int i = 0; i < array.Length; i++)
                     array[i].rank = i + 1;
                 onSuccess?.Invoke(array);
             },
-            onError,
-            accessToken
+            onError
         );
     }
 }

@@ -1,16 +1,15 @@
 using System.Collections;
 using UnityEngine;
-using System.Text.Json;
 
 public class SupabaseAuthClient
 {
     private readonly string baseUrl;
-    private readonly string anonKey;
+    private readonly string apikey;
 
-    public SupabaseAuthClient(string supabaseUrl, string anonKey)
+    public SupabaseAuthClient(string supabaseUrl, string apikey)
     {
         this.baseUrl = $"{supabaseUrl}/auth/v1";
-        this.anonKey = anonKey;
+        this.apikey = apikey;
     }
 
     public IEnumerator SignUp(
@@ -20,19 +19,29 @@ public class SupabaseAuthClient
         System.Action<string> onError
     )
     {
-        string json = $"{{\"email\":\"{email}\",\"password\":\"{password}\"}}";
+        string url = $"{baseUrl}/signup";
+
+        var bodyObj = new request
+        {
+            email = email,
+            password = password
+        };
+
+        string body = JsonUtility.ToJson(bodyObj);
+        
 
         yield return SupabaseHttp.SendRequest(
-            $"{baseUrl}/token?grant_type=password",
+            url,
             "POST",
-            json,
+            body,
+            apikey,
+            null,
             response =>
             {
-                var session = JsonSerializer.Deserialize<AuthSession>(response);
+                var session = JsonUtility.FromJson<AuthSession>(response);
                 onSuccess?.Invoke(session);
             },
-            onError,
-            anonKey
+            onError
         );
     }
 
@@ -43,19 +52,28 @@ public class SupabaseAuthClient
         System.Action<string> onError
     )
     {
-        string json = $"{{\"email\":\"{email}\",\"password\":\"{password}\"}}";
+        string url = $"{baseUrl}/token?grant_type=password";
+
+        var bodyObj = new request
+        {
+            email = email,
+            password = password
+        };
+
+        string body = JsonUtility.ToJson(bodyObj);
 
         yield return SupabaseHttp.SendRequest(
-            $"{baseUrl}/token?grant_type=password",
+            url,
             "POST",
-            json,
+            body,
+            apikey,
+            null,
             response =>
             {
-                var session = JsonSerializer.Deserialize<AuthSession>(response);
+                var session = JsonUtility.FromJson<AuthSession>(response);
                 onSuccess?.Invoke(session);
             },
-            onError,
-            anonKey
+            onError
         );
     }
 
@@ -65,19 +83,25 @@ public class SupabaseAuthClient
         System.Action<string> onError
     )
     {
-        string json = $"{{\"refresh_token\":\"{refreshToken}\"}}";
+        var bodyObj = new RefreshRequest
+        {
+            refresh_token = refreshToken
+        };
+
+        string body = JsonUtility.ToJson(bodyObj);
 
         yield return SupabaseHttp.SendRequest(
             $"{baseUrl}/token?grant_type=refresh_token",
             "POST",
-            json,
+            body,
+            apikey,
+            null,
             response =>
             {
-                var session = JsonSerializer.Deserialize<AuthSession>(response);
+                var session = JsonUtility.FromJson<AuthSession>(response);
                 onSuccess?.Invoke(session);
             },
-            onError,
-            anonKey
+            onError
         );
     }
     public IEnumerator SignOut(
@@ -90,9 +114,23 @@ public class SupabaseAuthClient
             $"{baseUrl}/logout",
             "POST",
             null,
+            apikey,
+            null,
             _ => onSuccess?.Invoke(),
-            onError,
-            accessToken
+            onError
         );
     }
+
+    [System.Serializable]
+    public class request {
+        public string email;
+        public string password;
+    }
+
+    [System.Serializable]
+    public class RefreshRequest
+    {
+        public string refresh_token;
+    }
+
 }

@@ -9,9 +9,10 @@ public static class SupabaseHttp
         string url,
         string method,
         string jsonBody,
+        string apikey,
+        string accessToken,
         System.Action<string> onSuccess,
-        System.Action<string> onError,
-        string accessToken = null
+        System.Action<string> onError
     )
     {
         var request = new UnityWebRequest(url, method);
@@ -23,6 +24,8 @@ public static class SupabaseHttp
             request.uploadHandler = new UploadHandlerRaw(bodyRaw);
             request.SetRequestHeader("Content-Type", "application/json");
         }
+
+        request.SetRequestHeader("apikey", apikey);
 
         if (!string.IsNullOrEmpty(accessToken))
         {
