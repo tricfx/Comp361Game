@@ -77,10 +77,9 @@ public class SettingsManager : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
+        Debug.Log("Setting fullscreen: " + isFullscreen);
         Screen.fullScreen = isFullscreen;
 
-        // Optional: re-apply current res when toggling fullscreen
-        // so it doesn't jump back
-        SetResolution(resolutionDropdown.value);
+
     }
 }
