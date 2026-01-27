@@ -7,7 +7,7 @@ using TMPro;
 
 public class SettingsManager : MonoBehaviour
 {
-    public Slider SFX;
+    public Slider Master;
     public Slider Music;
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
@@ -26,9 +26,9 @@ public class SettingsManager : MonoBehaviour
         resolutionDropdown.AddOptions(options);
     }
 
-    public void SetSFXVolume(float volume)
+    public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("SFX",SFX.value);
+        audioMixer.SetFloat("Master",Master.value);
     }
     public void SetMusicVolume(float volume)
     {
