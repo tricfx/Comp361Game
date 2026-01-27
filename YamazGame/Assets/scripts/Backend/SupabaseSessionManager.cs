@@ -3,12 +3,8 @@ using System.Collections;
 
 public class SupabaseSessionManager : MonoBehaviour
 {
-    [Header("Auth Client")]
     public SupabaseAuthClient AuthClient;
-
-    [Header("Refresh Settings")]
     public float refreshBufferSeconds = 60f;
-
     public AuthSession CurrentSession { get; private set; }
 
     private float expiryTime;
