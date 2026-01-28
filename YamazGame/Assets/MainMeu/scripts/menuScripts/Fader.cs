@@ -7,7 +7,7 @@ public class Fader : MonoBehaviour
     private CanvasGroup next;
     bool running;
 
-   
+
 
     // THIS is what will appear in Button OnClick:
     public void StartFade(CanvasGroup from, CanvasGroup to)

@@ -1,34 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\",
+  "WorkspaceRootPath": "E:\\Yamaz\\Comp361Game\\YamazGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\mainmeu\\scripts\\menuscripts\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|e:\\yamaz\\comp361game\\yamazgame\\assets\\mainmeu\\scripts\\menuscripts\\textbreathing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\textbreathing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\mainmeu\\scripts\\menuscripts\\backspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Particles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MainMeu\\scripts\\menuScripts\\Particles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|E:\\Yamaz\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\menusoundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\menusoundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|E:\\Yamaz\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\welcome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|E:\\Yamaz\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\fader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\fader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|E:\\Yamaz\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\backspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\backspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\shopScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\shopScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|E:\\Yamaz\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\fadebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\fadebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\cinematicressources\\ressources\\skip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\cinematicressources\\ressources\\skip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\cinematicressources\\ressources\\loadsceneonvideoend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\cinematicressources\\ressources\\loadsceneonvideoend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\menuScripts\\SettingsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\menuScripts\\SettingsManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\playerTest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\playerTest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|E:\\Yamaz\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,92 +42,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SettingsManager.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
-              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAA3wFIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "fadebutton.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\fadebutton.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\fadebutton.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\fadebutton.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\fadebutton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T17:46:25.981Z",
+              "WhenOpened": "2026-01-27T20:13:10.883Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TextBreathing.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\TextBreathing.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\TextBreathing.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\TextBreathing.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\TextBreathing.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T07:13:40.161Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BackSPace.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
-              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
-              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Title": "Particles.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Particles.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\Particles.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Particles.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\Particles.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T17:14:38.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "playerTest.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\playerTest.cs",
-              "RelativeDocumentMoniker": "Assets\\playerTest.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\playerTest.cs",
-              "RelativeToolTip": "Assets\\playerTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T16:09:25.574Z"
+              "WhenOpened": "2026-01-28T05:22:39.511Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "shopScript.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\shopScript.cs",
-              "RelativeDocumentMoniker": "Assets\\shopScript.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\shopScript.cs",
-              "RelativeToolTip": "Assets\\shopScript.cs",
+              "Title": "MenuSoundManager.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\MenuSoundManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\MenuSoundManager.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\MenuSoundManager.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\MenuSoundManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T16:04:41.591Z"
+              "WhenOpened": "2026-01-28T03:11:24.195Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Skip.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "RelativeDocumentMoniker": "Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "RelativeToolTip": "Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "SettingsManager.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAowGAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T15:40:39.575Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoadSceneOnVideoEnd.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\CinematicRessources\\Ressources\\LoadSceneOnVideoEnd.cs",
-              "RelativeDocumentMoniker": "Assets\\CinematicRessources\\Ressources\\LoadSceneOnVideoEnd.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\CinematicRessources\\Ressources\\LoadSceneOnVideoEnd.cs",
-              "RelativeToolTip": "Assets\\CinematicRessources\\Ressources\\LoadSceneOnVideoEnd.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T15:37:08.317Z"
+              "WhenOpened": "2026-01-28T01:04:28.566Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SettingsManager.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\menuScripts\\SettingsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\menuScripts\\SettingsManager.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\menuScripts\\SettingsManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\menuScripts\\SettingsManager.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAuwCwAAAAwAAAAAAAAAA==",
+              "Title": "BackSPace.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\BackSPace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T14:23:39.64Z"
+              "WhenOpened": "2026-01-27T20:34:58.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Fader.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Fader.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\Fader.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Fader.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\Fader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T20:22:09.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Welcome.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Welcome.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\Welcome.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\Welcome.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\Welcome.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T20:12:58.744Z"
             }
           ]
         }

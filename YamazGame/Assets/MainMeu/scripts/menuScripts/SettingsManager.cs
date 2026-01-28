@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -7,16 +8,40 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-    public Slider Master;
-    public Slider Music;
-    public AudioMixer audioMixer;
-    public TMP_Dropdown resolutionDropdown;
+    [Header("UI")]
+    [SerializeField] private Slider master;
+    [SerializeField] private Slider music;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private TMP_Dropdown qualityDropdown;
+    [SerializeField] private Toggle fullscreenToggle;
+
+    [Header("Audio")]
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private string masterParam = "Master";
+    [SerializeField] private string musicParam = "Music";
 
     private Resolution[] resolutions;
 
     void Start()
     {
-        // Build unique list (width x height only)
+        BuildResolutionDropdown();
+
+        resolutionDropdown.onValueChanged.AddListener(SetResolution);
+
+        if (master) master.onValueChanged.AddListener(SetMasterVolume);
+        if (music) music.onValueChanged.AddListener(SetMusicVolume);
+
+        if (fullscreenToggle) fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
+        if (qualityDropdown) qualityDropdown.onValueChanged.AddListener(SetQuality);
+
+        if (master) SetMasterVolume(master.value);
+        if (music) SetMusicVolume(music.value);
+        if (fullscreenToggle) SetFullscreen(fullscreenToggle.isOn);
+        if (qualityDropdown) SetQuality(qualityDropdown.value);
+    }
+
+    private void BuildResolutionDropdown()
+    {
         var unique = new Dictionary<string, Resolution>();
         foreach (var r in Screen.resolutions)
         {
@@ -25,49 +50,42 @@ public class SettingsManager : MonoBehaviour
                 unique[key] = r;
         }
 
-        var list = unique.Values
-            .OrderBy(r => r.width)
-            .ThenBy(r => r.height)
-            .ToList();
-
+        var list = unique.Values.OrderBy(r => r.width).ThenBy(r => r.height).ToList();
         resolutions = list.ToArray();
 
-        // Fill dropdown
         resolutionDropdown.ClearOptions();
         resolutionDropdown.AddOptions(resolutions.Select(r => $"{r.width} x {r.height}").ToList());
 
-        // Set dropdown to current resolution
-        int currentIndex = System.Array.FindIndex(resolutions,
-            r => r.width == Screen.width && r.height == Screen.height);
-
+        int currentIndex = Array.FindIndex(resolutions, r => r.width == Screen.width && r.height == Screen.height);
         if (currentIndex < 0) currentIndex = 0;
 
-        resolutionDropdown.value = currentIndex;
+        resolutionDropdown.SetValueWithoutNotify(currentIndex);
         resolutionDropdown.RefreshShownValue();
-
-        // IMPORTANT: hook listener (so selecting applies)
-        resolutionDropdown.onValueChanged.AddListener(SetResolution);
-
-        // Optional: apply the default immediately (keeps things consistent)
-         SetResolution(currentIndex);
     }
 
     public void SetResolution(int index)
     {
         if (index < 0 || index >= resolutions.Length) return;
-
-        Resolution r = resolutions[index];
+        var r = resolutions[index];
         Screen.SetResolution(r.width, r.height, Screen.fullScreen);
     }
 
-    public void SetMasterVolume(float volume)
+    public void SetMasterVolume(float value01)
     {
-        audioMixer.SetFloat("Master", Master.value);
+        audioMixer.SetFloat(masterParam, ToDb(value01));
     }
 
-    public void SetMusicVolume(float volume)
+    public void SetMusicVolume(float value01)
     {
-        audioMixer.SetFloat("Music", Music.value);
+        float db = ToDb(value01);
+        audioMixer.SetFloat(musicParam, db);
+    }
+
+
+    private static float ToDb(float value01)
+    {
+        value01 = Mathf.Clamp(value01, 0.0001f, 1f);
+        return Mathf.Log10(value01) * 20f;
     }
 
     public void SetQuality(int qualityIndex)
@@ -77,9 +95,6 @@ public class SettingsManager : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
-        Debug.Log("Setting fullscreen: " + isFullscreen);
         Screen.fullScreen = isFullscreen;
-
-
     }
 }

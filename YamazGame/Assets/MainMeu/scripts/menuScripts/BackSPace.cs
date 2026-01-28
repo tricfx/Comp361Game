@@ -2,16 +2,12 @@ using UnityEngine;
 
 public class BackSPace : MonoBehaviour
 {
-    public GameObject panelToClose;
-    public GameObject panelToOpen;
-
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Fader fader;
+    [SerializeField] private CanvasGroup from;
+    [SerializeField] private CanvasGroup to;
+    public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            panelToClose.SetActive(false);
-            panelToOpen.SetActive(true);
-        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+            fader.StartFade(from, to);
     }
 }
