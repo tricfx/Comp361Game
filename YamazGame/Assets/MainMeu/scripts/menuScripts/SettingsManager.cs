@@ -21,33 +21,76 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private string musicParam = "Music";
 
     private Resolution[] resolutions;
+    private GameSettingsData data;
+    private SettingsManager instance;
 
-    void Start()
+    void Awake()
     {
-        BuildResolutionDropdown();
+        if (instance != null && instance != this){
+            Destroy(gameObject);
+            return;
+        }
 
-        resolutionDropdown.onValueChanged.AddListener(SetResolution);
+        instance = this;
+        DontDestroyOnLoad(gameObject);
 
-        if (master) master.onValueChanged.AddListener(SetMasterVolume);
-        if (music) music.onValueChanged.AddListener(SetMusicVolume);
-
-        if (fullscreenToggle) fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
-        if (qualityDropdown) qualityDropdown.onValueChanged.AddListener(SetQuality);
-
-        if (master) SetMasterVolume(master.value);
-        if (music) SetMusicVolume(music.value);
-        if (fullscreenToggle) SetFullscreen(fullscreenToggle.isOn);
-        if (qualityDropdown) SetQuality(qualityDropdown.value);
+        //Debug.Log(GameSettingsStore.PathToFile);
+        data = GameSettingsStore.Load();
     }
 
-    private void BuildResolutionDropdown()
-    {
+    void Start(){
+        BuildResolutionDropdown();
+        ApplyToGame(data);
+        ApplyToUI(data);
+
+        if (resolutionDropdown) resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
+        if (master) master.onValueChanged.AddListener(OnMasterChanged);
+        if (music) music.onValueChanged.AddListener(OnMusicChanged);
+        if (fullscreenToggle) fullscreenToggle.onValueChanged.AddListener(OnFullscreenChanged);
+        if (qualityDropdown) qualityDropdown.onValueChanged.AddListener(OnQualityChanged);
+    }
+
+    private void ApplyToGame(GameSettingsData d){
+        SetMasterVolume(d.master);
+        SetMusicVolume(d.music);
+        SetQuality(d.qualityInd);
+        SetFullscreen(d.fullscreen);
+
+        Screen.SetResolution(d.resWidth, d.resHeight, d.fullscreen);
+    }
+
+    private void ApplyToUI(GameSettingsData d){
+        if (master) master.SetValueWithoutNotify(d.master);
+        if (music) music.SetValueWithoutNotify(d.music);
+
+        if (qualityDropdown){
+            int q = Mathf.Clamp(d.qualityInd, 0, QualitySettings.names.Length - 1);
+            qualityDropdown.SetValueWithoutNotify(q);
+            qualityDropdown.RefreshShownValue();
+        }
+
+        if (fullscreenToggle) fullscreenToggle.SetIsOnWithoutNotify(d.fullscreen);
+
+        if (resolutionDropdown){
+            int resInd = FindResolutionIndex(d.resWidth, d.resHeight);
+            if (resInd < 0) resInd = FindResolutionIndex(Screen.width, Screen.height);
+            if (resInd < 0) resInd = 0;
+
+            resolutionDropdown.SetValueWithoutNotify(resInd);
+            resolutionDropdown.RefreshShownValue();
+        }
+    }
+
+    private int FindResolutionIndex(int w, int h){
+        if (resolutions == null) return -1;
+        return Array.FindIndex(resolutions, r => r.width == w && r.height == h);
+    }
+
+    private void BuildResolutionDropdown(){
         var unique = new Dictionary<string, Resolution>();
-        foreach (var r in Screen.resolutions)
-        {
+        foreach (var r in Screen.resolutions){
             string key = $"{r.width}x{r.height}";
-            if (!unique.ContainsKey(key))
-                unique[key] = r;
+            if (!unique.ContainsKey(key)) unique[key] = r;
         }
 
         var list = unique.Values.OrderBy(r => r.width).ThenBy(r => r.height).ToList();
@@ -55,46 +98,61 @@ public class SettingsManager : MonoBehaviour
 
         resolutionDropdown.ClearOptions();
         resolutionDropdown.AddOptions(resolutions.Select(r => $"{r.width} x {r.height}").ToList());
-
-        int currentIndex = Array.FindIndex(resolutions, r => r.width == Screen.width && r.height == Screen.height);
-        if (currentIndex < 0) currentIndex = 0;
-
-        resolutionDropdown.SetValueWithoutNotify(currentIndex);
-        resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetResolution(int index)
-    {
+    private void OnResolutionChanged(int index){
         if (index < 0 || index >= resolutions.Length) return;
+
         var r = resolutions[index];
-        Screen.SetResolution(r.width, r.height, Screen.fullScreen);
+        data.resWidth = r.width;
+        data.resHeight = r.height;
+
+        Screen.SetResolution(r.width, r.height, data.fullscreen);
+        GameSettingsStore.Save(data);
     }
 
-    public void SetMasterVolume(float value01)
-    {
-        audioMixer.SetFloat(masterParam, ToDb(value01));
+    private void OnMasterChanged(float value){
+        data.master = value;
+        SetMasterVolume(value);
+        GameSettingsStore.Save(data);
     }
 
-    public void SetMusicVolume(float value01)
-    {
-        float db = ToDb(value01);
-        audioMixer.SetFloat(musicParam, db);
+    private void OnMusicChanged(float value){
+        data.music = value;
+        SetMusicVolume(value);
+        GameSettingsStore.Save(data);
     }
 
-
-    private static float ToDb(float value01)
-    {
-        value01 = Mathf.Clamp(value01, 0.0001f, 1f);
-        return Mathf.Log10(value01) * 20f;
+    private void OnQualityChanged(int qualityIndex){
+        data.qualityInd = qualityIndex;
+        SetQuality(qualityIndex);
+        GameSettingsStore.Save(data);
     }
 
-    public void SetQuality(int qualityIndex)
-    {
+    private void OnFullscreenChanged(bool isFullscreen){
+        data.fullscreen = isFullscreen;
+        SetFullscreen(isFullscreen);
+        Screen.SetResolution(data.resWidth, data.resHeight, isFullscreen);
+        GameSettingsStore.Save(data);
+    }
+    public void SetMasterVolume(float value){
+        audioMixer.SetFloat(masterParam, ToDb(value));
+    }
+
+    public void SetMusicVolume(float value){
+        audioMixer.SetFloat(musicParam, ToDb(value));
+    }
+
+    private static float ToDb(float value){
+        value = Mathf.Clamp(value, 0.0001f, 1f);
+        return Mathf.Log10(value) * 20f;
+    }
+
+    public void SetQuality(int qualityIndex){
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void SetFullscreen(bool isFullscreen)
-    {
+    public void SetFullscreen(bool isFullscreen){
         Screen.fullScreen = isFullscreen;
     }
 }
