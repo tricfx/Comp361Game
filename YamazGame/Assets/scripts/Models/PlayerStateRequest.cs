@@ -1,5 +1,5 @@
 [System.Serializable]
-public class PlayerState
+public class PlayerStateRequest
 {
     public int new_scene_number;
     public int new_gems_amount;
