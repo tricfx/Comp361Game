@@ -1,7 +1,7 @@
 [System.Serializable]
-public class BestRun
+public class BestRunResponse
 {
     public int rank;
+    public long best_time;
     public string username;
-    public long time_ms;
 }
