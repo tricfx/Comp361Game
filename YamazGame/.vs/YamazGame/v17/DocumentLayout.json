@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\cinematicressources\\ressources\\skip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\cinematicressources\\ressources\\skip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\mainmeu\\scripts\\menuscripts\\selectscreen\\screenfader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\selectscreen\\screenfader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\datapersistence\\filedatahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\datapersistence\\filedatahandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\mainmeu\\scripts\\menuscripts\\selectscreen\\selectscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\selectscreen\\selectscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\datapersistence\\datapersistencemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\datapersistence\\datapersistencemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\selectscreen\\selectscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\selectscreen\\selectscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\datapersistence\\data\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\datapersistence\\data\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\mainmeu\\scripts\\menuscripts\\chosescreen\\chosescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmeu\\scripts\\menuscripts\\chosescreen\\chosescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,27 +31,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Skip.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "RelativeDocumentMoniker": "Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "RelativeToolTip": "Assets\\CinematicRessources\\Ressources\\Skip.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBYAAAAFAAAAAAAAAA==",
+              "Title": "ScreenFader.cs",
+              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\ScreenFader.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\ScreenFader.cs",
+              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\ScreenFader.cs",
+              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\ScreenFader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T21:06:57.015Z",
+              "WhenOpened": "2026-01-29T00:08:56.586Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FileDataHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\FileDataHandler.cs",
-              "RelativeDocumentMoniker": "Assets\\DataPersistence\\FileDataHandler.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\FileDataHandler.cs",
-              "RelativeToolTip": "Assets\\DataPersistence\\FileDataHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABCAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameManager.cs",
+              "RelativeToolTip": "Assets\\GameManager.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T20:47:48.587Z"
+              "WhenOpened": "2026-01-28T21:52:00.679Z"
             },
             {
               "$type": "Document",
@@ -69,45 +62,23 @@
               "RelativeDocumentMoniker": "Assets\\DataPersistence\\DataPersistenceManager.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\DataPersistenceManager.cs",
               "RelativeToolTip": "Assets\\DataPersistence\\DataPersistenceManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T20:28:08.026Z"
+              "WhenOpened": "2026-01-28T20:28:08.026Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GameData.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\Data\\GameData.cs",
-              "RelativeDocumentMoniker": "Assets\\DataPersistence\\Data\\GameData.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\Data\\GameData.cs",
-              "RelativeToolTip": "Assets\\DataPersistence\\Data\\GameData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T20:27:33.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChoseScreen.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\ChoseScreen\\ChoseScreen.cs",
-              "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\ChoseScreen\\ChoseScreen.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\ChoseScreen\\ChoseScreen.cs",
-              "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\ChoseScreen\\ChoseScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T20:23:10.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SelectScreen.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
               "RelativeToolTip": "Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T20:23:06.538Z"
+              "WhenOpened": "2026-01-28T20:23:06.538Z",
+              "EditorCaption": ""
             }
           ]
         }

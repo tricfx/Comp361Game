@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SelectScreen : MonoBehaviour
 {
+    [SerializeField]
+    private LevelLoader levelLoader;
     public void NewGame()
     {
         DataPersistenceManager.instance.NewGame();
@@ -9,7 +11,7 @@ public class SelectScreen : MonoBehaviour
 
         DataPersistenceManager.instance.SaveGame();
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoader.LoadLevel(DataPersistenceManager.instance.gameData.sceneIndex);
     }
     public void LoadGame()
     {
@@ -22,7 +24,7 @@ public class SelectScreen : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene(index);
+        levelLoader.LoadLevel(index);
     }
 
    
