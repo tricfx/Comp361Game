@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 6f;
@@ -12,21 +12,34 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Recommended for top-down movement
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
     }
 
     void Update()
     {
+        
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            movement = Vector2.zero;
+            return;
+        }
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        movement = movement.normalized; // prevents faster diagonal movement
+        movement = movement.normalized;
     }
 
     void FixedUpdate()
     {
+       
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         rb.linearVelocity = movement * moveSpeed;
     }
 }
