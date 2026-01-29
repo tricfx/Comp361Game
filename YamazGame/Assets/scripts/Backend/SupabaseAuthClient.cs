@@ -104,6 +104,61 @@ public class SupabaseAuthClient
             onError
         );
     }
+    // This signs them in, so its best we direct them to a update password menu
+    public IEnumerator ForgotPassword(
+        string email,
+        System.Action<AuthSession> onSuccess,
+        System.Action<string> onError
+    )
+    {
+        var bodyObj = new forgotPasswordRequest {
+            email = email
+        };
+
+        string body = JsonUtility.ToJson(bodyObj);
+
+        yield return SupabaseHttp.SendRequest(
+            $"{baseUrl}/recover",
+            "POST",
+            body,
+            apikey,
+            null,
+            response => {
+                var session = JsonUtility.FromJson<AuthSession>(response);
+                onSuccess?.Invoke(session);
+            },
+            onError
+
+        );
+    }
+
+    public IEnumerator ChangePassword(
+        string accessToken,
+        string password,
+        System.Action onSuccess,
+        System.Action<string> onError
+    )
+    {
+        var bodyObj = new changePasswordRequest {
+            password = password
+        };
+
+        string body = JsonUtility.ToJson(bodyObj);
+
+        yield return SupabaseHttp.SendRequest(
+            $"{baseUrl}/user",
+            "PUT",
+            body,
+            apikey,
+            accessToken,
+            _ => {
+                onSuccess?.Invoke();
+            },
+            onError
+        );
+    }
+
+
     public IEnumerator SignOut(
         string accessToken,
         System.Action onSuccess,
@@ -115,7 +170,7 @@ public class SupabaseAuthClient
             "POST",
             null,
             apikey,
-            null,
+            accessToken,
             _ => onSuccess?.Invoke(),
             onError
         );
@@ -131,6 +186,16 @@ public class SupabaseAuthClient
     public class RefreshRequest
     {
         public string refresh_token;
+    }
+
+    [System.Serializable]
+    public class forgotPasswordRequest {
+        public string email;
+    }
+
+    [System.Serializable]
+    public class changePasswordRequest {
+        public string password;
     }
 
 }
