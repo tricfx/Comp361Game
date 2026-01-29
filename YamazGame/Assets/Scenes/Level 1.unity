@@ -256,6 +256,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122331195}
   m_CullTransparentMesh: 1
+--- !u!1 &410145170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410145172}
+  - component: {fileID: 410145171}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &410145171
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410145170}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: ae11c5e6ea137d24a8a12008d7200153, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &410145172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410145170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 257.49286, y: 690.94305, z: -2.8213909}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517236904
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,11 +1113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e74026dd54987848b0b2322b1b92f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 2003529024}
   characterIcon: {fileID: 1915214253}
   characterName: {fileID: 901063536}
   dialogueArea: {fileID: 601079063}
   isDialogueActive: 0
-  typingSpeed: 0.2
+  typingSpeed: 0.01
   animator: {fileID: 1464559356}
 --- !u!95 &1464559356
 Animator:
@@ -1694,8 +1824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: 29}
-  m_SizeDelta: {x: 100, y: 169.5578}
+  m_AnchoredPosition: {x: -326, y: 86}
+  m_SizeDelta: {x: 343, y: 358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915214253
 MonoBehaviour:
@@ -1747,7 +1877,6 @@ GameObject:
   - component: {fileID: 2003529021}
   - component: {fileID: 2003529019}
   - component: {fileID: 2003529023}
-  - component: {fileID: 2003529025}
   - component: {fileID: 2003529024}
   - component: {fileID: 2003529026}
   - component: {fileID: 2003529027}
@@ -1984,20 +2113,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2003529025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003529018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8e833468e94ca478236b641bd7870f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines: []
 --- !u!50 &2003529026
 Rigidbody2D:
   serializedVersion: 5
@@ -2040,13 +2155,160 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - character:
-        name: ddd
-        icon: {fileID: -310386516557112191, guid: f7187c09f09c05a4ba56f9c33110abcb, type: 3}
-      line: sdsd
+        name: ???
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Well\u2026 how curious. Fancy meeting someone all the way down here."
     - character:
-        name: ddd
-        icon: {fileID: -310386516557112191, guid: f7187c09f09c05a4ba56f9c33110abcb, type: 3}
-      line: ddsd
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: Huh?! Who are you?
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Me? I\u2019m Sherma. Just another soul bound to this place."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "\u2026\nI didn\u2019t expect to find anyone alive. I thought Hell was
+        a desolate pit\u2014nothing but suffering and silence."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Most believe that. But Hell is not empty\u2014it is awake. And it\u2019s
+        been watching you since the moment you fell."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "Watching\u2026 me?"
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Yes. I can feel it clearly now. The Lord\u2019s power flows within you\u2014yet
+        you seem completely unaware of it."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "The Lord\u2019s power? What are you talking about?"
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Your father. His essence still resonates within these chambers. Hell
+        recognizes it\u2026 responds to it. You are, in a way, speaking the same
+        language as this place."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "That doesn\u2019t make any sense."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: It will. It means you can harvest the powers of Hell itself.
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "\u2026?"
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "At the end of certain chambers\u2014once you survive what lies within\u2014you\u2019ll
+        feel it. A connection. Hell will offer you fragments of its strength."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "And I can just\u2026 take them?"
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: So I have to choose.
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Exactly. Power here is not about greed\u2014it\u2019s about restraint."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: And why would I even need these powers?
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "You wish to leave, don\u2019t you?"
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "I do. I\u2019ll escape\u2026 and I\u2019ll slay the wench who cast me
+        into this place."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Then you\u2019ll need them.\nThis realm is crawling with creatures meant
+        to ensure no one ever escapes. Every soul before you failed. Some fought.
+        Some begged. None made it out."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "But you said I\u2019m different."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "You are. Hell does not merely trap you\u2014it tests you."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "\u2026I understand."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "One more thing, before you go.\nAs you travel, you\u2019ll find gems
+        scattered throughout the floors."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: Gems?
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Remnants of humans who fell here carrying them. Hell collects what they
+        leave behind. When you connect with a chamber\u2019s core, those gems will
+        answer to you."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: And what are they used for?
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "If you ever see me again, bring them. You may exchange them for\u2026
+        advantages. Knowledge. Tools. Perhaps even power\u2014of a different kind."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: You speak as if you belong here.
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: I do. I was born from the roots of Hell itself.
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "\u2026Right."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: And what are they used for?
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "Don\u2019t dwell on it. Now go. Survive the chambers. Choose your powers
+        wisely. And remember\u2014Hell rewards strength, but it devours the reckless."
+    - character:
+        name: Yanluo
+        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+      line: "Thank you\u2026 Sherma."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "May the Goddess of Luck walk beside you. You\u2019ll need her more than
+        you think."
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2056,3 +2318,4 @@ SceneRoots:
   - {fileID: 517236909}
   - {fileID: 1804766627}
   - {fileID: 933948579}
+  - {fileID: 410145172}

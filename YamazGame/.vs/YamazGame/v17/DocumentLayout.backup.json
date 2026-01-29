@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\level1\\shopkeeper\\scripts\\dialoguetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\level1\\player\\playertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\level1\\player\\playertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\level1\\shopkeeper\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\level1\\shopkeeper\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\level1\\shopkeeper\\scripts\\dialoguetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\level1\\shopkeeper\\scripts\\dialoguetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\datapersistence\\datapersistencemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\datapersistence\\datapersistencemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\datapersistence\\datapersistencemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -39,19 +47,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "playerTest.cs",
+              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\player\\playerTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Level1\\player\\playerTest.cs",
+              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\player\\playerTest.cs",
+              "RelativeToolTip": "Assets\\Level1\\player\\playerTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T18:03:55.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DialogueManager.cs",
+              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
+              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
+              "RelativeToolTip": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAmwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T17:02:09.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DialogueTrigger.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
               "RelativeToolTip": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwBIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:52:10.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GameData.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\Data\\GameData.cs",
               "RelativeDocumentMoniker": "Assets\\DataPersistence\\Data\\GameData.cs",
@@ -63,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "SelectScreen.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
@@ -75,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "LevelLoader.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\LevelLoader.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\LevelLoader.cs",
@@ -87,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\GameManager.cs",
@@ -99,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DataPersistenceManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\DataPersistenceManager.cs",
               "RelativeDocumentMoniker": "Assets\\DataPersistence\\DataPersistenceManager.cs",
@@ -107,8 +141,7 @@
               "RelativeToolTip": "Assets\\DataPersistence\\DataPersistenceManager.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T20:28:08.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-28T20:28:08.026Z"
             }
           ]
         }

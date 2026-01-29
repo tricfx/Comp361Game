@@ -7,7 +7,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
-
+    public AudioSource audioSource;
     public Image characterIcon;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueArea;
@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueActive = true;
         animator.Play("BoxIn");
-
+        audioSource.mute = true;
         lines.Clear();
 
         foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
@@ -75,5 +75,6 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueActive = false;
         animator.Play("BoxOut");
+        audioSource.mute = false;
     }
 }
