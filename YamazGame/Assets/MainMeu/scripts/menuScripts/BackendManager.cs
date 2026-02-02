@@ -5,6 +5,9 @@ using System.Collections;
 
 public class BackendManager : MonoBehaviour
 {
+    [SerializeField]
+    private DataPersistenceManager manager;
+
     private SupabaseAuthClient AuthClient;
     private SupabaseGameClient GameClient;
     private SupabaseSessionManager SessionManager;
@@ -59,4 +62,9 @@ public class BackendManager : MonoBehaviour
         }
         );
     }
+
+   DataPersistenceManager.Instance.
+
+
+
 }
