@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Wall
-  - Player
-  - Floor
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -40,21 +40,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Floor
-    uniqueID: 3190769765
-    locked: 0
-  - name: Back wall
-    uniqueID: 2835610425
-    locked: 0
-  - name: Player
-    uniqueID: 1625054565
-    locked: 0
-  - name: Front of player, behind foreground
-    uniqueID: 130148829
-    locked: 0
-  - name: Foreground
-    uniqueID: 4228745965
     locked: 0
   m_RenderingLayers:
   - Default
