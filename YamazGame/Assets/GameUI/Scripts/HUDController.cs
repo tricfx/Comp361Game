@@ -5,7 +5,7 @@ using UnityEngine;
 public class HUDController : MonoBehaviour
 {
     [Header("Player & Views")]
-    [SerializeField] private Player1 player;
+    [SerializeField] private Player player;
     [SerializeField] private HealthBarView healthBarView;
     [SerializeField] private AbilitySlotView dashAbilityView;
     [SerializeField] private AbilitySlotView abilityQView;
