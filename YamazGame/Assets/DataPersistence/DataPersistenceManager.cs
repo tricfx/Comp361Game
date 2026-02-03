@@ -17,11 +17,14 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
-           Debug.LogError("More than one Data Persistence Manager in the scene.");
+            Destroy(gameObject);
+            Debug.LogError("More than one Data Persistence Manager in the scene.");
+            return;
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     private void Start()
     {
@@ -36,11 +39,10 @@ public class DataPersistenceManager : MonoBehaviour
     }
     public void LoadGame()
     {
-        this.gameData = dataHandler.Load();
-        if (this.gameData == null)
+        GameData data = dataHandler.Load();
+        if (data == null)
         {
-            Debug.LogWarning("No data found. Starting new game.");
-            NewGame();
+            StartCoroutine(BackendManager.Instance.GetPlayerState()); // this already handles the case where they don't have any data -> initializing default values
         }
 
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
@@ -56,6 +58,15 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObj.SaveData(ref gameData);
         }
         dataHandler.Save(gameData);
+        
+        PlayerStateRequest playerState = new PlayerStateRequest
+        {
+            new_scene_number = gameData.sceneIndex,
+            new_gems_amount = gameData.gemsCollected,
+            new_abilities = gameData.abilities,
+            new_left_during_combat = gameData.left_during_combat
+        };
+        StartCoroutine(BackendManager.Instance.UpdatePlayerState(playerState));
     }
     private void OnApplicationQuit()
     {

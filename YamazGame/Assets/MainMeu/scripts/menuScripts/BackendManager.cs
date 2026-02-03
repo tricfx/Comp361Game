@@ -5,12 +5,9 @@ using System.Collections;
 
 public class BackendManager : MonoBehaviour
 {
-    [SerializeField]
-    private DataPersistenceManager manager;
-
     private SupabaseAuthClient AuthClient;
     private SupabaseGameClient GameClient;
-    private SupabaseSessionManager SessionManager;
+    public SupabaseSessionManager SessionManager {get; private set;}
     
     public static BackendManager Instance;
 
@@ -31,7 +28,7 @@ public class BackendManager : MonoBehaviour
 
         SessionManager = gameObject.AddComponent<SupabaseSessionManager>();
     }
-    public IEnumerator SignUp(string email, string password)
+    public IEnumerator SignUp(string email, string password, Action<AuthSession> onSuccess)
     {
         Debug.Log("Signing up...");
         yield return AuthClient.SignUp(email, password,
@@ -39,6 +36,7 @@ public class BackendManager : MonoBehaviour
         {
             Debug.Log("SignUp Successful");
             SessionManager.SetSession(session);
+            onSuccess?.Invoke(session);
         },
         error =>
         {
@@ -47,7 +45,7 @@ public class BackendManager : MonoBehaviour
         );
     }
 
-    public IEnumerator SignIn(string email, string password)
+    public IEnumerator SignIn(string email, string password, Action<AuthSession> onSuccess)
     {
         Debug.Log("Signing in...");
         yield return AuthClient.SignIn(email, password,
@@ -55,6 +53,7 @@ public class BackendManager : MonoBehaviour
         {
             Debug.Log("SignIn Successful");
             SessionManager.SetSession(session);
+            onSuccess?.Invoke(session);
         },
         error =>
         {
@@ -63,6 +62,90 @@ public class BackendManager : MonoBehaviour
         );
     }
 
+    public IEnumerator SignOut(Action onSuccess)
+    {
+        Debug.Log("Signing out...");
+        yield return AuthClient.SignOut(SessionManager.AccessToken,
+        () =>
+        {
+            Debug.Log("Signed out successfully");
+            SessionManager.ClearSession();
+            onSuccess?.Invoke();
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
 
+    public IEnumerator ForgotPassword(string email)
+    {
+        Debug.Log("User forgot password");
+        yield return AuthClient.ForgotPassword(email,
+        session =>
+        {
+            SessionManager.SetSession(session);
+            Debug.Log("User is signed in");
+        },
+        error =>
+        {
+            Debug.Log(error);
+        }
+        );
+    }
+
+    public IEnumerator UpdatePlayerState(PlayerStateRequest newState)
+    {
+        Debug.Log("Updating player state");
+        yield return GameClient.UpdatePlayerState(SessionManager.AccessToken, newState,
+        _ =>
+        {
+            Debug.Log("Player state updated successfully");
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
+
+    public IEnumerator GetPlayerState()
+    {
+        Debug.Log("Fetching player state");
+        yield return GameClient.GetPlayerState(SessionManager.AccessToken,
+        response =>
+        {
+            GameData data = new GameData
+            {
+                sceneIndex = response.scene_number,
+                gemsCollected = response.gems_amount,
+                abilities = response.abilities,
+                left_during_combat = response.left_during_combat
+            };
+
+            DataPersistenceManager.instance.gameData = data;
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
+
+    public IEnumerator GetBestRuns(Action<BestRunResponse[]> onSuccess)
+    {
+        Debug.Log("Fetching best runs");
+        yield return GameClient.GetBestRuns(SessionManager.AccessToken,
+        response =>
+        {
+            onSuccess?.Invoke(response);
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
 
 }

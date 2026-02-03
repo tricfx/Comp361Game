@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float speed = 5f;                // Base movement speed
