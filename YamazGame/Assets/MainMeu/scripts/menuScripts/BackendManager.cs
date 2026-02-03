@@ -63,8 +63,6 @@ public class BackendManager : MonoBehaviour
         );
     }
 
-   DataPersistenceManager.Instance.
-
 
 
 }

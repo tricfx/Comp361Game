@@ -33,6 +33,15 @@ public class Player1 : MonoBehaviour
     private float dashTime = 0f;
     private float lastDash = -Mathf.Infinity;
 
+    //  Property for seconds before next dash 0 means on cooldown, 1 means ready
+    public float DashCooldownNormalized {
+        get{
+            float remaining = dashCooldown - (Time.time - lastDash);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / dashCooldown);
+        }
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
