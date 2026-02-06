@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 2
-  knockbackForce: 15
+  knockbackForce: 10
   attackCollider: {fileID: 4646832708374534682}
   faceRight: {x: 0.16, y: -0.117, z: 0}
   faceLeft: {x: -0.16, y: -0.117, z: 0}
