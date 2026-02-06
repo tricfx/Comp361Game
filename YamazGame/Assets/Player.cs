@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
     [Header("Ability Placeholders")]
     public GameObject abilityQ;
     public GameObject abilityE;
+    // tune these in inspector if cooldowns feel wrong
+    [Tooltip("Cooldown in seconds for Q ability")]
+    public float abilityQCooldown = 3f;
+    [Tooltip("Cooldown in seconds for E ability")]
+    public float abilityECooldown = 5f;
 
     [Header("Animation & Visuals")]
     public Animator animator;               // Drag animator here when ready
@@ -32,6 +37,39 @@ public class Player : MonoBehaviour
     private bool isDashing = false;
     private float dashTime = 0f;
     private float lastDash = -Mathf.Infinity;
+    // timestamps for Q/E so we can show cooldown on HUD
+    private float lastAbilityQ = -Mathf.Infinity;
+    private float lastAbilityE = -Mathf.Infinity;
+
+    //  Property for seconds before next dash 0 means on cooldown, 1 means ready
+    public float DashCooldownNormalized {
+        get{
+            float remaining = dashCooldown - (Time.time - lastDash);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / dashCooldown);
+        }
+    }
+
+    // 1 = ready, 0 = on cooldown (HUD reads these)
+    public float AbilityQCooldownNormalized
+    {
+        get
+        {
+            float remaining = abilityQCooldown - (Time.time - lastAbilityQ);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / abilityQCooldown);
+        }
+    }
+
+    public float AbilityECooldownNormalized
+    {
+        get
+        {
+            float remaining = abilityECooldown - (Time.time - lastAbilityE);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / abilityECooldown);
+        }
+    }
 
     void Start()
     {
@@ -146,25 +184,29 @@ public class Player : MonoBehaviour
         }
     }
 
-    // --- Ability stubs ---
+    // --- Ability stubs (with cooldown so HUD can show it) ---
     void UseAbilityQ()
     {
+        if (Time.time < lastAbilityQ + abilityQCooldown) return;
+
+        lastAbilityQ = Time.time;
         Debug.Log("Ability Q triggered");
 
         if (abilityQ != null)
         {
-            // Instantiate ability at player position or attack point
             Instantiate(abilityQ, transform.position, Quaternion.identity);
         }
     }
 
     void UseAbilityE()
     {
+        if (Time.time < lastAbilityE + abilityECooldown) return;
+
+        lastAbilityE = Time.time;
         Debug.Log("Ability E triggered");
 
         if (abilityE != null)
         {
-            // Instantiate ability at player position or attack point
             Instantiate(abilityE, transform.position, Quaternion.identity);
         }
     }

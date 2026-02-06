@@ -62,6 +62,23 @@ public class BackendManager : MonoBehaviour
         );
     }
 
+    public IEnumerator SignOut(Action onSuccess)
+    {
+        Debug.Log("Signing out...");
+        yield return AuthClient.SignOut(SessionManager.AccessToken,
+        () =>
+        {
+            Debug.Log("Signed out successfully");
+            SessionManager.ClearSession();
+            onSuccess?.Invoke();
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
+
     public IEnumerator ForgotPassword(string email)
     {
         Debug.Log("User forgot password");

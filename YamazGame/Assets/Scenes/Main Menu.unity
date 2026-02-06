@@ -10045,8 +10045,8 @@ GameObject:
   - component: {fileID: 1153260574}
   - component: {fileID: 1153260576}
   - component: {fileID: 1153260577}
-  - component: {fileID: 1153260578}
   - component: {fileID: 1153260579}
+  - component: {fileID: 1153260580}
   m_Layer: 5
   m_Name: SelectScreen
   m_TagString: Untagged
@@ -10140,21 +10140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a461f54cb8849747bcdd41e619353f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1153260578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153260572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34268f10d34e7249b199f5c958a7520, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fader: {fileID: 1348573869}
-  from: {fileID: 1153260576}
-  to: {fileID: 410227624}
 --- !u!114 &1153260579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10168,6 +10153,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoader: {fileID: 437099827}
+--- !u!114 &1153260580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153260572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab6374d2951c4d10ba8c563307d5abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fader: {fileID: 1348573869}
+  from: {fileID: 1153260576}
+  to: {fileID: 410227624}
 --- !u!1 &1176379132
 GameObject:
   m_ObjectHideFlags: 0
