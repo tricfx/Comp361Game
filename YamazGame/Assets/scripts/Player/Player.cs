@@ -41,10 +41,10 @@ public class Player : MonoBehaviour
     private bool isRunningSouth = false;
     private bool isRunningEast = false;
     private bool isRunningWest = false;
-    private bool isFacingNorth = false;
-    private bool isFacingSouth = false;
-    private bool isFacingEast = false;
-    private bool isFacingWest = false;
+    private bool isIdleEast = false;
+    private bool isIdleWest = false;
+    private bool isIdleNorth = false;
+    private bool isIdleSouth = false;
     private float dashTime = 0f;
     private float lastDash = -Mathf.Infinity;
     // timestamps for Q/E so we can show cooldown on HUD
@@ -114,10 +114,45 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool IsFacingNorth { get => isFacingNorth; set => isFacingNorth = value; }
-    public bool IsFacingSouth { get => isFacingSouth; set => isFacingSouth = value; }
-    public bool IsFacingEast { get => isFacingEast; set => isFacingEast = value; }
-    public bool IsFacingWest { get => isFacingWest; set => isFacingWest = value; }
+    public bool IsIdleEast
+    {
+        get { return isIdleEast; }
+        set
+        {
+            isIdleEast = value;
+            if (HasAnimParam("isIdleEast")) animator.SetBool("isIdleEast", isIdleEast);
+        }
+    }
+    public bool IsIdleWest
+    {
+        get { return isIdleWest; }
+        set
+        {
+            isIdleWest = value;
+            if (HasAnimParam("isIdleWest")) animator.SetBool("isIdleWest", isIdleWest);
+        }
+    }
+    public bool IsIdleNorth
+    {
+        get { return isIdleNorth; }
+        set
+        {
+            isIdleNorth = value;
+            if (HasAnimParam("isIdleNorth")) animator.SetBool("isIdleNorth", isIdleNorth);
+        }
+    }
+    public bool IsIdleSouth
+    {
+        get { return isIdleSouth; }
+        set
+        {
+            isIdleSouth = value;
+            if (HasAnimParam("isIdleSouth")) animator.SetBool("isIdleSouth", isIdleSouth);
+        }
+    }
+
+
+
 
     //  Property for seconds before next dash 0 means on cooldown, 1 means ready
     public float DashCooldownNormalized
@@ -235,10 +270,52 @@ public class Player : MonoBehaviour
             IsRunningWest = false;
         }
 
-        if (!IsRunning)
-        { }
+        // --- Idle Logic ---
+        if (!isRunning && movement == Vector2.zero)
+        {
+            // Use lastMovement to determine facing direction when standing still
+            Vector2 dir = lastMovement;
 
+            bool pureVertical = Mathf.Approximately(dir.x, 0f);
+            bool pureHorizontal = Mathf.Approximately(dir.y, 0f);
 
+            // Reset ALL first (critical for instant switching)
+            IsIdleEast = false;
+            IsIdleWest = false;
+            IsIdleNorth = false;
+            IsIdleSouth = false;
+
+            // Set the current direction
+            if (pureVertical && dir.y > 0)
+            {
+                IsIdleNorth = true;
+            }
+            else if (pureVertical && dir.y < 0)
+            {
+                IsIdleSouth = true;
+            }
+            else if (pureHorizontal && dir.x > 0)
+            {
+                IsIdleEast = true;
+            }
+            else if (pureHorizontal && dir.x < 0)
+            {
+                IsIdleWest = true;
+            }
+        }
+        else
+        {
+            IsIdleEast = false;
+            IsIdleWest = false;
+            IsIdleNorth = false;
+            IsIdleSouth = false;
+        }
+
+        if (movement != Vector2.zero)
+        {
+            IsRunning = true;
+            Debug.Log($"Running: {isRunning}, North: {isRunningNorth}, South: {isRunningSouth}, East: {isRunningEast}, West: {isRunningWest}");
+        }
 
 
 
@@ -277,7 +354,7 @@ public class Player : MonoBehaviour
         else
         {
             // Only use run speed if BOTH running AND moving
-            float currentSpeed = (isRunning && movement != Vector2.zero) ? runSpeed : speed;
+            float currentSpeed = (movement != Vector2.zero) ? runSpeed : 0f;
             rb.linearVelocity = movement * currentSpeed;
         }
     }

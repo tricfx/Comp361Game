@@ -277,8 +277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   runSpeed: 15
-  dashSpeed: 12
-  dashDuration: 0.2
+  dashSpeed: 20
+  dashDuration: 1
   dashCooldown: 1
   maxHP: 100
   currentHP: 0
