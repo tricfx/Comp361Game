@@ -184,18 +184,18 @@ public class Player : MonoBehaviour
             lastMovement = movement;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (movement != Vector2.zero)
         {
             IsRunning = true;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (movement == Vector2.zero)
         {
             IsRunning = false;
         }
 
 
         // Update running direction animations ONLY when running AND moving
-        if (IsRunning && movement != Vector2.zero)
+        if (IsRunning)
         {
             // Determine pure directions
             bool pureVertical = Mathf.Approximately(movement.x, 0f);
@@ -235,6 +235,8 @@ public class Player : MonoBehaviour
             IsRunningWest = false;
         }
 
+        if (!IsRunning)
+        { }
 
 
 
