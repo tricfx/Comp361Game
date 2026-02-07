@@ -29,8 +29,10 @@ public class Player : MonoBehaviour
     [Header("Attack Settings")]
     public float attackRange = 1f;          // Attack collision range
     public int attackDamage = 10;           // Base attack damage
-    public Transform attackPoint;           // Empty GameObject to mark attack origin
-    public LayerMask enemyLayers;           // What layers count as enemies
+    [Tooltip("How long movement is locked during attack (match your attack animation length)")]
+    public float attackDuration = 1.3f;      // How long attack state lasts — movement disabled this whole time
+    public Transform attackPoint;         // Empty GameObject to mark attack origin
+    public LayerMask enemyLayers;          // What layers count as enemies
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -45,6 +47,10 @@ public class Player : MonoBehaviour
     private bool isIdleWest = false;
     private bool isIdleNorth = false;
     private bool isIdleSouth = false;
+
+    private bool isAttacking = false;
+    private bool isAttackingEast = false;
+    private bool isAttackingWest = false;
     private float dashTime = 0f;
     private float lastDash = -Mathf.Infinity;
     // timestamps for Q/E so we can show cooldown on HUD
@@ -55,6 +61,8 @@ public class Player : MonoBehaviour
     private System.Collections.Generic.HashSet<string> animParams;
 
 
+
+    // --------Movement Properties-----------
     public bool IsRunning
     {
         get
@@ -151,6 +159,36 @@ public class Player : MonoBehaviour
         }
     }
 
+    // --------Attack Properties-----------
+    public bool IsAttacking
+    {
+        get { return isAttacking; }
+        set
+        {
+            isAttacking = value;
+            if (HasAnimParam("isAttacking")) animator.SetBool("isAttacking", isAttacking);
+        }
+    }
+    public bool IsAttackingEast
+    {
+        get { return isAttackingEast; }
+        set
+        {
+            isAttackingEast = value;
+            if (HasAnimParam("isAttackingEast")) animator.SetBool("isAttackingEast", isAttackingEast);
+        }
+    }
+
+    public bool IsAttackingWest
+    {
+        get { return isAttackingWest; }
+        set
+        {
+            isAttackingWest = value;
+            if (HasAnimParam("isAttackingWest")) animator.SetBool("isAttackingWest", isAttackingWest);
+        }
+    }
+
 
 
 
@@ -208,115 +246,125 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // --- Input ---
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        movement = movement.normalized;
+        if (!isAttacking)
+        {
+            // --- Input ---
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            movement = movement.normalized;
 
-        // Store last movement for attack direction
-        if (movement != Vector2.zero)
-        {
-            lastMovement = movement;
-        }
+            // Store last movement for attack direction
+            if (movement != Vector2.zero)
+            {
+                lastMovement = movement;
+            }
 
-        if (movement != Vector2.zero)
-        {
-            IsRunning = true;
+            if (movement != Vector2.zero)
+            {
+                IsRunning = true;
+            }
+            if (movement == Vector2.zero)
+            {
+                IsRunning = false;
+            }
+
+
+
+
+            // Update running direction animations ONLY when running AND moving
+            if (IsRunning)
+            {
+                // Determine pure directions
+                bool pureVertical = Mathf.Approximately(movement.x, 0f);
+                bool pureHorizontal = Mathf.Approximately(movement.y, 0f);
+
+                // Reset ALL first (critical for instant switching)
+                IsRunningNorth = false;
+                IsRunningSouth = false;
+                IsRunningEast = false;
+                IsRunningWest = false;
+
+                // Set the current direction
+                if (pureVertical && movement.y > 0)
+                {
+                    IsRunningNorth = true;
+                }
+                else if (pureVertical && movement.y < 0)
+                {
+                    IsRunningSouth = true;
+                }
+                else if (pureHorizontal && movement.x > 0)
+                {
+                    IsRunningEast = true;
+
+                }
+                else if (pureHorizontal && movement.x < 0)
+                {
+                    IsRunningWest = true;
+                }
+
+            }
+            else
+            {
+                IsRunningNorth = false;
+                IsRunningSouth = false;
+                IsRunningEast = false;
+                IsRunningWest = false;
+            }
+
+            // --- Idle Logic ---
+            if (!isRunning && movement == Vector2.zero)
+            {
+                // Use lastMovement to determine facing direction when standing still
+                Vector2 dir = lastMovement;
+
+                bool pureVertical = Mathf.Approximately(dir.x, 0f);
+                bool pureHorizontal = Mathf.Approximately(dir.y, 0f);
+
+                // Reset ALL first (critical for instant switching)
+                IsIdleEast = false;
+                IsIdleWest = false;
+                IsIdleNorth = false;
+                IsIdleSouth = false;
+
+                // Set the current direction
+                if (pureVertical && dir.y > 0)
+                {
+                    IsIdleNorth = true;
+                }
+                else if (pureVertical && dir.y < 0)
+                {
+                    IsIdleSouth = true;
+                }
+                else if (pureHorizontal && dir.x > 0)
+                {
+                    IsIdleEast = true;
+                }
+                else if (pureHorizontal && dir.x < 0)
+                {
+                    IsIdleWest = true;
+                }
+            }
+            else
+            {
+                IsIdleEast = false;
+                IsIdleWest = false;
+                IsIdleNorth = false;
+                IsIdleSouth = false;
+            }
         }
-        if (movement == Vector2.zero)
+        else
         {
+
+            rb.linearVelocity = Vector2.zero;
+            movement = Vector2.zero;
             IsRunning = false;
-        }
-
-
-        // Update running direction animations ONLY when running AND moving
-        if (IsRunning)
-        {
-            // Determine pure directions
-            bool pureVertical = Mathf.Approximately(movement.x, 0f);
-            bool pureHorizontal = Mathf.Approximately(movement.y, 0f);
-
-            // Reset ALL first (critical for instant switching)
             IsRunningNorth = false;
             IsRunningSouth = false;
             IsRunningEast = false;
             IsRunningWest = false;
 
-            // Set the current direction
-            if (pureVertical && movement.y > 0)
-            {
-                IsRunningNorth = true;
-            }
-            else if (pureVertical && movement.y < 0)
-            {
-                IsRunningSouth = true;
-            }
-            else if (pureHorizontal && movement.x > 0)
-            {
-                IsRunningEast = true;
-
-            }
-            else if (pureHorizontal && movement.x < 0)
-            {
-                IsRunningWest = true;
-            }
-
         }
-        else
-        {
-            IsRunningNorth = false;
-            IsRunningSouth = false;
-            IsRunningEast = false;
-            IsRunningWest = false;
-        }
-
-        // --- Idle Logic ---
-        if (!isRunning && movement == Vector2.zero)
-        {
-            // Use lastMovement to determine facing direction when standing still
-            Vector2 dir = lastMovement;
-
-            bool pureVertical = Mathf.Approximately(dir.x, 0f);
-            bool pureHorizontal = Mathf.Approximately(dir.y, 0f);
-
-            // Reset ALL first (critical for instant switching)
-            IsIdleEast = false;
-            IsIdleWest = false;
-            IsIdleNorth = false;
-            IsIdleSouth = false;
-
-            // Set the current direction
-            if (pureVertical && dir.y > 0)
-            {
-                IsIdleNorth = true;
-            }
-            else if (pureVertical && dir.y < 0)
-            {
-                IsIdleSouth = true;
-            }
-            else if (pureHorizontal && dir.x > 0)
-            {
-                IsIdleEast = true;
-            }
-            else if (pureHorizontal && dir.x < 0)
-            {
-                IsIdleWest = true;
-            }
-        }
-        else
-        {
-            IsIdleEast = false;
-            IsIdleWest = false;
-            IsIdleNorth = false;
-            IsIdleSouth = false;
-        }
-
-        if (movement != Vector2.zero)
-        {
-            IsRunning = true;
-            Debug.Log($"Running: {isRunning}, North: {isRunningNorth}, South: {isRunningSouth}, East: {isRunningEast}, West: {isRunningWest}");
-        }
-
 
 
         // --- Dash ---
@@ -351,11 +399,26 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = movement * dashSpeed;
         }
+        else if (isAttacking)
+        {
+            movement = Vector2.zero;
+            IsRunning = false;
+            IsRunningNorth = false;
+            IsRunningSouth = false;
+            IsRunningEast = false;
+            IsRunningWest = false;
+            rb.linearVelocity = Vector2.zero;
+        }
         else
         {
-            // Only use run speed if BOTH running AND moving
-            float currentSpeed = (movement != Vector2.zero) ? runSpeed : 0f;
-            rb.linearVelocity = movement * currentSpeed;
+            if (movement != Vector2.zero)
+            {
+                rb.linearVelocity = movement * runSpeed;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
         }
     }
 
@@ -388,26 +451,56 @@ public class Player : MonoBehaviour
     // --- Attack stub ---
     void Attack()
     {
-        Debug.Log("Attack triggered");
+        // Set attacking state and stop movement immediately
+        IsAttacking = true;
+        movement = Vector2.zero;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
 
-        // Trigger attack animation when animator is ready
-        if (animator != null && HasAnimParam("Attack"))
+        // Get mouse position in world space
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0; // Keep on same plane as player
+
+        // Calculate direction from player to mouse
+        Vector2 attackDirection = (mouseWorldPos - transform.position).normalized;
+
+        // Reset all attack directions
+        IsAttackingEast = false;
+        IsAttackingWest = false;
+
+        // Determine attack animation based on mouse direction (horizontal only)
+        if (attackDirection.x > 0)
         {
-            animator.SetTrigger("Attack");
-        }
 
-        // Detect enemies in range (when attackPoint is assigned)
+            IsAttackingEast = true;
+        }
+        // Mouse is to the right
+        else
+        {
+
+            IsAttackingWest = true;
+        } // Mouse is to the left
+
+        // Optional: Update lastMovement so character faces mouse direction
+        lastMovement = attackDirection;
+
+        // Detect enemies in range (you might want to adjust attackPoint position based on mouse direction)
         if (attackPoint != null)
         {
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
             foreach (Collider2D enemy in hitEnemies)
             {
-                // Call TakeDamage on enemy (adjust to match your enemy script)
-                // enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
                 Debug.Log("Hit " + enemy.name);
             }
         }
+
+        // Reset attack after attack duration (match this to your attack animation length)
+        Invoke(nameof(ResetAttack), attackDuration);
+    }
+    void ResetAttack()
+    {
+        IsAttacking = false;
+        IsAttackingEast = false;
+        IsAttackingWest = false;
     }
 
     // --- Ability stubs (with cooldown so HUD can show it) ---
@@ -442,9 +535,9 @@ public class Player : MonoBehaviour
     {
         if (animator == null) return;
 
-        // Only play run animation when actually moving (Shift + WASD)
+
         if (HasAnimParam("isRunning"))
-            animator.SetBool("isRunning", isRunning && movement != Vector2.zero);
+            animator.SetBool("isRunning", isRunning);
 
         // Set movement parameters for blend trees (only if they exist in the Animator)
         if (HasAnimParam("MoveX")) animator.SetFloat("MoveX", movement.x);
