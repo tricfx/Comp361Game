@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float speed = 5f;                // Base movement speed
+    public float runSpeed = 8f;             // Running speed
     public float dashSpeed = 12f;           // Dash speed
     public float dashDuration = 0.2f;       // How long dash lasts
     public float dashCooldown = 1f;         // Cooldown before next dash
@@ -22,8 +23,8 @@ public class Player : MonoBehaviour
     public float abilityECooldown = 5f;
 
     [Header("Animation & Visuals")]
-    public Animator animator;               // Drag animator here when ready
-    public SpriteRenderer spriteRenderer;   // Drag sprite renderer here when ready
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     [Header("Attack Settings")]
     public float attackRange = 1f;          // Attack collision range
@@ -35,15 +36,94 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private Vector2 lastMovement;           // Store last direction for attacks
     private bool isDashing = false;
+    private bool isRunning = false;
+    private bool isRunningNorth = false;
+    private bool isRunningSouth = false;
+    private bool isRunningEast = false;
+    private bool isRunningWest = false;
+    private bool isFacingNorth = false;
+    private bool isFacingSouth = false;
+    private bool isFacingEast = false;
+    private bool isFacingWest = false;
     private float dashTime = 0f;
     private float lastDash = -Mathf.Infinity;
     // timestamps for Q/E so we can show cooldown on HUD
     private float lastAbilityQ = -Mathf.Infinity;
     private float lastAbilityE = -Mathf.Infinity;
 
+    // Cached animator param names (avoids errors when params don't exist)
+    private System.Collections.Generic.HashSet<string> animParams;
+
+
+    public bool IsRunning
+    {
+        get
+        {
+            return isRunning;
+        }
+        set
+        {
+            isRunning = value;
+            if (HasAnimParam("isRunning")) animator.SetBool("isRunning", isRunning);
+        }
+    }
+    public bool IsRunningNorth
+    {
+        get
+        {
+            return isRunningNorth;
+        }
+        set
+        {
+            isRunningNorth = value;
+            if (HasAnimParam("isRunningNorth")) animator.SetBool("isRunningNorth", isRunningNorth);
+        }
+    }
+    public bool IsRunningSouth
+    {
+        get
+        {
+            return isRunningSouth;
+        }
+        set
+        {
+            isRunningSouth = value;
+            if (HasAnimParam("isRunningSouth")) animator.SetBool("isRunningSouth", isRunningSouth);
+        }
+    }
+    public bool IsRunningEast
+    {
+        get
+        {
+            return isRunningEast;
+        }
+        set
+        {
+            isRunningEast = value;
+            if (HasAnimParam("isRunningEast")) animator.SetBool("isRunningEast", isRunningEast);
+        }
+    }
+
+    public bool IsRunningWest
+    {
+        get { return isRunningWest; }
+        set
+        {
+            isRunningWest = value;
+            if (HasAnimParam("isRunningWest")) animator.SetBool("isRunningWest", isRunningWest);
+        }
+    }
+
+    public bool IsFacingNorth { get => isFacingNorth; set => isFacingNorth = value; }
+    public bool IsFacingSouth { get => isFacingSouth; set => isFacingSouth = value; }
+    public bool IsFacingEast { get => isFacingEast; set => isFacingEast = value; }
+    public bool IsFacingWest { get => isFacingWest; set => isFacingWest = value; }
+
     //  Property for seconds before next dash 0 means on cooldown, 1 means ready
-    public float DashCooldownNormalized {
-        get{
+    public float DashCooldownNormalized
+    {
+        get
+        {
             float remaining = dashCooldown - (Time.time - lastDash);
             if (remaining <= 0f) return 1f;
             return 1f - (remaining / dashCooldown);
@@ -77,9 +157,19 @@ public class Player : MonoBehaviour
         currentHP = maxHP;
 
         // Auto-grab components if not assigned
-        if (animator == null) animator = GetComponent<Animator>();
-        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Cache which animator parameters exist (avoids "parameter does not exist" errors)
+        animParams = new System.Collections.Generic.HashSet<string>();
+        if (animator != null)
+        {
+            foreach (var p in animator.parameters)
+                animParams.Add(p.name);
+        }
     }
+
+    bool HasAnimParam(string name) => animator != null && animParams != null && animParams.Contains(name);
 
     void Update()
     {
@@ -94,8 +184,64 @@ public class Player : MonoBehaviour
             lastMovement = movement;
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            IsRunning = true;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            IsRunning = false;
+        }
+
+
+        // Update running direction animations ONLY when running AND moving
+        if (IsRunning && movement != Vector2.zero)
+        {
+            // Determine pure directions
+            bool pureVertical = Mathf.Approximately(movement.x, 0f);
+            bool pureHorizontal = Mathf.Approximately(movement.y, 0f);
+
+            // Reset ALL first (critical for instant switching)
+            IsRunningNorth = false;
+            IsRunningSouth = false;
+            IsRunningEast = false;
+            IsRunningWest = false;
+
+            // Set the current direction
+            if (pureVertical && movement.y > 0)
+            {
+                IsRunningNorth = true;
+            }
+            else if (pureVertical && movement.y < 0)
+            {
+                IsRunningSouth = true;
+            }
+            else if (pureHorizontal && movement.x > 0)
+            {
+                IsRunningEast = true;
+
+            }
+            else if (pureHorizontal && movement.x < 0)
+            {
+                IsRunningWest = true;
+            }
+
+        }
+        else
+        {
+            IsRunningNorth = false;
+            IsRunningSouth = false;
+            IsRunningEast = false;
+            IsRunningWest = false;
+        }
+
+
+
+
+
+
         // --- Dash ---
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= lastDash + dashCooldown)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && Time.time >= lastDash + dashCooldown)
         {
             StartDash();
         }
@@ -128,7 +274,9 @@ public class Player : MonoBehaviour
         }
         else
         {
-            rb.linearVelocity = movement * speed;
+            // Only use run speed if BOTH running AND moving
+            float currentSpeed = (isRunning && movement != Vector2.zero) ? runSpeed : speed;
+            rb.linearVelocity = movement * currentSpeed;
         }
     }
 
@@ -140,12 +288,11 @@ public class Player : MonoBehaviour
         dashTime = dashDuration;
         lastDash = Time.time;
 
-        // Trigger dash animation when animator is ready
-        if (animator != null)
-        {
+        // Trigger dash animation in animator if it exists
+        if (animator != null && HasAnimParam("Dash"))
             animator.SetTrigger("Dash");
-        }
     }
+
 
     void LateUpdate()
     {
@@ -165,7 +312,7 @@ public class Player : MonoBehaviour
         Debug.Log("Attack triggered");
 
         // Trigger attack animation when animator is ready
-        if (animator != null)
+        if (animator != null && HasAnimParam("Attack"))
         {
             animator.SetTrigger("Attack");
         }
@@ -216,20 +363,16 @@ public class Player : MonoBehaviour
     {
         if (animator == null) return;
 
-        // Set movement parameters for blend trees
-        animator.SetFloat("MoveX", movement.x);
-        animator.SetFloat("MoveY", movement.y);
-        animator.SetFloat("Speed", movement.magnitude);
+        // Only play run animation when actually moving (Shift + WASD)
+        if (HasAnimParam("isRunning"))
+            animator.SetBool("isRunning", isRunning && movement != Vector2.zero);
 
-        // Set last movement for idle direction
-        animator.SetFloat("LastMoveX", lastMovement.x);
-        animator.SetFloat("LastMoveY", lastMovement.y);
-
-        // Flip sprite based on horizontal movement (if using sprite renderer)
-        if (spriteRenderer != null && movement.x != 0)
-        {
-            spriteRenderer.flipX = movement.x < 0;
-        }
+        // Set movement parameters for blend trees (only if they exist in the Animator)
+        if (HasAnimParam("MoveX")) animator.SetFloat("MoveX", movement.x);
+        if (HasAnimParam("MoveY")) animator.SetFloat("MoveY", movement.y);
+        if (HasAnimParam("Speed")) animator.SetFloat("Speed", movement.magnitude);
+        if (HasAnimParam("LastMoveX")) animator.SetFloat("LastMoveX", lastMovement.x);
+        if (HasAnimParam("LastMoveY")) animator.SetFloat("LastMoveY", lastMovement.y);
     }
 
     // --- Take Damage method ---
@@ -240,7 +383,7 @@ public class Player : MonoBehaviour
         Debug.Log("Player HP: " + currentHP);
 
         // Trigger hurt animation when animator is ready
-        if (animator != null)
+        if (animator != null && HasAnimParam("Hurt"))
         {
             animator.SetTrigger("Hurt");
         }
@@ -256,7 +399,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player died");
 
-        if (animator != null)
+        if (animator != null && HasAnimParam("Death"))
         {
             animator.SetTrigger("Death");
         }
