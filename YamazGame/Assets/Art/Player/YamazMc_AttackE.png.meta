@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: ecdee265af1924fc48a6a8e23782536d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5490592489099652642
+    second: YamazMc_AttackE_0
+  - first:
+      213: 4151511813686503457
+    second: YamazMc_AttackE_1
+  - first:
+      213: 7000351617812925050
+    second: YamazMc_AttackE_2
+  - first:
+      213: 3800650373637645612
+    second: YamazMc_AttackE_3
+  - first:
+      213: 2140679560033954048
+    second: YamazMc_AttackE_4
+  - first:
+      213: -805627623765981662
+    second: YamazMc_AttackE_5
+  - first:
+      213: 8631558646302708726
+    second: YamazMc_AttackE_6
+  - first:
+      213: 7633133830320712877
+    second: YamazMc_AttackE_7
+  - first:
+      213: 1004044443004821350
+    second: YamazMc_AttackE_8
+  - first:
+      213: -548628016635021632
+    second: YamazMc_AttackE_9
+  - first:
+      213: -375761000514725746
+    second: YamazMc_AttackE_10
+  - first:
+      213: -732789647716515562
+    second: YamazMc_AttackE_11
+  - first:
+      213: -6969656857105877114
+    second: YamazMc_AttackE_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YamazMc_AttackE_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 10
+        width: 71
+        height: 41
+      alignment: 9
+      pivot: {x: 0.39722067, y: 0.057169355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e663747c0823c40800000000000000
+      internalID: 5490592489099652642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 2
+        width: 68
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3841959, y: 0.12878038}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1282f97bff12d9930800000000000000
+      internalID: 4151511813686503457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_2
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 2
+        width: 61
+        height: 50
+      alignment: 9
+      pivot: {x: 0.32058865, y: 0.12636377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a029af4be362160800000000000000
+      internalID: 7000351617812925050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_3
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 2
+        width: 60
+        height: 50
+      alignment: 9
+      pivot: {x: 0.3467107, y: 0.12503807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25a02cc06f9eb430800000000000000
+      internalID: 3800650373637645612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_4
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 2
+        width: 59
+        height: 50
+      alignment: 9
+      pivot: {x: 0.33327574, y: 0.12898505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00963c1d7b835bd10800000000000000
+      internalID: 2140679560033954048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_5
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 10
+        width: 71
+        height: 41
+      alignment: 9
+      pivot: {x: 0.39444098, y: 0.047542594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226cf20d1f5d1d4f0800000000000000
+      internalID: -805627623765981662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_6
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1
+        width: 59
+        height: 50
+      alignment: 9
+      pivot: {x: 0.29665464, y: 0.22503799}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f313da5bd479c770800000000000000
+      internalID: 8631558646302708726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_7
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 3
+        width: 54
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3120739, y: 0.18962556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac684fc6c65ee960800000000000000
+      internalID: 7633133830320712877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_8
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 3
+        width: 50
+        height: 48
+      alignment: 9
+      pivot: {x: 0.3380615, y: 0.18962556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66fd10ce9151fed00800000000000000
+      internalID: 1004044443004821350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_9
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 10
+        width: 71
+        height: 41
+      alignment: 9
+      pivot: {x: 0.3920417, y: 0.05237626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c674a2c9b1e268f0800000000000000
+      internalID: -548628016635021632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_10
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 9
+        width: 89
+        height: 43
+      alignment: 9
+      pivot: {x: 0.21979651, y: 0.07068534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88dfd36c5709caf0800000000000000
+      internalID: -375761000514725746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_11
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 9
+        width: 88
+        height: 43
+      alignment: 9
+      pivot: {x: 0.23501171, y: 0.070685275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61106c8a2bb94d5f0800000000000000
+      internalID: -732789647716515562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamazMc_AttackE_12
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 9
+        width: 88
+        height: 43
+      alignment: 9
+      pivot: {x: 0.22888045, y: 0.06817474}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687b6d9e30ec64f90800000000000000
+      internalID: -6969656857105877114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b04755b5b602fc14aa6b834bb0b11e8e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      YamazMc_AttackE_0: 5490592489099652642
+      YamazMc_AttackE_1: 4151511813686503457
+      YamazMc_AttackE_10: -375761000514725746
+      YamazMc_AttackE_11: -732789647716515562
+      YamazMc_AttackE_12: -6969656857105877114
+      YamazMc_AttackE_2: 7000351617812925050
+      YamazMc_AttackE_3: 3800650373637645612
+      YamazMc_AttackE_4: 2140679560033954048
+      YamazMc_AttackE_5: -805627623765981662
+      YamazMc_AttackE_6: 8631558646302708726
+      YamazMc_AttackE_7: 7633133830320712877
+      YamazMc_AttackE_8: 1004044443004821350
+      YamazMc_AttackE_9: -548628016635021632
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

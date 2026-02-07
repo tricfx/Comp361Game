@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: e573654fdbba74e2c8f8576689ab8261
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3794391337898690235
+    second: YamaMC_RunningE_0
+  - first:
+      213: 3172216682749822230
+    second: YamaMC_RunningE_1
+  - first:
+      213: -8209262280769233997
+    second: YamaMC_RunningE_2
+  - first:
+      213: 6023472393023778831
+    second: YamaMC_RunningE_3
+  - first:
+      213: -7287499149410022286
+    second: YamaMC_RunningE_4
+  - first:
+      213: -152939861085215010
+    second: YamaMC_RunningE_5
+  - first:
+      213: -6998792495595013255
+    second: YamaMC_RunningE_6
+  - first:
+      213: -5001146965548765926
+    second: YamaMC_RunningE_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YamaMC_RunningE_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 6
+        width: 35
+        height: 51
+      alignment: 9
+      pivot: {x: 0.6565373, y: 0.0770883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6454a71d268a430800000000000000
+      internalID: 3794391337898690235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 6
+        width: 37
+        height: 51
+      alignment: 9
+      pivot: {x: 0.628212, y: 0.08283636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6150fdd044af50c20800000000000000
+      internalID: 3172216682749822230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 9
+        width: 41
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59116083, y: 0.07499295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb9cbe3377d21e80800000000000000
+      internalID: -8209262280769233997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 8
+        width: 41
+        height: 47
+      alignment: 9
+      pivot: {x: 0.54558134, y: 0.04733307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f00fd8c4a3ca79350800000000000000
+      internalID: 6023472393023778831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 5
+        width: 42
+        height: 48
+      alignment: 9
+      pivot: {x: 0.489733, y: 0.06275318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c447a622a9dda90800000000000000
+      internalID: -7287499149410022286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_5
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 7
+        width: 42
+        height: 46
+      alignment: 9
+      pivot: {x: 0.54791915, y: 0.065617874}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed6a404b106a0edf0800000000000000
+      internalID: -152939861085215010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_6
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 7
+        width: 42
+        height: 46
+      alignment: 9
+      pivot: {x: 0.54449683, y: 0.068742916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97bb3637e4b4fde90800000000000000
+      internalID: -6998792495595013255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_RunningE_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 5
+        width: 41
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5350632, y: 0.057007995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d61f0055b589ab0800000000000000
+      internalID: -5001146965548765926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cb9a397f67626f041a1e6599c7b4732e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      YamaMC_RunningE_0: 3794391337898690235
+      YamaMC_RunningE_1: 3172216682749822230
+      YamaMC_RunningE_2: -8209262280769233997
+      YamaMC_RunningE_3: 6023472393023778831
+      YamaMC_RunningE_4: -7287499149410022286
+      YamaMC_RunningE_5: -152939861085215010
+      YamaMC_RunningE_6: -6998792495595013255
+      YamaMC_RunningE_7: -5001146965548765926
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
