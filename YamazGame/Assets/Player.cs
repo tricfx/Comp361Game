@@ -83,6 +83,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // 🔧 TEMP TEST — remove later
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(10);
+        }
         // --- Input ---
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -233,19 +238,22 @@ public class Player : MonoBehaviour
     }
 
     // --- Take Damage method ---
-    public void TakeDamage(int dmg)
+   public void TakeDamage(int dmg)
     {
         currentHP -= dmg;
         currentHP = Mathf.Clamp(currentHP, 0, maxHP);
         Debug.Log("Player HP: " + currentHP);
 
-        // Trigger hurt animation when animator is ready
+        // CAMERA SHAKE
+        CameraShake shake = Camera.main.GetComponent<CameraShake>();
+        if (shake != null)
+            shake.Shake();
+
         if (animator != null)
         {
             animator.SetTrigger("Hurt");
         }
 
-        // Check for death
         if (currentHP <= 0)
         {
             Die();
@@ -294,5 +302,6 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+
 }
 
