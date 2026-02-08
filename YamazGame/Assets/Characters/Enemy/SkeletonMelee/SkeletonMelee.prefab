@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 801194435794625600}
   - component: {fileID: 8145605382020582448}
   - component: {fileID: 8993633933271097257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5987796750534435852}
   - component: {fileID: 2264489564971968135}
   - component: {fileID: 3830306270935621230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SkeletonMelee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 3045804539416431359}
   - component: {fileID: 4646832708374534682}
   - component: {fileID: 6302696239382881495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SkeletonMeleeAttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 321564370191039253}
   - component: {fileID: 1373734812935511056}
   - component: {fileID: 7215598511413288248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

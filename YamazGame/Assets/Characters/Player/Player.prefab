@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1165967328723756239}
-  - component: {fileID: 3517683506524462339}
   - component: {fileID: 8918152583089335204}
-  m_Layer: 0
-  m_Name: SwordHitbox
+  - component: {fileID: 1649436342850158967}
+  m_Layer: 7
+  m_Name: LeftAttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,23 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3130217155085718859}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3517683506524462339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943707349069919351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a61d5adacfff34bb22e9186611d016, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordDamage: 1
-  knockbackForce: 15
-  swordCollider: {fileID: 8918152583089335204}
-  faceRight: {x: 0.064, y: -0.05, z: 0}
-  faceLeft: {x: -0.064, y: -0.05, z: 0}
 --- !u!61 &8918152583089335204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80,7 +63,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -96,6 +79,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3518767, y: 1.7692881}
   m_EdgeRadius: 0
+--- !u!114 &1649436342850158967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943707349069919351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a61d5adacfff34bb22e9186611d016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordDamage: 1
+  knockbackForce: 15
+  leftAttackCollider: {fileID: 8918152583089335204}
 --- !u!1 &9163064191721406773
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,10 +107,10 @@ GameObject:
   - component: {fileID: 7813625683097407452}
   - component: {fileID: 5388209744686778683}
   - component: {fileID: 8797959330504564121}
-  - component: {fileID: 7139236319658120802}
+  - component: {fileID: 4065697943286994744}
   - component: {fileID: 1336866176175289302}
   - component: {fileID: 2374773411883942179}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -235,7 +233,7 @@ MonoBehaviour:
   moveSpeed: 1000
   maxSpeed: 5
   idleFriction: 0.9
-  swordHitbox: {fileID: 943707349069919351}
+  leftAttackHitbox: {fileID: 943707349069919351}
 --- !u!50 &8797959330504564121
 Rigidbody2D:
   serializedVersion: 5
@@ -261,10 +259,10 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &7139236319658120802
-BoxCollider2D:
+--- !u!70 &4065697943286994744
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -297,18 +295,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.006392248, y: -0.002452556}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6493383, y: 0.06103653}
-    oldSize: {x: 0.51, y: 0.51}
-    newSize: {x: 0.48, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.17457958, y: 0.020858817}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.0061551193, y: -0.0010107703}
+  m_Size: {x: 0.17003657, y: 0.021002153}
+  m_Direction: 1
 --- !u!95 &1336866176175289302
 Animator:
   serializedVersion: 7

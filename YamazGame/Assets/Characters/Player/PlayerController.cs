@@ -9,27 +9,80 @@ public class PlayerController : MonoBehaviour {
 
     bool IsMoving {
         set {
-            isMoving = value;
-            animator.SetBool("isMoving", isMoving);
+            _isMoving = value;
+            animator.SetBool("isMoving", _isMoving);
+        }
+        get {
+            return _isMoving;
+        }
+    }
+
+    bool CanMove {
+        set {
+            _canMove = value;
+        }
+        get {
+            return _canMove;
+        }
+    }
+
+    bool North {
+        set {
+            _north = value;
+            animator.SetBool("north", _north);
+        }
+        get {
+            return _north;
+        }
+    }
+
+    bool West {
+        set {
+            _west = value;
+            animator.SetBool("west", _west);
+        }
+        get {
+            return _west;
+        }
+    }
+
+    bool South {
+        set {
+            _south = value;
+            animator.SetBool("south", _south);
+        }
+        get {
+            return _south;
+        }
+    }
+
+    bool East {
+        set {
+            _east = value;
+            animator.SetBool("east", _east);
+        }
+        get {
+            return _east;
         }
     }
 
     public float moveSpeed = 1000f;
     public float maxSpeed = 5f;
-
-    // each frame of physics, what percentage of the speed should be shaved off the velocity out of 1 (100%)
     public float idleFriction = 0.9f;
 
-    public GameObject swordHitbox;
-
+    public GameObject leftAttackHitbox;
     Vector2 moveInput = Vector2.zero;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
-    Collider2D swordCollider;
+    Collider2D leftAttackCollider;
 
-    bool canMove = true;
-    bool isMoving = false;
+    bool _canMove = true;
+    bool _isMoving = false;
+    bool _north = false;
+    bool _south = true;
+    bool _east = false;
+    bool _west = false;
 
     // public ContactFilter2D movementFilter;
     // public float collisionOffset = 0.02f;
@@ -41,7 +94,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        swordCollider = swordHitbox.GetComponent<Collider2D>();
+        leftAttackCollider = leftAttackHitbox.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -51,35 +104,33 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate() {
 
-        if (canMove && moveInput != Vector2.zero) {
-            // move animation and velocity
-
-            // accelerate player while run direction is inputted
-            // cap movement speed at maxSpeed for any direction
-            // rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity + (moveInput * moveSpeed * Time.deltaTime), maxSpeed);
-
+        if (CanMove && moveInput != Vector2.zero) {
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
 
-            /* if (rb.linearVelocity.magnitude > maxSpeed) {
-                float limitedSpeed = Mathf.Lerp(rb.linearVelocity.magnitude, maxSpeed, idleFriction);
-                rb.linearVelocity = rb.linearVelocity.normalized * limitedSpeed;
-            } */
-
-            // looking left or right
             if (moveInput.x > 0) {
-                spriteRenderer.flipX = false;
-                gameObject.BroadcastMessage("IsFacingRight", true);
+                East = true;
+                West = false;   
             } else if (moveInput.x < 0) {
-                spriteRenderer.flipX = true;
-                gameObject.BroadcastMessage("IsFacingRight", false);
+                East = false;
+                West = true;
+            } else {
+                East = false;
+                West = false;
+            }
+
+            if (moveInput.y > 0) {
+                North = true;
+                South = false;
+            } else if (moveInput.y < 0) {
+                North = false;
+                South = true;
+            } else {
+                North = false;
+                South = false;
             }
 
             IsMoving = true;
-
         } else {
-            // no movement, interpolate velocity towards 0
-            // rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, idleFriction);
-
             IsMoving = false;
         }
     }
@@ -89,14 +140,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void OnFire() {
-        animator.SetTrigger("swordAttack");
+        animator.SetTrigger("leftAttack");
     }
 
-    /* public void LockMovement() {
-        canMove = false;
+    public void LockMovement() {
+        CanMove = false;
     }
 
     public void UnlockMovement() {
-        canMove = true;
-    } */
+        CanMove = true;
+    }
 }
