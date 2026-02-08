@@ -26,46 +26,6 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    bool North {
-        set {
-            _north = value;
-            animator.SetBool("north", _north);
-        }
-        get {
-            return _north;
-        }
-    }
-
-    bool West {
-        set {
-            _west = value;
-            animator.SetBool("west", _west);
-        }
-        get {
-            return _west;
-        }
-    }
-
-    bool South {
-        set {
-            _south = value;
-            animator.SetBool("south", _south);
-        }
-        get {
-            return _south;
-        }
-    }
-
-    bool East {
-        set {
-            _east = value;
-            animator.SetBool("east", _east);
-        }
-        get {
-            return _east;
-        }
-    }
-
     public float moveSpeed = 1000f;
     public float maxSpeed = 5f;
     public float idleFriction = 0.9f;
@@ -79,10 +39,6 @@ public class PlayerController : MonoBehaviour {
 
     bool _canMove = true;
     bool _isMoving = false;
-    bool _north = false;
-    bool _south = true;
-    bool _east = false;
-    bool _west = false;
 
     // public ContactFilter2D movementFilter;
     // public float collisionOffset = 0.02f;
@@ -103,32 +59,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-
         if (CanMove && moveInput != Vector2.zero) {
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
-
-            if (moveInput.x > 0) {
-                East = true;
-                West = false;   
-            } else if (moveInput.x < 0) {
-                East = false;
-                West = true;
-            } else {
-                East = false;
-                West = false;
-            }
-
-            if (moveInput.y > 0) {
-                North = true;
-                South = false;
-            } else if (moveInput.y < 0) {
-                North = false;
-                South = true;
-            } else {
-                North = false;
-                South = false;
-            }
-
             IsMoving = true;
         } else {
             IsMoving = false;
@@ -137,6 +69,14 @@ public class PlayerController : MonoBehaviour {
 
     void OnMove(InputValue value) {
         moveInput = value.Get<Vector2>();
+
+        if (CanMove && moveInput != Vector2.zero) {
+            animator.SetFloat("xInput", moveInput.x);
+            animator.SetFloat("yInput", moveInput.y);
+            IsMoving = true;
+        } else {
+            IsMoving = false;
+        }
     }
 
     void OnFire() {
