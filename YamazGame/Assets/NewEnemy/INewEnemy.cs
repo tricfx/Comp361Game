@@ -12,12 +12,12 @@ public interface INewEnemy {
     bool Moving { set; get; }
 
     void Start();
-    void Update();
     void FixedUpdate();
     void OnObjectDestroyed();
 
     void Attack();
     void ResetAttack();
+    void TakeDamage(float damage, Vector2 knockback);
     void TakeDamage(float damage);
     void TakeKnockback(Vector2 knockback);
 

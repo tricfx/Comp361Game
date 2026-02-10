@@ -45,7 +45,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         set
         {
             _targetable = value;
-            if (disableSimulation)
+            if (_disableSimulation)
             {
                 rb.simulated = false;
             }
@@ -116,10 +116,13 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     Collider2D feetCollider;
 
     [SerializeField] float _maxHealth = 10f;
+    [SerializeField] float _attackDamage = 1f;
+    [SerializeField] float _knockbackForce = 15f;
     [SerializeField] float _moveSpeed = 500f;
     [SerializeField] float _attackCooldown = 1f;
-
-    public bool disableSimulation = false;
+    [SerializeField] bool _disableSimulation = false;
+    [SerializeField] bool _enableInvincibilityWindow = false;
+    [SerializeField] float _invincibilityLimit = 0.3f;
 
     float _currentHealth;
     bool _targetable = true;
@@ -131,6 +134,9 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void Start()
     {
+        CurrentHealth = MaxHealth;
+        animator.SetBool("alive", true);
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -142,30 +148,56 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         attackRange = transform.Find("AttackRange").GetComponent<EnemyAttackRange>();
     }
 
-    public void Update()
-    {
-    }
-
     public void FixedUpdate()
     {
-        if (CanMove && detectionRange.PlayerInRange)
+        if (Invincible)
+        {
+            _invincibilityTimeElapsed += Time.deltaTime;
+
+            if (_invincibilityTimeElapsed > _invincibilityLimit)
+            {
+                Invincible = false;
+            }
+        }
+
+        if (CanMove && Targetable && detectionRange.PlayerInRange)
         {
             Move(gameObject.transform.position, detectionRange.PlayerPosition);
+        }
 
+        //////////// *** //////////////
+    }
+
+    public void TakeDamage(float damage, Vector2 knockback)
+    {
+        if (!Invincible)
+        {
+            CurrentHealth -= damage;
+            TakeKnockback(knockback);
+
+            if (_enableInvincibilityWindow)
+            {
+                Invincible = true;
+            }
         }
     }
 
     public void TakeDamage(float damage)
     {
+        if (!Invincible)
+        {
+            CurrentHealth -= damage;
+
+            if (_enableInvincibilityWindow)
+            {
+                Invincible = true;
+            }
+        }
     }
 
     public void TakeKnockback(Vector2 knockback)
     {
-    }
-
-    public void ResetAttack()
-    {
-        CanAttack = true;
+        rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     public void LockMovement()
@@ -184,6 +216,6 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     }
 
     public abstract void Attack();
-
+    public abstract void ResetAttack();
     public abstract void Move(Vector2 startPosition, Vector2 targetPosition);
 }
