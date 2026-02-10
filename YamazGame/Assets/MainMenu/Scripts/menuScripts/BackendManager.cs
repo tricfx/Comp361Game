@@ -168,6 +168,7 @@ public class BackendManager : MonoBehaviour
         try
         {
             var e = JsonUtility.FromJson<SupabaseError>(rawError);
+            string rawLower = rawError.ToLowerInvariant();
 
             if (e != null && !string.IsNullOrEmpty(e.error_code))
             {
@@ -182,7 +183,7 @@ public class BackendManager : MonoBehaviour
                     //    break;
 
                     case "invalid_credentials":
-                        err = "Invalid login credentials";
+                        err = e.msg;
                         break;
 
                     case "weak_password":
@@ -191,8 +192,21 @@ public class BackendManager : MonoBehaviour
 
 
                     case "validation_failed":
-                        err = "Please enter your email";
-                        break;
+                        //err = "Please enter your email";
+
+                        if (rawLower.Contains("invalid format"))
+                        {
+                            err = "Please enter a valid email address";
+                        }
+                        else if (rawLower.Contains("missing email") || rawLower.Contains("recovery"))
+                        {
+                            err = "Please enter your email address";
+                        }
+                        else
+                        {
+                            err = e.msg;
+                        }
+                            break;
 
                     default:
                         if (!string.IsNullOrEmpty(e.msg)) err = e.msg;

@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "E:\\Yamaz\\Comp361Game\\YamazGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|e:\\yamaz\\comp361game\\yamazgame\\assets\\mainmenu\\scripts\\menuscripts\\fader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmenu\\scripts\\menuscripts\\fader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|e:\\yamaz\\comp361game\\yamazgame\\assets\\mainmenu\\scripts\\menuscripts\\errorpopup\\forgotpasswordpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmenu\\scripts\\menuscripts\\errorpopup\\forgotpasswordpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|e:\\yamaz\\comp361game\\yamazgame\\assets\\mainmenu\\scripts\\menuscripts\\errorpopup\\connectloginpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\mainmenu\\scripts\\menuscripts\\errorpopup\\connectloginpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -73,6 +81,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Fader.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\Fader.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\Fader.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\Fader.cs",
+              "RelativeToolTip": "Assets\\MainMenu\\Scripts\\menuScripts\\Fader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T06:56:16.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ForgotPasswordPanel.cs",
+              "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup\\ForgotPasswordPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup\\ForgotPasswordPanel.cs",
+              "ToolTip": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup\\ForgotPasswordPanel.cs",
+              "RelativeToolTip": "Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup\\ForgotPasswordPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T06:54:05.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ConnectLoginPanel.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup\\ConnectLoginPanel.cs",
               "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup\\ConnectLoginPanel.cs",
@@ -85,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ErrorPopup.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup.cs",
               "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\ErrorPopup.cs",
@@ -97,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "DataPersistenceManager.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\DataPersistenceManager.cs",
               "RelativeDocumentMoniker": "Assets\\DataPersistence\\DataPersistenceManager.cs",
@@ -109,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AuthSession.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\scripts\\Backend\\AuthSession.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Backend\\AuthSession.cs",
@@ -121,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "RegisterUI.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\scripts\\uiScripts\\RegisterUI.cs",
               "RelativeDocumentMoniker": "Assets\\MainMenu\\scripts\\uiScripts\\RegisterUI.cs",
@@ -133,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "BackendManager.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\BackendManager.cs",
               "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\BackendManager.cs",
@@ -145,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "RegisterUI.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\uiScripts\\RegisterUI.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\uiScripts\\RegisterUI.cs",
@@ -155,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "LoginUI.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\uiScripts\\LoginUI.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\uiScripts\\LoginUI.cs",
@@ -165,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
@@ -177,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DialogueTrigger.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
@@ -189,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "GameData.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\Data\\GameData.cs",
               "RelativeDocumentMoniker": "Assets\\DataPersistence\\Data\\GameData.cs",
@@ -201,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "SelectScreen.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
@@ -211,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "LevelLoader.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\LevelLoader.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\LevelLoader.cs",
@@ -221,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameManager.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameManager.cs",
@@ -231,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "playerTest.cs",
               "DocumentMoniker": "E:\\Yamaz\\Comp361Game\\YamazGame\\Assets\\Level1\\player\\playerTest.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\player\\playerTest.cs",
@@ -243,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "SettingsManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",

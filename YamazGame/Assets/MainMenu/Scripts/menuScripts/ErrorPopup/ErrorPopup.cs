@@ -7,9 +7,11 @@ public class ErrorPopup : MonoBehaviour
     [SerializeField] private GameObject[] backgrounds;
 
     [SerializeField] private TMP_Text errorMsg;
+    [SerializeField] private AudioSource sfx;
 
     public void Show(string msg)
     {
+        sfx?.Play();
         errorMsg.text = msg;
 
         for (int i = 0; i < backgrounds.Length; i++)

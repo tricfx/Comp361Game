@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64d12cc2c55d10e449d8bf8a2cd8106f
+guid: 65b02f1c82e0ea84e8383f6422a1da65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6782813536761691038
-    second: controls_0
+      213: -1100868185008584237
+    second: rounded-rectangle-512_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: controls_0
+      name: rounded-rectangle-512_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 4608
-        height: 3072
+        y: 39
+        width: 512
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9b346c89f4612e50800000000000000
-      internalID: 6782813536761691038
+      spriteID: 3d9c808e73ee8b0f0800000000000000
+      internalID: -1100868185008584237
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      controls_0: 6782813536761691038
+      rounded-rectangle-512_0: -1100868185008584237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
