@@ -194,9 +194,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 10
+  _attackDamage: 1
+  _knockbackForce: 15
   _moveSpeed: 500
   _attackCooldown: 1
-  disableSimulation: 0
+  _disableSimulation: 0
+  _enableInvincibilityWindow: 0
+  _invincibilityLimit: 0.3
 --- !u!1 &4466537174138201665
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +214,7 @@ GameObject:
   - component: {fileID: 7929122026899671448}
   m_Layer: 6
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,7 +396,7 @@ GameObject:
   - component: {fileID: 3548950214057549109}
   m_Layer: 6
   m_Name: Hurtbox
-  m_TagString: Untagged
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

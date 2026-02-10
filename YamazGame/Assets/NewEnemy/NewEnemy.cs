@@ -106,31 +106,29 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    EnemyHitbox hitbox;
-    EnemyHurtbox hurtbox;
-    EnemyDetectionRange detectionRange;
-    EnemyAttackRange attackRange;
-    SpriteRenderer spriteRenderer;
-    Animator animator;
-    Rigidbody2D rb;
-    Collider2D feetCollider;
+    protected EnemyHitbox hitbox;
+    protected EnemyHurtbox hurtbox;
+    protected EnemyDetectionRange detectionRange;
+    protected EnemyAttackRange attackRange;
+    protected SpriteRenderer spriteRenderer;
+    protected Animator animator;
+    protected Rigidbody2D rb;
+    protected Collider2D feetCollider;
 
-    [SerializeField] float _maxHealth = 10f;
-    [SerializeField] float _attackDamage = 1f;
-    [SerializeField] float _knockbackForce = 15f;
-    [SerializeField] float _moveSpeed = 500f;
-    [SerializeField] float _attackCooldown = 1f;
-    [SerializeField] bool _disableSimulation = false;
-    [SerializeField] bool _enableInvincibilityWindow = false;
-    [SerializeField] float _invincibilityLimit = 0.3f;
+    [SerializeField] protected float _maxHealth = 10f;
+    [SerializeField] protected float _moveSpeed = 500f;
+    [SerializeField] protected float _attackCooldown = 1f;
+    [SerializeField] protected bool _disableSimulation = false;
+    [SerializeField] protected bool _enableInvincibilityWindow = false;
+    [SerializeField] protected float _invincibilityLimit = 0.3f;
 
-    float _currentHealth;
-    bool _targetable = true;
-    bool _invincible = false;
-    float _invincibilityTimeElapsed = 0f;
-    bool _canAttack = true;
-    bool _canMove = true;
-    bool _moving = false;
+    protected float _currentHealth;
+    protected bool _targetable = true;
+    protected bool _invincible = false;
+    protected float _invincibilityTimeElapsed = 0f;
+    protected bool _canAttack = true;
+    protected bool _canMove = true;
+    protected bool _moving = false;
 
     public void Start()
     {

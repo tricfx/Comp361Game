@@ -90,4 +90,9 @@ public class PlayerController : MonoBehaviour {
     public void UnlockMovement() {
         CanMove = true;
     }
+
+    public void TakeDamage(float damage, Vector2 knockback)
+    {
+        
+    }
 }
