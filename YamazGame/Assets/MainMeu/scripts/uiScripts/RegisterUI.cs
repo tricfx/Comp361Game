@@ -8,6 +8,7 @@ public class RegisterUI : MonoBehaviour
     [SerializeField] private Fader fader;
     [SerializeField] private CanvasGroup from;
     [SerializeField] private CanvasGroup to;
+    [SerializeField] private ErrorUI errorUI;
 
     public void OnRegisterClicked()
     {
@@ -21,6 +22,10 @@ public class RegisterUI : MonoBehaviour
             {
                 fader.StartFade(from, to);
             }
+        },
+        error =>
+        {
+            errorUI.ShowError($"{error.msg}", 4f);
         }
         ));
     }

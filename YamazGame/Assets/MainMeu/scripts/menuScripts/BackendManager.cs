@@ -28,7 +28,7 @@ public class BackendManager : MonoBehaviour
 
         SessionManager = gameObject.AddComponent<SupabaseSessionManager>();
     }
-    public IEnumerator SignUp(string email, string password, Action<AuthSession> onSuccess)
+    public IEnumerator SignUp(string email, string password, Action<AuthSession> onSuccess, Action<ErrorResponse> onError)
     {
         Debug.Log("Signing up...");
         yield return AuthClient.SignUp(email, password,
@@ -41,11 +41,13 @@ public class BackendManager : MonoBehaviour
         error =>
         {
             Debug.LogError(error);
+            ErrorResponse errorObj = JsonUtility.FromJson<ErrorResponse>(error);
+            onError?.Invoke(errorObj); 
         }
         );
     }
 
-    public IEnumerator SignIn(string email, string password, Action<AuthSession> onSuccess)
+    public IEnumerator SignIn(string email, string password, Action<AuthSession> onSuccess, Action<ErrorResponse> onError)
     {
         Debug.Log("Signing in...");
         yield return AuthClient.SignIn(email, password,
@@ -58,6 +60,8 @@ public class BackendManager : MonoBehaviour
         error =>
         {
             Debug.LogError(error);
+            ErrorResponse errorObj = JsonUtility.FromJson<ErrorResponse>(error);
+            onError?.Invoke(errorObj);
         }
         );
     }
