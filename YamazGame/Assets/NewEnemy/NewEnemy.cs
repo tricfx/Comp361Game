@@ -142,7 +142,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         hitbox = transform.Find("Hitbox").GetComponent<EnemyHitbox>();
         hurtbox = transform.Find("Hurtbox").GetComponent<EnemyHurtbox>();
-        detectionRange = transform.Find("DetectionRange").GetComponent<EnemyDetectionRange>();
+        detectionRange = transform.Find("DetectionRange").GetComponent<EnemyDetectionRange>(); // *** PROBLEM HERE ***
         attackRange = transform.Find("AttackRange").GetComponent<EnemyAttackRange>();
     }
 
@@ -158,7 +158,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             }
         }
 
-        if (CanMove && Targetable && detectionRange.PlayerInRange)
+        Debug.Log(CanMove);
+        Debug.Log(Targetable);
+        Debug.Log(detectionRange);
+        Debug.Log(detectionRange.PlayerInRange);
+
+        if (CanMove && Targetable && detectionRange.PlayerInRange) // *** BUG ***
         {
             Move(gameObject.transform.position, detectionRange.PlayerPosition);
         }
@@ -216,5 +221,4 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     public abstract void Attack();
     public abstract void ResetAttack();
     public abstract void Move(Vector2 startPosition, Vector2 targetPosition);
-    
 }
