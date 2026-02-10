@@ -216,4 +216,5 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     public abstract void Attack();
     public abstract void ResetAttack();
     public abstract void Move(Vector2 startPosition, Vector2 targetPosition);
+    
 }
