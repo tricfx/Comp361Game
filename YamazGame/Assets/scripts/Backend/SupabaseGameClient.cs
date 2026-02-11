@@ -71,7 +71,7 @@ public class SupabaseGameClient
 
     public IEnumerator GetBestRuns(string accessToken, System.Action<BestRunResponse[]> onSuccess, System.Action<string> onError)
     {
-        string url = $"{baseUrl.Replace("/rpc", "")}/bestcompletiontime?select=username,best_time&order=best_time.asc&limit=10";
+        string url = $"{baseUrl.Replace("/rpc", "")}/bestcompletiontime?select=username,best_time&best_time=gt.0&order=best_time.asc&limit=10";
 
         yield return SupabaseHttp.SendRequest(url, "GET", null, apikey, accessToken,
             response =>
