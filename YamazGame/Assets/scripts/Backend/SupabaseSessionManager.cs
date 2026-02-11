@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SupabaseSessionManager : MonoBehaviour
 {
-    public SupabaseAuthClient AuthClient;
+    private SupabaseAuthClient AuthClient;
     public float refreshBufferSeconds = 60f;
     public AuthSession CurrentSession { get; private set; }
 
