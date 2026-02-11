@@ -193,9 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d77925b17b94e9e88680c43a116e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitbox: {fileID: 7929122026899671448}
+  hurtbox: {fileID: 3548950214057549109}
+  detectionRange: {fileID: 3538662739765094555}
+  attackRange: {fileID: 1591120705167467719}
   _maxHealth: 10
-  _attackDamage: 1
-  _knockbackForce: 15
   _moveSpeed: 500
   _attackCooldown: 1
   _disableSimulation: 0
@@ -474,6 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a973369d2fc7c4777a2783950ab490a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackDamage: 1
+  _knockbackForce: 15
 --- !u!1 &6712337824860022052
 GameObject:
   m_ObjectHideFlags: 0

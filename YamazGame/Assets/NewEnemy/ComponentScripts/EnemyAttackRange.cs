@@ -14,33 +14,33 @@ public class EnemyAttackRange : MonoBehaviour
     {
         get
         {
-            return _playerPosition;
+            return _playerTransform.position;
         }
     }
 
     bool _playerInRange;
-    Vector2 _playerPosition;
+    Transform _playerTransform;
 
     void Start()
     {
-        _playerPosition = Vector2.zero;
+        _playerTransform = null;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("PlayerHitbox"))
         {
             _playerInRange = true;
-            _playerPosition = other.gameObject.transform.position;
+            _playerTransform = other.transform;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("PlayerHitbox"))
         {
             _playerInRange = false;
-            _playerPosition = Vector2.zero;
+            _playerTransform = null;
         }
     }
 }

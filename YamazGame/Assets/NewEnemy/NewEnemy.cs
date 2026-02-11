@@ -106,10 +106,10 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    protected EnemyHitbox hitbox;
-    protected EnemyHurtbox hurtbox;
-    protected EnemyDetectionRange detectionRange;
-    protected EnemyAttackRange attackRange;
+    [SerializeField] protected EnemyHitbox hitbox;
+    [SerializeField] protected EnemyHurtbox hurtbox;
+    [SerializeField] protected EnemyDetectionRange detectionRange;
+    [SerializeField] protected EnemyAttackRange attackRange;
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rb;
@@ -132,21 +132,16 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void Start()
     {
-        CurrentHealth = MaxHealth;
-        animator.SetBool("alive", true);
-
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         feetCollider = GetComponent<Collider2D>();
 
-        hitbox = transform.Find("Hitbox").GetComponent<EnemyHitbox>();
-        hurtbox = transform.Find("Hurtbox").GetComponent<EnemyHurtbox>();
-        detectionRange = transform.Find("DetectionRange").GetComponent<EnemyDetectionRange>(); // *** PROBLEM HERE ***
-        attackRange = transform.Find("AttackRange").GetComponent<EnemyAttackRange>();
+        CurrentHealth = MaxHealth;
+        animator.SetBool("alive", true);
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         if (Invincible)
         {
@@ -157,18 +152,24 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
                 Invincible = false;
             }
         }
+    }
 
-        Debug.Log(CanMove);
-        Debug.Log(Targetable);
-        Debug.Log(detectionRange);
-        Debug.Log(detectionRange.PlayerInRange);
-
-        if (CanMove && Targetable && detectionRange.PlayerInRange) // *** BUG ***
+    public void FixedUpdate()
+    {
+        if (CanAttack && attackRange.PlayerInRange)
         {
-            Move(gameObject.transform.position, detectionRange.PlayerPosition);
+            Moving = false;
+            Attack();
         }
-
-        //////////// *** //////////////
+        else if (CanMove && Targetable && detectionRange.PlayerInRange)
+        {
+            Moving = true;
+            Move(transform.position, detectionRange.PlayerPosition);
+        }
+        else
+        {
+            Moving = false;
+        }
     }
 
     public void TakeDamage(float damage, Vector2 knockback)
