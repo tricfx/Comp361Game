@@ -15,7 +15,6 @@ public class LeaderboardUI : MonoBehaviour
             {
                 rankTexts[i].text = entries[i].rank.ToString();
                 nameTexts[i].text = entries[i].username;
-                Debug.Log(entries[i].best_time);
                 timeTexts[i].text = FormatTime(entries[i].best_time);
             }
             else
@@ -31,7 +30,7 @@ public class LeaderboardUI : MonoBehaviour
     {
         float totalSeconds = time / 1000f;
 
-        // Max allowed time: 5 hours
+        // Max allowed time: 99 hours
         if (totalSeconds <= 0 || totalSeconds > 99 * 3600)
             return "N/A";
 
