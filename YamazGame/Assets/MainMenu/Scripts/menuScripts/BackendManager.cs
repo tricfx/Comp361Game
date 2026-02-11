@@ -34,31 +34,47 @@ public class BackendManager : MonoBehaviour
     public IEnumerator SignUp(string email, string password, string username, Action<AuthSession> onSuccess)
     {
         Debug.Log("Signing up...");
+
+        bool signUpSucceeded = false;
+        AuthSession sessionResult = null;
+
         yield return AuthClient.SignUp(email, password,
-        session =>
-        {
-            Debug.Log("SignUp Successful");
-            SessionManager.SetSession(session);
-            onSuccess?.Invoke(session);
-        },
-        error =>
-        {
-            Debug.LogError(error);
-            ShowError(error);
-        }
+            session =>
+            {
+                Debug.Log("SignUp Successful");
+
+                signUpSucceeded = true;
+                sessionResult = session;
+
+                SessionManager.SetSession(session);
+                onSuccess?.Invoke(session);
+            },
+            error =>
+            {
+                Debug.LogError(error);
+                ShowError(error);
+            }
         );
-        yield return GameClient.CreatePlayer(SessionManager.AccessToken, username,
-        () =>
+
+        if (!signUpSucceeded)
         {
-            Debug.Log($"Created player '{username}'");
-        },
-        error =>
-        {
-            Debug.LogError(error);
-            ShowError(error);
+            Debug.LogWarning("Signup failed, skipping CreatePlayer.");
+            yield break;
         }
+
+        yield return GameClient.CreatePlayer(SessionManager.AccessToken, username,
+            () =>
+            {
+                Debug.Log($"Created player '{username}'");
+            },
+            error =>
+            {
+                Debug.LogError(error);
+                ShowError(error);
+            }
         );
     }
+
 
     public IEnumerator SignIn(string email, string password, Action<AuthSession> onSuccess)
     {
