@@ -16,11 +16,17 @@ public class EnemyHurtbox : MonoBehaviour
         if (!other.CompareTag("PlayerHitbox")) return;
 
         PlayerController player = other.GetComponentInParent<PlayerController>();
+        if (player == null || player.feetCollider == null) return;
 
-        if (player == null) return;
+        NewEnemy enemy = transform.parent.parent.GetComponent<NewEnemy>();
+        if (enemy == null || enemy.feetCollider == null) return;
 
-        Vector2 direction = (Vector2) (other.gameObject.transform.position - transform.parent.position).normalized;
+        Vector2 enemyFeetPos = enemy.feetCollider.bounds.center;
+        Vector2 playerFeetPos = player.feetCollider.bounds.center;
+
+        Vector2 direction = (playerFeetPos - enemyFeetPos).normalized;
         Vector2 knockback = direction * _knockbackForce;
+        
         player.TakeDamage(_attackDamage, knockback);
     }
 }

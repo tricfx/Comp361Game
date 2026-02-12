@@ -26,34 +26,27 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public float moveSpeed = 1000f;
-    public float maxSpeed = 5f;
-    public float idleFriction = 0.9f;
+    [SerializeField] protected float moveSpeed = 1000f;
+    [SerializeField] protected float maxSpeed = 5f;
+    [SerializeField] protected float idleFriction = 0.9f;
+    [SerializeField] protected GameObject leftAttackHitbox;
 
-    public GameObject leftAttackHitbox;
-    Vector2 moveInput = Vector2.zero;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
-    Animator animator;
-    Collider2D leftAttackCollider;
+    public SpriteRenderer spriteRenderer { get; private set; }
+    public Rigidbody2D rb { get; private set; }
+    public Animator animator { get; private set; }
+    public Collider2D feetCollider { get; private set; }
 
-    bool _canMove = true;
-    bool _isMoving = false;
+    protected Vector2 moveInput = Vector2.zero;
+    protected bool _canMove = true;
+    protected bool _isMoving = false;
 
-    // public ContactFilter2D movementFilter;
-    // public float collisionOffset = 0.02f;
-    // public SwordAttack swordAttack;
-    // List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        leftAttackCollider = leftAttackHitbox.GetComponent<Collider2D>();
+        feetCollider = GetComponent<CapsuleCollider2D>();
     }
 
-    // Update is called once per frame
     void Update() {
         
     }

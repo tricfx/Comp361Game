@@ -18,12 +18,6 @@ public class NewSkeleton : NewEnemy
     {
         Vector2 direction = (targetPosition - startPosition).normalized;
         rb.AddForce(direction * _moveSpeed * Time.fixedDeltaTime);
-        if (direction.x > 0)
-        {
-                
-        } else
-        {
-                
-        }
+        flipDirection(direction);
     }
 }

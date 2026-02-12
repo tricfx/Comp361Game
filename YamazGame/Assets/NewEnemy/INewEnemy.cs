@@ -20,6 +20,7 @@ public interface INewEnemy {
     void TakeDamage(float damage, Vector2 knockback);
     void TakeDamage(float damage);
     void TakeKnockback(Vector2 knockback);
+    void flipDirection(Vector2 direction);
 
     void Move(Vector2 startPosition, Vector2 targetPosition);
     void LockMovement();

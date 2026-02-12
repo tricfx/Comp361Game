@@ -108,12 +108,13 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     [SerializeField] protected EnemyHitbox hitbox;
     [SerializeField] protected EnemyHurtbox hurtbox;
+    [SerializeField] protected Transform faceDirection;
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
-    protected SpriteRenderer spriteRenderer;
-    protected Animator animator;
-    protected Rigidbody2D rb;
-    protected Collider2D feetCollider;
+    public SpriteRenderer spriteRenderer { get; private set; }
+    public Animator animator { get; private set; }
+    public Rigidbody2D rb { get; private set; }
+    public Collider2D feetCollider { get; private set; }
 
     [SerializeField] protected float _maxHealth = 10f;
     [SerializeField] protected float _moveSpeed = 500f;
@@ -201,7 +202,22 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void TakeKnockback(Vector2 knockback)
     {
+        knockback.y *= 0.5f;
+        knockback.Normalize();
         rb.AddForce(knockback, ForceMode2D.Impulse);
+    }
+
+    public void flipDirection(Vector2 direction)
+    {
+        if (direction.x > 0)
+        {
+                faceDirection.localScale = new Vector3(1, 1, 1);
+                spriteRenderer.flipX = false;
+        } else
+        {
+                faceDirection.localScale = new Vector3(-1, 1, 1);
+                spriteRenderer.flipX = true;
+        }
     }
 
     public void LockMovement()
