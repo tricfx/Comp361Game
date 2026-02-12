@@ -93,6 +93,6 @@ public class PlayerController : MonoBehaviour {
 
     public void TakeDamage(float damage, Vector2 knockback)
     {
-        
+        GetComponent<DamageableCharacter>().OnHit(damage, knockback);
     }
 }

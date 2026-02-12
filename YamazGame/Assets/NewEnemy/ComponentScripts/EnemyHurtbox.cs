@@ -13,14 +13,14 @@ public class EnemyHurtbox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject player = other.transform.parent.gameObject;
+        if (!other.CompareTag("PlayerHitbox")) return;
 
-        if (other.gameObject.CompareTag("Hitbox") && player.CompareTag("Player"))
-        {
-            Vector3 parentPosition = transform.parent.position;
-            Vector2 direction = (Vector2) (other.gameObject.transform.position - parentPosition).normalized;
-            Vector2 knockback = direction * _knockbackForce;
-            player.GetComponent<PlayerController>().TakeDamage(_attackDamage, knockback);
-        }
+        PlayerController player = other.GetComponentInParent<PlayerController>();
+
+        if (player == null) return;
+
+        Vector2 direction = (Vector2) (other.gameObject.transform.position - transform.parent.position).normalized;
+        Vector2 knockback = direction * _knockbackForce;
+        player.TakeDamage(_attackDamage, knockback);
     }
 }
