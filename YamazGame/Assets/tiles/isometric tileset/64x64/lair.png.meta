@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: a5a414c90c7d54bc3aaf1335aa57083d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6947337267990653189
+    second: lair_0
+  - first:
+      213: 4662819637642341392
+    second: lair_1
+  - first:
+      213: -8042976728174230629
+    second: lair_2
+  - first:
+      213: -6320489352818160710
+    second: lair_3
+  - first:
+      213: -5208407539362075382
+    second: lair_4
+  - first:
+      213: -275132721542881068
+    second: lair_5
+  - first:
+      213: 519739722951256848
+    second: lair_6
+  - first:
+      213: 3607485738569122400
+    second: lair_7
+  - first:
+      213: -3717091060069398210
+    second: lair_8
+  - first:
+      213: -4300329458992457032
+    second: lair_9
+  - first:
+      213: -7852164378080506199
+    second: lair_10
+  - first:
+      213: -3243252594822021083
+    second: lair_11
+  - first:
+      213: -1779102114425542471
+    second: lair_12
+  - first:
+      213: -4552451747659857637
+    second: lair_13
+  - first:
+      213: 3392503062577029543
+    second: lair_14
+  - first:
+      213: 8744251187479191629
+    second: lair_15
+  - first:
+      213: -4134942066599055384
+    second: lair_16
+  - first:
+      213: -650695023207601839
+    second: lair_17
+  - first:
+      213: -7333219650857420676
+    second: lair_18
+  - first:
+      213: 1986723500362366223
+    second: lair_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lair_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 133
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf695963099169f90800000000000000
+      internalID: -6947337267990653189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 136
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c236971c9a5b040800000000000000
+      internalID: 4662819637642341392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 136
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b93017c774b916090800000000000000
+      internalID: -8042976728174230629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 133
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb82a6cb6c1948a0800000000000000
+      internalID: -6320489352818160710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 131
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d6bd230f408b7b0800000000000000
+      internalID: -5208407539362075382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 131
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0a95a5f388e2cf0800000000000000
+      internalID: -275132721542881068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_6
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 131
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b6b2a368c763700800000000000000
+      internalID: 519739722951256848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_7
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 131
+        width: 58
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06243bb7a2d501230800000000000000
+      internalID: 3607485738569122400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 67
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3988c6ff5d3a6cc0800000000000000
+      internalID: -3717091060069398210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_9
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 67
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba5b9324292254c0800000000000000
+      internalID: -4300329458992457032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_10
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 67
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae0986c912870390800000000000000
+      internalID: -7852164378080506199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_11
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 67
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52005c0d2f6adf2d0800000000000000
+      internalID: -3243252594822021083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_12
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 63
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8e4829d0c5f47e0800000000000000
+      internalID: -1779102114425542471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 63
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b11c0a3614172d0c0800000000000000
+      internalID: -4552451747659857637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_14
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 63
+        width: 121
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a12458af87941f20800000000000000
+      internalID: 3392503062577029543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_15
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 3
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d402c704022d95970800000000000000
+      internalID: 8744251187479191629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 3
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef2b89291cbd96c0800000000000000
+      internalID: -4134942066599055384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_17
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 3
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159a89ce25448f6f0800000000000000
+      internalID: -650695023207601839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_18
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 3
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c78bab2a49b2b3a90800000000000000
+      internalID: -7333219650857420676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lair_19
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 66
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0df40a5f72429b10800000000000000
+      internalID: 1986723500362366223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      lair_0: -6947337267990653189
+      lair_1: 4662819637642341392
+      lair_10: -7852164378080506199
+      lair_11: -3243252594822021083
+      lair_12: -1779102114425542471
+      lair_13: -4552451747659857637
+      lair_14: 3392503062577029543
+      lair_15: 8744251187479191629
+      lair_16: -4134942066599055384
+      lair_17: -650695023207601839
+      lair_18: -7333219650857420676
+      lair_19: 1986723500362366223
+      lair_2: -8042976728174230629
+      lair_3: -6320489352818160710
+      lair_4: -5208407539362075382
+      lair_5: -275132721542881068
+      lair_6: 519739722951256848
+      lair_7: 3607485738569122400
+      lair_8: -3717091060069398210
+      lair_9: -4300329458992457032
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
