@@ -9,7 +9,7 @@ public class PlayerActions : MonoBehaviour
 
     [Header("Attack Combo")]
     [SerializeField] private float comboWindow = 0.5f;         // Strict 0.5s window to combo
-    [SerializeField] private float comboEnableDelay = 0.2f;    // When can you combo?
+    [SerializeField] private float comboEnableDelay = 0f;    // When can you combo?
 
     private int comboStep = 0;
     private float lastAttackTime = -999f;

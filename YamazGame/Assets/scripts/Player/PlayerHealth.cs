@@ -48,11 +48,7 @@ public class PlayerHealth : MonoBehaviour
         if (controller) controller.enabled = false;
         if (actions) actions.enabled = false;
 
-        float deathAnimationLength = 2f; // Adjust to match your death animation length
-        Destroy(gameObject, deathAnimationLength);
-
-        // Optional: Reload scene after 3 seconds
-        // Invoke("ReloadScene", 3f);
+        Invoke("ReloadScene", 3f);
     }
 
     private void ReloadScene()

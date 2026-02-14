@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 4731976069451397383}
   - component: {fileID: 2473590855028938758}
   - component: {fileID: 5620701775207736557}
+  - component: {fileID: 6839188271553356197}
   - component: {fileID: 4395188340007543857}
   m_Layer: 0
   m_Name: Player
@@ -238,8 +239,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: 0.035364557, y: -0.044434514}
+  m_Size: {x: 0.43960848, y: 0.73825496}
   m_Direction: 0
 --- !u!50 &4512945187162635060
 Rigidbody2D:
@@ -249,7 +250,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8994838657509954306}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -264,9 +265,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &3566642138979658831
 MonoBehaviour:
@@ -521,6 +522,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7330a0eb3241248de977b092737ebfbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6839188271553356197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994838657509954306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebb4a36303ba46018222e62961cb1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  anim: {fileID: 4731976069451397383}
+  controller: {fileID: 2473590855028938758}
+  actions: {fileID: 4395188340007543857}
 --- !u!114 &4395188340007543857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,3 +554,4 @@ MonoBehaviour:
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
   comboWindow: 0.8
+  comboEnableDelay: 0
