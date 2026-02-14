@@ -33,6 +33,10 @@ public class PlayerActions : MonoBehaviour
             canCombo = true;
             Debug.Log("Combo enabled!");
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GetComponent<PlayerHealth>()?.TakeDamage(100);
+        }
 
         // Check if combo window expired - RESET if too late
         if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)

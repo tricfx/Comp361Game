@@ -4,7 +4,8 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    private static readonly int AttackStep = Animator.StringToHash("AttackStep"); // Add this at the top with other hashes
+    private static readonly int AttackStep = Animator.StringToHash("AttackStep");
+    private static readonly int Death = Animator.StringToHash("Death");
     private static readonly int MoveX = Animator.StringToHash("MoveX");
     private static readonly int MoveY = Animator.StringToHash("MoveY");
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -58,6 +59,12 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.SetTrigger(Attack);
         Debug.Log($"Animator: AttackStep = {step}");
     }
+    public void TriggerDeath()
+    {
+        if (!animator) return;
+        animator.SetTrigger(Death);
+        Debug.Log("Death animation triggered");
+    }
 
     public void ResetAttackStep()
     {
@@ -65,4 +72,6 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.SetInteger(AttackStep, 0);
         Debug.Log("AttackStep reset to 0");
     }
+
+
 }
