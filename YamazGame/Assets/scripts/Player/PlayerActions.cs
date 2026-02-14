@@ -8,11 +8,12 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private PlayerController2D controller;
 
     [Header("Attack Combo")]
-    [SerializeField] private float comboWindow = 1f; // Time window to continue combo
+    [SerializeField] private float comboWindow = 0.5f;         // Strict 0.5s window to combo
+    [SerializeField] private float comboEnableDelay = 0.2f;    // When can you combo?
 
-    private int comboStep = 0;              // Current combo step (0, 1, 2, 3)
-    private float lastAttackTime = -999f;   // When last attack happened
-    private bool canCombo = false;          // Can we continue the combo?
+    private int comboStep = 0;
+    private float lastAttackTime = -999f;
+    private bool canCombo = false;
 
     private void Awake()
     {
@@ -23,12 +24,18 @@ public class PlayerActions : MonoBehaviour
 
     private void Update()
     {
-        // Optional: don't allow actions while dashing
         if (controller && controller.IsDashing)
             return;
 
-        // Check if combo window expired
-        if (Time.time - lastAttackTime > comboWindow)
+        // Auto-enable combo after delay
+        if (comboStep > 0 && !canCombo && Time.time - lastAttackTime > comboEnableDelay)
+        {
+            canCombo = true;
+            Debug.Log("Combo enabled!");
+        }
+
+        // Check if combo window expired - RESET if too late
+        if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)
         {
             ResetCombo();
         }
@@ -51,6 +58,13 @@ public class PlayerActions : MonoBehaviour
 
     private void PerformAttack()
     {
+        // Check if trying to attack outside combo window
+        if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)
+        {
+            Debug.Log("Combo expired! Starting fresh.");
+            ResetCombo();
+        }
+
         // Only attack if we're ready for the next combo step
         if (!canCombo && comboStep > 0)
         {
@@ -58,36 +72,28 @@ public class PlayerActions : MonoBehaviour
             return;
         }
 
+        // Increment combo
         lastAttackTime = Time.time;
         comboStep++;
 
         if (comboStep > 3)
         {
-            ResetCombo();
             comboStep = 1;
         }
 
         // Trigger the appropriate attack
         anim?.TriggerAttackCombo(comboStep);
-        Debug.Log($"Attack {comboStep}");
+        Debug.Log($"Attack {comboStep} at time {Time.time}");
 
-        // Can't combo again until animation allows it
+        // Can't combo again until delay passes
         canCombo = false;
     }
 
-    // Call this from Animation Event in the middle of each attack animation
-    public void EnableCombo()
-    {
-        canCombo = true;
-        lastAttackTime = Time.time; // ADD THIS LINE - refreshes the timer!
-        Debug.Log("Combo enabled!");
-    }
-
-    // Call this to reset combo
     public void ResetCombo()
     {
         comboStep = 0;
         canCombo = false;
+        anim?.ResetAttackStep();
         Debug.Log("Combo reset");
     }
 }

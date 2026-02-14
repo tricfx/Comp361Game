@@ -58,4 +58,11 @@ public class PlayerAnimatorController : MonoBehaviour
         animator.SetTrigger(Attack);
         Debug.Log($"Animator: AttackStep = {step}");
     }
+
+    public void ResetAttackStep()
+    {
+        if (!animator) return;
+        animator.SetInteger(AttackStep, 0);
+        Debug.Log("AttackStep reset to 0");
+    }
 }

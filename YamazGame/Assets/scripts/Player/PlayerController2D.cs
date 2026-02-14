@@ -8,13 +8,13 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private PlayerAnimatorController anim;
 
     [Header("Move")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float accel = 20f;
-    [SerializeField] private float decel = 150f; // higher = slower to stop
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float accel = 60f;
+    [SerializeField] private float decel = 120f; // higher = slower to stop
 
     [Header("Dash")]
-    [SerializeField] private float dashSpeed = 12f;
-    [SerializeField] private float dashDuration = 0.18f;
+    [SerializeField] private float dashSpeed = 20f;
+    [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float dashCooldown = 0.8f;
 
     private Rigidbody2D rb;
