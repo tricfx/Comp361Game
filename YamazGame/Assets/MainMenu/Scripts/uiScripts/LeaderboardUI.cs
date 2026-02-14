@@ -15,14 +15,31 @@ public class LeaderboardUI : MonoBehaviour
             {
                 rankTexts[i].text = entries[i].rank.ToString();
                 nameTexts[i].text = entries[i].username;
-                timeTexts[i].text = entries[i].best_time.ToString();
+                timeTexts[i].text = FormatTime(entries[i].best_time);
             }
             else
             {
                 rankTexts[i].text = "-";
                 nameTexts[i].text = "---";
-                timeTexts[i].text = "--:--";
+                timeTexts[i].text = "--:--:--";
             }
         }
     }
+        
+    private string FormatTime(long time)
+    {
+        float totalSeconds = time / 1000f;
+
+        // Max allowed time: 99 hours
+        if (totalSeconds <= 0 || totalSeconds > 99 * 3600)
+            return "N/A";
+
+        int hours = Mathf.FloorToInt(totalSeconds / 3600f);
+        int minutes = Mathf.FloorToInt((totalSeconds % 3600f) / 60f);
+        int seconds = Mathf.FloorToInt(totalSeconds % 60f);
+
+        return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+    }
+
+
 }

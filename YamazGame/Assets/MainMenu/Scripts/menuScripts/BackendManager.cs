@@ -31,23 +31,50 @@ public class BackendManager : MonoBehaviour
 
         SessionManager = gameObject.AddComponent<SupabaseSessionManager>();
     }
-    public IEnumerator SignUp(string email, string password, Action<AuthSession> onSuccess)
+    public IEnumerator SignUp(string email, string password, string username, Action<AuthSession> onSuccess)
     {
         Debug.Log("Signing up...");
+
+        bool signUpSucceeded = false;
+        AuthSession sessionResult = null;
+
         yield return AuthClient.SignUp(email, password,
-        session =>
+            session =>
+            {
+                Debug.Log("SignUp Successful");
+
+                signUpSucceeded = true;
+                sessionResult = session;
+
+                SessionManager.SetSession(session);
+                onSuccess?.Invoke(session);
+            },
+            error =>
+            {
+                Debug.LogError(error);
+                ShowError(error);
+            }
+        );
+
+        if (!signUpSucceeded)
         {
-            Debug.Log("SignUp Successful");
-            SessionManager.SetSession(session);
-            onSuccess?.Invoke(session);
-        },
-        error =>
-        {
-            Debug.LogError(error);
-            ShowError(error);
+            Debug.LogWarning("Signup failed, skipping CreatePlayer.");
+            yield break;
         }
+
+        yield return GameClient.CreatePlayer(SessionManager.AccessToken, username,
+            () =>
+            {
+                Debug.Log($"Created player '{username}'");
+            },
+            error =>
+            {
+                Debug.LogError(error);
+                ShowError(error);
+            }
         );
     }
+
 
     public IEnumerator SignIn(string email, string password, Action<AuthSession> onSuccess)
     {
@@ -168,6 +195,7 @@ public class BackendManager : MonoBehaviour
         try
         {
             var e = JsonUtility.FromJson<SupabaseError>(rawError);
+            string rawLower = rawError.ToLowerInvariant();
 
             if (e != null && !string.IsNullOrEmpty(e.error_code))
             {
@@ -182,7 +210,7 @@ public class BackendManager : MonoBehaviour
                     //    break;
 
                     case "invalid_credentials":
-                        err = "Invalid login credentials";
+                        err = e.msg;
                         break;
 
                     case "weak_password":
@@ -191,8 +219,21 @@ public class BackendManager : MonoBehaviour
 
 
                     case "validation_failed":
-                        err = "Please enter your email";
-                        break;
+                        //err = "Please enter your email";
+
+                        if (rawLower.Contains("invalid format"))
+                        {
+                            err = "Please enter a valid email address";
+                        }
+                        else if (rawLower.Contains("missing email") || rawLower.Contains("recovery"))
+                        {
+                            err = "Please enter your email address";
+                        }
+                        else
+                        {
+                            err = e.msg;
+                        }
+                            break;
 
                     default:
                         if (!string.IsNullOrEmpty(e.msg)) err = e.msg;
