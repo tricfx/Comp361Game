@@ -506,8 +506,8 @@ MonoBehaviour:
   moveSpeed: 5
   accel: 60
   decel: 120
-  dashSpeed: 12
-  dashDuration: 0.18
+  dashSpeed: 20
+  dashDuration: 1
   dashCooldown: 0.8
 --- !u!114 &5620701775207736557
 MonoBehaviour:
@@ -536,3 +536,4 @@ MonoBehaviour:
   input: {fileID: 5620701775207736557}
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
+  comboWindow: 0.8

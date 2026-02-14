@@ -52,8 +52,8 @@ public class PlayerController2D : MonoBehaviour
                 lastAimDir = new Vector2(0f, Mathf.Sign(move.y));
         }
 
-        // Dash trigger
-        if (input.DashPressed && dashCooldownTimer <= 0f && !isDashing)
+        // Dash trigger - ONLY WHILE MOVING
+        if (input.DashPressed && dashCooldownTimer <= 0f && !isDashing && move.sqrMagnitude > 0.1f)
             StartDash();
 
         // Timers

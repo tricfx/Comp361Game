@@ -4,6 +4,7 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
+    private static readonly int AttackStep = Animator.StringToHash("AttackStep"); // Add this at the top with other hashes
     private static readonly int MoveX = Animator.StringToHash("MoveX");
     private static readonly int MoveY = Animator.StringToHash("MoveY");
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -12,6 +13,7 @@ public class PlayerAnimatorController : MonoBehaviour
     private static readonly int IsDashing = Animator.StringToHash("IsDashing");
     private static readonly int Dash = Animator.StringToHash("Dash");
     private static readonly int Attack = Animator.StringToHash("Attack");
+
 
     private void Awake()
     {
@@ -48,5 +50,12 @@ public class PlayerAnimatorController : MonoBehaviour
     public void TriggerAttack()
     {
         animator.SetTrigger(Attack);
+    }
+    public void TriggerAttackCombo(int step)
+    {
+        if (!animator) return;
+        animator.SetInteger(AttackStep, step);
+        animator.SetTrigger(Attack);
+        Debug.Log($"Animator: AttackStep = {step}");
     }
 }
