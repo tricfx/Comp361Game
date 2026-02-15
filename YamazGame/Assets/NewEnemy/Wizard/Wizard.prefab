@@ -28,9 +28,55 @@ Transform:
   m_LocalPosition: {x: 0.05264938, y: 0.2496318, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6849458508608160805}
   m_Father: {fileID: 8254811840770965934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1529817702109958439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6849458508608160805}
+  - component: {fileID: 1034858515595350144}
+  m_Layer: 0
+  m_Name: WizardProjectileSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6849458508608160805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529817702109958439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.318, y: 0.145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4780606943734477868}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034858515595350144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529817702109958439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872c8022695a7425693cb6909f8a5282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 9048418171210716307, guid: 61859b3047e09450aa494526078621a3, type: 3}
 --- !u!1 &2052049496488832472
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +531,8 @@ MonoBehaviour:
   attackRange: {fileID: 8324734251027002773}
   _maxHealth: 5
   _moveSpeed: 500
-  _attackCooldown: 1
+  _attackCooldown: 3
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+  projectileSpawner: {fileID: 1034858515595350144}
