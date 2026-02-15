@@ -4,6 +4,8 @@ public class NewSkeleton : NewEnemy
 {
     public override void Attack()
     {
+        if (!CanAttack) return;
+
         CanAttack = false;
         animator.SetTrigger("attack");
         Invoke(nameof(ResetAttack), _attackCooldown);

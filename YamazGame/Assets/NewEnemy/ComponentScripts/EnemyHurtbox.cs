@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyHurtbox : MonoBehaviour
 {
-    [SerializeField] float _attackDamage = 1f;
-    [SerializeField] float _knockbackForce = 15f;
+    [SerializeField] float attackDamage = 1f;
+    [SerializeField] float knockbackForce = 15f;
     Collider2D hurtbox;
 
     void Start()
@@ -25,8 +25,8 @@ public class EnemyHurtbox : MonoBehaviour
         Vector2 playerFeetPos = player.feetCollider.bounds.center;
 
         Vector2 direction = (playerFeetPos - enemyFeetPos).normalized;
-        Vector2 knockback = direction * _knockbackForce;
+        Vector2 knockback = direction * knockbackForce;
         
-        player.TakeDamage(_attackDamage, knockback);
+        player.TakeDamage(attackDamage, knockback);
     }
 }
