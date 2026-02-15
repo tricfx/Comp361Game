@@ -5,7 +5,7 @@ public class Wizard : NewEnemy
     [SerializeField] WizardProjectileSpawner projectileSpawner;
     Transform playerTarget;
 
-    void Start()
+    protected override void Start()
     {
         base.Start();
         playerTarget = GameObject.FindGameObjectWithTag("Player").transform;

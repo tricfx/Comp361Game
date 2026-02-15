@@ -131,7 +131,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected bool _canMove = true;
     protected bool _moving = false;
 
-    public void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

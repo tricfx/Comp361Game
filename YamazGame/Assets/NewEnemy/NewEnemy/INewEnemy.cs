@@ -11,10 +11,6 @@ public interface INewEnemy {
     bool CanMove { set; get; }
     bool Moving { set; get; }
 
-    void Start();
-    void FixedUpdate();
-    void OnObjectDestroyed();
-
     void Attack();
     void ResetAttack();
     void TakeDamage(float damage, Vector2 knockback);
