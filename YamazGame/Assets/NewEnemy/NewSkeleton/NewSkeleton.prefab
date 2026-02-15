@@ -198,8 +198,8 @@ MonoBehaviour:
   faceDirection: {fileID: 6919719421441425951}
   detectionRange: {fileID: 3538662739765094555}
   attackRange: {fileID: 1591120705167467719}
-  _maxHealth: 10
-  _moveSpeed: 500
+  _maxHealth: 8
+  _moveSpeed: 750
   _attackCooldown: 1
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
