@@ -246,6 +246,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+         // 🔧 TEMP TEST — remove later
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(10);
+        }
+
         if (!isAttacking)
         {
             // --- Input ---
