@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 6e06620a6ba4444f292d771eed0790e5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4961078754150747211
+    second: YamaMC_AtxN_0
+  - first:
+      213: -1389800176598443958
+    second: YamaMC_AtxN_1
+  - first:
+      213: 3977236796082558314
+    second: YamaMC_AtxN_2
+  - first:
+      213: 8442142616010052059
+    second: YamaMC_AtxN_3
+  - first:
+      213: 2208361987625462854
+    second: YamaMC_AtxN_4
+  - first:
+      213: 826112456413145004
+    second: YamaMC_AtxN_5
+  - first:
+      213: 1910237554290351722
+    second: YamaMC_AtxN_6
+  - first:
+      213: -7898787722031112973
+    second: YamaMC_AtxN_7
+  - first:
+      213: 5114973310918745211
+    second: YamaMC_AtxN_8
+  - first:
+      213: -3428599917147343166
+    second: YamaMC_AtxN_9
+  - first:
+      213: -5576913832055916837
+    second: YamaMC_AtxN_10
+  - first:
+      213: 9119001569296345731
+    second: YamaMC_AtxN_11
+  - first:
+      213: 738314161976445755
+    second: YamaMC_AtxN_12
+  - first:
+      213: -3727031791377478571
+    second: YamaMC_AtxN_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YamaMC_AtxN_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 23
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c84eb87da49d440800000000000000
+      internalID: 4961078754150747211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 23
+        width: 27
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4813155a1076bce0800000000000000
+      internalID: -1389800176598443958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_2
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 64
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a651d123bcbf13730800000000000000
+      internalID: 3977236796082558314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 23
+        width: 56
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1577a1bf3882570800000000000000
+      internalID: 8442142616010052059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 23
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c24eff68da5ae10800000000000000
+      internalID: 2208361987625462854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 23
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca7e705f6e0f67b00800000000000000
+      internalID: 826112456413145004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 23
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e561c4fe6828a10800000000000000
+      internalID: 1910237554290351722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_7
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 23
+        width: 56
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc5e189a6ed16290800000000000000
+      internalID: -7898787722031112973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_8
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 23
+        width: 43
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c5ae040290cf640800000000000000
+      internalID: 5114973310918745211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_9
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 23
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6bf757a8a2b60d0800000000000000
+      internalID: -3428599917147343166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_10
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 21
+        width: 26
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd63851ea62da92b0800000000000000
+      internalID: -5576913832055916837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_11
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 20
+        width: 31
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a632cdc933d8e70800000000000000
+      internalID: 9119001569296345731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_12
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 20
+        width: 25
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b0f3d81d40f3a00800000000000000
+      internalID: 738314161976445755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_AtxN_13
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 20
+        width: 25
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c8b58155ce64cc0800000000000000
+      internalID: -3727031791377478571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      YamaMC_AtxN_0: 4961078754150747211
+      YamaMC_AtxN_1: -1389800176598443958
+      YamaMC_AtxN_10: -5576913832055916837
+      YamaMC_AtxN_11: 9119001569296345731
+      YamaMC_AtxN_12: 738314161976445755
+      YamaMC_AtxN_13: -3727031791377478571
+      YamaMC_AtxN_2: 3977236796082558314
+      YamaMC_AtxN_3: 8442142616010052059
+      YamaMC_AtxN_4: 2208361987625462854
+      YamaMC_AtxN_5: 826112456413145004
+      YamaMC_AtxN_6: 1910237554290351722
+      YamaMC_AtxN_7: -7898787722031112973
+      YamaMC_AtxN_8: 5114973310918745211
+      YamaMC_AtxN_9: -3428599917147343166
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

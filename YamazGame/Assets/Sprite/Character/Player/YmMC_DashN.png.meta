@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 1690238cfd4e84543b48ce6ba3acaa59
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6104539346552106351
+    second: YmMC_DashN_0
+  - first:
+      213: 3139420756020843867
+    second: YmMC_DashN_1
+  - first:
+      213: -2825819025544089118
+    second: YmMC_DashN_2
+  - first:
+      213: 5773277248956431454
+    second: YmMC_DashN_3
+  - first:
+      213: 3213395957116818735
+    second: YmMC_DashN_4
+  - first:
+      213: -292686317978029376
+    second: YmMC_DashN_5
+  - first:
+      213: -449822109986191049
+    second: YmMC_DashN_6
+  - first:
+      213: -1711604720974025691
+    second: YmMC_DashN_7
+  - first:
+      213: -7633650102629466797
+    second: YmMC_DashN_8
+  - first:
+      213: -7308962112883964897
+    second: YmMC_DashN_9
+  - first:
+      213: 49321300666912447
+    second: YmMC_DashN_10
+  - first:
+      213: -2938935878521823448
+    second: YmMC_DashN_11
+  - first:
+      213: 3158492896109666032
+    second: YmMC_DashN_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YmMC_DashN_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 42
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192dd5bbec1584ba0800000000000000
+      internalID: -6104539346552106351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 36
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b555c135b86719b20800000000000000
+      internalID: 3139420756020843867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 43
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e177ee619ca8c8d0800000000000000
+      internalID: -2825819025544089118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 33
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c74edd11dce1050800000000000000
+      internalID: 5773277248956431454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 39
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25df920996489c20800000000000000
+      internalID: 3213395957116818735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_5
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 43
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c27d42385b20fbf0800000000000000
+      internalID: -292686317978029376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 10
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739082a9c29e1c9f0800000000000000
+      internalID: -449822109986191049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 2
+        width: 52
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c267223982f38e0800000000000000
+      internalID: -1711604720974025691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_8
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 24
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d752d2da3df0690800000000000000
+      internalID: -7633650102629466797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_9
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 9
+        width: 52
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1443c0dea9519a90800000000000000
+      internalID: -7308962112883964897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_10
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 12
+        width: 52
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbe8c1e26793fa000800000000000000
+      internalID: 49321300666912447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_11
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 24
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f5e0fb36dc637d0800000000000000
+      internalID: -2938935878521823448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YmMC_DashN_12
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 42
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe163afd8835db20800000000000000
+      internalID: 3158492896109666032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      YmMC_DashN_0: -6104539346552106351
+      YmMC_DashN_1: 3139420756020843867
+      YmMC_DashN_10: 49321300666912447
+      YmMC_DashN_11: -2938935878521823448
+      YmMC_DashN_12: 3158492896109666032
+      YmMC_DashN_2: -2825819025544089118
+      YmMC_DashN_3: 5773277248956431454
+      YmMC_DashN_4: 3213395957116818735
+      YmMC_DashN_5: -292686317978029376
+      YmMC_DashN_6: -449822109986191049
+      YmMC_DashN_7: -1711604720974025691
+      YmMC_DashN_8: -7633650102629466797
+      YmMC_DashN_9: -7308962112883964897
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
