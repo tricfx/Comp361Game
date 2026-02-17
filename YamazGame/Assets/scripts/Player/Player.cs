@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     [Header("Animation & Visuals")]
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    [SerializeField] private CameraShake cameraShake; // Reference to camera shake script so the camera reacts when the player takes damage
 
     [Header("Attack Settings")]
     public float attackRange = 1f;          // Attack collision range
@@ -257,6 +258,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+         //TEMP TEST — remove later
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(10);
+        }
+
         if (!isAttacking)
         {
             // --- Input ---
@@ -565,6 +572,12 @@ public class Player : MonoBehaviour
         currentHP -= dmg;
         currentHP = Mathf.Clamp(currentHP, 0, maxHP);
         Debug.Log("Player HP: " + currentHP);
+
+        // Trigger camera shake feedback when the player takes damage 
+        if (cameraShake != null)
+        {
+            cameraShake.Shake();
+        }
 
         // Trigger hurt animation when animator is ready
         if (animator != null && HasAnimParam("Hurt"))
