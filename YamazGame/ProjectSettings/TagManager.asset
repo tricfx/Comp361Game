@@ -43,6 +43,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: under
+    uniqueID: 123164273
+    locked: 0
+  - name: floor
+    uniqueID: 1965166271
+    locked: 0
   - name: back wall
     uniqueID: 2796311475
     locked: 0
