@@ -5,4 +5,5 @@ public class PlayerStateRequest
     public int new_gems_amount;
     public string[] new_abilities;
     public bool new_left_during_combat;
+    public string[] new_buffs;
 }

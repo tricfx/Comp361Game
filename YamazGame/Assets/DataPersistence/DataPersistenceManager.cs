@@ -64,7 +64,8 @@ public class DataPersistenceManager : MonoBehaviour
             new_scene_number = gameData.sceneIndex,
             new_gems_amount = gameData.gemsCollected,
             new_abilities = gameData.abilities,
-            new_left_during_combat = gameData.left_during_combat
+            new_left_during_combat = gameData.left_during_combat,
+            new_buffs = gameData.buffs
         };
         StartCoroutine(BackendManager.Instance.UpdatePlayerState(playerState));
     }
