@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 // Drives health bar, ability cooldowns, dialogue hide, and death overlay.
 // Assign Player + all 3 ability views. 
@@ -8,7 +7,6 @@ public class HUDController : MonoBehaviour
     [Header("Player & Views")]
     [SerializeField] private Player player;
     [SerializeField] private HealthBarView healthBarView;
-    [SerializeField] private TMP_Text healthText;
     [SerializeField] private AbilitySlotView dashAbilityView;
     [SerializeField] private AbilitySlotView abilityQView;
     [SerializeField] private AbilitySlotView abilityEView;
@@ -24,10 +22,6 @@ public class HUDController : MonoBehaviour
         // health bar - only update when we have the view so no missing ref
         if (healthBarView != null)
             healthBarView.SetHealth(player.currentHP, player.maxHP);
-
-        // numeric health text (e.g. "75 / 100")
-        if (healthText != null)
-            healthText.text = $"{player.currentHP} / {player.maxHP}";
 
         // all three ability slots (dash, Q, E)
         if (dashAbilityView != null)
