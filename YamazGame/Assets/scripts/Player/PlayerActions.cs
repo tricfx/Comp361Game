@@ -15,6 +15,8 @@ public class PlayerActions : MonoBehaviour
     private float lastAttackTime = -999f;
     private bool canCombo = false;
 
+    public bool IsAttacking => comboStep > 0;
+
     private void Awake()
     {
         if (!input) input = GetComponent<PlayerInputHandler>();
@@ -31,7 +33,7 @@ public class PlayerActions : MonoBehaviour
         if (comboStep > 0 && !canCombo && Time.time - lastAttackTime > comboEnableDelay)
         {
             canCombo = true;
-            Debug.Log("Combo enabled!");
+
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -65,14 +67,14 @@ public class PlayerActions : MonoBehaviour
         // Check if trying to attack outside combo window
         if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)
         {
-            Debug.Log("Combo expired! Starting fresh.");
+
             ResetCombo();
         }
 
         // Only attack if we're ready for the next combo step
         if (!canCombo && comboStep > 0)
         {
-            Debug.Log("Can't combo yet, wait for animation");
+
             return;
         }
 
@@ -87,7 +89,7 @@ public class PlayerActions : MonoBehaviour
 
         // Trigger the appropriate attack
         anim?.TriggerAttackCombo(comboStep);
-        Debug.Log($"Attack {comboStep} at time {Time.time}");
+
 
         // Can't combo again until delay passes
         canCombo = false;
@@ -98,7 +100,7 @@ public class PlayerActions : MonoBehaviour
         comboStep = 0;
         canCombo = false;
         anim?.ResetAttackStep();
-        Debug.Log("Combo reset");
+
     }
 }
 

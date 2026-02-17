@@ -57,20 +57,20 @@ public class PlayerAnimatorController : MonoBehaviour
         if (!animator) return;
         animator.SetInteger(AttackStep, step);
         animator.SetTrigger(Attack);
-        Debug.Log($"Animator: AttackStep = {step}");
+
     }
     public void TriggerDeath()
     {
         if (!animator) return;
         animator.SetTrigger(Death);
-        Debug.Log("Death animation triggered");
+
     }
 
     public void ResetAttackStep()
     {
         if (!animator) return;
         animator.SetInteger(AttackStep, 0);
-        Debug.Log("AttackStep reset to 0");
+
     }
 
 

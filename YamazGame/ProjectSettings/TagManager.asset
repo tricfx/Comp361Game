@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DamageZone
   - Enemy
+  - PlayerHitbox
+  - PlayerHurtbox
   layers:
   - Default
   - TransparentFX
@@ -15,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - PlayerHurtbox
+  - PlayerHitbox
   - 
   - 
   - 

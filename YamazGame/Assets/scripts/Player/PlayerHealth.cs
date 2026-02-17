@@ -1,3 +1,4 @@
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -5,6 +6,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
+
+    Rigidbody2D rb;
 
     [Header("References")]
     [SerializeField] private PlayerAnimatorController anim;
@@ -16,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
         if (!actions) actions = GetComponent<PlayerActions>();
@@ -40,6 +44,8 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
 
         Debug.Log("Player died!");
+
+        rb.linearVelocity = Vector2.zero; // Stop all movement immediately
 
         // Trigger death animation
         anim?.TriggerDeath();
