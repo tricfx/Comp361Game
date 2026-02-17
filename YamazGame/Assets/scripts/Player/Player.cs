@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
     public int currentHP;
 
     [Header("Ability Placeholders")]
-    public GameObject abilityQ;
-    public GameObject abilityE;
+    public IAbility abilityQ;
+    public IAbility abilityE;
     // tune these in inspector if cooldowns feel wrong
     [Tooltip("Cooldown in seconds for Q ability")]
     public float abilityQCooldown = 3f;
@@ -387,6 +387,7 @@ public class Player : MonoBehaviour
         // --- Ability placeholders ---
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Q pressed");
             UseAbilityQ();
         }
         if (Input.GetKeyDown(KeyCode.E))
@@ -524,7 +525,7 @@ public class Player : MonoBehaviour
 
         if (abilityQ != null)
         {
-            Instantiate(abilityQ, transform.position, Quaternion.identity);
+            abilityQ.Do();
         }
     }
 
@@ -537,7 +538,7 @@ public class Player : MonoBehaviour
 
         if (abilityE != null)
         {
-            Instantiate(abilityE, transform.position, Quaternion.identity);
+            abilityE.Do();
         }
     }
 
