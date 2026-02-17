@@ -1,43 +1,60 @@
 using UnityEngine;
+using Unity.Cinemachine;
 using System.Collections;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField] private float duration = 0.15f;
-    [SerializeField] private float magnitude = 0.2f;
+    private CinemachineCamera vcam;
+    private CinemachineBasicMultiChannelPerlin noise;
 
-    private Vector3 originalPos;
-    private Coroutine shakeRoutine;
-
-    private void Awake()
+    void Awake()
     {
-        originalPos = transform.localPosition;
-        Debug.Log("CameraShake attached to: " + gameObject.name);
-    }
+        // Try to find a CinemachineCamera anywhere in the scene
+        vcam = GetComponent<CinemachineCamera>();
 
-    public void Shake()
-    {
-        Debug.Log("SHAKE CALLED");
+        if (vcam == null)
+            vcam = GetComponentInChildren<CinemachineCamera>(true);
 
-        if (shakeRoutine != null)
-            StopCoroutine(shakeRoutine);
+        if (vcam == null)
+            vcam = Object.FindFirstObjectByType<CinemachineCamera>(FindObjectsInactive.Include);
 
-        shakeRoutine = StartCoroutine(DoShake());
-    }
-
-    private IEnumerator DoShake()
-    {
-        float elapsed = 0f;
-
-        while (elapsed < duration)
+        // Try to find the Perlin noise on the camera or its children
+        if (vcam != null)
         {
-            Vector2 offset = Random.insideUnitCircle * magnitude;
-            transform.localPosition = originalPos + (Vector3)offset;
+            noise = vcam.GetComponent<CinemachineBasicMultiChannelPerlin>();
 
-            elapsed += Time.deltaTime;
-            yield return null;
+            if (noise == null)
+                noise = vcam.GetComponentInChildren<CinemachineBasicMultiChannelPerlin>(true);
         }
 
-        transform.localPosition = originalPos;
+        Debug.Log("CameraShake Awake on " + gameObject.name + ", vcam=" + (vcam!=null) + ", noise=" + (noise!=null));
+
+        if (noise != null)
+        {
+            noise.AmplitudeGain = 0f; // ensure no shake at start
+        }
+        else
+        {
+            Debug.LogWarning("CameraShake: No Cinemachine noise component found in scene!");
+        }
+    }
+
+    public void Shake(float duration = 0.2f, float strength = 0.5f)
+    {
+        Debug.Log("CameraShake.Shake() called on " + gameObject.name);
+        StopAllCoroutines();
+        StartCoroutine(ShakeRoutine(duration, strength));
+    }
+
+    IEnumerator ShakeRoutine(float duration, float strength)
+    {
+        if (noise == null)
+            yield break;
+
+        noise.AmplitudeGain = strength;
+
+        yield return new WaitForSeconds(duration);
+
+        noise.AmplitudeGain = 0f; // stop shaking
     }
 }
