@@ -5,7 +5,9 @@ using UnityEngine;
 public class HUDController : MonoBehaviour
 {
     [Header("Player & Views")]
+    [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private Player player;
+    [SerializeField] private PlayerActions playerActions;
     [SerializeField] private HealthBarView healthBarView;
     [SerializeField] private AbilitySlotView dashAbilityView;
     [SerializeField] private AbilitySlotView abilityQView;
@@ -17,19 +19,30 @@ public class HUDController : MonoBehaviour
 
     void Update()
     {
-        if (player == null) return;
+        if (playerHealth == null)
+        {
+            Debug.LogError("HUDController: PlayerHealth reference is NULL.");
+            return;
+        }
+        if (playerActions == null) return;
 
         // health bar - only update when we have the view so no missing ref
         if (healthBarView != null)
-            healthBarView.SetHealth(player.currentHP, player.maxHP);
+            healthBarView.SetHealth(
+                playerHealth.CurrentHealth,
+                playerHealth.MaxHealth
+            );
 
         // all three ability slots (dash, Q, E)
-        if (dashAbilityView != null)
-            dashAbilityView.SetCooldownNormalized(player.DashCooldownNormalized);
-        if (abilityQView != null)
-            abilityQView.SetCooldownNormalized(player.AbilityQCooldownNormalized);
-        if (abilityEView != null)
-            abilityEView.SetCooldownNormalized(player.AbilityECooldownNormalized);
+        if (playerActions != null)
+        {
+            if (dashAbilityView != null)
+                dashAbilityView.SetCooldownNormalized(playerActions.DashCooldownNormalized);
+            if (abilityQView != null)
+                abilityQView.SetCooldownNormalized(playerActions.AbilityQCooldownNormalized);
+            if (abilityEView != null)
+                abilityEView.SetCooldownNormalized(playerActions.AbilityECooldownNormalized);
+        }
 
         // hide HUD when talking to npc so it doesn't sit on top of dialogue
         if (hudCanvasGroup != null && DialogueManager.Instance != null)
@@ -42,6 +55,6 @@ public class HUDController : MonoBehaviour
 
         // show "you died" panel when hp hits 0
         if (deathOverlayPanel != null)
-            deathOverlayPanel.SetActive(player.currentHP <= 0);
+            deathOverlayPanel.SetActive(playerHealth.CurrentHealth <= 0);
     }
 }

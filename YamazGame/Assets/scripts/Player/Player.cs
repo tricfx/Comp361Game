@@ -259,6 +259,12 @@ public class Player : MonoBehaviour
     {
         if (!isAttacking)
         {
+            Debug.Log("Player Update running");
+            // 🔧 TEMP TEST — remove later
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                TakeDamage(10);
+            }
             // --- Input ---
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
@@ -516,7 +522,7 @@ public class Player : MonoBehaviour
     }
 
     // --- Ability stubs (with cooldown so HUD can show it) ---
-    void UseAbilityQ()
+    public void UseAbilityQ()
     {
         if (Time.time < lastAbilityQ + abilityQCooldown) return;
 
@@ -529,7 +535,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void UseAbilityE()
+    public void UseAbilityE()
     {
         if (Time.time < lastAbilityE + abilityECooldown) return;
 
@@ -565,6 +571,11 @@ public class Player : MonoBehaviour
         currentHP -= dmg;
         currentHP = Mathf.Clamp(currentHP, 0, maxHP);
         Debug.Log("Player HP: " + currentHP);
+
+        // CAMERA SHAKE
+        CameraShake shake = Camera.main.GetComponent<CameraShake>();
+        if (shake != null)
+            shake.Shake();
 
         // Trigger hurt animation when animator is ready
         if (animator != null && HasAnimParam("Hurt"))

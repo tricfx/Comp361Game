@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
+    public int CurrentHealth => currentHealth; // For HUD update
+    public int MaxHealth => maxHealth; // For HUD update
 
     [Header("References")]
     [SerializeField] private PlayerAnimatorController anim;
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
         if (!actions) actions = GetComponent<PlayerActions>();
+        Debug.Log("PlayerHealth Awake: " + currentHealth);
     }
 
     public void TakeDamage(int damage)
