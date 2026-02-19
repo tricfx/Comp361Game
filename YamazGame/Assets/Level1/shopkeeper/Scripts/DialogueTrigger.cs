@@ -24,20 +24,87 @@ public class Dialogue
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public Dialogue firstTimeDialogue;
 
-    public void TriggerDialogue()
+    [Header("Repeat line")]
+    public string repeat = "Hell has rewarded you again… Will you claim what it offers through me?";
+    public string noLine = "Then go. The chambers will test you further.";
+
+    public GameObject interactPrompt;
+
+    private bool hasMet = false;
+
+    private bool playerInRange = false;
+    private PlayerInputHandler input;
+
+    //public void TriggerDialogue()
+    //{
+    //    if (hasTriggered) return;
+
+    //    hasTriggered = true;
+    //    DialogueManager.Instance.StartDialogue(dialogue);
+    //}
+
+    private void Update()
     {
-        DialogueManager.Instance.StartDialogue(dialogue);
+        if (!playerInRange) return;
+        if (input == null) return;
+
+        if (input.InteractPressed)
+        {
+            TriggerInteraction();
+        }
+    }
+
+    private void TriggerInteraction()
+    {
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive) return;
+        var dm = DialogueManager.Instance;
+        if (dm == null) return;
+        if (dm.isDialogueActive || dm.IsShopTransitioning) return;
+
+        if (!hasMet)
+        {
+            hasMet = true;
+            DialogueManager.Instance.StartDialogue(firstTimeDialogue);
+        }
+        else
+        {
+            DialogueManager.Instance.StartChoice(
+                repeat,
+                onYes: () =>
+                {
+                    // OPENM PANEL HERE
+                    //Debug.Log("todo");
+                    DialogueManager.Instance.OpenShop();
+                },
+                onNo: () =>
+                {
+                    DialogueManager.Instance.StartSingleLine(noLine);
+                }
+            );
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
-        if (collision.tag == "Player")
+        if (!collision.CompareTag("Player")) return;
+        playerInRange = true;
+        input = collision.GetComponent<PlayerInputHandler>();
+        if (interactPrompt != null)
         {
-            TriggerDialogue();
+            interactPrompt.SetActive(true);
+            Debug.Log("Prompt enabled: " + interactPrompt.activeSelf);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Player")) return;
+
+        playerInRange = false;
+        input = null;
+
+        if (interactPrompt != null) interactPrompt.SetActive(false);
     }
 }

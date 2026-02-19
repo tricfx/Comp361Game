@@ -257,6 +257,21 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            movement = Vector2.zero;
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+
+            IsRunning = false;
+            IsRunningNorth = false;
+            IsRunningSouth = false;
+            IsRunningEast = false;
+            IsRunningWest = false;
+
+            return;
+        }
+
         if (!isAttacking)
         {
             // --- Input ---
@@ -407,6 +422,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         if (isDashing)
         {
             rb.linearVelocity = movement * dashSpeed;
