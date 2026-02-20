@@ -9,9 +9,11 @@ public class HUDController : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private PlayerActions playerActions;
     [SerializeField] private HealthBarView healthBarView;
+    [SerializeField] private HealthTextView healthTextView;
     [SerializeField] private AbilitySlotView dashAbilityView;
     [SerializeField] private AbilitySlotView abilityQView;
     [SerializeField] private AbilitySlotView abilityEView;
+    
 
     [Header("Dialogue & Death")]
     [SerializeField] private CanvasGroup hudCanvasGroup;
@@ -45,6 +47,14 @@ public class HUDController : MonoBehaviour
                 playerHealth.CurrentHealth,
                 playerHealth.MaxHealth
             );
+        
+        if (healthTextView != null)
+        {
+            healthTextView.SetHealth(
+                playerHealth.CurrentHealth,
+                playerHealth.MaxHealth
+            );
+        }
 
         // all three ability slots (dash, Q, E)
         if (playerActions != null)
