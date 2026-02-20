@@ -39,7 +39,7 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    public void Shake(float duration = 0.2f, float strength = 0.5f)
+    public void Shake(float duration = 0.2f, float strength = 1.5f)
     {
         Debug.Log("CameraShake.Shake() called on " + gameObject.name);
         StopAllCoroutines();

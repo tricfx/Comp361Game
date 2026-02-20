@@ -14,9 +14,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private PlayerActions actions;
 
     private bool isDead = false;
+    public bool IsDead => isDead;
 
     private void Awake()
     {
+        isDead = false;
         currentHealth = maxHealth;
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
@@ -30,6 +32,13 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= damage;
         Debug.Log($"Player took {damage} damage. Health: {currentHealth}/{maxHealth}");
+        
+        // CAMERA SHAKE
+        CameraShake shake = Camera.main.GetComponent<CameraShake>();
+        if (shake != null)
+        {
+            shake.Shake();
+        }
 
         if (currentHealth <= 0)
         {

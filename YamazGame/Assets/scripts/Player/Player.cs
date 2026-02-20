@@ -572,10 +572,6 @@ public class Player : MonoBehaviour
         currentHP = Mathf.Clamp(currentHP, 0, maxHP);
         Debug.Log("Player HP: " + currentHP);
 
-        // CAMERA SHAKE
-        CameraShake shake = Camera.main.GetComponent<CameraShake>();
-        if (shake != null)
-            shake.Shake();
 
         // Trigger hurt animation when animator is ready
         if (animator != null && HasAnimParam("Hurt"))
