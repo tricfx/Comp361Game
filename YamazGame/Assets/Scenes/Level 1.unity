@@ -394,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &182202017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10244,7 +10244,7 @@ MonoBehaviour:
   abilityQView: {fileID: 1197407596}
   abilityEView: {fileID: 1867826377}
   hudCanvasGroup: {fileID: 0}
-  deathOverlayPanel: {fileID: 0}
+  deathOverlayPanel: {fileID: 182202016}
 --- !u!1 &853412562
 GameObject:
   m_ObjectHideFlags: 0
@@ -33530,6 +33530,7 @@ GameObject:
   - component: {fileID: 1414018789}
   - component: {fileID: 1414018791}
   - component: {fileID: 1414018790}
+  - component: {fileID: 1414018792}
   m_Layer: 5
   m_Name: YouDIedText
   m_TagString: Untagged
@@ -33585,8 +33586,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190220
-  m_fontColor: {r: 0.5471698, g: 0, b: 0, a: 1}
+    rgba: 4278190143
+  m_fontColor: {r: 0.24528301, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -33656,6 +33657,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414018788}
   m_CullTransparentMesh: 1
+--- !u!114 &1414018792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414018788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f9294b38a23486f941714104be95e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1464559352
 GameObject:
   m_ObjectHideFlags: 0
@@ -38666,7 +38679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.74509805, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -172679,162 +172692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    dialogueLines:
-    - character:
-        name: ???
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Well\u2026 how curious. Fancy meeting someone all the way down here."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: Huh?! Who are you?
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Me? I\u2019m Sherma. Just another soul bound to this place."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "\u2026\nI didn\u2019t expect to find anyone alive. I thought Hell was
-        a desolate pit\u2014nothing but suffering and silence."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Most believe that. But Hell is not empty\u2014it is awake. And it\u2019s
-        been watching you since the moment you fell."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "Watching\u2026 me?"
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Yes. I can feel it clearly now. The Lord\u2019s power flows within you\u2014yet
-        you seem completely unaware of it."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "The Lord\u2019s power? What are you talking about?"
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Your father. His essence still resonates within these chambers. Hell
-        recognizes it\u2026 responds to it. You are, in a way, speaking the same
-        language as this place."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "That doesn\u2019t make any sense."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: It will. It means you can harvest the powers of Hell itself.
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "\u2026?"
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "At the end of certain chambers\u2014once you survive what lies within\u2014you\u2019ll
-        feel it. A connection. Hell will offer you fragments of its strength."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "And I can just\u2026 take them?"
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: So I have to choose.
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Exactly. Power here is not about greed\u2014it\u2019s about restraint."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: And why would I even need these powers?
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "You wish to leave, don\u2019t you?"
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "I do. I\u2019ll escape\u2026 and I\u2019ll slay the wench who cast me
-        into this place."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Then you\u2019ll need them.\nThis realm is crawling with creatures meant
-        to ensure no one ever escapes. Every soul before you failed. Some fought.
-        Some begged. None made it out."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "But you said I\u2019m different."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "You are. Hell does not merely trap you\u2014it tests you."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "\u2026I understand."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "One more thing, before you go.\nAs you travel, you\u2019ll find gems
-        scattered throughout the floors."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: Gems?
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Remnants of humans who fell here carrying them. Hell collects what they
-        leave behind. When you connect with a chamber\u2019s core, those gems will
-        answer to you."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: And what are they used for?
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "If you ever see me again, bring them. You may exchange them for\u2026
-        advantages. Knowledge. Tools. Perhaps even power\u2014of a different kind."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: You speak as if you belong here.
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: I do. I was born from the roots of Hell itself.
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "\u2026Right."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: And what are they used for?
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Don\u2019t dwell on it. Now go. Survive the chambers. Choose your powers
-        wisely. And remember\u2014Hell rewards strength, but it devours the reckless."
-    - character:
-        name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
-      line: "Thank you\u2026 Sherma."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "May the Goddess of Luck walk beside you. You\u2019ll need her more than
-        you think."
+    dialogueLines: []
 --- !u!1 &2046818152
 GameObject:
   m_ObjectHideFlags: 0
