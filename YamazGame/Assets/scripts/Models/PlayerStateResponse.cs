@@ -4,4 +4,5 @@ public class PlayerStateResponse {
     public int gems_amount;
     public string[] abilities;
     public bool left_during_combat;
+    public string[] buffs;
 }

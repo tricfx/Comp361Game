@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
     [Header("Player Stats")]
     public int maxHP = 100;
     public int currentHP;
+
+    private List<string> activeBuffs = new List<string>();
 
     [Header("Ability Placeholders")]
     public IAbility abilityQ;
@@ -648,6 +651,48 @@ public class Player : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void TryEquipAbility(AbilityCard newAbility)
+    {
+        if (abilityQ == null)
+        {
+            //abilityQ = newAbility.abilityPrefab;
+            return;
+        }
+
+        else if (abilityE == null)
+        {
+            //abilityE = newAbility.abilityPrefab;
+            return;
+        }
+        else
+        {
+            return; //need to implement replacement thing
+        }
+        
+    }
+
+    public void ReplaceAbilitySlot(bool replaceQ, AbilityCard newAbility)
+    {
+        if (replaceQ)
+        {
+            //abilityQ = newAbility.abilityPrefab;
+        }
+        else
+        {
+            //abilityE = newAbility.abilityPrefab;
+        }
+    }
+
+    public void AddBuff(string buffID)
+    {
+        if (activeBuffs.Contains(buffID))
+        {
+            return;
+        }
+
+        activeBuffs.Add(buffID);
     }
 }
 

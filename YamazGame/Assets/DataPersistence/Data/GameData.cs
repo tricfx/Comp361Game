@@ -5,7 +5,8 @@ public class GameData
 {
    public int sceneIndex;
    public int gemsCollected;
-   public string[] abilities; 
+   public string[] abilities;
+   public string[] buffs; 
    public bool left_during_combat;
 
     //these will be the default values upon a new game start, if the player presses continue, we will load saved data and if there is none, we will use these defaults
@@ -15,6 +16,7 @@ public class GameData
         sceneIndex = 0;
         gemsCollected = 0;
         abilities = new string[] { };
+        buffs = new string[] { };
         left_during_combat = false;
     }
 }
