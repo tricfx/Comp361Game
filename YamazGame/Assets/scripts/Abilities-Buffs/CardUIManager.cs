@@ -36,15 +36,16 @@ public class CardUIManager : MonoBehaviour
     }
 
 
-    public async void OpenRewardScreen()
+    public void OpenRewardScreen()
     {
-        await Roll3Rewards();
+        Roll3Rewards();
         rewardPanel.SetActive(true);
+        Time.timeScale = 0f; // Pause the game while the reward screen is open
 
         
     }
 
-    async Task Roll3Rewards()
+    public void Roll3Rewards()
     {
         currentRewards.Clear();
 
@@ -64,7 +65,8 @@ public class CardUIManager : MonoBehaviour
 
     public void OnRewardSelected(Card reward)
     {
-        reward.Apply(player);
+        //reward.Apply(player);
         rewardPanel.SetActive(false);
+        Time.timeScale = 1f; // Resume the game after selecting a reward
     }
 }
