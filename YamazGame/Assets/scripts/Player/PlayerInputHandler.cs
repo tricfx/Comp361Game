@@ -9,6 +9,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool AttackPressed { get; private set; }
     public bool QPressed { get; private set; }
     public bool EPressed { get; private set; }
+    public bool InteractPressed { get; private set; }
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
@@ -34,6 +35,10 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (ctx.performed) EPressed = true;
     }
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed) InteractPressed = true;
+    }
 
     private void LateUpdate()
     {
@@ -42,6 +47,7 @@ public class PlayerInputHandler : MonoBehaviour
         AttackPressed = false;
         QPressed = false;
         EPressed = false;
+        InteractPressed = false;
     }
 }
 
