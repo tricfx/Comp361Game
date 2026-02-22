@@ -657,13 +657,13 @@ public class Player : MonoBehaviour
     {
         if (abilityQ == null)
         {
-            abilityQ = newAbility.abilityPrefab;
+            //abilityQ = newAbility.abilityPrefab;
             return;
         }
 
         else if (abilityE == null)
         {
-            abilityE = newAbility.abilityPrefab;
+            //abilityE = newAbility.abilityPrefab;
             return;
         }
         else
@@ -677,11 +677,11 @@ public class Player : MonoBehaviour
     {
         if (replaceQ)
         {
-            abilityQ = newAbility.abilityPrefab;
+            //abilityQ = newAbility.abilityPrefab;
         }
         else
         {
-            abilityE = newAbility.abilityPrefab;
+            //abilityE = newAbility.abilityPrefab;
         }
     }
 
