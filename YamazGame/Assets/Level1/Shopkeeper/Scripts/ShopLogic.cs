@@ -64,7 +64,7 @@ public class ShopLogic : MonoBehaviour
         if (IsPurchased(item)) { RefreshUI(); return; }
         if (totalPurchased >= maxAbilitiesTotal) { RefreshUI(); return; }
 
-        if (!playerGems.SpendGems(item.cost))
+        if (!playerGems.TrySpendGems(item.cost))
         {
             RefreshUI();
             return;
@@ -83,7 +83,7 @@ public class ShopLogic : MonoBehaviour
     private void RefreshUI()
     {
         if (gemCountText != null && playerGems != null)
-            gemCountText.text = playerGems.GetGems().ToString();
+            gemCountText.text = playerGems.CurrentGems.ToString();
 
         bool capReached = totalPurchased >= maxAbilitiesTotal;
 
@@ -95,7 +95,7 @@ public class ShopLogic : MonoBehaviour
                 item.costText.text = item.cost.ToString();
 
             bool purchased = IsPurchased(item);
-            bool canAfford = playerGems != null && playerGems.GetGems() >= item.cost;
+            bool canAfford = playerGems != null && playerGems.CurrentGems >= item.cost;
 
             if (item.buyButton != null)
                 item.buyButton.interactable = !purchased && !capReached && canAfford;
