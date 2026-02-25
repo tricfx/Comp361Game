@@ -33,7 +33,6 @@ public class HUDController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("HUD sees IsDead: " + playerHealth.IsDead);
         if (playerHealth == null)
         {
             Debug.LogError("HUDController: PlayerHealth reference is NULL.");

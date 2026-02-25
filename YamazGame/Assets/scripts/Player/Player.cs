@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
 
 
 
-    // --------Movement Properties-----------
+    // Movement Properties
     public bool IsRunning
     {
         get
@@ -347,7 +347,7 @@ public class Player : MonoBehaviour
                 IsRunningWest = false;
             }
 
-            // --- Idle Logic ---
+            // Idle Logic
             if (!isRunning && movement == Vector2.zero)
             {
                 // Use lastMovement to determine facing direction when standing still
@@ -419,7 +419,7 @@ public class Player : MonoBehaviour
             UseAbilityE();
         }
 
-        // --- Attack stub ---
+        // Attack stub 
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
@@ -464,7 +464,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // --- Dash Logic ---
+    // Dash Logic 
     void StartDash()
     {
         if (movement == Vector2.zero) return; // can't dash without direction

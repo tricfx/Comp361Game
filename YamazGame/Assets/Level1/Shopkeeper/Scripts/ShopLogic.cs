@@ -53,6 +53,9 @@ public class ShopLogic : MonoBehaviour
 
     private void OnEnable()
     {
+        if (playerGems == null)
+            playerGems = FindFirstObjectByType<PlayerGems>();
+
         RefreshUI();
     }
 
@@ -82,6 +85,11 @@ public class ShopLogic : MonoBehaviour
 
     private void RefreshUI()
     {
+        if (playerGems == null)
+        {
+            Debug.LogWarning("ShopLogic: PlayerGems not found yet.");
+            return;
+        }
         if (gemCountText != null && playerGems != null)
             gemCountText.text = playerGems.CurrentGems.ToString();
 
@@ -119,6 +127,9 @@ public class ShopLogic : MonoBehaviour
     }
     private bool IsPurchased(Item item)
     {
+        if (item == null || string.IsNullOrEmpty(item.id))
+            return false;
+
         return itemPurchasedFlags.TryGetValue(item.id, out bool v) && v;
     }
 
@@ -127,6 +138,9 @@ public class ShopLogic : MonoBehaviour
 
     private void SetPurchased(string id)
     {
+        if (string.IsNullOrEmpty(id))
+            return;
+
         itemPurchasedFlags[id] = true;
     }
 }

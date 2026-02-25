@@ -18,4 +18,17 @@ public class Level : MonoBehaviour
     {
         sceneManager.RoomCleared();
     }
+
+    void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            EnemyKilled();
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ClearRoom();
+        }    
+    }
 }
