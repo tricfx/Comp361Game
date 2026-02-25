@@ -45,6 +45,7 @@ public class PlayerAnimatorController : MonoBehaviour
 
     public void TriggerDash()
     {
+
         animator.SetTrigger(Dash);
     }
 
