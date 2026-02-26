@@ -372,7 +372,6 @@ GameObject:
   - component: {fileID: 6365615291235604374}
   - component: {fileID: 6799350317173006556}
   - component: {fileID: 4512945187162635060}
-  - component: {fileID: 3566642138979658831}
   - component: {fileID: 4313405202548319389}
   - component: {fileID: 8123051474615805345}
   - component: {fileID: 4731976069451397383}
@@ -488,36 +487,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3566642138979658831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994838657509954306}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c9546b4661246b093633836ce2f5ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  runSpeed: 15
-  dashSpeed: 20
-  dashDuration: 1
-  dashCooldown: 1
-  maxHP: 100
-  currentHP: 0
-  abilityQCooldown: 3
-  abilityECooldown: 5
-  animator: {fileID: 4313405202548319389}
-  spriteRenderer: {fileID: 0}
-  attackRange: 1
-  attackDamage: 10
-  attackDuration: 1
-  attackPoint: {fileID: 0}
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!95 &4313405202548319389
 Animator:
   serializedVersion: 7
@@ -725,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 5620701775207736557}
   anim: {fileID: 4731976069451397383}
+  actions: {fileID: 4395188340007543857}
   moveSpeed: 5
   accel: 60
   decel: 120
@@ -774,9 +744,7 @@ MonoBehaviour:
   input: {fileID: 5620701775207736557}
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
-  player: {fileID: 0}
   comboWindow: 0.8
-  comboEnableDelay: 0
   dashCooldown: 1
   abilityQCooldown: 3
   abilityECooldown: 5
