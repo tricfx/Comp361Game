@@ -3,10 +3,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] public Player player;
+    [SerializeField] public int maxHealth = 100;
     private int currentHealth;
     public int CurrentHealth => currentHealth; // For HUD update
-    public int MaxHealth => maxHealth; // For HUD update
+    public int MaxHealth;
 
     [Header("References")]
     [SerializeField] private PlayerAnimatorController anim;
@@ -19,11 +20,17 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         isDead = false;
-        currentHealth = maxHealth;
+        MaxHealth = player.maxHP;
+        currentHealth = MaxHealth;
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
         if (!actions) actions = GetComponent<PlayerActions>();
         Debug.Log("PlayerHealth Awake: " + currentHealth);
+    }
+
+    void Update()
+    {
+        MaxHealth = player.maxHP; // Sync max health with player data
     }
 
     public void TakeDamage(int damage)
@@ -69,4 +76,6 @@ public class PlayerHealth : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
     }
+
+
 }

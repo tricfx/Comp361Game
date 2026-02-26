@@ -12176,6 +12176,7 @@ MonoBehaviour:
   - {fileID: 1550537595}
   - {fileID: 1905014347}
   rewardPanel: {fileID: 1542598821}
+  player: {fileID: 1332874946080679998}
 --- !u!4 &801964912
 Transform:
   m_ObjectHideFlags: 0
@@ -182707,6 +182708,14 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3566642138979658831, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1332874946080679998}
     - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: comboWindow
       value: 0.5
@@ -182782,6 +182791,14 @@ PrefabInstance:
     - target: {fileID: 6365615291235604374, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1332874946080679998}
+    - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8123051474615805345, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_NotificationBehavior
