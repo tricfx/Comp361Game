@@ -243,18 +243,19 @@ public class Player : MonoBehaviour
             foreach (var p in animator.parameters)
                 animParams.Add(p.name);
         }
-
-        // scene change logic code
-        if (PlayerSpawn.nextSpawn != Vector2.zero)
-        {
-            Vector2 spawnPos = PlayerSpawn.nextSpawn;
-            spawnPos.y += 1f; // lift slightly to avoid overlapping tile colliders
-            transform.position = spawnPos;
-
-            // clear spawn so it doesn't apply again
-            PlayerSpawn.nextSpawn = Vector2.zero;
-        }
     }
+
+    void OnEnable()
+{
+    if (PlayerSpawn.nextSpawn != Vector2.zero)
+    {
+        Vector2 spawnPos = PlayerSpawn.nextSpawn;
+        spawnPos.y += 1f; // avoid tile collision
+        transform.position = spawnPos;
+
+        PlayerSpawn.nextSpawn = Vector2.zero;
+    }
+}
 
     bool HasAnimParam(string name) => animator != null && animParams != null && animParams.Contains(name);
 
