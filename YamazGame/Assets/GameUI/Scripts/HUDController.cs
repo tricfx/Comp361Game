@@ -6,7 +6,6 @@ public class HUDController : MonoBehaviour
 {
     [Header("Player & Views")]
     [SerializeField] private PlayerHealth playerHealth;
-    [SerializeField] private Player player;
     [SerializeField] private PlayerActions playerActions;
     [SerializeField] private HealthBarView healthBarView;
     [SerializeField] private HealthTextView healthTextView;
@@ -46,7 +45,7 @@ public class HUDController : MonoBehaviour
                 playerHealth.CurrentHealth,
                 playerHealth.MaxHealth
             );
-        
+
         if (healthTextView != null)
         {
             healthTextView.SetHealth(

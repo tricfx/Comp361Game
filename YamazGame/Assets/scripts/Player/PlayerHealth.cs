@@ -1,14 +1,12 @@
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] public Player player;
     [SerializeField] public int maxHealth = 100;
     private int currentHealth;
     public int CurrentHealth => currentHealth; // For HUD update
-    public int MaxHealth;
+    public int MaxHealth => maxHealth;         // For HUD update
 
     Rigidbody2D rb;
 
@@ -19,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     private bool isDead = false;
     public bool IsDead => isDead;
+
     private void Awake()
     {
         isDead = false;
@@ -31,18 +30,13 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("PlayerHealth Awake: " + currentHealth);
     }
 
-    void Update()
-    {
-        MaxHealth = player.maxHP; // Sync max health with player data
-    }
-
     public void TakeDamage(int damage)
     {
         if (isDead) return;
 
         currentHealth -= damage;
         Debug.Log($"Player took {damage} damage. Health: {currentHealth}/{maxHealth}");
-        
+
         // CAMERA SHAKE
         CameraShake shake = Camera.main.GetComponent<CameraShake>();
         if (shake != null)
@@ -80,6 +74,13 @@ public class PlayerHealth : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
+    }
+
+
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 
 

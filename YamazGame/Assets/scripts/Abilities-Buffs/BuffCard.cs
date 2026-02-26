@@ -6,19 +6,34 @@ public class BuffCard : Card
     public string buffID;
     public int bonusDamage;
     public int bonusHealth;
-    public int bonusSpeed;
+    public float bonusSpeed;
     public float dashCooldownDecrease;
-    public int bonusDashRange;
-    [SerializeField] private PlayerHealth playerHealth;
 
-    public override void Apply(Player player)
+    public override void Apply(GameObject playerObject)
     {
-        //this is an example idk what we want yet
-        player.attackDamage += bonusDamage;
-        player.maxHP += bonusHealth;
-        player.dashCooldown -= dashCooldownDecrease;
-        player.speed += bonusSpeed;
-        player.AddBuff(buffID);
-        
+        // Attack damage lives on PlayerHitbox
+        var hitbox = playerObject.GetComponentInChildren<PlayerHitbox>();
+        if (hitbox != null)
+            hitbox.attackDamage += bonusDamage;
+
+        // Max health lives on PlayerHealth
+        var health = playerObject.GetComponent<PlayerHealth>();
+        if (health != null)
+            health.maxHealth += bonusHealth;
+
+        // Move speed lives on PlayerController2D
+        var controller = playerObject.GetComponent<PlayerController2D>();
+        if (controller != null)
+            controller.moveSpeed += bonusSpeed;
+
+        // Dash cooldown lives on PlayerActions
+        var actions = playerObject.GetComponent<PlayerActions>();
+        if (actions != null)
+            actions.dashCooldown = Mathf.Max(0f, actions.dashCooldown - dashCooldownDecrease);
+
+        // Buffs tracked on PlayerBuffs
+        var buffs = playerObject.GetComponent<PlayerBuffs>();
+        if (buffs != null)
+            buffs.AddBuff(buffID);
     }
 }

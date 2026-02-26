@@ -9,6 +9,7 @@ public class PlayerGems : MonoBehaviour
     {
         GemManager.Instance.AddGems(amount);
     }
+    
 
     public bool TrySpendGems(int amount)
     {
