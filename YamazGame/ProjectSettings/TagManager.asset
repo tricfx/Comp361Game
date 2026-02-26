@@ -64,6 +64,12 @@ TagManager:
   - name: front wall +2
     uniqueID: 3756171461
     locked: 0
+  - name: front wall +3
+    uniqueID: 1630785529
+    locked: 0
+  - name: front wall +4
+    uniqueID: 3281854571
+    locked: 0
   - name: foreground
     uniqueID: 3523546293
     locked: 0
