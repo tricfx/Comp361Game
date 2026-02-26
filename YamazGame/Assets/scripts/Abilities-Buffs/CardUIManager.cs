@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 public class CardUIManager : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class CardUIManager : MonoBehaviour
     public CardUI[] cardSlots;
     public GameObject rewardPanel;
 
-    private Player player;
+    public Player player;
     private List<Card> currentRewards = new();
 
     void Awake()
@@ -48,16 +48,40 @@ public class CardUIManager : MonoBehaviour
     public void Roll3Rewards()
     {
         currentRewards.Clear();
-
+        int rolls = 0;
         while (currentRewards.Count < 3)
         {
             Card reward = rewardDatabase.GetRandomReward();
+            
+            string depedency = reward.dependency;
+            if (depedency != "")
+            {
+                if (!player.activeBuffs.Contains(depedency)) {
+                    continue;
+                }
+            }
 
-            if (!currentRewards.Contains(reward))
+            if (!currentRewards.Contains(reward) && !player.activeBuffs.Contains(reward.cardID))
                 currentRewards.Add(reward);
+            rolls++;
+            if (rolls == 200) {
+                break;
+            }
         }
 
-        for (int i = 0; i < 3; i++)
+        if (currentRewards.Count == 0)
+        {
+            Debug.LogWarning("No valid rewards available to roll.");
+            return; // or disable reward UI / show message
+        }
+        int fillIndex = 0;
+        while (currentRewards.Count < 3)
+        {
+            currentRewards.Add(currentRewards[fillIndex % currentRewards.Count]);
+            fillIndex++;
+        }
+
+        for (int i = 0; i < currentRewards.Count; i++)
         {
             cardSlots[i].Setup(currentRewards[i]);
         }
@@ -65,7 +89,7 @@ public class CardUIManager : MonoBehaviour
 
     public void OnRewardSelected(Card reward)
     {
-        //reward.Apply(player);
+        reward.Apply(player);
         rewardPanel.SetActive(false);
         Time.timeScale = 1f; // Resume the game after selecting a reward
     }

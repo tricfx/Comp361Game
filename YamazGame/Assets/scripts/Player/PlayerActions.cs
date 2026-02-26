@@ -18,7 +18,7 @@ public class PlayerActions : MonoBehaviour
     public bool IsAttacking => comboStep > 0;
 
     [Header("Ability Cooldowns")]
-    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] public float dashCooldown = 1f;
     [SerializeField] private float abilityQCooldown = 3f;
     [SerializeField] private float abilityECooldown = 5f;
 

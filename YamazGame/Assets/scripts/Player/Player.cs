@@ -14,12 +14,13 @@ public class Player : MonoBehaviour
     public int maxHP = 100;
     public int currentHP;
 
-    private List<string> activeBuffs = new List<string>();
+    public List<string> activeBuffs = new List<string>();
 
     [Header("Ability Placeholders")]
     public IAbility abilityQ;
     public IAbility abilityE;
     // tune these in inspector if cooldowns feel wrong
+    // tune these in inspector if cooldowns feel wrongad
     [Tooltip("Cooldown in seconds for Q ability")]
     public float abilityQCooldown = 3f;
     [Tooltip("Cooldown in seconds for E ability")]

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: RewardDatabase
   m_EditorClassIdentifier: 
   allRewards:
-  - {fileID: 11400000, guid: bd221729de265404a80ecbcd3a0df32a, type: 2}
-  - {fileID: 11400000, guid: 32cde6f2768e040a9bbc278e0c6b2450, type: 2}
-  - {fileID: 11400000, guid: 3a94cfcf00bbd4848afb4eefd7223fbd, type: 2}
+  - {fileID: 11400000, guid: 50f77ef94f1cf804794597be436fa682, type: 2}
+  - {fileID: 11400000, guid: de252b3593b8fb4478f6fdf6c3036187, type: 2}
+  - {fileID: 11400000, guid: 0c172dc5b7561d7469b7e0776804b3ba, type: 2}
+  - {fileID: 11400000, guid: 4f6e4e5e4daf659438d766fd56de3741, type: 2}
+  - {fileID: 11400000, guid: f0679292050fb494fbcd50760ffc3a82, type: 2}
+  - {fileID: 11400000, guid: b51eae817c79dbb44955e0ac66f383d5, type: 2}
+  - {fileID: 11400000, guid: ec562035b59f0f246a7b29cc375abfab, type: 2}
+  - {fileID: 11400000, guid: 28251bf80cdeb2d4cb82fe15069e52e2, type: 2}
+  - {fileID: 11400000, guid: 546fa70fa36b7df4089ab92c7a3e61e1, type: 2}
+  - {fileID: 11400000, guid: 35819b1da67ccac4b9e3348ee22fd034, type: 2}
