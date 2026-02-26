@@ -6,6 +6,7 @@ public class PlayerController2D : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerInputHandler input;
     [SerializeField] private PlayerAnimatorController anim;
+    [SerializeField] private PlayerActions actions;
 
     [Header("Move")]
     [SerializeField] private float moveSpeed = 10f;
@@ -33,6 +34,7 @@ public class PlayerController2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
+        if (!actions) actions = GetComponent<PlayerActions>();
 
         // Ensure idle never starts at (0,0) if your idle tree defaults to east at (0,0)
         anim?.SetFacing(lastAimDir);
@@ -53,7 +55,7 @@ public class PlayerController2D : MonoBehaviour
         }
 
         // Dash trigger - ONLY WHILE MOVING
-        if (input.DashPressed && dashCooldownTimer <= 0f && !isDashing && move.sqrMagnitude > 0.1f)
+        if (input.DashPressed && dashCooldownTimer <= 0f && !isDashing && move.sqrMagnitude > 0.1f && !actions.IsAttacking)
             StartDash();
 
         // Timers
@@ -93,6 +95,14 @@ public class PlayerController2D : MonoBehaviour
             rb.linearVelocity = lastAimDir * dashSpeed;
             return;
         }
+        if (actions != null && actions.IsAttacking)
+        {
+
+            rb.linearVelocity = Vector2.zero;
+            velocity = Vector2.zero;
+            return;
+        }
+
 
         Vector2 move = input.Move;
         Vector2 moveDir = move.sqrMagnitude > 0.0001f ? move.normalized : Vector2.zero;
