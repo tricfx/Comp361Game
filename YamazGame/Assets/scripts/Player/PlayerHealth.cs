@@ -19,17 +19,12 @@ public class PlayerHealth : MonoBehaviour
 
     private bool isDead = false;
     public bool IsDead => isDead;
-
     private void Awake()
     {
         isDead = false;
-<<<<<<< HEAD
-        MaxHealth = player.maxHP;
-        currentHealth = MaxHealth;
-=======
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
->>>>>>> origin/main
+
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
         if (!actions) actions = GetComponent<PlayerActions>();
