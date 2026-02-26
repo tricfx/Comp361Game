@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: d799dd2b6faed4991956b212b2baecc3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rewardDatabase: {instanceID: 0}
+  - rewardPanel: {instanceID: 0}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
