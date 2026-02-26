@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 6065679768550912435}
   m_Layer: 9
   m_Name: FeetCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,8 +358,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.2231331, y: -0.054766655}
-  m_Size: {x: 1.1572075, y: 1.1572075}
+  m_Offset: {x: -1.2942531, y: 0.4583149}
+  m_Size: {x: 0.36472464, y: 1.126728}
   m_Direction: 0
 --- !u!1 &8994838657509954306
 GameObject:
@@ -507,8 +507,6 @@ MonoBehaviour:
   dashCooldown: 1
   maxHP: 100
   currentHP: 0
-  abilityQ: {fileID: 0}
-  abilityE: {fileID: 0}
   abilityQCooldown: 3
   abilityECooldown: 5
   animator: {fileID: 4313405202548319389}
@@ -691,6 +689,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 49692bc0-637d-4b29-9551-693ac7cb0875
     m_ActionName: 'Player/AbilityE[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 848c8734-05ad-4e33-b504-8eefb125c520
+    m_ActionName: 'Player/Interact[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -772,5 +774,9 @@ MonoBehaviour:
   input: {fileID: 5620701775207736557}
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
+  player: {fileID: 0}
   comboWindow: 0.8
   comboEnableDelay: 0
+  dashCooldown: 1
+  abilityQCooldown: 3
+  abilityECooldown: 5
