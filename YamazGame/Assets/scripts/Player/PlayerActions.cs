@@ -9,8 +9,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private Player player;
 
     [Header("Attack Combo")]
-    [SerializeField] private float comboWindow = 0.5f;         // Strict 0.5s window to combo
-    [SerializeField] private float comboEnableDelay = 0f;    // When can you combo?
+    [SerializeField] private float comboWindow = 0.45f;         // Strict 0.45s window to combo
 
     private int comboStep = 0;
     private float lastAttackTime = -999f;
@@ -44,12 +43,6 @@ public class PlayerActions : MonoBehaviour
         if (controller && controller.IsDashing)
             return;
 
-        // Auto-enable combo after delay
-        if (comboStep > 0 && !canCombo && Time.time - lastAttackTime > comboEnableDelay)
-        {
-            canCombo = true;
-
-        }
         if (Input.GetKeyDown(KeyCode.K))
         {
             GetComponent<PlayerHealth>()?.TakeDamage(100);
@@ -147,6 +140,11 @@ public class PlayerActions : MonoBehaviour
         canCombo = false;
         anim?.ResetAttackStep();
 
+    }
+
+    public void AllowNextCombo()
+    {
+        canCombo = true;
     }
 }
 

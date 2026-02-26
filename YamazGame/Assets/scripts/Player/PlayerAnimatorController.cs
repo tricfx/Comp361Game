@@ -74,5 +74,10 @@ public class PlayerAnimatorController : MonoBehaviour
 
     }
 
+    public void EnableCombo()
+    {
+        GetComponent<PlayerActions>()?.AllowNextCombo();
+    }
+
 
 }
