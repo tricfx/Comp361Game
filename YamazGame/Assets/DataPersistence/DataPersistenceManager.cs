@@ -40,7 +40,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void LoadGame()
     {
         GameData data = dataHandler.Load();
-        if (data == null)
+        if (data == null && BackendManager.Instance.SessionManager.AccessToken != null)
         {
             StartCoroutine(BackendManager.Instance.GetPlayerState()); // this already handles the case where they don't have any data -> initializing default values
         }
@@ -58,16 +58,19 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObj.SaveData(ref gameData);
         }
         dataHandler.Save(gameData);
-        
-        PlayerStateRequest playerState = new PlayerStateRequest
+        if (BackendManager.Instance.SessionManager.AccessToken != null)
         {
-            new_scene_number = gameData.sceneIndex,
-            new_gems_amount = gameData.gemsCollected,
-            new_abilities = gameData.abilities,
-            new_left_during_combat = gameData.left_during_combat,
-            new_buffs = gameData.buffs
-        };
-        StartCoroutine(BackendManager.Instance.UpdatePlayerState(playerState));
+            PlayerStateRequest playerState = new PlayerStateRequest
+            {
+                new_scene_number = gameData.sceneIndex,
+                new_gems_amount = gameData.gemsCollected,
+                new_abilities = gameData.abilities,
+                new_left_during_combat = gameData.left_during_combat,
+                new_buffs = gameData.buffs
+            };
+            StartCoroutine(BackendManager.Instance.UpdatePlayerState(playerState));
+        }
+        
     }
     private void OnApplicationQuit()
     {
