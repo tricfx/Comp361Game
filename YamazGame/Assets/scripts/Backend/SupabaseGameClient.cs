@@ -26,6 +26,7 @@ public class SupabaseGameClient
                     gems_amount = 0,
                     abilities = new string[0],
                     left_during_combat = false,
+                    buffs = new string[0]
                 };
                 onSuccess?.Invoke(state);
             },

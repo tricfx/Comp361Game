@@ -6,6 +6,7 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private PlayerInputHandler input;
     [SerializeField] private PlayerAnimatorController anim;
     [SerializeField] private PlayerController2D controller;
+    [SerializeField] private Player player;
 
     [Header("Attack Combo")]
     [SerializeField] private float comboWindow = 0.5f;         // Strict 0.5s window to combo
@@ -17,15 +18,29 @@ public class PlayerActions : MonoBehaviour
 
     public bool IsAttacking => comboStep > 0;
 
+    [Header("Ability Cooldowns")]
+    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private float abilityQCooldown = 3f;
+    [SerializeField] private float abilityECooldown = 5f;
+
+    private float lastDash = -Mathf.Infinity;
+    private float lastAbilityQ = -Mathf.Infinity;
+    private float lastAbilityE = -Mathf.Infinity;
+
     private void Awake()
     {
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
+        if (!player) player = GetComponent<Player>();
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            GetComponent<PlayerHealth>()?.TakeDamage(10);
+        }
         if (controller && controller.IsDashing)
             return;
 
@@ -51,14 +66,45 @@ public class PlayerActions : MonoBehaviour
             PerformAttack();
         }
 
-        if (input.QPressed)
+        if (input.QPressed && Time.time >= lastAbilityQ + abilityQCooldown)
         {
-            Debug.Log("Ability Q (placeholder)");
+            lastAbilityQ = Time.time;
+            player?.UseAbilityQ();
         }
 
-        if (input.EPressed)
+        if (input.EPressed && Time.time >= lastAbilityE + abilityECooldown)
         {
-            Debug.Log("Ability E (placeholder)");
+            lastAbilityE = Time.time;
+            player?.UseAbilityE();
+        }
+    }
+    public float DashCooldownNormalized
+    {
+        get
+        {
+            float remaining = dashCooldown - (Time.time - lastDash);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / dashCooldown);
+        }
+    }
+
+    public float AbilityQCooldownNormalized
+    {
+        get
+        {
+            float remaining = abilityQCooldown - (Time.time - lastAbilityQ);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / abilityQCooldown);
+        }
+    }
+
+    public float AbilityECooldownNormalized
+    {
+        get
+        {
+            float remaining = abilityECooldown - (Time.time - lastAbilityE);
+            if (remaining <= 0f) return 1f;
+            return 1f - (remaining / abilityECooldown);
         }
     }
 

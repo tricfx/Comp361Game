@@ -154,7 +154,8 @@ public class BackendManager : MonoBehaviour
                 sceneIndex = response.scene_number,
                 gemsCollected = response.gems_amount,
                 abilities = response.abilities,
-                left_during_combat = response.left_during_combat
+                left_during_combat = response.left_during_combat,
+                buffs = response.buffs
             };
 
             DataPersistenceManager.instance.gameData = data;

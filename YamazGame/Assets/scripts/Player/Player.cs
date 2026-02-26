@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,9 +14,11 @@ public class Player : MonoBehaviour
     public int maxHP = 100;
     public int currentHP;
 
+    private List<string> activeBuffs = new List<string>();
+
     [Header("Ability Placeholders")]
-    public GameObject abilityQ;
-    public GameObject abilityE;
+    public IAbility abilityQ;
+    public IAbility abilityE;
     // tune these in inspector if cooldowns feel wrong
     [Tooltip("Cooldown in seconds for Q ability")]
     public float abilityQCooldown = 3f;
@@ -62,7 +65,7 @@ public class Player : MonoBehaviour
 
 
 
-    // --------Movement Properties-----------
+    // Movement Properties
     public bool IsRunning
     {
         get
@@ -257,8 +260,29 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            movement = Vector2.zero;
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+
+            IsRunning = false;
+            IsRunningNorth = false;
+            IsRunningSouth = false;
+            IsRunningEast = false;
+            IsRunningWest = false;
+
+            return;
+        }
+
         if (!isAttacking)
         {
+            Debug.Log("Player Update running");
+            // 🔧 TEMP TEST — remove later
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                TakeDamage(10);
+            }
             // --- Input ---
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
@@ -323,7 +347,7 @@ public class Player : MonoBehaviour
                 IsRunningWest = false;
             }
 
-            // --- Idle Logic ---
+            // Idle Logic
             if (!isRunning && movement == Vector2.zero)
             {
                 // Use lastMovement to determine facing direction when standing still
@@ -387,6 +411,7 @@ public class Player : MonoBehaviour
         // --- Ability placeholders ---
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Q pressed");
             UseAbilityQ();
         }
         if (Input.GetKeyDown(KeyCode.E))
@@ -394,7 +419,7 @@ public class Player : MonoBehaviour
             UseAbilityE();
         }
 
-        // --- Attack stub ---
+        // Attack stub 
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
@@ -406,6 +431,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         if (isDashing)
         {
             rb.linearVelocity = movement * dashSpeed;
@@ -433,7 +464,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // --- Dash Logic ---
+    // Dash Logic 
     void StartDash()
     {
         if (movement == Vector2.zero) return; // can't dash without direction
@@ -515,7 +546,7 @@ public class Player : MonoBehaviour
     }
 
     // --- Ability stubs (with cooldown so HUD can show it) ---
-    void UseAbilityQ()
+    public void UseAbilityQ()
     {
         if (Time.time < lastAbilityQ + abilityQCooldown) return;
 
@@ -524,11 +555,11 @@ public class Player : MonoBehaviour
 
         if (abilityQ != null)
         {
-            Instantiate(abilityQ, transform.position, Quaternion.identity);
+            abilityQ.Do();
         }
     }
 
-    void UseAbilityE()
+    public void UseAbilityE()
     {
         if (Time.time < lastAbilityE + abilityECooldown) return;
 
@@ -537,7 +568,7 @@ public class Player : MonoBehaviour
 
         if (abilityE != null)
         {
-            Instantiate(abilityE, transform.position, Quaternion.identity);
+            abilityE.Do();
         }
     }
 
@@ -564,6 +595,7 @@ public class Player : MonoBehaviour
         currentHP -= dmg;
         currentHP = Mathf.Clamp(currentHP, 0, maxHP);
         Debug.Log("Player HP: " + currentHP);
+
 
         // Trigger hurt animation when animator is ready
         if (animator != null && HasAnimParam("Hurt"))
@@ -619,6 +651,48 @@ public class Player : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void TryEquipAbility(AbilityCard newAbility)
+    {
+        if (abilityQ == null)
+        {
+            //abilityQ = newAbility.abilityPrefab;
+            return;
+        }
+
+        else if (abilityE == null)
+        {
+            //abilityE = newAbility.abilityPrefab;
+            return;
+        }
+        else
+        {
+            return; //need to implement replacement thing
+        }
+        
+    }
+
+    public void ReplaceAbilitySlot(bool replaceQ, AbilityCard newAbility)
+    {
+        if (replaceQ)
+        {
+            //abilityQ = newAbility.abilityPrefab;
+        }
+        else
+        {
+            //abilityE = newAbility.abilityPrefab;
+        }
+    }
+
+    public void AddBuff(string buffID)
+    {
+        if (activeBuffs.Contains(buffID))
+        {
+            return;
+        }
+
+        activeBuffs.Add(buffID);
     }
 }
 
