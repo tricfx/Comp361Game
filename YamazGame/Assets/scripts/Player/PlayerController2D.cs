@@ -9,9 +9,9 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private PlayerActions actions;
 
     [Header("Move")]
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float accel = 60f;
-    [SerializeField] private float decel = 120f; // higher = slower to stop
+    [SerializeField] public float moveSpeed = 10f;
+    [SerializeField] public float accel = 60f;
+    [SerializeField] public float decel = 120f; // higher = slower to stop
 
     [Header("Dash")]
     [SerializeField] private float dashSpeed = 20f;
@@ -63,6 +63,13 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update()
     {
+        // Block movement during dialogue
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            anim?.SetSpeed(0f);
+            return;
+        }
+
         Vector2 move = input.Move;
 
         // Update last direction for facing (SNAP to cardinal to avoid wrong flashes)
@@ -110,6 +117,14 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Stop physics during dialogue
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            rb.linearVelocity = Vector2.zero;
+            velocity = Vector2.zero;
+            return;
+        }
+
         if (isDashing)
         {
             rb.linearVelocity = lastAimDir * dashSpeed;

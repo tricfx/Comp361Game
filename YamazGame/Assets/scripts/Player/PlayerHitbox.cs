@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHitbox : MonoBehaviour
 {
-    [SerializeField] private int attackDamage = 10;
+    [SerializeField] public int attackDamage = 10;
     [SerializeField] private PlayerActions playerActions;
 
     private void Awake()

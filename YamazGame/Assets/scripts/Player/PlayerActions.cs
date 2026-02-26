@@ -6,10 +6,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private PlayerInputHandler input;
     [SerializeField] private PlayerAnimatorController anim;
     [SerializeField] private PlayerController2D controller;
-    [SerializeField] private Player player;
 
     [Header("Attack Combo")]
-    [SerializeField] private float comboWindow = 0.45f;         // Strict 0.45s window to combo
+    [SerializeField] private float comboWindow = 0.45f;
 
     private int comboStep = 0;
     private float lastAttackTime = -999f;
@@ -26,51 +25,52 @@ public class PlayerActions : MonoBehaviour
     private float lastAbilityQ = -Mathf.Infinity;
     private float lastAbilityE = -Mathf.Infinity;
 
+    [Header("Abilities")]
+    private IAbility abilityQ;
+    private IAbility abilityE;
+
     private void Awake()
     {
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
-        if (!player) player = GetComponent<Player>();
     }
 
     private void Update()
     {
+        // Block all actions during dialogue
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+            return;
+
         if (Input.GetKeyDown(KeyCode.H))
-        {
             GetComponent<PlayerHealth>()?.TakeDamage(10);
-        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+            GetComponent<PlayerHealth>()?.TakeDamage(100);
+
         if (controller && controller.IsDashing)
             return;
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            GetComponent<PlayerHealth>()?.TakeDamage(100);
-        }
-
-        // Check if combo window expired - RESET if too late
+        // Check if combo window expired
         if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)
-        {
             ResetCombo();
-        }
 
         if (input.AttackPressed)
-        {
             PerformAttack();
-        }
 
         if (input.QPressed && Time.time >= lastAbilityQ + abilityQCooldown)
         {
             lastAbilityQ = Time.time;
-            player?.UseAbilityQ();
+            abilityQ?.Do();
         }
 
         if (input.EPressed && Time.time >= lastAbilityE + abilityECooldown)
         {
             lastAbilityE = Time.time;
-            player?.UseAbilityE();
+            abilityE?.Do();
         }
     }
+
     public float DashCooldownNormalized
     {
         get
@@ -103,34 +103,19 @@ public class PlayerActions : MonoBehaviour
 
     private void PerformAttack()
     {
-        // Check if trying to attack outside combo window
         if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)
-        {
-
             ResetCombo();
-        }
 
-        // Only attack if we're ready for the next combo step
         if (!canCombo && comboStep > 0)
-        {
-
             return;
-        }
 
-        // Increment combo
         lastAttackTime = Time.time;
         comboStep++;
 
         if (comboStep > 3)
-        {
             comboStep = 1;
-        }
 
-        // Trigger the appropriate attack
         anim?.TriggerAttackCombo(comboStep);
-
-
-        // Can't combo again until delay passes
         canCombo = false;
     }
 
@@ -139,12 +124,48 @@ public class PlayerActions : MonoBehaviour
         comboStep = 0;
         canCombo = false;
         anim?.ResetAttackStep();
-
     }
 
     public void AllowNextCombo()
     {
         canCombo = true;
+    }
+
+    // Equip an ability into the first free slot (Q then E)
+    public void TryEquipAbility(AbilityCard card)
+    {
+        if (abilityQ == null)
+        {
+            // TODO: instantiate and assign card.abilityPrefab as abilityQ
+            Debug.Log($"Equipped {card.abilityID} to Q slot");
+            return;
+        }
+        else if (abilityE == null)
+        {
+            // TODO: instantiate and assign card.abilityPrefab as abilityE
+            Debug.Log($"Equipped {card.abilityID} to E slot");
+            return;
+        }
+        else
+        {
+            Debug.Log("Both ability slots full — replacement UI needed");
+            // TODO: prompt player to replace Q or E
+        }
+    }
+
+    // Replace a specific slot
+    public void ReplaceAbilitySlot(bool replaceQ, AbilityCard card)
+    {
+        if (replaceQ)
+        {
+            // TODO: instantiate and assign card.abilityPrefab as abilityQ
+            Debug.Log($"Replaced Q slot with {card.abilityID}");
+        }
+        else
+        {
+            // TODO: instantiate and assign card.abilityPrefab as abilityE
+            Debug.Log($"Replaced E slot with {card.abilityID}");
+        }
     }
 }
 
