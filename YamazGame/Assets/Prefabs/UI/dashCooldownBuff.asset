@@ -16,8 +16,9 @@ MonoBehaviour:
   cardName: Instant Reprieve
   cardDescription: ' Lower character dash cooldown by 0.5 seconds '
   icon: {fileID: -5595748233500887021, guid: 87ba546580d9a0c44a83a0bde4884bca, type: 3}
+  dependency: 
   type: 0
-  buffID: 4
+  buffID: Cooldown
   bonusDamage: 0
   bonusHealth: 0
   bonusSpeed: 0

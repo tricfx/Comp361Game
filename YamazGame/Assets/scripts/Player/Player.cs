@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public IAbility abilityQ;
     public IAbility abilityE;
     // tune these in inspector if cooldowns feel wrong
+    // tune these in inspector if cooldowns feel wrongad
     [Tooltip("Cooldown in seconds for Q ability")]
     public float abilityQCooldown = 3f;
     [Tooltip("Cooldown in seconds for E ability")]

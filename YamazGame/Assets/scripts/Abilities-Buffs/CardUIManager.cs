@@ -60,13 +60,25 @@ public class CardUIManager : MonoBehaviour
                     continue;
                 }
             }
-            
+
             if (!currentRewards.Contains(reward) && !player.activeBuffs.Contains(reward.cardID))
                 currentRewards.Add(reward);
             rolls++;
             if (rolls == 200) {
                 break;
             }
+        }
+
+        if (currentRewards.Count == 0)
+        {
+            Debug.LogWarning("No valid rewards available to roll.");
+            return; // or disable reward UI / show message
+        }
+        int fillIndex = 0;
+        while (currentRewards.Count < 3)
+        {
+            currentRewards.Add(currentRewards[fillIndex % currentRewards.Count]);
+            fillIndex++;
         }
 
         for (int i = 0; i < currentRewards.Count; i++)
