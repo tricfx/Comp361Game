@@ -61,6 +61,8 @@ public class DialogueManager : MonoBehaviour
     private bool videoPrepared = false;
     public bool IsShopTransitioning => openShopCo != null || closeShopCo != null;
 
+    public GameObject interactPrompt;
+
 
     public bool isDialogueActive { get; private set; }
 
@@ -123,6 +125,7 @@ public class DialogueManager : MonoBehaviour
 
     private void BeginSession()
     {
+        interactPrompt.SetActive(false);
         if (!dialogueWasVisible && uiSfxSource != null && dialogueOpenSfx != null)
             uiSfxSource.PlayOneShot(dialogueOpenSfx);
 
@@ -230,6 +233,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        interactPrompt.SetActive(true);
         isDialogueActive = false;
         if (uiSfxSource != null && dialogueCloseSfx != null)
             uiSfxSource.PlayOneShot(dialogueCloseSfx);
