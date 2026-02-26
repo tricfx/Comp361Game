@@ -20,7 +20,7 @@ MonoBehaviour:
   type: 0
   buffID: heal3
   bonusDamage: 0
-  bonusHealth: 40
+  bonusHealth: 60
   bonusSpeed: 0
   dashCooldownDecrease: 0
   bonusDashRange: 0

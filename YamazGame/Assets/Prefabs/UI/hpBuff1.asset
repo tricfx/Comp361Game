@@ -20,7 +20,7 @@ MonoBehaviour:
   type: 0
   buffID: heal1
   bonusDamage: 0
-  bonusHealth: 0
+  bonusHealth: 10
   bonusSpeed: 0
   dashCooldownDecrease: 0
   bonusDashRange: 0

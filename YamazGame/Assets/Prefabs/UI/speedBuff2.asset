@@ -15,7 +15,7 @@ MonoBehaviour:
   cardID: speed2
   cardName: Tengu Haste
   cardDescription: Increase character speed by 4 points
-  icon: {fileID: -8063460933723396871, guid: a29c753d91eaa3e4da5c3e8a745e45f9, type: 3}
+  icon: {fileID: -3076839270327766027, guid: 79928fa6e527fb14895b1affa5e6009c, type: 3}
   dependency: speed1
   type: 0
   buffID: speed2

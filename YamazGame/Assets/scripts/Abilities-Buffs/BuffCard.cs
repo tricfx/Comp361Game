@@ -16,7 +16,7 @@ public class BuffCard : Card
         //this is an example idk what we want yet
         player.attackDamage += bonusDamage;
         player.maxHP += bonusHealth;
-        player.dashDuration -= dashCooldownDecrease;
+        player.dashCooldown -= dashCooldownDecrease;
         player.speed += bonusSpeed;
         player.AddBuff(buffID);
         
