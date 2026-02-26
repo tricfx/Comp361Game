@@ -10,5 +10,5 @@ public abstract class Card : ScriptableObject
 
     public CardType type;
 
-    public abstract void Apply(Player player);
+    public abstract void Apply(GameObject playerObject);
 }

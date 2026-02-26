@@ -6,8 +6,12 @@ public class AbilityCard : Card
     public string abilityID;
     public GameObject abilityPrefab;
 
-    public override void Apply(Player player)
+    public override void Apply(GameObject playerObject)
     {
-        player.TryEquipAbility(this);
+        var actions = playerObject.GetComponent<PlayerActions>();
+        if (actions != null)
+            actions.TryEquipAbility(this);
+        else
+            Debug.LogWarning("AbilityCard: No PlayerActions found on player object.");
     }
 }

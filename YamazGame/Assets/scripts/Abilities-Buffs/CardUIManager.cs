@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public class CardUIManager : MonoBehaviour
 {
@@ -11,7 +10,9 @@ public class CardUIManager : MonoBehaviour
     public CardUI[] cardSlots;
     public GameObject rewardPanel;
 
-    public Player player;
+    public GameObject player; // Assign the player GameObject in the Inspector
+    private PlayerBuffs playerBuffs;
+
     private List<Card> currentRewards = new();
 
     void Awake()
@@ -23,8 +24,13 @@ public class CardUIManager : MonoBehaviour
         }
 
         Instance = this;
-
         DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        if (player != null)
+            playerBuffs = player.GetComponent<PlayerBuffs>();
     }
 
     void Update()
@@ -35,45 +41,49 @@ public class CardUIManager : MonoBehaviour
         }
     }
 
-
     public void OpenRewardScreen()
     {
         Roll3Rewards();
         rewardPanel.SetActive(true);
-        Time.timeScale = 0f; // Pause the game while the reward screen is open
-
-        
+        Time.timeScale = 0f;
     }
 
     public void Roll3Rewards()
     {
         currentRewards.Clear();
         int rolls = 0;
+
         while (currentRewards.Count < 3)
         {
             Card reward = rewardDatabase.GetRandomReward();
-            
-            string depedency = reward.dependency;
-            if (depedency != "")
+
+            // Check dependency
+            string dependency = reward.dependency;
+            if (dependency != "" && (playerBuffs == null || !playerBuffs.HasBuff(dependency)))
             {
-                if (!player.activeBuffs.Contains(depedency)) {
-                    continue;
-                }
+                rolls++;
+                if (rolls >= 200) break;
+                continue;
             }
 
-            if (!currentRewards.Contains(reward) && !player.activeBuffs.Contains(reward.cardID))
+            // No duplicates and not already owned
+            if (!currentRewards.Contains(reward) &&
+                (playerBuffs == null || !playerBuffs.HasBuff(reward.cardID)))
+            {
                 currentRewards.Add(reward);
-            rolls++;
-            if (rolls == 200) {
-                break;
             }
+
+            rolls++;
+            if (rolls >= 200) break;
         }
 
         if (currentRewards.Count == 0)
         {
             Debug.LogWarning("No valid rewards available to roll.");
-            return; // or disable reward UI / show message
+            return;
         }
+
+        // Fill remaining slots if fewer than 3 unique rewards exist
         int fillIndex = 0;
         while (currentRewards.Count < 3)
         {
@@ -81,7 +91,7 @@ public class CardUIManager : MonoBehaviour
             fillIndex++;
         }
 
-        for (int i = 0; i < currentRewards.Count; i++)
+        for (int i = 0; i < cardSlots.Length; i++)
         {
             cardSlots[i].Setup(currentRewards[i]);
         }
@@ -91,6 +101,6 @@ public class CardUIManager : MonoBehaviour
     {
         reward.Apply(player);
         rewardPanel.SetActive(false);
-        Time.timeScale = 1f; // Resume the game after selecting a reward
+        Time.timeScale = 1f;
     }
 }
