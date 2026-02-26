@@ -1,0 +1,2847 @@
+fileFormatVersion: 2
+guid: 97387b5b7914840a8af3c6db924f3922
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9109216204637914578
+    second: AtelierMagicae_GemsMineralsFreebsVol1__0
+  - first:
+      213: 8292052474946665433
+    second: AtelierMagicae_GemsMineralsFreebsVol1__1
+  - first:
+      213: -5601589948376843138
+    second: AtelierMagicae_GemsMineralsFreebsVol1__2
+  - first:
+      213: 4236462995582098681
+    second: AtelierMagicae_GemsMineralsFreebsVol1__3
+  - first:
+      213: -3029041644672386096
+    second: AtelierMagicae_GemsMineralsFreebsVol1__4
+  - first:
+      213: -5918887310809152935
+    second: AtelierMagicae_GemsMineralsFreebsVol1__5
+  - first:
+      213: -2351271400250006365
+    second: AtelierMagicae_GemsMineralsFreebsVol1__6
+  - first:
+      213: -3829402804533413197
+    second: AtelierMagicae_GemsMineralsFreebsVol1__7
+  - first:
+      213: -976114453107383336
+    second: AtelierMagicae_GemsMineralsFreebsVol1__8
+  - first:
+      213: -95971212511479924
+    second: AtelierMagicae_GemsMineralsFreebsVol1__9
+  - first:
+      213: 656476598097085049
+    second: AtelierMagicae_GemsMineralsFreebsVol1__10
+  - first:
+      213: -3757095204432002898
+    second: AtelierMagicae_GemsMineralsFreebsVol1__11
+  - first:
+      213: 9028764550730435131
+    second: AtelierMagicae_GemsMineralsFreebsVol1__12
+  - first:
+      213: 8311780246766157514
+    second: AtelierMagicae_GemsMineralsFreebsVol1__13
+  - first:
+      213: 4914939432305091122
+    second: AtelierMagicae_GemsMineralsFreebsVol1__14
+  - first:
+      213: -6484489850956761651
+    second: AtelierMagicae_GemsMineralsFreebsVol1__15
+  - first:
+      213: 8552180261834488242
+    second: AtelierMagicae_GemsMineralsFreebsVol1__16
+  - first:
+      213: 6534925959437217952
+    second: AtelierMagicae_GemsMineralsFreebsVol1__17
+  - first:
+      213: 5890046538234924252
+    second: AtelierMagicae_GemsMineralsFreebsVol1__18
+  - first:
+      213: 605392828049154272
+    second: AtelierMagicae_GemsMineralsFreebsVol1__19
+  - first:
+      213: -2759159442213484236
+    second: AtelierMagicae_GemsMineralsFreebsVol1__20
+  - first:
+      213: -496713229036736285
+    second: AtelierMagicae_GemsMineralsFreebsVol1__21
+  - first:
+      213: 6726741740535496716
+    second: AtelierMagicae_GemsMineralsFreebsVol1__22
+  - first:
+      213: 10847524156754361
+    second: AtelierMagicae_GemsMineralsFreebsVol1__23
+  - first:
+      213: 7880660459699031178
+    second: AtelierMagicae_GemsMineralsFreebsVol1__24
+  - first:
+      213: -204280971070168108
+    second: AtelierMagicae_GemsMineralsFreebsVol1__25
+  - first:
+      213: 3012304545359358778
+    second: AtelierMagicae_GemsMineralsFreebsVol1__26
+  - first:
+      213: 4913103287226894805
+    second: AtelierMagicae_GemsMineralsFreebsVol1__27
+  - first:
+      213: -2958837271615589628
+    second: AtelierMagicae_GemsMineralsFreebsVol1__28
+  - first:
+      213: -6280182321064932629
+    second: AtelierMagicae_GemsMineralsFreebsVol1__29
+  - first:
+      213: 8132464702533390959
+    second: AtelierMagicae_GemsMineralsFreebsVol1__30
+  - first:
+      213: 4089533681806978516
+    second: AtelierMagicae_GemsMineralsFreebsVol1__31
+  - first:
+      213: 2364703866177762482
+    second: AtelierMagicae_GemsMineralsFreebsVol1__32
+  - first:
+      213: 7573482751022510890
+    second: AtelierMagicae_GemsMineralsFreebsVol1__33
+  - first:
+      213: -8200693460419670343
+    second: AtelierMagicae_GemsMineralsFreebsVol1__34
+  - first:
+      213: 8717063762109410142
+    second: AtelierMagicae_GemsMineralsFreebsVol1__35
+  - first:
+      213: -8766216581981702049
+    second: AtelierMagicae_GemsMineralsFreebsVol1__36
+  - first:
+      213: 3239351880509681437
+    second: AtelierMagicae_GemsMineralsFreebsVol1__37
+  - first:
+      213: -6980108351241519130
+    second: AtelierMagicae_GemsMineralsFreebsVol1__38
+  - first:
+      213: -594853033172674133
+    second: AtelierMagicae_GemsMineralsFreebsVol1__39
+  - first:
+      213: -5625877521873245790
+    second: AtelierMagicae_GemsMineralsFreebsVol1__40
+  - first:
+      213: -4306343455372508922
+    second: AtelierMagicae_GemsMineralsFreebsVol1__41
+  - first:
+      213: -5781789042609299452
+    second: AtelierMagicae_GemsMineralsFreebsVol1__42
+  - first:
+      213: 749189536286965159
+    second: AtelierMagicae_GemsMineralsFreebsVol1__43
+  - first:
+      213: -5168972415484093256
+    second: AtelierMagicae_GemsMineralsFreebsVol1__44
+  - first:
+      213: 2536851330645898432
+    second: AtelierMagicae_GemsMineralsFreebsVol1__45
+  - first:
+      213: 536661186863589742
+    second: AtelierMagicae_GemsMineralsFreebsVol1__46
+  - first:
+      213: -3564294323997271070
+    second: AtelierMagicae_GemsMineralsFreebsVol1__47
+  - first:
+      213: 9077873653095138936
+    second: AtelierMagicae_GemsMineralsFreebsVol1__48
+  - first:
+      213: -5058066286635681589
+    second: AtelierMagicae_GemsMineralsFreebsVol1__49
+  - first:
+      213: 6826073919940267474
+    second: AtelierMagicae_GemsMineralsFreebsVol1__50
+  - first:
+      213: -2562349909929258458
+    second: AtelierMagicae_GemsMineralsFreebsVol1__51
+  - first:
+      213: -4196741673401800189
+    second: AtelierMagicae_GemsMineralsFreebsVol1__52
+  - first:
+      213: -4525808478863651386
+    second: AtelierMagicae_GemsMineralsFreebsVol1__53
+  - first:
+      213: 4123492760058584922
+    second: AtelierMagicae_GemsMineralsFreebsVol1__54
+  - first:
+      213: -4438447222884036280
+    second: AtelierMagicae_GemsMineralsFreebsVol1__55
+  - first:
+      213: -39558523911300930
+    second: AtelierMagicae_GemsMineralsFreebsVol1__56
+  - first:
+      213: -1182603629045508729
+    second: AtelierMagicae_GemsMineralsFreebsVol1__57
+  - first:
+      213: 280233393617029686
+    second: AtelierMagicae_GemsMineralsFreebsVol1__58
+  - first:
+      213: 2183042208528206875
+    second: AtelierMagicae_GemsMineralsFreebsVol1__59
+  - first:
+      213: 7891937675917055510
+    second: AtelierMagicae_GemsMineralsFreebsVol1__60
+  - first:
+      213: -2200014186930001382
+    second: AtelierMagicae_GemsMineralsFreebsVol1__61
+  - first:
+      213: 5099518974518212238
+    second: AtelierMagicae_GemsMineralsFreebsVol1__62
+  - first:
+      213: 334007066364997154
+    second: AtelierMagicae_GemsMineralsFreebsVol1__63
+  - first:
+      213: -4818281218594021468
+    second: AtelierMagicae_GemsMineralsFreebsVol1__64
+  - first:
+      213: -44371444287241467
+    second: AtelierMagicae_GemsMineralsFreebsVol1__65
+  - first:
+      213: 3076750002734173812
+    second: AtelierMagicae_GemsMineralsFreebsVol1__66
+  - first:
+      213: -5454278641624289419
+    second: AtelierMagicae_GemsMineralsFreebsVol1__67
+  - first:
+      213: 6504037976657978827
+    second: AtelierMagicae_GemsMineralsFreebsVol1__68
+  - first:
+      213: -4909040701156962944
+    second: AtelierMagicae_GemsMineralsFreebsVol1__69
+  - first:
+      213: 4520518834360384373
+    second: AtelierMagicae_GemsMineralsFreebsVol1__70
+  - first:
+      213: -3919661390264444665
+    second: AtelierMagicae_GemsMineralsFreebsVol1__71
+  - first:
+      213: 5347260951225994441
+    second: AtelierMagicae_GemsMineralsFreebsVol1__72
+  - first:
+      213: 5811906903288140403
+    second: AtelierMagicae_GemsMineralsFreebsVol1__73
+  - first:
+      213: -4129001333868918657
+    second: AtelierMagicae_GemsMineralsFreebsVol1__74
+  - first:
+      213: -6575885370612977108
+    second: AtelierMagicae_GemsMineralsFreebsVol1__75
+  - first:
+      213: -775126343067770499
+    second: AtelierMagicae_GemsMineralsFreebsVol1__76
+  - first:
+      213: -5762221112750085325
+    second: AtelierMagicae_GemsMineralsFreebsVol1__77
+  - first:
+      213: -4001130214497280424
+    second: AtelierMagicae_GemsMineralsFreebsVol1__78
+  - first:
+      213: -1397902879656506226
+    second: AtelierMagicae_GemsMineralsFreebsVol1__79
+  - first:
+      213: 6315655045944954984
+    second: AtelierMagicae_GemsMineralsFreebsVol1__80
+  - first:
+      213: -1368541386919881946
+    second: AtelierMagicae_GemsMineralsFreebsVol1__81
+  - first:
+      213: -9134204244169966836
+    second: AtelierMagicae_GemsMineralsFreebsVol1__82
+  - first:
+      213: 1320777020130526702
+    second: AtelierMagicae_GemsMineralsFreebsVol1__83
+  - first:
+      213: 8568246401202442713
+    second: AtelierMagicae_GemsMineralsFreebsVol1__84
+  - first:
+      213: 935065561342406915
+    second: AtelierMagicae_GemsMineralsFreebsVol1__85
+  - first:
+      213: 3619665354365059163
+    second: AtelierMagicae_GemsMineralsFreebsVol1__86
+  - first:
+      213: -1278691197277695708
+    second: AtelierMagicae_GemsMineralsFreebsVol1__87
+  - first:
+      213: -3738779518575838185
+    second: AtelierMagicae_GemsMineralsFreebsVol1__88
+  - first:
+      213: -1722378362367473530
+    second: AtelierMagicae_GemsMineralsFreebsVol1__89
+  - first:
+      213: 2621565178448408981
+    second: AtelierMagicae_GemsMineralsFreebsVol1__90
+  - first:
+      213: 6155032943884397203
+    second: AtelierMagicae_GemsMineralsFreebsVol1__91
+  - first:
+      213: 6205167437427126227
+    second: AtelierMagicae_GemsMineralsFreebsVol1__92
+  - first:
+      213: -6794665892474687803
+    second: AtelierMagicae_GemsMineralsFreebsVol1__93
+  - first:
+      213: 5237457863217142162
+    second: AtelierMagicae_GemsMineralsFreebsVol1__94
+  - first:
+      213: 4172372218333432347
+    second: AtelierMagicae_GemsMineralsFreebsVol1__95
+  - first:
+      213: -8879005385941381574
+    second: AtelierMagicae_GemsMineralsFreebsVol1__96
+  - first:
+      213: -1703546506135838062
+    second: AtelierMagicae_GemsMineralsFreebsVol1__97
+  - first:
+      213: 1156627434160811944
+    second: AtelierMagicae_GemsMineralsFreebsVol1__98
+  - first:
+      213: 7757688570592672730
+    second: AtelierMagicae_GemsMineralsFreebsVol1__99
+  - first:
+      213: -7956600210469526230
+    second: AtelierMagicae_GemsMineralsFreebsVol1__100
+  - first:
+      213: 3488104753389493478
+    second: AtelierMagicae_GemsMineralsFreebsVol1__101
+  - first:
+      213: -4798160869728040197
+    second: AtelierMagicae_GemsMineralsFreebsVol1__102
+  - first:
+      213: -8464849814509229261
+    second: AtelierMagicae_GemsMineralsFreebsVol1__103
+  - first:
+      213: 7991706367723359553
+    second: AtelierMagicae_GemsMineralsFreebsVol1__104
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 737
+        width: 325
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5ccab10ef6a6e70800000000000000
+      internalID: 9109216204637914578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 644
+        width: 49
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db3814fac9431370800000000000000
+      internalID: 8292052474946665433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 644
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c7995de972342b0800000000000000
+      internalID: -5601589948376843138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 642
+        width: 25
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fc12c316a0faca30800000000000000
+      internalID: 4236462995582098681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__4
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 643
+        width: 25
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbff673caea6f5d0800000000000000
+      internalID: -3029041644672386096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 643
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95247a5b953ebdda0800000000000000
+      internalID: -5918887310809152935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 643
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a420997e1b9e5fd0800000000000000
+      internalID: -2351271400250006365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 644
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bab6e5307a3bdac0800000000000000
+      internalID: -3829402804533413197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__8
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 643
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3e86a93152472f0800000000000000
+      internalID: -976114453107383336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__9
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 646
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87f691d0ba0baef0800000000000000
+      internalID: -95971212511479924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__10
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 651
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9720fe0ecf54c1900800000000000000
+      internalID: 656476598097085049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 583
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0c18841dd1cdbc0800000000000000
+      internalID: -3757095204432002898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 580
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a4deeb58d9c4d70800000000000000
+      internalID: 9028764550730435131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 580
+        width: 45
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acefa93c810695370800000000000000
+      internalID: 8311780246766157514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__14
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 580
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232ea1b8f5f553440800000000000000
+      internalID: 4914939432305091122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__15
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 580
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5b81c36d67206a0800000000000000
+      internalID: -6484489850956761651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__16
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 580
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b970c103a27fa670800000000000000
+      internalID: 8552180261834488242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__17
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 579
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0fbbd5988b0ba50800000000000000
+      internalID: 6534925959437217952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__18
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 578
+        width: 55
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc0306ae16adb150800000000000000
+      internalID: 5890046538234924252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__19
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 588
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e06071d199c66800800000000000000
+      internalID: 605392828049154272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__20
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 583
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43943302b1f75b9d0800000000000000
+      internalID: -2759159442213484236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__21
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 515
+        width: 18
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0370c23f15b19f0800000000000000
+      internalID: -496713229036736285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__22
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 520
+        width: 50
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c00496429ff2a5d50800000000000000
+      internalID: 6726741740535496716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__23
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 520
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b94e0804c9862000800000000000000
+      internalID: 10847524156754361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__24
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 517
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cc3df3feabd5d60800000000000000
+      internalID: 7880660459699031178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__25
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 514
+        width: 55
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d3adf40a8f3a2df0800000000000000
+      internalID: -204280971070168108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__26
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 519
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b607d260bddc920800000000000000
+      internalID: 3012304545359358778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__27
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 528
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d986f3b869de2440800000000000000
+      internalID: 4913103287226894805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__28
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 522
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403ba259d2910f6d0800000000000000
+      internalID: -2958837271615589628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__29
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 532
+        width: 45
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea8c3ce37f48d8a0800000000000000
+      internalID: -6280182321064932629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__30
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 517
+        width: 49
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62d7ee2f815cd070800000000000000
+      internalID: 8132464702533390959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__31
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 456
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dda9116731f0c830800000000000000
+      internalID: 4089533681806978516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__32
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 460
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4b48633ad11d020800000000000000
+      internalID: 2364703866177762482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__33
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 458
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23be3f9f6a6a1960800000000000000
+      internalID: 7573482751022510890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__34
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 451
+        width: 50
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be01d33fb8413e80800000000000000
+      internalID: -8200693460419670343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__35
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 455
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b26f08e4b39f870800000000000000
+      internalID: 8717063762109410142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__36
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 454
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5877dec674285680800000000000000
+      internalID: -8766216581981702049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__37
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 472
+        width: 44
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1fe54c5f5d74fc20800000000000000
+      internalID: 3239351880509681437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__38
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 468
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eff28ecf6ca12f90800000000000000
+      internalID: -6980108351241519130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__39
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 451
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9dd286158aeb7f0800000000000000
+      internalID: -594853033172674133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__40
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 457
+        width: 21
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9e3e6733edce1b0800000000000000
+      internalID: -5625877521873245790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__41
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 401
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60181bd717bcc34c0800000000000000
+      internalID: -4306343455372508922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__42
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 404
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400e60dbf75f2cfa0800000000000000
+      internalID: -5781789042609299452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__43
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 393
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adf2d3f9e7a56a00800000000000000
+      internalID: 749189536286965159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__44
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 388
+        width: 51
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc174979fe1448b0800000000000000
+      internalID: -5168972415484093256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__45
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 388
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4302b28d4b43320800000000000000
+      internalID: 2536851330645898432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__46
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 390
+        width: 47
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e696ebf818a927700800000000000000
+      internalID: 536661186863589742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__47
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 391
+        width: 51
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb933f5235198ec0800000000000000
+      internalID: -3564294323997271070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__48
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 395
+        width: 52
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8760d98adf51bfd70800000000000000
+      internalID: 9077873653095138936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__49
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 386
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc873b6d2832ec9b0800000000000000
+      internalID: -5058066286635681589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__50
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 388
+        width: 45
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd099860161bbe50800000000000000
+      internalID: 6826073919940267474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__51
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 340
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62299643554b07cd0800000000000000
+      internalID: -2562349909929258458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__52
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 340
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30aaeceeead22c5c0800000000000000
+      internalID: -4196741673401800189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__53
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 340
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd81efca291131c0800000000000000
+      internalID: -4525808478863651386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__54
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 337
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5fdf2d61d6993930800000000000000
+      internalID: 4123492760058584922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__55
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 330
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8419da544c77762c0800000000000000
+      internalID: -4438447222884036280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__56
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 332
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb89d6a6bb5737ff0800000000000000
+      internalID: -39558523911300930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__57
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 329
+        width: 35
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78597acd34c869fe0800000000000000
+      internalID: -1182603629045508729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__58
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 321
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63aceb869c693e300800000000000000
+      internalID: 280233393617029686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__59
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 334
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c02098259bb4e10800000000000000
+      internalID: 2183042208528206875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__60
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 331
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616de82c08bc58d60800000000000000
+      internalID: 7891937675917055510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__61
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 268
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1aa73fc0caf771e0800000000000000
+      internalID: -2200014186930001382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__62
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 269
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86b5892d7125c640800000000000000
+      internalID: 5099518974518212238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__63
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 269
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ee72f38a1a2a400800000000000000
+      internalID: 334007066364997154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__64
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 261
+        width: 63
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af54c192c6022db0800000000000000
+      internalID: -4818281218594021468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__65
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 260
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5038611186c526ff0800000000000000
+      internalID: -44371444287241467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__66
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 255
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e07af73dfc2ba20800000000000000
+      internalID: 3076750002734173812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__67
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 266
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57febf339728e44b0800000000000000
+      internalID: -5454278641624289419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__68
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 264
+        width: 18
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc56954741cf24a50800000000000000
+      internalID: 6504037976657978827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__69
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 265
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08dca93dd759fdbb0800000000000000
+      internalID: -4909040701156962944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__70
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 266
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b738addeb1cbe30800000000000000
+      internalID: 4520518834360384373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__71
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 206
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70959799bb09a99c0800000000000000
+      internalID: -3919661390264444665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__72
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 197
+        width: 63
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc842f0189453a40800000000000000
+      internalID: 5347260951225994441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__73
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 202
+        width: 56
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3725126298a08a050800000000000000
+      internalID: 5811906903288140403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__74
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 196
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7801a9c927d2b6c0800000000000000
+      internalID: -4129001333868918657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__75
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 198
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22fce09813cdb4a0800000000000000
+      internalID: -6575885370612977108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__76
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 193
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71e561a2b23e35f0800000000000000
+      internalID: -775126343067770499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__77
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 196
+        width: 49
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b66417d6a7800b0800000000000000
+      internalID: -5762221112750085325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__78
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 195
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e9ec0d4412978c0800000000000000
+      internalID: -4001130214497280424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__79
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 204
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c0493ccb6a99ce0800000000000000
+      internalID: -1397902879656506226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__80
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 200
+        width: 18
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860d3717dc6b5a750800000000000000
+      internalID: 6315655045944954984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__81
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 142
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62358340cd6f10de0800000000000000
+      internalID: -1368541386919881946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__82
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 132
+        width: 46
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b326092a9cc3180800000000000000
+      internalID: -9134204244169966836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__83
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 134
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee50168b3b7545210800000000000000
+      internalID: 1320777020130526702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__84
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 132
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d1d0b394b688e670800000000000000
+      internalID: 8568246401202442713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__85
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 132
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301f3818c250afc00800000000000000
+      internalID: 935065561342406915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__86
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 134
+        width: 39
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50c7b44672ab3230800000000000000
+      internalID: 3619665354365059163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__87
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 130
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42118d0812d214ee0800000000000000
+      internalID: -1278691197277695708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__88
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 122
+        width: 35
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71cf7c536df2d1cc0800000000000000
+      internalID: -3738779518575838185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__89
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 138
+        width: 21
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68884464102e818e0800000000000000
+      internalID: -1722378362367473530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__90
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 144
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59173f0e3aba16420800000000000000
+      internalID: 2621565178448408981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__91
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 78
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a6e090ad11b6550800000000000000
+      internalID: 6155032943884397203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__92
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 80
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df2aaf68ee2d1650800000000000000
+      internalID: 6205167437427126227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__93
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 77
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce6597de5f74b1a0800000000000000
+      internalID: -6794665892474687803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__94
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 81
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29952276d203fa840800000000000000
+      internalID: 5237457863217142162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__95
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 74
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a09782d6e37e930800000000000000
+      internalID: 4172372218333432347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__96
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 77
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e0f2cf4af67c480800000000000000
+      internalID: -8879005385941381574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__97
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 79
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2926a6b7a79cb58e0800000000000000
+      internalID: -1703546506135838062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__98
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 76
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af60a6f58a2d0010800000000000000
+      internalID: 1156627434160811944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__99
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 76
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbb84827a8d8ab60800000000000000
+      internalID: 7757688570592672730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__100
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 77
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a256a23b34a749190800000000000000
+      internalID: -7956600210469526230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__101
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 328
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecd12ddacc386030800000000000000
+      internalID: 3488104753389493478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__102
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 20
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa4ea85c12896db0800000000000000
+      internalID: -4798160869728040197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__103
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 20
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b652141ffc68a80800000000000000
+      internalID: -8464849814509229261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtelierMagicae_GemsMineralsFreebsVol1__104
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 20
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14dc06d799e38ee60800000000000000
+      internalID: 7991706367723359553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AtelierMagicae_GemsMineralsFreebsVol1__0: 9109216204637914578
+      AtelierMagicae_GemsMineralsFreebsVol1__1: 8292052474946665433
+      AtelierMagicae_GemsMineralsFreebsVol1__10: 656476598097085049
+      AtelierMagicae_GemsMineralsFreebsVol1__100: -7956600210469526230
+      AtelierMagicae_GemsMineralsFreebsVol1__101: 3488104753389493478
+      AtelierMagicae_GemsMineralsFreebsVol1__102: -4798160869728040197
+      AtelierMagicae_GemsMineralsFreebsVol1__103: -8464849814509229261
+      AtelierMagicae_GemsMineralsFreebsVol1__104: 7991706367723359553
+      AtelierMagicae_GemsMineralsFreebsVol1__11: -3757095204432002898
+      AtelierMagicae_GemsMineralsFreebsVol1__12: 9028764550730435131
+      AtelierMagicae_GemsMineralsFreebsVol1__13: 8311780246766157514
+      AtelierMagicae_GemsMineralsFreebsVol1__14: 4914939432305091122
+      AtelierMagicae_GemsMineralsFreebsVol1__15: -6484489850956761651
+      AtelierMagicae_GemsMineralsFreebsVol1__16: 8552180261834488242
+      AtelierMagicae_GemsMineralsFreebsVol1__17: 6534925959437217952
+      AtelierMagicae_GemsMineralsFreebsVol1__18: 5890046538234924252
+      AtelierMagicae_GemsMineralsFreebsVol1__19: 605392828049154272
+      AtelierMagicae_GemsMineralsFreebsVol1__2: -5601589948376843138
+      AtelierMagicae_GemsMineralsFreebsVol1__20: -2759159442213484236
+      AtelierMagicae_GemsMineralsFreebsVol1__21: -496713229036736285
+      AtelierMagicae_GemsMineralsFreebsVol1__22: 6726741740535496716
+      AtelierMagicae_GemsMineralsFreebsVol1__23: 10847524156754361
+      AtelierMagicae_GemsMineralsFreebsVol1__24: 7880660459699031178
+      AtelierMagicae_GemsMineralsFreebsVol1__25: -204280971070168108
+      AtelierMagicae_GemsMineralsFreebsVol1__26: 3012304545359358778
+      AtelierMagicae_GemsMineralsFreebsVol1__27: 4913103287226894805
+      AtelierMagicae_GemsMineralsFreebsVol1__28: -2958837271615589628
+      AtelierMagicae_GemsMineralsFreebsVol1__29: -6280182321064932629
+      AtelierMagicae_GemsMineralsFreebsVol1__3: 4236462995582098681
+      AtelierMagicae_GemsMineralsFreebsVol1__30: 8132464702533390959
+      AtelierMagicae_GemsMineralsFreebsVol1__31: 4089533681806978516
+      AtelierMagicae_GemsMineralsFreebsVol1__32: 2364703866177762482
+      AtelierMagicae_GemsMineralsFreebsVol1__33: 7573482751022510890
+      AtelierMagicae_GemsMineralsFreebsVol1__34: -8200693460419670343
+      AtelierMagicae_GemsMineralsFreebsVol1__35: 8717063762109410142
+      AtelierMagicae_GemsMineralsFreebsVol1__36: -8766216581981702049
+      AtelierMagicae_GemsMineralsFreebsVol1__37: 3239351880509681437
+      AtelierMagicae_GemsMineralsFreebsVol1__38: -6980108351241519130
+      AtelierMagicae_GemsMineralsFreebsVol1__39: -594853033172674133
+      AtelierMagicae_GemsMineralsFreebsVol1__4: -3029041644672386096
+      AtelierMagicae_GemsMineralsFreebsVol1__40: -5625877521873245790
+      AtelierMagicae_GemsMineralsFreebsVol1__41: -4306343455372508922
+      AtelierMagicae_GemsMineralsFreebsVol1__42: -5781789042609299452
+      AtelierMagicae_GemsMineralsFreebsVol1__43: 749189536286965159
+      AtelierMagicae_GemsMineralsFreebsVol1__44: -5168972415484093256
+      AtelierMagicae_GemsMineralsFreebsVol1__45: 2536851330645898432
+      AtelierMagicae_GemsMineralsFreebsVol1__46: 536661186863589742
+      AtelierMagicae_GemsMineralsFreebsVol1__47: -3564294323997271070
+      AtelierMagicae_GemsMineralsFreebsVol1__48: 9077873653095138936
+      AtelierMagicae_GemsMineralsFreebsVol1__49: -5058066286635681589
+      AtelierMagicae_GemsMineralsFreebsVol1__5: -5918887310809152935
+      AtelierMagicae_GemsMineralsFreebsVol1__50: 6826073919940267474
+      AtelierMagicae_GemsMineralsFreebsVol1__51: -2562349909929258458
+      AtelierMagicae_GemsMineralsFreebsVol1__52: -4196741673401800189
+      AtelierMagicae_GemsMineralsFreebsVol1__53: -4525808478863651386
+      AtelierMagicae_GemsMineralsFreebsVol1__54: 4123492760058584922
+      AtelierMagicae_GemsMineralsFreebsVol1__55: -4438447222884036280
+      AtelierMagicae_GemsMineralsFreebsVol1__56: -39558523911300930
+      AtelierMagicae_GemsMineralsFreebsVol1__57: -1182603629045508729
+      AtelierMagicae_GemsMineralsFreebsVol1__58: 280233393617029686
+      AtelierMagicae_GemsMineralsFreebsVol1__59: 2183042208528206875
+      AtelierMagicae_GemsMineralsFreebsVol1__6: -2351271400250006365
+      AtelierMagicae_GemsMineralsFreebsVol1__60: 7891937675917055510
+      AtelierMagicae_GemsMineralsFreebsVol1__61: -2200014186930001382
+      AtelierMagicae_GemsMineralsFreebsVol1__62: 5099518974518212238
+      AtelierMagicae_GemsMineralsFreebsVol1__63: 334007066364997154
+      AtelierMagicae_GemsMineralsFreebsVol1__64: -4818281218594021468
+      AtelierMagicae_GemsMineralsFreebsVol1__65: -44371444287241467
+      AtelierMagicae_GemsMineralsFreebsVol1__66: 3076750002734173812
+      AtelierMagicae_GemsMineralsFreebsVol1__67: -5454278641624289419
+      AtelierMagicae_GemsMineralsFreebsVol1__68: 6504037976657978827
+      AtelierMagicae_GemsMineralsFreebsVol1__69: -4909040701156962944
+      AtelierMagicae_GemsMineralsFreebsVol1__7: -3829402804533413197
+      AtelierMagicae_GemsMineralsFreebsVol1__70: 4520518834360384373
+      AtelierMagicae_GemsMineralsFreebsVol1__71: -3919661390264444665
+      AtelierMagicae_GemsMineralsFreebsVol1__72: 5347260951225994441
+      AtelierMagicae_GemsMineralsFreebsVol1__73: 5811906903288140403
+      AtelierMagicae_GemsMineralsFreebsVol1__74: -4129001333868918657
+      AtelierMagicae_GemsMineralsFreebsVol1__75: -6575885370612977108
+      AtelierMagicae_GemsMineralsFreebsVol1__76: -775126343067770499
+      AtelierMagicae_GemsMineralsFreebsVol1__77: -5762221112750085325
+      AtelierMagicae_GemsMineralsFreebsVol1__78: -4001130214497280424
+      AtelierMagicae_GemsMineralsFreebsVol1__79: -1397902879656506226
+      AtelierMagicae_GemsMineralsFreebsVol1__8: -976114453107383336
+      AtelierMagicae_GemsMineralsFreebsVol1__80: 6315655045944954984
+      AtelierMagicae_GemsMineralsFreebsVol1__81: -1368541386919881946
+      AtelierMagicae_GemsMineralsFreebsVol1__82: -9134204244169966836
+      AtelierMagicae_GemsMineralsFreebsVol1__83: 1320777020130526702
+      AtelierMagicae_GemsMineralsFreebsVol1__84: 8568246401202442713
+      AtelierMagicae_GemsMineralsFreebsVol1__85: 935065561342406915
+      AtelierMagicae_GemsMineralsFreebsVol1__86: 3619665354365059163
+      AtelierMagicae_GemsMineralsFreebsVol1__87: -1278691197277695708
+      AtelierMagicae_GemsMineralsFreebsVol1__88: -3738779518575838185
+      AtelierMagicae_GemsMineralsFreebsVol1__89: -1722378362367473530
+      AtelierMagicae_GemsMineralsFreebsVol1__9: -95971212511479924
+      AtelierMagicae_GemsMineralsFreebsVol1__90: 2621565178448408981
+      AtelierMagicae_GemsMineralsFreebsVol1__91: 6155032943884397203
+      AtelierMagicae_GemsMineralsFreebsVol1__92: 6205167437427126227
+      AtelierMagicae_GemsMineralsFreebsVol1__93: -6794665892474687803
+      AtelierMagicae_GemsMineralsFreebsVol1__94: 5237457863217142162
+      AtelierMagicae_GemsMineralsFreebsVol1__95: 4172372218333432347
+      AtelierMagicae_GemsMineralsFreebsVol1__96: -8879005385941381574
+      AtelierMagicae_GemsMineralsFreebsVol1__97: -1703546506135838062
+      AtelierMagicae_GemsMineralsFreebsVol1__98: 1156627434160811944
+      AtelierMagicae_GemsMineralsFreebsVol1__99: 7757688570592672730
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

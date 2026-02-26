@@ -6,6 +6,11 @@ TagManager:
   tags:
   - DamageZone
   - Enemy
+  - PlayerHitbox
+  - PlayerHurtbox
+  - EnemyHurtbox
+  - EnemyHitbox
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
@@ -15,10 +20,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Player
+  - PlayerHurtbox
+  - PlayerHitbox
   - 
   - 
   - 
@@ -57,6 +62,21 @@ TagManager:
     locked: 0
   - name: front wall
     uniqueID: 3077672399
+    locked: 0
+  - name: front wall + 1
+    uniqueID: 980085191
+    locked: 0
+  - name: front wall +2
+    uniqueID: 3756171461
+    locked: 0
+  - name: front wall +3
+    uniqueID: 1630785529
+    locked: 0
+  - name: front wall +4
+    uniqueID: 3281854571
+    locked: 0
+  - name: foreground
+    uniqueID: 3523546293
     locked: 0
   m_RenderingLayers:
   - Default

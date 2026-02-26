@@ -1,47 +1,17 @@
 using UnityEngine;
 
+// Moved content to GemManager
 public class PlayerGems : MonoBehaviour
 {
-    [Header("Gems")]
-    [SerializeField] private int startingGems = 0;
-    private int currentGems;
+    public int CurrentGems => GemManager.Instance.CurrentGems;
 
-    private void Awake()
+    public void RewardGems(int amount)
     {
-        currentGems = startingGems;
+        GemManager.Instance.AddGems(amount);
     }
 
-    public int GetGems()
+    public bool TrySpendGems(int amount)
     {
-        return currentGems;
-    }
-
-    public void AddGems(int amount)
-    {
-        if (amount <= 0) return;
-
-        currentGems += amount;
-        Debug.Log($"Gems added: {amount}. Total gems: {currentGems}");
-    }
-
-    public bool SpendGems(int amount)
-    {
-        if (amount <= 0) return true;
-
-        if (currentGems < amount)
-        {
-            Debug.Log("Not enough gems!");
-            return false;
-        }
-
-        currentGems -= amount;
-        Debug.Log($"Gems spent: {amount}. Remaining gems: {currentGems}");
-        return true;
-    }
-
-    public void SetGems(int amount)
-    {
-        currentGems = Mathf.Max(0, amount);
-        Debug.Log($"Gems set to: {currentGems}");
+        return GemManager.Instance.SpendGems(amount);
     }
 }

@@ -88,23 +88,21 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+        input = collision.GetComponentInParent<PlayerInputHandler>();
+        if (input == null) return;
+
         playerInRange = true;
-        input = collision.GetComponent<PlayerInputHandler>();
-        if (interactPrompt != null)
-        {
-            interactPrompt.SetActive(true);
-            Debug.Log("Prompt enabled: " + interactPrompt.activeSelf);
-        }
+        interactPrompt.SetActive(true);
+        Debug.Log("Prompt enabled: " + interactPrompt.activeSelf);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+
+        if (collision.GetComponentInParent<PlayerInputHandler>() == null) return;
 
         playerInRange = false;
         input = null;
-
         if (interactPrompt != null) interactPrompt.SetActive(false);
     }
 }

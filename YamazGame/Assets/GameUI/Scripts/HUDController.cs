@@ -13,7 +13,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] private AbilitySlotView dashAbilityView;
     [SerializeField] private AbilitySlotView abilityQView;
     [SerializeField] private AbilitySlotView abilityEView;
-    
+    [SerializeField] private BloodSplatterView bloodSplatterView;
 
     [Header("Dialogue & Death")]
     [SerializeField] private CanvasGroup hudCanvasGroup;
@@ -33,7 +33,6 @@ public class HUDController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("HUD sees IsDead: " + playerHealth.IsDead);
         if (playerHealth == null)
         {
             Debug.LogError("HUDController: PlayerHealth reference is NULL.");
@@ -51,6 +50,13 @@ public class HUDController : MonoBehaviour
         if (healthTextView != null)
         {
             healthTextView.SetHealth(
+                playerHealth.CurrentHealth,
+                playerHealth.MaxHealth
+            );
+        }
+        if (bloodSplatterView != null)
+        {
+            bloodSplatterView.SetHealth(
                 playerHealth.CurrentHealth,
                 playerHealth.MaxHealth
             );

@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        SceneManager.LoadScene(targetScene);
         PlayerSpawn.nextSpawn = spawnPosition;
+        SceneManager.LoadScene(targetScene);
     }
 }

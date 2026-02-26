@@ -53,6 +53,9 @@ public class ShopLogic : MonoBehaviour
 
     private void OnEnable()
     {
+        if (playerGems == null)
+            playerGems = FindFirstObjectByType<PlayerGems>();
+
         RefreshUI();
     }
 
@@ -64,7 +67,7 @@ public class ShopLogic : MonoBehaviour
         if (IsPurchased(item)) { RefreshUI(); return; }
         if (totalPurchased >= maxAbilitiesTotal) { RefreshUI(); return; }
 
-        if (!playerGems.SpendGems(item.cost))
+        if (!playerGems.TrySpendGems(item.cost))
         {
             RefreshUI();
             return;
@@ -82,8 +85,13 @@ public class ShopLogic : MonoBehaviour
 
     private void RefreshUI()
     {
+        if (playerGems == null)
+        {
+            Debug.LogWarning("ShopLogic: PlayerGems not found yet.");
+            return;
+        }
         if (gemCountText != null && playerGems != null)
-            gemCountText.text = playerGems.GetGems().ToString();
+            gemCountText.text = playerGems.CurrentGems.ToString();
 
         bool capReached = totalPurchased >= maxAbilitiesTotal;
 
@@ -95,7 +103,7 @@ public class ShopLogic : MonoBehaviour
                 item.costText.text = item.cost.ToString();
 
             bool purchased = IsPurchased(item);
-            bool canAfford = playerGems != null && playerGems.GetGems() >= item.cost;
+            bool canAfford = playerGems != null && playerGems.CurrentGems >= item.cost;
 
             if (item.buyButton != null)
                 item.buyButton.interactable = !purchased && !capReached && canAfford;
@@ -119,6 +127,9 @@ public class ShopLogic : MonoBehaviour
     }
     private bool IsPurchased(Item item)
     {
+        if (item == null || string.IsNullOrEmpty(item.id))
+            return false;
+
         return itemPurchasedFlags.TryGetValue(item.id, out bool v) && v;
     }
 
@@ -127,6 +138,9 @@ public class ShopLogic : MonoBehaviour
 
     private void SetPurchased(string id)
     {
+        if (string.IsNullOrEmpty(id))
+            return;
+
         itemPurchasedFlags[id] = true;
     }
 }
