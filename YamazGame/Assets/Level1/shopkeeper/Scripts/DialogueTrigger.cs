@@ -36,6 +36,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange = false;
     private PlayerInputHandler input;
+    private int playerOverlapCount = 0;
 
     //public void TriggerDialogue()
     //{
@@ -88,21 +89,26 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        input = collision.GetComponentInParent<PlayerInputHandler>();
-        if (input == null) return;
+        var handler = collision.GetComponentInParent<PlayerInputHandler>();
+        if (handler == null) return;
+        input = handler;
+        playerOverlapCount++;
+        playerInRange = playerOverlapCount > 0;
 
-        playerInRange = true;
         interactPrompt.SetActive(true);
-        Debug.Log("Prompt enabled: " + interactPrompt.activeSelf);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        var handler = collision.GetComponentInParent<PlayerInputHandler>();
+        if (handler == null) return;
+        playerOverlapCount = Mathf.Max(0, playerOverlapCount - 1);
+        playerInRange = playerOverlapCount > 0;
 
-        if (collision.GetComponentInParent<PlayerInputHandler>() == null) return;
-
-        playerInRange = false;
-        input = null;
-        if (interactPrompt != null) interactPrompt.SetActive(false);
+        if (!playerInRange)
+        {
+            input = null;
+            interactPrompt.SetActive(false);
+        }
     }
 }
