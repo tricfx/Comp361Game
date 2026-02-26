@@ -16,8 +16,9 @@ MonoBehaviour:
   cardName: Celestial Ruin
   cardDescription: Increase character damage by 30 points
   icon: {fileID: -4508444146662920174, guid: 2d041a853361fbc4ca82ff7e7f2d001f, type: 3}
+  dependency: dmg2
   type: 0
-  buffID: 
+  buffID: dmg3
   bonusDamage: 30
   bonusHealth: 0
   bonusSpeed: 0

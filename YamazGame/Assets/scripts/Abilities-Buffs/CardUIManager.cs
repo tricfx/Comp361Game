@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 public class CardUIManager : MonoBehaviour
 {
@@ -47,16 +48,28 @@ public class CardUIManager : MonoBehaviour
     public void Roll3Rewards()
     {
         currentRewards.Clear();
-
+        int rolls = 0;
         while (currentRewards.Count < 3)
         {
             Card reward = rewardDatabase.GetRandomReward();
-
-            if (!currentRewards.Contains(reward))
+            
+            string depedency = reward.dependency;
+            if (depedency != "")
+            {
+                if (!player.activeBuffs.Contains(depedency)) {
+                    continue;
+                }
+            }
+            
+            if (!currentRewards.Contains(reward) && !player.activeBuffs.Contains(reward.cardID))
                 currentRewards.Add(reward);
+            rolls++;
+            if (rolls == 200) {
+                break;
+            }
         }
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < currentRewards.Count; i++)
         {
             cardSlots[i].Setup(currentRewards[i]);
         }

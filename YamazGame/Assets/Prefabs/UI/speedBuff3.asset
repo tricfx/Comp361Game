@@ -16,8 +16,9 @@ MonoBehaviour:
   cardName: Radiant Bloom
   cardDescription: Increase character speed by 6 points
   icon: {fileID: -8063460933723396871, guid: a29c753d91eaa3e4da5c3e8a745e45f9, type: 3}
+  dependency: speed2
   type: 0
-  buffID: 
+  buffID: speed2
   bonusDamage: 0
   bonusHealth: 0
   bonusSpeed: 6

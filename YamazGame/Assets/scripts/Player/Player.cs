@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public int maxHP = 100;
     public int currentHP;
 
-    private List<string> activeBuffs = new List<string>();
+    public List<string> activeBuffs = new List<string>();
 
     [Header("Ability Placeholders")]
     public IAbility abilityQ;

@@ -16,8 +16,9 @@ MonoBehaviour:
   cardName: Oni Blade
   cardDescription: Increase character damage by 20 points
   icon: {fileID: 6413552206698252740, guid: f23739457998d4c49945133b260a735d, type: 3}
+  dependency: dmg1
   type: 0
-  buffID: 
+  buffID: dmg2
   bonusDamage: 20
   bonusHealth: 0
   bonusSpeed: 0
