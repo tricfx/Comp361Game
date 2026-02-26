@@ -261448,7 +261448,7 @@ MonoBehaviour:
   - {fileID: 1550537595}
   - {fileID: 1905014347}
   rewardPanel: {fileID: 1542598821}
-  player: {fileID: 0}
+  player: {fileID: 1690713646}
 --- !u!4 &801964912
 Transform:
   m_ObjectHideFlags: 0
@@ -555380,6 +555380,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4355084252441972179, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: playerActions
+      value: 
+      objectReference: {fileID: 1332874946080679999}
     - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: player
       value: 
@@ -555649,6 +555653,10 @@ PrefabInstance:
       propertyPath: healEffect
       value: 
       objectReference: {fileID: 4678103677468820507, guid: 1245b8d2997d5b34fb1637be70a7eb05, type: 3}
+    - target: {fileID: 1342106369993696059, guid: 99aa3685bbf10c14a9fe9e897db2ebc2, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1332874946080680000}
     - target: {fileID: 1580648783167133365, guid: 99aa3685bbf10c14a9fe9e897db2ebc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.789074
