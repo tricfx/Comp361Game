@@ -6,6 +6,9 @@ public class BuffCard : Card
     public string buffID;
     public int bonusDamage;
     public int bonusHealth;
+    public int bonusSpeed;
+    public float dashCooldownDecrease;
+    public int bonusDashRange;
     [SerializeField] private PlayerHealth playerHealth;
 
     public override void Apply(Player player)
@@ -13,7 +16,9 @@ public class BuffCard : Card
         //this is an example idk what we want yet
         player.attackDamage += bonusDamage;
         player.maxHP += bonusHealth;
-        
+        player.dashDuration -= dashCooldownDecrease;
+        player.speed += bonusSpeed;
         player.AddBuff(buffID);
+        
     }
 }

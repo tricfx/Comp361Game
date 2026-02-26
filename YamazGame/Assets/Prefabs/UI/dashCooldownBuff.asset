@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d811323fe6584b36889548b63f702f2, type: 3}
-  m_Name: New Buff Card
+  m_Name: dashCooldownBuff
   m_EditorClassIdentifier: 
-  cardID: 
-  cardName: 
-  cardDescription: 
-  icon: {fileID: 0}
+  cardID: Cooldown
+  cardName: Instant Reprieve
+  cardDescription: ' Lower character dash cooldown by 0.5 seconds '
+  icon: {fileID: -5595748233500887021, guid: 87ba546580d9a0c44a83a0bde4884bca, type: 3}
   type: 0
-  buffID: 
+  buffID: 4
   bonusDamage: 0
+  bonusHealth: 0
+  bonusSpeed: 0
+  dashCooldownDecrease: 0.5
+  bonusDashRange: 0
+  playerHealth: {fileID: 0}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d811323fe6584b36889548b63f702f2, type: 3}
+  m_Name: hpBuff3
+  m_EditorClassIdentifier: 
+  cardID: heal3
+  cardName: "Eternal Draught\t"
+  cardDescription: Increase character hp by 40 points
+  icon: {fileID: -2905242622354299604, guid: 79b37abeb329bb1488b44f499879d6ce, type: 3}
+  type: 0
+  buffID: 3
+  bonusDamage: 0
+  bonusHealth: 40
+  bonusSpeed: 0
+  dashCooldownDecrease: 0
+  bonusDashRange: 0
+  playerHealth: {fileID: 0}
