@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 public class CardUIManager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class CardUIManager : MonoBehaviour
     public CardUI[] cardSlots;
     public GameObject rewardPanel;
 
-    private Player player;
+    public Player player;
     private List<Card> currentRewards = new();
 
     void Awake()
@@ -65,7 +64,7 @@ public class CardUIManager : MonoBehaviour
 
     public void OnRewardSelected(Card reward)
     {
-        //reward.Apply(player);
+        reward.Apply(player);
         rewardPanel.SetActive(false);
         Time.timeScale = 1f; // Resume the game after selecting a reward
     }
