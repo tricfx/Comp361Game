@@ -17,7 +17,6 @@ public class PlayerActions : MonoBehaviour
     public bool IsAttacking => comboStep > 0;
 
     [Header("Ability Cooldowns")]
-    [SerializeField] public float dashCooldown = 1f;
     [SerializeField] private float abilityQCooldown = 3f;
     [SerializeField] private float abilityECooldown = 5f;
 
@@ -75,9 +74,9 @@ public class PlayerActions : MonoBehaviour
     {
         get
         {
-            float remaining = dashCooldown - (Time.time - lastDash);
+            float remaining = controller.dashCooldown - (Time.time - lastDash);
             if (remaining <= 0f) return 1f;
-            return 1f - (remaining / dashCooldown);
+            return 1f - (remaining / controller.dashCooldown);
         }
     }
 

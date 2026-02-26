@@ -9,21 +9,26 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private PlayerActions actions;
 
     [Header("Move")]
-    [SerializeField] public float moveSpeed = 10f;
-    [SerializeField] public float accel = 60f;
-    [SerializeField] public float decel = 120f; // higher = slower to stop
+    public float moveSpeed = 10f;
+    public float accel = 60f;
+    public float decel = 120f; // higher = slower to stop
 
     [Header("Dash")]
-    [SerializeField] private float dashSpeed = 20f;
-    [SerializeField] private float dashDuration = 0.5f;
-    [SerializeField] private float dashCooldown = 0.8f;
+    public float dashSpeed = 20f;       // How fast the dash moves
+    public float dashDistance = 5f;     // How far the dash travels in units (for buffs)
+    public float dashDuration = 0.5f;
+    public float dashCooldown = 0.8f;
 
     public float DashSpeed
     {
         get { return dashSpeed; }
         set { dashSpeed = value; }
     }
-
+    public float DashDistance
+    {
+        get { return dashDistance; }
+        set { dashDistance = value; }
+    }
     public float DashDuration
     {
         get { return dashDuration; }
@@ -63,13 +68,6 @@ public class PlayerController2D : MonoBehaviour
 
     private void Update()
     {
-        // Block movement during dialogue
-        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
-        {
-            anim?.SetSpeed(0f);
-            return;
-        }
-
         Vector2 move = input.Move;
 
         // Update last direction for facing (SNAP to cardinal to avoid wrong flashes)
@@ -117,14 +115,6 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Stop physics during dialogue
-        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
-        {
-            rb.linearVelocity = Vector2.zero;
-            velocity = Vector2.zero;
-            return;
-        }
-
         if (isDashing)
         {
             rb.linearVelocity = lastAimDir * dashSpeed;
