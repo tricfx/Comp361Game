@@ -18,6 +18,26 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] private float dashDuration = 0.5f;
     [SerializeField] private float dashCooldown = 0.8f;
 
+    public float DashSpeed
+    {
+        get { return dashSpeed; }
+        set { dashSpeed = value; }
+    }
+
+    public float DashDuration
+    {
+        get { return dashDuration; }
+        set { dashDuration = value; }
+    }
+    public float DashCooldown
+    {
+        get { return dashCooldown; }
+        set { dashCooldown = value; }
+    }
+
+
+
+
     private Rigidbody2D rb;
     private Vector2 velocity;
     private Vector2 lastAimDir = Vector2.down;
