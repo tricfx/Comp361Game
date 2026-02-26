@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
 
 
 
-    // --------Movement Properties-----------
+    // Movement Properties
     public bool IsRunning
     {
         get
@@ -243,18 +243,19 @@ public class Player : MonoBehaviour
             foreach (var p in animator.parameters)
                 animParams.Add(p.name);
         }
-
-        // scene change logic code
-        if (PlayerSpawn.nextSpawn != Vector2.zero)
-        {
-            Vector2 spawnPos = PlayerSpawn.nextSpawn;
-            spawnPos.y += 1f; // lift slightly to avoid overlapping tile colliders
-            transform.position = spawnPos;
-
-            // clear spawn so it doesn't apply again
-            PlayerSpawn.nextSpawn = Vector2.zero;
-        }
     }
+
+    void OnEnable()
+{
+    if (PlayerSpawn.nextSpawn != Vector2.zero)
+    {
+        Vector2 spawnPos = PlayerSpawn.nextSpawn;
+        spawnPos.y += 1f; // avoid tile collision
+        transform.position = spawnPos;
+
+        PlayerSpawn.nextSpawn = Vector2.zero;
+    }
+}
 
     bool HasAnimParam(string name) => animator != null && animParams != null && animParams.Contains(name);
 
@@ -278,7 +279,7 @@ public class Player : MonoBehaviour
         if (!isAttacking)
         {
             Debug.Log("Player Update running");
-            // 🔧 TEMP TEST — remove later
+            // TEMP TEST — remove later
             if (Input.GetKeyDown(KeyCode.H))
             {
                 TakeDamage(10);
@@ -347,7 +348,7 @@ public class Player : MonoBehaviour
                 IsRunningWest = false;
             }
 
-            // --- Idle Logic ---
+            // Idle Logic
             if (!isRunning && movement == Vector2.zero)
             {
                 // Use lastMovement to determine facing direction when standing still
@@ -419,7 +420,7 @@ public class Player : MonoBehaviour
             UseAbilityE();
         }
 
-        // --- Attack stub ---
+        // Attack stub 
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
@@ -464,7 +465,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // --- Dash Logic ---
+    // Dash Logic 
     void StartDash()
     {
         if (movement == Vector2.zero) return; // can't dash without direction
