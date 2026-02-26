@@ -11,7 +11,6 @@ public class BloodSplatterView : MonoBehaviour
     void Start()
     {
         // Ensure blood renders BELOW other HUD elements
-        // First sibling = rendered first = behind everything else
         transform.SetAsFirstSibling();
     }
 
@@ -30,8 +29,8 @@ public class BloodSplatterView : MonoBehaviour
 
         if (hpPercent > thresholdHPPercent)
         {
-            // From full HP to 20% HP:
-            // Blood grows inward until it perfectly fits the screen
+            
+            // When full hp to 20% hp, blood grows inward until it perfectly fits the screen
             float t = Mathf.InverseLerp(1f, thresholdHPPercent, hpPercent);
 
             scale = Mathf.Lerp(maxScale, 1.0f, t);
@@ -40,8 +39,8 @@ public class BloodSplatterView : MonoBehaviour
         }
         else
         {
-            // Below 20% HP:
-            // Keep perfect scale, increase intensity only
+            
+            // When below 20% hp, keeps perfect scale, increases intensity only
             scale = 1.0f;
 
             float t = Mathf.InverseLerp(thresholdHPPercent, 0f, hpPercent);
