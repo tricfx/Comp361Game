@@ -279,7 +279,7 @@ public class Player : MonoBehaviour
         if (!isAttacking)
         {
             Debug.Log("Player Update running");
-            // 🔧 TEMP TEST — remove later
+            // TEMP TEST — remove later
             if (Input.GetKeyDown(KeyCode.H))
             {
                 TakeDamage(10);
