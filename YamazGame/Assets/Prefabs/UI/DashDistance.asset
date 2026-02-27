@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d811323fe6584b36889548b63f702f2, type: 3}
   m_Name: DashDistance
   m_EditorClassIdentifier: 
-  cardID: 
-  cardName: 
-  cardDescription: 
-  icon: {fileID: 0}
+  cardID: DashDistance
+  cardName: Heavenly step
+  cardDescription: Increase dash distance by 3 points
+  icon: {fileID: -360538525503843100, guid: b790824472cef324daf78c90c61f5d4c, type: 3}
   dependency: 
   type: 0
-  buffID: 
+  buffID: DashDistance
   bonusDamage: 0
   bonusHealth: 0
   bonusSpeed: 0
   dashCooldownDecrease: 0
+  dashDistanceBonus: 3
