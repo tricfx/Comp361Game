@@ -4,7 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
     public int CurrentHealth => currentHealth; // For HUD update
     public int MaxHealth => maxHealth;         // For HUD update
 
