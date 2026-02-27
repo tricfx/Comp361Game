@@ -26,8 +26,12 @@ public class PlayerActions : MonoBehaviour
     private float lastAbilityE = -Mathf.Infinity;
 
     [Header("Abilities")]
+    public AbilityCard qAbilityCard;
+    public AbilityCard eAbilityCard;
     private IAbility abilityQ;
     private IAbility abilityE;
+    private GameObject abilityQObject;
+    private GameObject abilityEObject;
 
     private void Awake()
     {
@@ -136,20 +140,16 @@ public class PlayerActions : MonoBehaviour
     {
         if (abilityQ == null)
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityQ
-            Debug.Log($"Equipped {card.abilityID} to Q slot");
-            return;
+            EquipToSlot(card, true);
         }
         else if (abilityE == null)
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityE
-            Debug.Log($"Equipped {card.abilityID} to E slot");
-            return;
+            EquipToSlot(card, false);
         }
         else
         {
-            Debug.Log("Both ability slots full — replacement UI needed");
-            // TODO: prompt player to replace Q or E
+            // Both full → Open replacement UI
+            CardUIManager.Instance.OpenReplacementUI(card);
         }
     }
 
@@ -158,13 +158,46 @@ public class PlayerActions : MonoBehaviour
     {
         if (replaceQ)
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityQ
-            Debug.Log($"Replaced Q slot with {card.abilityID}");
+            abilityQ?.Dispose();
+            if (abilityQObject) Destroy(abilityQObject);
+            EquipToSlot(card, true);
         }
         else
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityE
-            Debug.Log($"Replaced E slot with {card.abilityID}");
+            abilityE?.Dispose();
+            if (abilityEObject) Destroy(abilityEObject);
+            EquipToSlot(card, false);
+        }
+    }
+
+    private void EquipToSlot(AbilityCard card, bool toQ)
+    {
+        GameObject abilityObj = Instantiate(card.abilityPrefab, transform);
+
+        IAbility ability = abilityObj.GetComponent<IAbility>();
+        //ability.Initialize(gameObject);
+
+        if (toQ)
+        {
+            abilityQ?.Dispose();
+            if (abilityQObject) Destroy(abilityQObject);
+
+            qAbilityCard = card;
+            abilityQ = ability;
+            abilityQObject = abilityObj;
+
+            Debug.Log($"Equipped {card.abilityID} to Q");
+        }
+        else
+        {
+            abilityE?.Dispose();
+            if (abilityEObject) Destroy(abilityEObject);
+
+            eAbilityCard = card;
+            abilityE = ability;
+            abilityEObject = abilityObj;
+
+            Debug.Log($"Equipped {card.abilityID} to E");
         }
     }
 }

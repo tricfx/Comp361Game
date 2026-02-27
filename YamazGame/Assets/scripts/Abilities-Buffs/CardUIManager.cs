@@ -8,12 +8,16 @@ public class CardUIManager : MonoBehaviour
     public CardDatabase rewardDatabase;
 
     public CardUI[] cardSlots;
+    public CardUI[] replacementSlots;
     public GameObject rewardPanel;
+    public GameObject replacementPanel;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
 
     private List<Card> currentRewards = new();
+
+    private AbilityCard pendingReplacementCard;
 
     void Awake()
     {
@@ -38,6 +42,10 @@ public class CardUIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             OpenRewardScreen();
+        }
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            OpenReplacementUI(new AbilityCard { cardName = "Test Ability", cardDescription = "This is a test ability.", cardID = "test_ability" });
         }
     }
 
@@ -99,8 +107,37 @@ public class CardUIManager : MonoBehaviour
 
     public void OnRewardSelected(Card reward)
     {
-        reward.Apply(player);
+        if (reward is AbilityCard abilityCard)
+        {
+            player.GetComponent<PlayerActions>().TryEquipAbility(abilityCard);
+        }
+        else
+        {
+            reward.Apply(player);
+        }
+
         rewardPanel.SetActive(false);
         Time.timeScale = 1f;
     }
+
+    public void OpenReplacementUI(AbilityCard newCard)
+    {
+        pendingReplacementCard = newCard;
+        replacementSlots[0].Setup(player.GetComponent<PlayerActions>().qAbilityCard);
+        replacementSlots[1].Setup(player.GetComponent<PlayerActions>().eAbilityCard);
+        replacementPanel.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+    public void OnReplaceSelected(bool replaceQ)
+    {
+        var playerActions = player.GetComponent<PlayerActions>();
+
+        playerActions.ReplaceAbilitySlot(replaceQ, pendingReplacementCard);
+
+        pendingReplacementCard = null;
+        replacementPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    
 }

@@ -27,4 +27,20 @@ public class CardUI : MonoBehaviour
     {
         CardUIManager.Instance.OnRewardSelected(card);
     }
+
+    public void OnReplaceCard()
+    {
+        if (card is AbilityCard)
+        {
+            
+            if (CardUIManager.Instance.player.GetComponent<PlayerActions>().qAbilityCard == card)
+            {
+                CardUIManager.Instance.OnReplaceSelected(true);
+            }
+            else
+            {
+                 CardUIManager.Instance.OnReplaceSelected(false);
+            }
+        }
+    }
 }

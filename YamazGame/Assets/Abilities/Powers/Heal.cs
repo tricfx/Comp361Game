@@ -8,6 +8,7 @@ public class Heal : MonoBehaviour, IAbility
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private ParticleSystem healEffect;
 
+
     private void Awake()
     {
         if (!playerHealth)
@@ -23,6 +24,14 @@ public class Heal : MonoBehaviour, IAbility
 
         Debug.Log("Healing started!");
         StartCoroutine(HealOverTime());
+    }
+
+    public void Dispose()
+    {
+        StopAllCoroutines();
+        if (healEffect != null)
+            healEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        Destroy(gameObject);
     }
 
     private IEnumerator HealOverTime()

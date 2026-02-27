@@ -11,4 +11,11 @@ public class IceMagic : MonoBehaviour, IAbility
         if (iceEffect != null)
             iceEffect.Play();
     }
+
+    public void Dispose()
+    {
+        if (iceEffect != null)
+            iceEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        Destroy(gameObject);
+    }
 }
