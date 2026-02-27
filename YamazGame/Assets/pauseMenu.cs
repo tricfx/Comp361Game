@@ -86,4 +86,12 @@ public class pauseMenu : MonoBehaviour
 
         Application.Quit();
     }
+    public void LeavingSettings()
+        {
+        inSettings = false;
+    }
+    public void LeavingControls()
+    {
+        inControls = false;
+    }
 }
