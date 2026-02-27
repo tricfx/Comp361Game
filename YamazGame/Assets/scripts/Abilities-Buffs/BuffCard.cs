@@ -19,8 +19,7 @@ public class BuffCard : Card
         // Max health lives on PlayerHealth
         var health = playerObject.GetComponent<PlayerHealth>();
         if (health != null)
-            health.maxHealth += bonusHealth;
-            health.currentHealth += bonusHealth; // Heal the player by the same amount as the max health increase
+            health.currentHealth += bonusHealth;
 
         // Move speed lives on PlayerController2D
         var controller = playerObject.GetComponent<PlayerController2D>();
@@ -28,9 +27,9 @@ public class BuffCard : Card
             controller.moveSpeed += bonusSpeed;
 
         // Dash cooldown lives on PlayerActions
-        var actions = playerObject.GetComponent<PlayerActions>();
-        if (actions != null)
-            actions.dashCooldown = Mathf.Max(0f, actions.dashCooldown - dashCooldownDecrease);
+        var movementDash = playerObject.GetComponent<PlayerController2D>();
+        if (movementDash != null)
+            movementDash.dashCooldown = Mathf.Max(0f, movementDash.dashCooldown - dashCooldownDecrease);
 
         // Buffs tracked on PlayerBuffs
         var buffs = playerObject.GetComponent<PlayerBuffs>();
