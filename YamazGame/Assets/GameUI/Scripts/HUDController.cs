@@ -14,20 +14,12 @@ public class HUDController : MonoBehaviour
     [SerializeField] private AbilitySlotView abilityEView;
     [SerializeField] private BloodSplatterView bloodSplatterView;
 
-    [Header("Dialogue & Death")]
+    [Header("Dialogue")]
     [SerializeField] private CanvasGroup hudCanvasGroup;
-    [SerializeField] private GameObject deathOverlayPanel;
-
-    private bool deathShown = false;
 
     void Start()
     {
         playerHealth = FindFirstObjectByType<PlayerHealth>();
-
-        if (deathOverlayPanel != null)
-            deathOverlayPanel.SetActive(false);
-
-        deathShown = false;
     }
 
     void Update()
@@ -79,13 +71,6 @@ public class HUDController : MonoBehaviour
                 hudCanvasGroup.alpha = 0f;
             else
                 hudCanvasGroup.alpha = 1f;
-        }
-
-        // show "you died" panel once when player dies
-        if (deathOverlayPanel != null && playerHealth.IsDead && !deathShown)
-        {
-            deathOverlayPanel.SetActive(true);
-            deathShown = true;
         }
     }
 }

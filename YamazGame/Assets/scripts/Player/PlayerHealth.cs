@@ -15,11 +15,26 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private PlayerController2D controller;
     [SerializeField] private PlayerActions actions;
 
+    [Header("Death")]
+    [SerializeField] private float deathPanelLength = 3f;
+    [SerializeField] private GameObject gameOverAudioObject;
+    private AudioSource[] gameOverSources;
+    [SerializeField] private GameObject deathPanel;
+    [SerializeField] private float deathPanelDelay = 0.5f;
+
     private bool isDead = false;
     public bool IsDead => isDead;
 
     private void Awake()
     {
+        if (deathPanel != null)
+            deathPanel.SetActive(false);
+
+        if (gameOverAudioObject != null)
+            gameOverSources = gameOverAudioObject.GetComponents<AudioSource>();
+
+        AudioListener.pause = false;
+
         isDead = false;
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
@@ -44,8 +59,15 @@ public class PlayerHealth : MonoBehaviour
             shake.Shake();
         }
 
+        if (currentHealth > 0 && currentHealth <= 30)
+        {
+            MusicManager.Instance?.TriggerLowHealthEffect(currentHealth);
+        }
+
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
+            MusicManager.Instance?.StopLowHealthEffectImmediate();
             Die();
         }
     }
@@ -66,16 +88,22 @@ public class PlayerHealth : MonoBehaviour
         if (controller) controller.enabled = false;
         if (actions) actions.enabled = false;
 
-        Invoke("ReloadScene", 3f);
+        AudioListener.pause = true;
+
+        if (gameOverSources != null && gameOverSources.Length > 0)
+            StartCoroutine(PlayGameOverSequence());
+
+        StartCoroutine(DeathSequence());
     }
 
     private void ReloadScene()
     {
+        AudioListener.pause = false;
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
     }
-
 
     public void Heal(int amount)
     {
@@ -83,5 +111,31 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 
+    private System.Collections.IEnumerator PlayGameOverSequence()
+    {
+        foreach (AudioSource src in gameOverSources)
+        {
+            if (src == null || src.clip == null) continue;
 
+            src.ignoreListenerPause = true;
+            src.Stop();
+            src.Play();
+
+            yield return new WaitForSecondsRealtime(src.clip.length);
+        }
+    }
+
+    private System.Collections.IEnumerator DeathSequence()
+    {
+        if (deathPanel != null)
+        {
+            yield return new WaitForSecondsRealtime(deathPanelDelay);
+            deathPanel.SetActive(true);
+        }
+
+        float remainingTime = Mathf.Max(0f, deathPanelLength - deathPanelDelay);
+        yield return new WaitForSecondsRealtime(remainingTime);
+
+        ReloadScene();
+    }
 }
