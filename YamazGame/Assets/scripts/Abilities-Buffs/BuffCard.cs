@@ -8,6 +8,7 @@ public class BuffCard : Card
     public int bonusHealth;
     public float bonusSpeed;
     public float dashCooldownDecrease;
+    public float dashDistanceBonus;
 
     public override void Apply(GameObject playerObject)
     {
@@ -35,5 +36,10 @@ public class BuffCard : Card
         var buffs = playerObject.GetComponent<PlayerBuffs>();
         if (buffs != null)
             buffs.AddBuff(buffID);
+
+        var distance = playerObject.GetComponent<PlayerController2D>();
+        if (distance != null)
+            distance.dashDistance += dashDistanceBonus;
+
     }
 }
