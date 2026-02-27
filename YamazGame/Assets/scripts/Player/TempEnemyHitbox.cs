@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class EnemyHitbox : MonoBehaviour
+public class TempEnemyHitbox : MonoBehaviour
 {
     [SerializeField] private int contactDamage = 10;
     [SerializeField] private float damageCooldown = 1f;
