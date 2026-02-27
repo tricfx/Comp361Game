@@ -7,7 +7,7 @@ public abstract class Card : ScriptableObject
     public string cardDescription;
     public Sprite icon;
     public string dependency;
-
+    public int cooldoenSeconds;
     public CardType type;
 
     public abstract void Apply(GameObject playerObject);
