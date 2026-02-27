@@ -17,7 +17,7 @@ MonoBehaviour:
   cardDescription: Heal 5% of total hp per second over 10 seconds
   icon: {fileID: -1049461823314036041, guid: d5ec2912b671c2b459f06981fc4bff77, type: 3}
   dependency: 
-  cooldoenSeconds: 20
+  cooldownSeconds: 20
   type: 1
   abilityID: Healing
   abilityPrefab: {fileID: 7984291775624426538, guid: 99aa3685bbf10c14a9fe9e897db2ebc2, type: 3}
