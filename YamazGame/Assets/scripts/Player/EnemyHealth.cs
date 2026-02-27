@@ -3,8 +3,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private int maxHealth = 30;
-    private int currentHealth;
+    [SerializeField] private float maxHealth = 30f;
+    private float currentHealth;
 
     [Header("Visual Feedback")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
             originalColor = spriteRenderer.color;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         Debug.Log($"TakeDamage called! isDead={isDead}, damage={damage}, currentHealth BEFORE={currentHealth}");
 
