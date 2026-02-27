@@ -17,8 +17,8 @@ public class PlayerActions : MonoBehaviour
     public bool IsAttacking => comboStep > 0;
 
     [Header("Ability Cooldowns")]
-    [SerializeField] private float abilityQCooldown = 3f;
-    [SerializeField] private float abilityECooldown = 5f;
+    [SerializeField] private float abilityQCooldown = 0f;
+    [SerializeField] private float abilityECooldown = 0f;
 
     private float lastDash = -Mathf.Infinity;
     private float lastAbilityQ = -Mathf.Infinity;
@@ -187,7 +187,7 @@ public class PlayerActions : MonoBehaviour
         {
             abilityQ?.Dispose();
             if (abilityQObject) Destroy(abilityQObject);
-
+            abilityQCooldown = card.cooldownSeconds;
             qAbilityCard = card;
             abilityQ = ability;
             abilityQObject = abilityObj;
@@ -199,7 +199,7 @@ public class PlayerActions : MonoBehaviour
         {
             abilityE?.Dispose();
             if (abilityEObject) Destroy(abilityEObject);
-
+            abilityECooldown = card.cooldownSeconds;
             eAbilityCard = card;
             abilityE = ability;
             abilityEObject = abilityObj;
