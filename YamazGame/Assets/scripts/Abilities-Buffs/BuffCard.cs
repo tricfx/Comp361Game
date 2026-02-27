@@ -13,9 +13,9 @@ public class BuffCard : Card
     public override void Apply(GameObject playerObject)
     {
         // Attack damage lives on PlayerHitbox
-        var hitbox = playerObject.GetComponentInChildren<PlayerHitbox>();
-        if (hitbox != null)
-            hitbox.attackDamage += bonusDamage;
+        var hurtbox = playerObject.GetComponentInChildren<PlayerHurtbox>();
+        if (hurtbox != null)
+            hurtbox.attackDamage += bonusDamage;
 
         // Max health lives on PlayerHealth
         var health = playerObject.GetComponent<PlayerHealth>();
