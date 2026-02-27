@@ -293727,7 +293727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1604158012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -305952,15 +305952,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2360954002374303501, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2360954002374303501, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2360954002374303501, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2671548599061986836, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -305972,11 +305972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4308734435351474707, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4308734435351474707, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4451531152060381712, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -306046,17 +306046,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 5637092856978024705, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5983181060566298682, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5983181060566298682, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5983181060566298682, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6781812395963999348, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -306152,11 +306156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7537849214703680509, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7537849214703680509, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8214633783977696638, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -310713,8 +310717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -326, y: 86}
-  m_SizeDelta: {x: 343, y: 358}
+  m_AnchoredPosition: {x: -308.1, y: 81.3}
+  m_SizeDelta: {x: 265.21, y: 358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915214253
 MonoBehaviour:
@@ -455424,7 +455428,7 @@ MonoBehaviour:
       line: "Well\u2026 how curious. Fancy meeting someone all the way down here."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: Huh?! Who are you?
     - character:
         name: Sherma
@@ -455432,7 +455436,7 @@ MonoBehaviour:
       line: "Me? I\u2019m Sherma. Just another soul bound to this place."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "\u2026\nI didn\u2019t expect to find anyone alive. I thought Hell was
         a desolate pit\u2014nothing but suffering and silence."
     - character:
@@ -455442,7 +455446,7 @@ MonoBehaviour:
         been watching you since the moment you fell."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "Watching\u2026 me?"
     - character:
         name: Sherma
@@ -455451,7 +455455,7 @@ MonoBehaviour:
         you seem completely unaware of it."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "The Lord\u2019s power? What are you talking about?"
     - character:
         name: Sherma
@@ -455461,7 +455465,7 @@ MonoBehaviour:
         language as this place."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "That doesn\u2019t make any sense."
     - character:
         name: Sherma
@@ -455469,7 +455473,7 @@ MonoBehaviour:
       line: It will. It means you can harvest the powers of Hell itself.
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "\u2026?"
     - character:
         name: Sherma
@@ -455478,11 +455482,11 @@ MonoBehaviour:
         feel it. A connection. Hell will offer you fragments of its strength."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "And I can just\u2026 take them?"
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: So I have to choose.
     - character:
         name: Sherma
@@ -455490,7 +455494,7 @@ MonoBehaviour:
       line: "Exactly. Power here is not about greed\u2014it\u2019s about restraint."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: And why would I even need these powers?
     - character:
         name: Sherma
@@ -455498,7 +455502,7 @@ MonoBehaviour:
       line: "You wish to leave, don\u2019t you?"
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "I do. I\u2019ll escape\u2026 and I\u2019ll slay the wench who cast me
         into this place."
     - character:
@@ -455509,7 +455513,7 @@ MonoBehaviour:
         Some begged. None made it out."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "But you said I\u2019m different."
     - character:
         name: Sherma
@@ -455517,7 +455521,7 @@ MonoBehaviour:
       line: "You are. Hell does not merely trap you\u2014it tests you."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "\u2026I understand."
     - character:
         name: Sherma
@@ -455526,7 +455530,7 @@ MonoBehaviour:
         scattered throughout the floors."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: Gems?
     - character:
         name: Sherma
@@ -455536,7 +455540,7 @@ MonoBehaviour:
         answer to you."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: And what are they used for?
     - character:
         name: Sherma
@@ -455545,7 +455549,7 @@ MonoBehaviour:
         advantages. Knowledge. Tools. Perhaps even power\u2014of a different kind."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: You speak as if you belong here.
     - character:
         name: Sherma
@@ -455553,11 +455557,11 @@ MonoBehaviour:
       line: I do. I was born from the roots of Hell itself.
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "\u2026Right."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: And what are they used for?
     - character:
         name: Sherma
@@ -455566,7 +455570,7 @@ MonoBehaviour:
         wisely. And remember\u2014Hell rewards strength, but it devours the reckless."
     - character:
         name: Yanluo
-        icon: {fileID: 4334783836991956000, guid: 653b99d5265b55c478640db67649adbb, type: 3}
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "Thank you\u2026 Sherma."
     - character:
         name: Sherma
