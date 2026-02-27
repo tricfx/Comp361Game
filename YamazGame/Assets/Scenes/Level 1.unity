@@ -35049,7 +35049,7 @@ GameObject:
   - component: {fileID: 467552663}
   m_Layer: 5
   m_Name: Canvas_HUD
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35075,6 +35075,8 @@ MonoBehaviour:
   abilityEView: {fileID: 1325203378}
   bloodSplatterView: {fileID: 1604158015}
   hudCanvasGroup: {fileID: 0}
+  qSlot: {fileID: 1357506397}
+  eSlot: {fileID: 1325203378}
 --- !u!114 &467552664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287580,7 +287582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9126632893365767051, guid: fe05ecbc64017464782f4d4ff21b8c55, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -287611,6 +287613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownFillImage: {fileID: 1197894802}
+  iconImage: {fileID: 1325203376}
 --- !u!1 &1325351523
 GameObject:
   m_ObjectHideFlags: 0
@@ -287950,7 +287953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2186627556539719362, guid: c3350492c1995430a9a0ae8ae95a29d7, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -287981,6 +287984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownFillImage: {fileID: 654806304}
+  iconImage: {fileID: 1357506395}
 --- !u!1 &1418278394
 GameObject:
   m_ObjectHideFlags: 0
@@ -557655,7 +557659,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690713646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb1b1c4540fdeeb4096a1d38f514eeb9, type: 3}
   m_Name: 

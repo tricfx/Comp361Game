@@ -32,11 +32,17 @@ public class PlayerActions : MonoBehaviour
     private GameObject abilityQObject;
     private GameObject abilityEObject;
 
+
+    private HUDController hud;
+
     private void Awake()
     {
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
+        var hudObj = GameObject.FindWithTag("HUD");
+        if (hudObj != null)
+            hud = hudObj.GetComponent<HUDController>();
     }
 
     private void Update()
@@ -171,6 +177,7 @@ public class PlayerActions : MonoBehaviour
 
     private void EquipToSlot(AbilityCard card, bool toQ)
     {
+       
         GameObject abilityObj = Instantiate(card.abilityPrefab, transform);
 
         IAbility ability = abilityObj.GetComponent<IAbility>();
@@ -185,6 +192,7 @@ public class PlayerActions : MonoBehaviour
             abilityQ = ability;
             abilityQObject = abilityObj;
 
+
             Debug.Log($"Equipped {card.abilityID} to Q");
         }
         else
@@ -198,6 +206,7 @@ public class PlayerActions : MonoBehaviour
 
             Debug.Log($"Equipped {card.abilityID} to E");
         }
+        hud?.SetSlotIcon(toQ, card.icon);
     }
 }
 

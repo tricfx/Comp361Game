@@ -17,6 +17,16 @@ public class HUDController : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private CanvasGroup hudCanvasGroup;
 
+
+    [SerializeField] private AbilitySlotView qSlot;
+    [SerializeField] private AbilitySlotView eSlot;
+
+    public void SetSlotIcon(bool toQ, Sprite icon)
+    {
+        if (toQ) qSlot.SetIcon(icon);
+        else eSlot.SetIcon(icon);
+    }
+
     void Start()
     {
         playerHealth = FindFirstObjectByType<PlayerHealth>();
