@@ -12,9 +12,11 @@ public class Heal : MonoBehaviour, IAbility
 
     private void Awake()
     {
-        healInstance = Instantiate(healPrefab, new Vector3(8.3f, 43.8f, 0f), Quaternion.identity);
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
+        Vector3 spawnPosition = playerHealth.transform.position;
+
+        healInstance = Instantiate(healPrefab, spawnPosition, Quaternion.identity);
     }
 
     public void Do()

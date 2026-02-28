@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\abilities\\powers\\heal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\abilities\\powers\\heal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\scripts\\player\\playeractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\scripts\\abilities-buffs\\abilitycard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\abilities-buffs\\abilitycard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\abilities\\powers\\heal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\abilities\\powers\\heal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -163,7 +163,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -179,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CardUI.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\CardUI.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\CardUI.cs",
@@ -192,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AbilityCard.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\AbilityCard.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\AbilityCard.cs",
@@ -205,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerActions.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Player\\PlayerActions.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerActions.cs",
@@ -218,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AbilitySlotView.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameUI\\Scripts\\AbilitySlotView.cs",
               "RelativeDocumentMoniker": "Assets\\GameUI\\Scripts\\AbilitySlotView.cs",
@@ -230,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "HUDController.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameUI\\Scripts\\HUDController.cs",
               "RelativeDocumentMoniker": "Assets\\GameUI\\Scripts\\HUDController.cs",
@@ -242,15 +242,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Heal.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Abilities\\Powers\\Heal.cs",
               "RelativeDocumentMoniker": "Assets\\Abilities\\Powers\\Heal.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Abilities\\Powers\\Heal.cs",
               "RelativeToolTip": "Assets\\Abilities\\Powers\\Heal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T18:47:18.66Z"
+              "WhenOpened": "2026-02-27T18:47:18.66Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -277,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Card.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\Card.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\Card.cs",
