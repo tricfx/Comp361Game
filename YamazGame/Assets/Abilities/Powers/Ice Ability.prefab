@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapBounds: {fileID: 0}
-  spawnOffset: 2
+  spawnOffset: 3
   boundMargin: 3
   duration: 2
   playerHealth: {fileID: 0}
+  effectRotationEuler: {x: 10.93, y: -10.05, z: -13.7}
+  effectScale: {x: 0.5, y: 0.83, z: 1}
   ice: {fileID: 7221718550222938184, guid: 0358c1fdf1b414840a5ced6a89c4c57f, type: 3}
