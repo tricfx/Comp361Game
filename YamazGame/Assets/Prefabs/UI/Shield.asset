@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb345365ec759456bac9acada4d7588a, type: 3}
+  m_Name: Shield
+  m_EditorClassIdentifier: 
+  cardID: Shield
+  cardName: Divine Protection
+  cardDescription: Create a shield to take no damage for 5 seconds
+  icon: {fileID: 2389193319765324094, guid: 3eb70675202beba46b54b5b014d541f9, type: 3}
+  dependency: 
+  cooldownSeconds: 15
+  type: 1
+  abilityID: Shield
+  abilityPrefab: {fileID: 7007560943704542523, guid: 2e5d17610260533499c6e4d615423a7c, type: 3}
