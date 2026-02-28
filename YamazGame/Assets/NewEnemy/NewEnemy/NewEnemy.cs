@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class NewEnemy : MonoBehaviour, INewEnemy
 {
-    public float MaxHealth {
+    public int MaxHealth {
         get
         {
             return _maxHealth;
@@ -13,7 +13,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    public float CurrentHealth
+    public int CurrentHealth
     {
         get
         {
@@ -116,14 +116,14 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     public Rigidbody2D rb { get; private set; }
     public Collider2D feetCollider { get; private set; }
 
-    [SerializeField] protected float _maxHealth = 10f;
-    [SerializeField] protected float _moveSpeed = 2000f;
+    [SerializeField] protected int _maxHealth = 10;
+    [SerializeField] protected int _moveSpeed = 2000;
     [SerializeField] protected float _attackCooldown = 1f;
     [SerializeField] protected bool _disableSimulation = false;
     [SerializeField] protected bool _enableInvincibilityWindow = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
 
-    protected float _currentHealth;
+    protected int _currentHealth;
     protected bool _targetable = true;
     protected bool _invincible = false;
     protected float _invincibilityTimeElapsed = 0f;
@@ -173,7 +173,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    public void TakeDamage(float damage, Vector2 knockback)
+    public void TakeDamage(int damage, Vector2 knockback)
     {
         if (!Invincible)
         {
@@ -187,7 +187,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (!Invincible)
         {

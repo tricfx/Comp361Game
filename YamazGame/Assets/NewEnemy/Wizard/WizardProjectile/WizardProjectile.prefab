@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4614322422756000389}
   - component: {fileID: 6166598465716921028}
   - component: {fileID: 9138955683907279682}
+  - component: {fileID: 7418872436719172314}
   m_Layer: 8
   m_Name: WizardProjectile
   m_TagString: EnemyHurtbox
@@ -189,7 +190,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30425a0edfb3343ec8604169ec9532ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 2
-  projectileSpeed: 5000
-  projectileDuration: 2
-  knockbackForce: 10
+  projectileSpeed: 6000
+  projectileDuration: 3
+--- !u!114 &7418872436719172314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048418171210716307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a973369d2fc7c4777a2783950ab490a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackDamage: 2
+  _knockbackForce: 10

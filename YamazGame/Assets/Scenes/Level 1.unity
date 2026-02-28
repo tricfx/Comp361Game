@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36312762}
   m_Layer: 0
-  m_Name: --------Music/SFX------
+  m_Name: '--------Music/SFX------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23453,7 +23453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169873393}
   m_Layer: 0
-  m_Name: ---------Settings-------
+  m_Name: '---------Settings-------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43176,7 +43176,7 @@ GameObject:
   - component: {fileID: 517236905}
   - component: {fileID: 517236910}
   m_Layer: 5
-  m_Name: ---------Canvas--------
+  m_Name: '---------Canvas--------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251860,7 +251860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706983825}
   m_Layer: 0
-  m_Name: ----------Other---------
+  m_Name: '----------Other---------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284667,34 +284667,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2011200509}
     m_Modifications:
-    - target: {fileID: 1403890789074495156, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529817702109958439, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2052049496488832472, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5186783103312330731, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
       propertyPath: m_SortingLayer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209514698184644428, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6407917262768909906, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1690713646}
-    - target: {fileID: 6447183512488331472, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6865457932143640122, guid: aea699b12cc964f3a8685d9259975a71, type: 3}
       propertyPath: m_Name
       value: Wizard
@@ -285535,7 +285515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -10.800049, y: -27.100098}
+  m_AnchoredPosition: {x: -10.80011, y: -27.100098}
   m_SizeDelta: {x: 49.9456, y: 46.4208}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &991400024
@@ -287685,7 +287665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1339426621}
   m_Layer: 0
-  m_Name: ---------Powers--------
+  m_Name: '---------Powers--------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288319,6 +288299,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5637092856978024705, guid: d8d16d6509923e941aa1955207e252a0, type: 3}
   m_PrefabInstance: {fileID: 1680317222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1508804986 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+  m_PrefabInstance: {fileID: 1699238767}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1514713211
 GameObject:
@@ -306598,6 +306583,63 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5566835495308685218, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
   m_PrefabInstance: {fileID: 1332874946080679997}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1699238767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2011200509}
+    m_Modifications:
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0045193643
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841590106115769670, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153261031417381223, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
+      propertyPath: m_Name
+      value: NewSkeleton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36aacd33111e34f74a8203c9a1f5cd60, type: 3}
 --- !u!1 &1701867146
 GameObject:
   m_ObjectHideFlags: 0
@@ -307334,7 +307376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824166893}
   m_Layer: 0
-  m_Name: ----------Map----------
+  m_Name: '----------Map----------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455646,8 +455688,8 @@ MonoBehaviour:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
       line: "Your father. His essence still resonates within these chambers. Hell
-        recognizes it\u2026 responds to it. You are, in a way, speaking the same
-        language as this place."
+        recognizes it\u2026 responds to it. You are, in a way, speaking the same language
+        as this place."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -455940,7 +455982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011200509}
   m_Layer: 0
-  m_Name: ---------Entities--------
+  m_Name: '---------Entities--------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -455962,6 +456004,7 @@ Transform:
   - {fileID: 1332874946080680030}
   - {fileID: 2003529022}
   - {fileID: 297672973}
+  - {fileID: 1508804986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017748780
@@ -557304,7 +557347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123051474615805345, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionName
-      value: 'Player/Interact[/Keyboard/f]'
+      value: Player/Interact[/Keyboard/f]
       objectReference: {fileID: 0}
     - target: {fileID: 8123051474615805345, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.size

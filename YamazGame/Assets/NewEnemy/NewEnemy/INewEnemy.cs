@@ -2,8 +2,8 @@ using UnityEngine;
 
 public interface INewEnemy {
     
-    float MaxHealth { set; get; }
-    float CurrentHealth { set; get; }
+    int MaxHealth { set; get; }
+    int CurrentHealth { set; get; }
     bool Targetable { set; get; }
     bool Invincible { set; get; }
 
@@ -13,8 +13,8 @@ public interface INewEnemy {
 
     void Attack();
     void ResetAttack();
-    void TakeDamage(float damage, Vector2 knockback);
-    void TakeDamage(float damage);
+    void TakeDamage(int damage, Vector2 knockback);
+    void TakeDamage(int damage);
     void TakeKnockback(Vector2 knockback);
     void flipDirection(Vector2 direction);
 

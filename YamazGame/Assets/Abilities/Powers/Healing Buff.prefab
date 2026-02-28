@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healPerSecond: 5
   duration: 10
-  player: {fileID: 0}
-  healEffect: {fileID: 0}
+  playerHealth: {fileID: 0}
+  healPrefab: {fileID: 4678103677468820507, guid: 1245b8d2997d5b34fb1637be70a7eb05, type: 3}

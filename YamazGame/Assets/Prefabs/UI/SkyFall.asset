@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb345365ec759456bac9acada4d7588a, type: 3}
-  m_Name: fire
+  m_Name: SkyFall
   m_EditorClassIdentifier: 
-  cardID: fire123
-  cardName: fire
-  cardDescription: fire
-  icon: {fileID: -4541641736659173238, guid: 3a23bd7f45bc347ccab0d8d84903b155, type: 3}
+  cardID: Skyfall
+  cardName: Sky burst
+  cardDescription: Stars fall from the sky on your foes
+  icon: {fileID: 3836954968553550457, guid: ff92aa236bd45504c94b6d3ae389bc1d, type: 3}
+  dependency: 
+  cooldownSeconds: 10
   type: 1
-  abilityID: 123
-  abilityPrefab: {fileID: 0}
+  abilityID: Skyfall
+  abilityPrefab: {fileID: 1703236983586644648, guid: ad3481761efc5e3469640f7a541bfcdc, type: 3}

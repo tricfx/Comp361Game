@@ -3,10 +3,8 @@ using UnityEngine;
 
 public class WizardProjectile : MonoBehaviour
 {
-    [SerializeField] int projectileDamage = 2;
-    [SerializeField] float projectileSpeed = 5000f;
+    [SerializeField] int projectileSpeed = 5000;
     [SerializeField] float projectileDuration = 2f;
-    [SerializeField] float knockbackForce = 10f;
 
     Animator animator;
     Rigidbody2D rb;
@@ -75,17 +73,6 @@ public class WizardProjectile : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("PlayerHitbox")) return;
-
-        PlayerHealth player = other.GetComponentInParent<PlayerHealth>();
-        if (player == null /* || player.feetCollider == null */) return;
-
-
-        // Vector2 playerFeetPos = player.feetCollider.bounds.center;
-        // Vector2 direction = (playerFeetPos - (Vector2) transform.position).normalized;
-        // Vector2 knockback = direction * knockbackForce;
-
-        player.TakeDamage(projectileDamage /* , knockback */);
-
         Explode();
     }
 }
