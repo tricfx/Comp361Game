@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4f1a0a8de8e4cf4a599b59e1c29191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 6839188271553356197}
 --- !u!1 &4496421783395000772
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   playerActions: {fileID: 0}
+  attackCollider: {fileID: 0}
 --- !u!1 &5897921085173228654
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,13 +372,15 @@ GameObject:
   - component: {fileID: 6365615291235604374}
   - component: {fileID: 6799350317173006556}
   - component: {fileID: 4512945187162635060}
-  - component: {fileID: 4313405202548319389}
+  - component: {fileID: 3920970003775374591}
   - component: {fileID: 8123051474615805345}
   - component: {fileID: 4731976069451397383}
   - component: {fileID: 2473590855028938758}
   - component: {fileID: 5620701775207736557}
   - component: {fileID: 6839188271553356197}
   - component: {fileID: 4395188340007543857}
+  - component: {fileID: 8315656966709912735}
+  - component: {fileID: 5566835495308685218}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -487,28 +489,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!95 &4313405202548319389
-Animator:
-  serializedVersion: 7
+--- !u!114 &3920970003775374591
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8994838657509954306}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cee123ff0850f4d4f90144789b48f202, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37dcb184959e943edbf94d8796b8c9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8123051474615805345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94420e7eb44c48ffbf78be25172379d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4313405202548319389}
+  animator: {fileID: 0}
 --- !u!114 &2473590855028938758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,6 +691,7 @@ MonoBehaviour:
   accel: 60
   decel: 120
   dashSpeed: 20
+  dashDistance: 5
   dashDuration: 1
   dashCooldown: 0.8
 --- !u!114 &5620701775207736557
@@ -725,12 +718,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebb4a36303ba46018222e62961cb1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   maxHealth: 100
-  MaxHealth: 0
+  currentHealth: 0
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
   actions: {fileID: 4395188340007543857}
+  deathPanelLength: 3
+  gameOverAudioObject: {fileID: 0}
+  deathPanel: {fileID: 0}
+  deathPanelDelay: 0.5
 --- !u!114 &4395188340007543857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,6 +743,41 @@ MonoBehaviour:
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
   comboWindow: 0.8
-  dashCooldown: 1
   abilityQCooldown: 3
   abilityECooldown: 5
+  qAbilityCard: {fileID: 0}
+  eAbilityCard: {fileID: 0}
+--- !u!114 &8315656966709912735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994838657509954306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953e8aaa5d7530c49a7d923243bf383b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &5566835495308685218
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994838657509954306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cee123ff0850f4d4f90144789b48f202, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
