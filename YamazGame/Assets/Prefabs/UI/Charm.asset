@@ -18,6 +18,6 @@ MonoBehaviour:
   icon: {fileID: 9111962250586777772, guid: 79371de7dd3be2a429cb6e4fde7ae8d6, type: 3}
   dependency: 
   cooldownSeconds: 30
-  type: 0
+  type: 1
   abilityID: Charm
   abilityPrefab: {fileID: 5402376539046082640, guid: 316effbdff5f78b45807ec6cf2faffb6, type: 3}

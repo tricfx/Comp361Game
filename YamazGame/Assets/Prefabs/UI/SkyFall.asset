@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb345365ec759456bac9acada4d7588a, type: 3}
-  m_Name: Venti
+  m_Name: SkyFall
   m_EditorClassIdentifier: 
-  cardID: Venti
-  cardName: Void Tempest
-  cardDescription: Create a vortex pulling in ennemies and damaging them
-  icon: {fileID: 3145422626473575850, guid: 5b9fef0a221e2f74cb26e20ef2d1f669, type: 3}
+  cardID: Skyfall
+  cardName: Sky burst
+  cardDescription: Stars fall from the sky on your foes
+  icon: {fileID: -3878557786174838139, guid: 118827ec3adf18a4096b938ded8fbb26, type: 3}
   dependency: 
-  cooldownSeconds: 20
+  cooldownSeconds: 10
   type: 1
-  abilityID: Venti
-  abilityPrefab: {fileID: 3410464993873763626, guid: 6305eb499bb871d49b9226b560a346a1, type: 3}
+  abilityID: Skyfall
+  abilityPrefab: {fileID: 1703236983586644648, guid: ad3481761efc5e3469640f7a541bfcdc, type: 3}

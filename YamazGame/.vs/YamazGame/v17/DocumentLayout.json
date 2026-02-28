@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\abilities\\powers\\charm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\venti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\venti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\scripts\\abilities-buffs\\abilitycard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\abilities-buffs\\abilitycard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\scripts\\player\\playeractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\assets\\scripts\\abilities-buffs\\carduimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -100,7 +92,7 @@
               "RelativeDocumentMoniker": "Assets\\Abilities\\Powers\\Charm.cs",
               "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Abilities\\Powers\\Charm.cs",
               "RelativeToolTip": "Assets\\Abilities\\Powers\\Charm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-28T19:03:46.642Z",
               "IsPinned": true,
@@ -108,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "CardUIManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\CardUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\CardUIManager.cs",
@@ -120,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "BuffCard.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\BuffCard.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\BuffCard.cs",
@@ -132,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "CardDatabase.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\CardDatabase.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\CardDatabase.cs",
@@ -144,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AbilityCard.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\AbilityCard.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\AbilityCard.cs",
@@ -156,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "AbilitySlotView.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameUI\\Scripts\\AbilitySlotView.cs",
               "RelativeDocumentMoniker": "Assets\\GameUI\\Scripts\\AbilitySlotView.cs",
@@ -168,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "BackendManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\BackendManager.cs",
               "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\BackendManager.cs",
@@ -180,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Fader.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMenu\\Scripts\\menuScripts\\Fader.cs",
               "RelativeDocumentMoniker": "Assets\\MainMenu\\Scripts\\menuScripts\\Fader.cs",
@@ -192,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "RegisterUI.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\uiScripts\\RegisterUI.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\uiScripts\\RegisterUI.cs",
@@ -204,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "LoginUI.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\uiScripts\\LoginUI.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\uiScripts\\LoginUI.cs",
@@ -216,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "DialogueManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueManager.cs",
@@ -228,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "DialogueTrigger.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\shopkeeper\\Scripts\\DialogueTrigger.cs",
@@ -240,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "GameData.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\DataPersistence\\Data\\GameData.cs",
               "RelativeDocumentMoniker": "Assets\\DataPersistence\\Data\\GameData.cs",
@@ -252,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "SelectScreen.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SelectScreen\\SelectScreen.cs",
@@ -264,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "LevelLoader.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\LevelLoader.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\LevelLoader.cs",
@@ -276,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\GameManager.cs",
@@ -288,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "playerTest.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Level1\\player\\playerTest.cs",
               "RelativeDocumentMoniker": "Assets\\Level1\\player\\playerTest.cs",
@@ -300,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "SettingsManager.cs",
               "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
               "RelativeDocumentMoniker": "Assets\\MainMeu\\scripts\\menuScripts\\SettingsManager.cs",
@@ -309,52 +301,6 @@
               "ViewState": "AgIAADgAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-31T01:03:38.703Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "ba6127be-67a8-4a5c-9283-3ed63026f876",
-        "Display": 1,
-        "X": 15,
-        "Y": -7,
-        "Width": 1510,
-        "Height": 729,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Venti.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Venti.cs",
-              "RelativeDocumentMoniker": "Assets\\Venti.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\Venti.cs",
-              "RelativeToolTip": "Assets\\Venti.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T19:41:14.204Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerActions.cs",
-              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Player\\PlayerActions.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Player\\PlayerActions.cs",
-              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Player\\PlayerActions.cs",
-              "RelativeToolTip": "Assets\\scripts\\Player\\PlayerActions.cs",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAUwNQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T19:49:44.79Z"
             }
           ]
         }
