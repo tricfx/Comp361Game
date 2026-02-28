@@ -6,11 +6,13 @@ public class Heal : MonoBehaviour, IAbility
     [SerializeField] private int healPerSecond = 1;
     [SerializeField] private float duration = 10f;
     [SerializeField] private PlayerHealth playerHealth;
-    [SerializeField] private ParticleSystem healEffect;
+    public ParticleSystem healPrefab;   
+    private ParticleSystem healInstance;
 
 
     private void Awake()
     {
+        healInstance = Instantiate(healPrefab, new Vector3(8.3f, 43.8f, 0f), Quaternion.identity);
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
     }
@@ -19,8 +21,12 @@ public class Heal : MonoBehaviour, IAbility
     {
         if (playerHealth == null) return;
 
-        if (healEffect != null)
-            healEffect.Play();
+        if (healInstance != null)
+        {
+            healInstance.Play();
+            Debug.Log("Heal effect started!");
+        }
+            
 
         Debug.Log("Healing started!");
         StartCoroutine(HealOverTime());
@@ -29,8 +35,8 @@ public class Heal : MonoBehaviour, IAbility
     public void Dispose()
     {
         StopAllCoroutines();
-        if (healEffect != null)
-            healEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        if (healInstance != null)
+            healInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         Destroy(gameObject);
     }
 
@@ -41,8 +47,8 @@ public class Heal : MonoBehaviour, IAbility
 
         while (total < duration && playerHealth.CurrentHealth < playerHealth.MaxHealth)
         {
-            if (healEffect != null)
-                healEffect.transform.position = playerHealth.transform.position;
+            if (healInstance != null)
+                healInstance.transform.position = playerHealth.transform.position;
 
             total += Time.deltaTime;
             tick += Time.deltaTime;
@@ -59,7 +65,7 @@ public class Heal : MonoBehaviour, IAbility
             yield return null;
         }
 
-        if (healEffect != null)
-            healEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        if (healInstance != null)
+            healInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 }
