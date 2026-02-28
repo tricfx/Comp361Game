@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyHitbox : MonoBehaviour
 {
+    /*
     void Start()
     {
         
@@ -11,4 +12,5 @@ public class EnemyHitbox : MonoBehaviour
     {
         
     }
+    */
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHurtbox : MonoBehaviour
 {
-    [SerializeField] public float attackDamage = 1f;
+    [SerializeField] public int attackDamage = 1;
     [SerializeField] private PlayerActions playerActions;
     public Collider2D attackCollider;
 
