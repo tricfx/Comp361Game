@@ -64,7 +64,7 @@ public class CardUIManager : MonoBehaviour
         while (currentRewards.Count < 3)
         {
             Card reward = rewardDatabase.GetRandomReward();
-
+            
             // Check dependency
             string dependency = reward.dependency;
             if (dependency != "" && (playerBuffs == null || !playerBuffs.HasBuff(dependency)))
@@ -74,6 +74,13 @@ public class CardUIManager : MonoBehaviour
                 continue;
             }
 
+            var actions = player.GetComponent<PlayerActions>();
+
+            if (actions != null)
+            {
+                if (actions.qAbilityCard != null && actions.qAbilityCard.cardID == reward.cardID) continue;
+                if (actions.eAbilityCard != null && actions.eAbilityCard.cardID == reward.cardID) continue;
+            }
             // No duplicates and not already owned
             if (!currentRewards.Contains(reward) &&
                 (playerBuffs == null || !playerBuffs.HasBuff(reward.cardID)))
