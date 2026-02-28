@@ -42,7 +42,6 @@ public class PlayerController2D : MonoBehaviour
 
 
 
-
     private Rigidbody2D rb;
     private Vector2 velocity;
     private Vector2 lastAimDir = Vector2.down;

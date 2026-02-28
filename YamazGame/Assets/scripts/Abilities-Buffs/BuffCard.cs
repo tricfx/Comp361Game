@@ -8,18 +8,20 @@ public class BuffCard : Card
     public int bonusHealth;
     public float bonusSpeed;
     public float dashCooldownDecrease;
+    public float dashDistanceBonus;
 
     public override void Apply(GameObject playerObject)
     {
         // Attack damage lives on PlayerHitbox
-        var hitbox = playerObject.GetComponentInChildren<PlayerHitbox>();
-        if (hitbox != null)
-            hitbox.attackDamage += bonusDamage;
+        var hurtbox = playerObject.GetComponentInChildren<PlayerHurtbox>();
+        if (hurtbox != null)
+            hurtbox.attackDamage += bonusDamage;
 
         // Max health lives on PlayerHealth
         var health = playerObject.GetComponent<PlayerHealth>();
         if (health != null)
             health.currentHealth += bonusHealth;
+            health.maxHealth += bonusHealth;
 
         // Move speed lives on PlayerController2D
         var controller = playerObject.GetComponent<PlayerController2D>();
@@ -35,5 +37,10 @@ public class BuffCard : Card
         var buffs = playerObject.GetComponent<PlayerBuffs>();
         if (buffs != null)
             buffs.AddBuff(buffID);
+
+        var distance = playerObject.GetComponent<PlayerController2D>();
+        if (distance != null)
+            distance.dashDistance += dashDistanceBonus;
+
     }
 }

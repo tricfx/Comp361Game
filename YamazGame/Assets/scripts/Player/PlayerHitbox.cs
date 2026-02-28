@@ -2,48 +2,32 @@ using UnityEngine;
 
 public class PlayerHitbox : MonoBehaviour
 {
-    [SerializeField] public int attackDamage = 10;
-    [SerializeField] private PlayerActions playerActions;
+    /*
+    [SerializeField] private PlayerHealth playerHealth;
 
     private void Awake()
     {
-        if (!playerActions)
-            playerActions = GetComponentInParent<PlayerActions>();
+        // Get PlayerHealth from parent
+        if (!playerHealth)
+            playerHealth = GetComponentInParent<PlayerHealth>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"PlayerHitbox collided with: {other.gameObject.name}, Tag: {other.tag}");
-
-        // Only damage enemies if player is attacking
-        if (playerActions != null && playerActions.IsAttacking)
+        // Check if hit by enemy attack
+        if (other.CompareTag("EnemyAttack") || other.CompareTag("Enemy"))
         {
-            Debug.Log($"Player IS attacking! Checking if enemy...");
+            // Get damage from enemy
+            int damage = 10; // Default
 
-            // Check if we hit an enemy's hurtbox
-            if (other.CompareTag("EnemyHurtbox") || other.CompareTag("Enemy"))
-            {
-                Debug.Log($"Hit an enemy hurtbox! Looking for EnemyHealth...");
+            // Try to get actual damage from enemy (Disabled for now, as it requires a specific EnemyAttack component)
+            //var enemyAttack = other.GetComponent<EnemyAttack>();
+            //if (enemyAttack != null)
+                //damage = enemyAttack.damage;
 
-                // Try to find EnemyHealth on the enemy (might be on parent)
-                var enemyHealth = other.GetComponent<EnemyHealth>();
-                if (enemyHealth == null)
-                    enemyHealth = other.GetComponentInParent<EnemyHealth>();
-
-                if (enemyHealth != null)
-                {
-                    enemyHealth.TakeDamage(attackDamage);
-                    Debug.Log($"Called TakeDamage on enemy for {attackDamage} damage!");
-                }
-                else
-                {
-                    Debug.LogError("Found enemy hurtbox but NO EnemyHealth component!");
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("Player is NOT attacking, ignoring collision");
+            playerHealth?.TakeDamage(damage);
+            Debug.Log($"Player hurtbox hit! Took {damage} damage");
         }
     }
+    */
 }

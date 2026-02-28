@@ -17,22 +17,32 @@ public class PlayerActions : MonoBehaviour
     public bool IsAttacking => comboStep > 0;
 
     [Header("Ability Cooldowns")]
-    [SerializeField] private float abilityQCooldown = 3f;
-    [SerializeField] private float abilityECooldown = 5f;
+    [SerializeField] private float abilityQCooldown = 0f;
+    [SerializeField] private float abilityECooldown = 0f;
 
     private float lastDash = -Mathf.Infinity;
     private float lastAbilityQ = -Mathf.Infinity;
     private float lastAbilityE = -Mathf.Infinity;
 
     [Header("Abilities")]
+    public AbilityCard qAbilityCard;
+    public AbilityCard eAbilityCard;
     private IAbility abilityQ;
     private IAbility abilityE;
+    private GameObject abilityQObject;
+    private GameObject abilityEObject;
+
+
+    private HUDController hud;
 
     private void Awake()
     {
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
+        var hudObj = GameObject.FindWithTag("HUD");
+        if (hudObj != null)
+            hud = hudObj.GetComponent<HUDController>();
     }
 
     private void Update()
@@ -135,20 +145,16 @@ public class PlayerActions : MonoBehaviour
     {
         if (abilityQ == null)
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityQ
-            Debug.Log($"Equipped {card.abilityID} to Q slot");
-            return;
+            EquipToSlot(card, true);
         }
         else if (abilityE == null)
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityE
-            Debug.Log($"Equipped {card.abilityID} to E slot");
-            return;
+            EquipToSlot(card, false);
         }
         else
         {
-            Debug.Log("Both ability slots full — replacement UI needed");
-            // TODO: prompt player to replace Q or E
+            // Both full → Open replacement UI
+            CardUIManager.Instance.OpenReplacementUI(card);
         }
     }
 
@@ -157,14 +163,50 @@ public class PlayerActions : MonoBehaviour
     {
         if (replaceQ)
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityQ
-            Debug.Log($"Replaced Q slot with {card.abilityID}");
+            abilityQ?.Dispose();
+            if (abilityQObject) Destroy(abilityQObject);
+            EquipToSlot(card, true);
         }
         else
         {
-            // TODO: instantiate and assign card.abilityPrefab as abilityE
-            Debug.Log($"Replaced E slot with {card.abilityID}");
+            abilityE?.Dispose();
+            if (abilityEObject) Destroy(abilityEObject);
+            EquipToSlot(card, false);
         }
+    }
+
+    private void EquipToSlot(AbilityCard card, bool toQ)
+    {
+       
+        GameObject abilityObj = Instantiate(card.abilityPrefab, transform);
+
+        IAbility ability = abilityObj.GetComponent<IAbility>();
+        //ability.Initialize(gameObject);
+
+        if (toQ)
+        {
+            abilityQ?.Dispose();
+            if (abilityQObject) Destroy(abilityQObject);
+            abilityQCooldown = card.cooldownSeconds;
+            qAbilityCard = card;
+            abilityQ = ability;
+            abilityQObject = abilityObj;
+
+
+            Debug.Log($"Equipped {card.abilityID} to Q");
+        }
+        else
+        {
+            abilityE?.Dispose();
+            if (abilityEObject) Destroy(abilityEObject);
+            abilityECooldown = card.cooldownSeconds;
+            eAbilityCard = card;
+            abilityE = ability;
+            abilityEObject = abilityObj;
+
+            Debug.Log($"Equipped {card.abilityID} to E");
+        }
+        hud?.SetSlotIcon(toQ, card.icon);
     }
 }
 
