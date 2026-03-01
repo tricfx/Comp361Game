@@ -33461,15 +33461,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
       propertyPath: m_text
-      value: 3 Rerolls left
+      value: Reroll ( 3 left )
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
+      propertyPath: m_margin.w
+      value: 4.4943886
       objectReference: {fileID: 0}
     - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
       propertyPath: m_margin.x
-      value: 18.14038
+      value: 15.0289
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
+      propertyPath: m_margin.y
+      value: -1.3828831
       objectReference: {fileID: 0}
     - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
       propertyPath: m_margin.z
       value: -17.276733
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a96d4e2d2eecab4bb4a2949ae511a4d, type: 2}
+    - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8149989603619348534, guid: 6a96d4e2d2eecab4bb4a2949ae511a4d, type: 2}
+    - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7157144779161836462, guid: 74411b9be492af14cb0798103be0d632, type: 3}
       propertyPath: m_Pivot.x

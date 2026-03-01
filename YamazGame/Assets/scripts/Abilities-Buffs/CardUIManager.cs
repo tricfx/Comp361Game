@@ -30,7 +30,7 @@ public class CardUIManager : MonoBehaviour
         {
             rerolls--;
             Roll3Rewards();
-            rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"({rerolls}) Rerolls left";
+            rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Reroll  ( {rerolls} left )";
             if(rerolls <= 0) rerollButton.interactable = false;
             OpenRewardScreen();
         }
