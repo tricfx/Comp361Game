@@ -21,6 +21,7 @@ public class Level : MonoBehaviour
 
     void Update() 
     {
+        // For testing...
         if (Input.GetKeyDown(KeyCode.I))
         {
             EnemyKilled();

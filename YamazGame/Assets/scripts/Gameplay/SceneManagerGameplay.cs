@@ -3,13 +3,17 @@ using UnityEngine;
 public class SceneManagerGameplay : MonoBehaviour
 {
     [SerializeField] private RewardEngine rewardEngine;
-    
+    [SerializeField] private int gemsPerKill = 3;
+
     private int totalKills = 0;
     private int currentFloor = 1;
 
     public void RegisterKill()
     {
         totalKills++;
+
+        GemManager.Instance.AddGems(gemsPerKill);
+
         Debug.Log("Kill registered: " + totalKills);
     }
 

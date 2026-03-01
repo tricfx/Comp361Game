@@ -74,6 +74,12 @@ public class EnemyHealth : MonoBehaviour
 
         Debug.Log("Enemy died! Destroying in 0.5s");
 
+        Level level = FindFirstObjectByType<Level>();
+        if (level != null)
+        {
+            level.EnemyKilled();
+        }
+
         // Destroy after a delay
         Destroy(gameObject, 0.5f);
     }
