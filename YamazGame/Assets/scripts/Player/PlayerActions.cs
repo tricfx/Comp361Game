@@ -211,13 +211,6 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
 
             Debug.Log($"Equipped {card.abilityID} to E");
         }
-        var hudObj = GameObject.FindWithTag("HUD");
-        Debug.Log("HUD object found? " + (hudObj != null ? hudObj.name : "NO"));
-        if (hudObj != null)
-        {
-            hud = hudObj.GetComponent<HUDController>();
-            Debug.Log("HUDController found? " + (hud != null));
-        }
         hud?.SetSlotIcon(toQ, card.icon);
         
     }

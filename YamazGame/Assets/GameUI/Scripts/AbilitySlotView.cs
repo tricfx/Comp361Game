@@ -9,16 +9,6 @@ public class AbilitySlotView : MonoBehaviour {
 
 
 
-    private void Start()
-    {
-        var player = GameObject.FindGameObjectWithTag("Player");
-        var playerActions = player.GetComponent<PlayerActions>();
-        if (playerActions != null && playerActions.qAbilityCard != null)
-        {
-            SetIcon(playerActions.qAbilityCard.icon);
-        }
-    }
-
     // 0 = on cooldown, 1 = ready (HUDController passes player's cooldown value)
     public void SetCooldownNormalized(float normalized){
         if (cooldownFillImage == null) return;
