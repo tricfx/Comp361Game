@@ -1,20 +1,22 @@
 using UnityEngine;
 using System;
 
-public class GemManager : MonoBehaviour
+public class GemManager : MonoBehaviour, IDataPersistence
 {
-    public static GemManager Instance; // Only one GemManager exist in the game
+    public static GemManager Instance;
 
     public event Action<int> OnGemsChanged;
-
-    [SerializeField] private int startingGems = 0;
 
     private int currentGems;
 
     public int CurrentGems => currentGems;
 
-    void Awake()
+    private void Awake()
     {
+        if (DataPersistenceManager.instance != null)
+        {
+            DataPersistenceManager.instance.LoadGame();
+        }
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -23,8 +25,6 @@ public class GemManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        currentGems = startingGems;
     }
 
     public void AddGems(int amount)
@@ -33,24 +33,32 @@ public class GemManager : MonoBehaviour
 
         currentGems += amount;
         OnGemsChanged?.Invoke(currentGems);
-
-        Debug.Log("Gems Added: " + amount);
     }
 
     public bool SpendGems(int amount)
     {
-        if (amount <= 0) return false;
-
-        if (currentGems < amount)
-        {
-            Debug.Log("Not enough gems");
+        if (amount <= 0 || currentGems < amount)
             return false;
-        }
 
         currentGems -= amount;
         OnGemsChanged?.Invoke(currentGems);
-
-        Debug.Log("Gems Spent: " + amount);
         return true;
+    }
+
+
+    public void SaveData(ref GameData data)
+    {
+        Debug.Log("Saving gems: " + currentGems);
+        data.gemsCollected = currentGems;
+        // We will also save the current scene index to know where to load back in from here since why not
+        data.sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+    }
+
+
+    public void LoadData(GameData data)
+    {
+        Debug.Log("Loading gems: " + data.gemsCollected);
+        this.currentGems = data.gemsCollected;
+        OnGemsChanged?.Invoke(currentGems);
     }
 }

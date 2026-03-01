@@ -32,6 +32,7 @@ public class DataPersistenceManager : MonoBehaviour
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
+    
 
     public void NewGame()
     {
@@ -39,8 +40,10 @@ public class DataPersistenceManager : MonoBehaviour
     }
     public void LoadGame()
     {
-        GameData data = dataHandler.Load();
-        if (data == null && BackendManager.Instance.SessionManager.AccessToken != null)
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+        Debug.Log("Found " + dataPersistenceObjects.Count + " data persistence objects in the scene.");
+        this.gameData = dataHandler.Load();
+        if (this.gameData == null && BackendManager.Instance.SessionManager.AccessToken != null)
         {
             StartCoroutine(BackendManager.Instance.GetPlayerState()); // this already handles the case where they don't have any data -> initializing default values
         }
@@ -53,6 +56,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.SaveData(ref gameData);
