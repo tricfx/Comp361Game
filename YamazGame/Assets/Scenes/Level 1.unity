@@ -286133,7 +286133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b36faca0b3442a695f5bc4e98128bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingGems: 0
 --- !u!4 &1098369466
 Transform:
   m_ObjectHideFlags: 0
@@ -557353,6 +557352,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1332874946080679999}
     - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: iconE
+      value: 
+      objectReference: {fileID: 1325203376}
+    - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: iconQ
+      value: 
+      objectReference: {fileID: 1357506395}
+    - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
@@ -557360,6 +557367,10 @@ PrefabInstance:
       propertyPath: comboWindow
       value: 0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: cardDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 43214f0d9fbc04947b8e3a24623549e2, type: 2}
     - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: comboEnableDelay
       value: 0

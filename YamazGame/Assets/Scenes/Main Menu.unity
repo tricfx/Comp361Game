@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: playerData.json
-  useEncryption: 1
+  useEncryption: 0
   gameData:
     sceneIndex: 0
     gemsCollected: 0

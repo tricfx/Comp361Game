@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerActions : MonoBehaviour
+public class PlayerActions : MonoBehaviour, IDataPersistence
 {
     [Header("References")]
     [SerializeField] private PlayerInputHandler input;
     [SerializeField] private PlayerAnimatorController anim;
     [SerializeField] private PlayerController2D controller;
+    [SerializeField] private CardDatabase cardDatabase;
 
     [Header("Attack Combo")]
     [SerializeField] private float comboWindow = 0.45f;
@@ -31,12 +33,15 @@ public class PlayerActions : MonoBehaviour
     private IAbility abilityE;
     private GameObject abilityQObject;
     private GameObject abilityEObject;
+    
+
 
 
     private HUDController hud;
 
     private void Awake()
     {
+
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
@@ -206,7 +211,45 @@ public class PlayerActions : MonoBehaviour
 
             Debug.Log($"Equipped {card.abilityID} to E");
         }
+        var hudObj = GameObject.FindWithTag("HUD");
+        Debug.Log("HUD object found? " + (hudObj != null ? hudObj.name : "NO"));
+        if (hudObj != null)
+        {
+            hud = hudObj.GetComponent<HUDController>();
+            Debug.Log("HUDController found? " + (hud != null));
+        }
         hud?.SetSlotIcon(toQ, card.icon);
+        
+    }
+
+    private void EquipByIdToSlot(string cardId, bool toQ)
+    {
+        if (string.IsNullOrEmpty(cardId)) return;
+
+        var card = cardDatabase.GetCardByID(cardId) as AbilityCard;
+        if (card == null) return;
+        Debug.Log($"Loading ability {cardId} and {card.icon})");
+        ReplaceAbilitySlot(toQ, card); // ensures correct slot
+
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.abilities == null || data.abilities.Length < 2)
+            data.abilities = new string[2];
+
+        // Store the cardIDs (consistent with CardDatabase lookup)
+        data.abilities[0] = qAbilityCard != null ? qAbilityCard.cardID : "";
+        data.abilities[1] = eAbilityCard != null ? eAbilityCard.cardID : "";
+    }
+
+    public void LoadData(GameData data)
+    {   
+        if (data?.abilities == null || data.abilities.Length < 2) return;
+        if (cardDatabase == null) return;
+       
+        EquipByIdToSlot(data.abilities[0], true);  // Q
+        EquipByIdToSlot(data.abilities[1], false); // E
     }
 }
 
