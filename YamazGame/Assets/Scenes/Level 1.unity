@@ -287662,6 +287662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownFillImage: {fileID: 1197894802}
   iconImage: {fileID: 1325203376}
+  isQSlot: 0
 --- !u!1 &1325351523
 GameObject:
   m_ObjectHideFlags: 0
@@ -288001,6 +288002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownFillImage: {fileID: 654806304}
   iconImage: {fileID: 1357506395}
+  isQSlot: 1
 --- !u!1 &1418278394
 GameObject:
   m_ObjectHideFlags: 0
