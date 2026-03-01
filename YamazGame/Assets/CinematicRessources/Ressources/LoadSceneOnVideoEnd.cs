@@ -5,7 +5,6 @@ using UnityEngine.Video;
 public class LoadSceneOnVideoEnd : MonoBehaviour
 {
     [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] private string nextSceneName;
 
     void Awake()
     {
@@ -27,9 +26,6 @@ public class LoadSceneOnVideoEnd : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer vp)
     {
-        if (!string.IsNullOrEmpty(nextSceneName))
-            SceneManager.LoadScene(nextSceneName);
-        else
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
