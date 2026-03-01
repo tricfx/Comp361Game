@@ -33461,7 +33461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
       propertyPath: m_text
-      value: 'Rerolls (3 left) '
+      value: 3 Rerolls left
       objectReference: {fileID: 0}
     - target: {fileID: 5846888644228674291, guid: 74411b9be492af14cb0798103be0d632, type: 3}
       propertyPath: m_margin.x
@@ -262062,7 +262062,6 @@ MonoBehaviour:
   replacementPanel: {fileID: 0}
   rerollButton: {fileID: 298732911}
   player: {fileID: 1690713646}
-  rerolls: 3
 --- !u!4 &801964912
 Transform:
   m_ObjectHideFlags: 0

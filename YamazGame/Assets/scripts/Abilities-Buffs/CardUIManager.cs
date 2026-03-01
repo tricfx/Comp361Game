@@ -22,7 +22,7 @@ public class CardUIManager : MonoBehaviour
 
     private AbilityCard pendingReplacementCard;
 
-    public int rerolls = 3;
+    private int rerolls = 3;
 
     public void RerollButton()
     {
@@ -30,7 +30,7 @@ public class CardUIManager : MonoBehaviour
         {
             rerolls--;
             Roll3Rewards();
-            rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Rerolls ({rerolls}) left";
+            rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"({rerolls}) Rerolls left";
             if(rerolls <= 0) rerollButton.interactable = false;
             OpenRewardScreen();
         }
