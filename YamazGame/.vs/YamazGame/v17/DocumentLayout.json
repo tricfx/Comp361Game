@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|c:\\users\\ayman\\documents\\github\\comp361game\\yamazgame\\assets\\scripts\\abilities-buffs\\carduimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A2CD15D-171D-8122-D5B3-AA972DED03E4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\abilities-buffs\\carduimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CardUIManager.cs",
+              "DocumentMoniker": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\CardUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Abilities-Buffs\\CardUIManager.cs",
+              "ToolTip": "C:\\Users\\Ayman\\Documents\\GitHub\\Comp361Game\\YamazGame\\Assets\\scripts\\Abilities-Buffs\\CardUIManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\Abilities-Buffs\\CardUIManager.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAswI8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T18:39:17.027Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

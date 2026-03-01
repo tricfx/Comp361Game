@@ -141,6 +141,8 @@ public class CardUIManager : MonoBehaviour
         }
 
         rewardPanel.SetActive(false);
+        rerolls = 3;
+        rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Reroll  ( {rerolls} left )";
         Time.timeScale = 1f;
     }
 
