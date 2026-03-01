@@ -3,7 +3,7 @@ using UnityEngine;
 public class SceneManagerGameplay : MonoBehaviour
 {
     [SerializeField] private RewardEngine rewardEngine;
-
+    
     private int totalKills = 0;
     private int currentFloor = 1;
 
