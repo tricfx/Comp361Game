@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine.UI;
 
 public class CardUIManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class CardUIManager : MonoBehaviour
     public CardUI[] replacementSlots;
     public GameObject rewardPanel;
     public GameObject replacementPanel;
+    public Button rerollButton;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -19,6 +22,20 @@ public class CardUIManager : MonoBehaviour
 
     private AbilityCard pendingReplacementCard;
 
+    public int rerolls = 3;
+
+    public void RerollButton()
+    {
+        if (rerolls > 0)
+        {
+            rerolls--;
+            Roll3Rewards();
+            rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Rerolls ({rerolls}) left";
+            if(rerolls <= 0) rerollButton.interactable = false;
+            OpenRewardScreen();
+        }
+        
+    }
     void Awake()
     {
         if (Instance != null && Instance != this)
