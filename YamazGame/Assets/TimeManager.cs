@@ -14,14 +14,14 @@ public class TimeManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton + DontDestroyOnLoad
+        
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // make sure this is the ROOT that holds the canvas too
+        DontDestroyOnLoad(gameObject); 
     }
 
     private void Start()
