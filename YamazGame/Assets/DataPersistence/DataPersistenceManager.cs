@@ -55,7 +55,12 @@ public class DataPersistenceManager : MonoBehaviour
         if (BackendManager.Instance.SessionManager.AccessToken != null)
         {
 
-            StartCoroutine(BackendManager.Instance.GetPlayerState());
+            StartCoroutine(BackendManager.Instance.GetPlayerState(
+                () =>
+                {
+                    dataHandler.Save(this.gameData);
+                }
+            ));
         }
 
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
