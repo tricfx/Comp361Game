@@ -143,7 +143,7 @@ public class BackendManager : MonoBehaviour
         );
     }
 
-    public IEnumerator GetPlayerState()
+    public IEnumerator GetPlayerState(Action onSuccess)
     {
         Debug.Log("Fetching player state");
         yield return GameClient.GetPlayerState(SessionManager.AccessToken,
@@ -159,6 +159,7 @@ public class BackendManager : MonoBehaviour
             };
 
             DataPersistenceManager.instance.gameData = data;
+            onSuccess?.Invoke();
         },
         error =>
         {
@@ -181,6 +182,22 @@ public class BackendManager : MonoBehaviour
         }
         );
     }
+
+    public IEnumerator SubmitRun(long timeMs, bool isCompleted, Action onSuccess)
+    {
+        Debug.Log("Submitting run");
+        yield return GameClient.SubmitRun(SessionManager.AccessToken, timeMs, isCompleted,
+        _ =>
+        {
+            onSuccess?.Invoke();
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
+
     [System.Serializable]
     private class SupabaseError
     {

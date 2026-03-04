@@ -23,6 +23,7 @@ public class HUDController : MonoBehaviour
 
     public void SetSlotIcon(bool toQ, Sprite icon)
     {
+
         if (toQ) qSlot.SetIcon(icon);
         else eSlot.SetIcon(icon);
     }

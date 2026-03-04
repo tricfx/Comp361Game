@@ -6,17 +6,21 @@ using UnityEngine.UI;
 public class AbilitySlotView : MonoBehaviour {
     [SerializeField] private Image cooldownFillImage;
     [SerializeField] private Image iconImage;          // the Image that displays the ability icon
-
-
+    [SerializeField] private bool isQSlot;
 
     private void Start()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null) return;
+
         var playerActions = player.GetComponent<PlayerActions>();
-        if (playerActions != null && playerActions.qAbilityCard != null)
-        {
+        if (playerActions == null) return;
+
+        if (isQSlot && playerActions.qAbilityCard != null)
             SetIcon(playerActions.qAbilityCard.icon);
-        }
+
+        if (!isQSlot && playerActions.eAbilityCard != null)
+            SetIcon(playerActions.eAbilityCard.icon);
     }
 
     // 0 = on cooldown, 1 = ready (HUDController passes player's cooldown value)
