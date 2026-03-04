@@ -24,6 +24,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             if (value < _currentHealth)
             {
                 animator.SetTrigger("hit");
+                UnlockMovement();
+                if (spriteRenderer)
+                {
+                    spriteRenderer.color = Color.red;
+                    Invoke("ResetColor", 0.1f);
+                }
             }
 
             _currentHealth = value;
@@ -106,8 +112,6 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    [SerializeField] protected EnemyHitbox hitbox;
-    [SerializeField] protected EnemyHurtbox hurtbox;
     [SerializeField] protected Transform faceDirection;
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
@@ -130,6 +134,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected bool _canAttack = true;
     protected bool _canMove = true;
     protected bool _moving = false;
+    private Color originalColor;
 
     protected virtual void Start()
     {
@@ -140,6 +145,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         CurrentHealth = MaxHealth;
         animator.SetBool("alive", true);
+        originalColor = spriteRenderer.color;
     }
 
     public void Update()
@@ -233,6 +239,14 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     public void OnObjectDestroyed()
     {
         Destroy(gameObject);
+    }
+
+    private void ResetColor()
+    {
+        if (spriteRenderer)
+        {
+            spriteRenderer.color = originalColor;
+        }
     }
 
     public abstract void Attack();

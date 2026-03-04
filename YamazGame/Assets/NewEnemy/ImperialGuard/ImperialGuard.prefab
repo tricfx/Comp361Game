@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4013200044058987307}
+  - component: {fileID: 4894063336914265231}
   - component: {fileID: 1811877921182897045}
   m_Layer: 8
   m_Name: AttackRange
@@ -26,12 +27,49 @@ Transform:
   m_GameObject: {fileID: 1398044046313058184}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalScale: {x: 10.2073965, y: 0.722125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 689116534472677966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &4894063336914265231
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398044046313058184}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 1
 --- !u!114 &1811877921182897045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,14 +570,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524bd95c732bde743b4a104b5a4c2edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 0}
-  hurtbox: {fileID: 0}
-  faceDirection: {fileID: 0}
-  detectionRange: {fileID: 0}
-  attackRange: {fileID: 0}
+  faceDirection: {fileID: 4601751760806937784}
+  detectionRange: {fileID: 2344700382323681538}
+  attackRange: {fileID: 1811877921182897045}
   _maxHealth: 10
-  _moveSpeed: 2000
-  _attackCooldown: 1
+  _moveSpeed: 5000
+  _attackCooldown: 5
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
