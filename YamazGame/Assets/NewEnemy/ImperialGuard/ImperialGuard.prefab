@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 10.2073965, y: 0.722125, z: 1}
+  m_LocalScale: {x: 12.473758, y: 0.722125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 689116534472677966}
@@ -150,7 +150,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.5
+  m_Radius: 3
 --- !u!114 &2344700382323681538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26d408f51d6f45f5b16a5ef7e02eaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2.5
+  radius: 3
 --- !u!1 &5417434597297060715
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,10 +575,11 @@ MonoBehaviour:
   attackRange: {fileID: 1811877921182897045}
   _maxHealth: 10
   _moveSpeed: 5000
-  _attackCooldown: 5
+  _attackCooldown: 4
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+  dashSpeed: 50
 --- !u!1 &8854117760306899535
 GameObject:
   m_ObjectHideFlags: 0

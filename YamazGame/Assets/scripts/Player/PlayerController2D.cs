@@ -41,7 +41,7 @@ public class PlayerController2D : MonoBehaviour
     }
 
 
-
+    public Collider2D feetCollider { get; private set; }
     private Rigidbody2D rb;
     private Vector2 velocity;
     private Vector2 lastAimDir = Vector2.down;
@@ -55,6 +55,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void Awake()
     {
+        feetCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         if (!input) input = GetComponent<PlayerInputHandler>();
         if (!anim) anim = GetComponent<PlayerAnimatorController>();

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class ImperialGuard : NewEnemy
 {
+    [SerializeField] float dashSpeed = 50f;
+    bool isDashing = false;
+    Vector2 dashTarget;
     float orbitSign;
 
     protected override void Start()
@@ -10,20 +13,49 @@ public class ImperialGuard : NewEnemy
         orbitSign = Random.Range(0,2) == 0 ? -1f : 1f;
     }
 
+    public new void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            Move(transform.position, detectionRange.PlayerPosition);
+            return;
+        }
+
+        base.FixedUpdate();
+    }
+
     public override void Attack()
     {
         if (!CanAttack) return;
-
         CanAttack = false;
-
         animator.SetTrigger("attack");
-
         Invoke(nameof(ResetAttack), _attackCooldown);
     }
 
     public override void Move(Vector2 startPosition, Vector2 targetPosition)
     {
-        // radius of detection range
+        if (isDashing)
+        {
+            Vector2 newPos = Vector2.MoveTowards(
+                rb.position,
+                dashTarget,
+                dashSpeed * Time.fixedDeltaTime
+            );
+
+            rb.MovePosition(newPos);
+
+            if (Vector2.Distance(rb.position, dashTarget) < 0.05f)
+            {
+                isDashing = false;
+            }
+
+            return;
+        }
+
+        OrbitPlayer(startPosition, targetPosition);
+    }
+
+    public void OrbitPlayer(Vector2 startPosition, Vector2 targetPosition) {
         CircleCollider2D circle = detectionRange.GetComponent<CircleCollider2D>();
         float radius = circle.radius * detectionRange.transform.lossyScale.x;
 
@@ -36,27 +68,19 @@ public class ImperialGuard : NewEnemy
         if (distance < 0.001f) return;
 
         Vector2 radialDir = toPlayer.normalized;
-
-        // perpendicular direction for circling
         Vector2 tangentDir = new Vector2(-radialDir.y, radialDir.x) * orbitSign;
-        
         Vector2 moveDir = Vector2.zero;
 
-        // --- radial control ---
         if (distance > desiredDistance)
         {
-            // too far (near edge) → move inward slightly
             moveDir += radialDir;
         }
         else if (distance < desiredDistance - tolerance)
         {
-            // too close → move outward
             moveDir -= radialDir;
         }
 
-        // --- sideways orbit ---
         moveDir += tangentDir;
-
         moveDir.Normalize();
 
         rb.AddForce(moveDir * _moveSpeed * Time.fixedDeltaTime);
@@ -66,5 +90,23 @@ public class ImperialGuard : NewEnemy
     public override void ResetAttack()
     {
         CanAttack = true;
+    }
+
+    public void DashTowardPlayer()
+    {
+        if (!detectionRange.PlayerInRange) return;
+
+        Vector2 enemyPos = feetCollider.bounds.center;
+        Vector2 playerPos = detectionRange.PlayerPosition;
+        Vector2 dir = (playerPos - enemyPos).normalized;
+
+        float distance = Mathf.Abs(Vector2.Distance(enemyPos, playerPos));
+        float dashDistance = distance * 2f;
+
+        dashTarget = enemyPos + dir * dashDistance;
+        isDashing = true;
+
+        rb.linearVelocity = Vector2.zero;
+        flipDirection(dir);
     }
 }
