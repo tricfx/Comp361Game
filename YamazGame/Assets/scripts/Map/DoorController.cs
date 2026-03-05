@@ -10,6 +10,8 @@ public class DoorController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         doorCollider = GetComponent<Collider2D>();
+        if (doorCollider)
+            doorCollider.enabled = false;
     }
 
     private void OnEnable()
@@ -26,6 +28,6 @@ public class DoorController : MonoBehaviour
     {
         UnityEngine.Debug.Log("Door Opening");
         animator.SetTrigger("Open");
-        doorCollider.enabled = false;
+        doorCollider.enabled = true;
     }
 }
