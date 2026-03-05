@@ -14,6 +14,7 @@ public class EnemyManager : MonoBehaviour
         if (aliveEnemies == 0)
         {
             UnityEngine.Debug.LogWarning("No enemies registered in scene.");
+            OnAllEnemiesDefeated.Invoke();
         }
     }
 
