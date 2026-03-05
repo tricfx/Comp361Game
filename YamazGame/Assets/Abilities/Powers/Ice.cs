@@ -6,9 +6,14 @@ public class Ice : MonoBehaviour, IAbility
 {
     [SerializeField] private Collider2D mapBounds;
     [SerializeField] private float spawnOffset = 1f;
-    [SerializeField] private float boundMargin = 3f; // spawn 2f before the wall/bound
+    [SerializeField] private float boundMargin = 3f;
     [SerializeField] private float duration = 2f;
+    [SerializeField] private float hitRadius = 3f;
+    [SerializeField] private float damageMultiplier = 2f;
+    [SerializeField] private float slowDuration = 5f;
+    [SerializeField] private float slowMultiplier = 0.3f; // 0.3 = 30% of original speed
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PlayerHurtbox playerHurtbox;
     [SerializeField] private Vector3 effectRotationEuler = new Vector3(10.93f, -10.05f, -13.7f);
     [SerializeField] private Vector3 effectScale = new Vector3(0.5f, 0.83f, 1f);
     public ParticleSystem ice;
@@ -20,10 +25,12 @@ public class Ice : MonoBehaviour, IAbility
     {
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
+        if (!playerHurtbox)
+            playerHurtbox = playerHealth.transform.root.GetComponentInChildren<PlayerHurtbox>();
+        if (playerHurtbox == null)
+            Debug.LogError("Ice: Could not find PlayerHurtbox on player!");
 
         iceInstance = Instantiate(ice, GetSpawnPosition(), Quaternion.Euler(effectRotationEuler));
-
-        // force the exact scale you want
         iceInstance.transform.localScale = effectScale;
     }
 
@@ -49,18 +56,42 @@ public class Ice : MonoBehaviour, IAbility
 
     private IEnumerator CharmOverTime()
     {
-        float total = 0f;
+        Vector3 effectPos = iceInstance.transform.position;
 
+        // One big burst of damage immediately on cast
+        int burstDamage = Mathf.Max(1, Mathf.RoundToInt(playerHurtbox.attackDamage * damageMultiplier));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(effectPos, hitRadius);
+        foreach (var col in hits)
+        {
+            if (col.CompareTag("EnemyHitbox"))
+            {
+                NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(burstDamage);
+                    StartCoroutine(SlowEnemy(enemy));
+                }
+            }
+        }
+
+        // Wait for visual effect to finish
+        float total = 0f;
         while (total < duration)
         {
-
-
             total += Time.deltaTime;
-            yield return null; // wait one frame
+            yield return null;
         }
 
         if (iceInstance != null)
             iceInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+    }
+
+    private IEnumerator SlowEnemy(NewEnemy enemy)
+    {
+        enemy.SlowMultiplier = slowMultiplier;
+        yield return new WaitForSeconds(slowDuration);
+        if (enemy != null)
+            enemy.SlowMultiplier = 1f;
     }
     private Vector3 GetSpawnPosition()
     {
@@ -80,7 +111,7 @@ public class Ice : MonoBehaviour, IAbility
         {
             if (!hit.collider) continue;
 
-            // ignore player’s own colliders
+            // ignore playerï¿½s own colliders
             if (hit.collider.transform.IsChildOf(playerHealth.transform.root)) continue;
 
             // treat these as map bounds (tilemap walls/floor composites)
