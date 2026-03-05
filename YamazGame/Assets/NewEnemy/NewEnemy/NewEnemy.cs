@@ -133,6 +133,9 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected bool _moving = false;
     protected float _slowMultiplier = 1f;
 
+    private bool _isCharmed = false;
+    private float _charmTimer = 0f;
+
     public float SlowMultiplier
     {
         get { return _slowMultiplier; }
@@ -152,6 +155,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void Update()
     {
+        // Handle charm timer
+        if (_isCharmed)
+        {
+            _charmTimer -= Time.deltaTime;
+
+            if (_charmTimer <= 0f)
+            {
+                _isCharmed = false;
+            }
+        }
+
         if (Invincible)
         {
             _invincibilityTimeElapsed += Time.deltaTime;
@@ -165,6 +179,45 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void FixedUpdate()
     {
+        // If charmed, target other enemies instead of the player
+        if (_isCharmed)
+        {
+            NewEnemy[] enemies = FindObjectsOfType<NewEnemy>();
+
+            NewEnemy targetEnemy = null;
+            float closestDistance = float.MaxValue;
+
+            foreach (NewEnemy enemy in enemies)
+            {
+                if (enemy == this) continue;
+                if (enemy._isCharmed) continue;
+                if (!enemy.Targetable) continue;
+
+                float distance = Vector2.Distance(transform.position, enemy.transform.position);
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    targetEnemy = enemy;
+                }
+            }
+
+            if (targetEnemy != null)
+            {
+                Moving = true;
+                int originalSpeed = _moveSpeed;
+                _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
+                Move(transform.position, targetEnemy.transform.position);
+                _moveSpeed = originalSpeed;
+            }
+            else
+            {
+                Moving = false;
+            }
+
+            return;
+        }
+
         if (CanAttack && attackRange.PlayerInRange)
         {
             Moving = false;
@@ -245,6 +298,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     public void OnObjectDestroyed()
     {
         Destroy(gameObject);
+    }
+
+    public void ApplyCharm(float duration)
+    {
+        _isCharmed = true;
+        _charmTimer = duration;
     }
 
     public abstract void Attack();
