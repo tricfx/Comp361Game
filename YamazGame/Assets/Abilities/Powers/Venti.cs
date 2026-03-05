@@ -5,10 +5,15 @@ using UnityEngine.Tilemaps;
 public class Venti : MonoBehaviour, IAbility
 {
     [SerializeField] private Collider2D mapBounds;
-    [SerializeField] private float spawnOffset = 10f;
-    [SerializeField] private float boundMargin = 3f; // spawn 2f before the wall/bound
-    [SerializeField] private float duration = 10f;
+    [SerializeField] private float spawnOffset = 4f;
+    [SerializeField] private float boundMargin = 3f;
+    [SerializeField] private float duration = 7f;
+    [SerializeField] private float pullRadius = 6f;
+    [SerializeField] private float pullForce = 8f;
+    [SerializeField] private float tickRate = 0.5f;
+    [SerializeField] private float damageMultiplier = 0.5f;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PlayerHurtbox playerHurtbox;
     public ParticleSystem venti;
     private ParticleSystem ventiInstance;
 
@@ -18,6 +23,10 @@ public class Venti : MonoBehaviour, IAbility
     {
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
+        if (!playerHurtbox)
+            playerHurtbox = playerHealth.transform.root.GetComponentInChildren<PlayerHurtbox>();
+        if (playerHurtbox == null)
+            Debug.LogError("Venti: Could not find PlayerHurtbox on player!");
 
         Vector3 spawnPosition = playerHealth.transform.position;
 
@@ -46,14 +55,46 @@ public class Venti : MonoBehaviour, IAbility
 
     private IEnumerator CharmOverTime()
     {
+        Vector3 core = ventiInstance.transform.position;
         float total = 0f;
+        float tickTimer = 0f;
+        int tickDamage = Mathf.Max(1, Mathf.RoundToInt(playerHurtbox.attackDamage * damageMultiplier));
 
         while (total < duration)
         {
-            
+            // Pull all enemies in radius toward core every frame
+            Collider2D[] hits = Physics2D.OverlapCircleAll(core, pullRadius);
+            foreach (var col in hits)
+            {
+                if (col.CompareTag("EnemyHitbox"))
+                {
+                    NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
+                    if (enemy != null && enemy.Targetable)
+                    {
+                        Vector2 pullDir = (core - enemy.transform.position).normalized;
+                        enemy.rb.AddForce(pullDir * pullForce, ForceMode2D.Force);
+                    }
+                }
+            }
+
+            // Tick damage to enemies near the core
+            tickTimer += Time.deltaTime;
+            if (tickTimer >= tickRate)
+            {
+                tickTimer = 0f;
+                Collider2D[] coreHits = Physics2D.OverlapCircleAll(core, 1.5f);
+                foreach (var col in coreHits)
+                {
+                    if (col.CompareTag("EnemyHitbox"))
+                    {
+                        NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
+                        enemy?.TakeDamage(tickDamage);
+                    }
+                }
+            }
 
             total += Time.deltaTime;
-            yield return null; // wait one frame
+            yield return null;
         }
 
         if (ventiInstance != null)
@@ -77,7 +118,7 @@ public class Venti : MonoBehaviour, IAbility
         {
             if (!hit.collider) continue;
 
-            // ignore player’s own colliders
+            // ignore playerï¿½s own colliders
             if (hit.collider.transform.IsChildOf(playerHealth.transform.root)) continue;
 
             // treat these as map bounds (tilemap walls/floor composites)

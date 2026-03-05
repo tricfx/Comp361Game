@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 36312762}
   m_Layer: 0
-  m_Name: '--------Music/SFX------'
+  m_Name: --------Music/SFX------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23401,7 +23401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169873393}
   m_Layer: 0
-  m_Name: '---------Settings-------'
+  m_Name: ---------Settings-------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43336,7 +43336,7 @@ GameObject:
   - component: {fileID: 517236905}
   - component: {fileID: 517236910}
   m_Layer: 5
-  m_Name: '---------Canvas--------'
+  m_Name: ---------Canvas--------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252135,7 +252135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706983825}
   m_Layer: 0
-  m_Name: '----------Other---------'
+  m_Name: ----------Other---------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285928,7 +285928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -10.800171, y: -27.100098}
+  m_AnchoredPosition: {x: -10.800049, y: -27.100098}
   m_SizeDelta: {x: 49.9456, y: 46.4208}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &991400024
@@ -307836,7 +307836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824166893}
   m_Layer: 0
-  m_Name: '----------Map----------'
+  m_Name: ----------Map----------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456148,8 +456148,8 @@ MonoBehaviour:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
       line: "Your father. His essence still resonates within these chambers. Hell
-        recognizes it\u2026 responds to it. You are, in a way, speaking the same language
-        as this place."
+        recognizes it\u2026 responds to it. You are, in a way, speaking the same
+        language as this place."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -456442,7 +456442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011200509}
   m_Layer: 0
-  m_Name: '---------Entities--------'
+  m_Name: ---------Entities--------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557894,7 +557894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123051474615805345, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionName
-      value: Player/Interact[/Keyboard/f]
+      value: 'Player/Interact[/Keyboard/f]'
       objectReference: {fileID: 0}
     - target: {fileID: 8123051474615805345, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.size
@@ -557926,7 +557926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8680477353073072649, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8994838657509954306, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_Name

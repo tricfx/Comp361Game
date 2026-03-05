@@ -8,48 +8,47 @@ public class Shield : MonoBehaviour, IAbility
     public ParticleSystem shield;
     private ParticleSystem shieldInstance;
 
-
-
     private void Awake()
     {
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
 
-        Vector3 spawnPosition = playerHealth.transform.position;
-
-        shieldInstance = Instantiate(shield, spawnPosition, Quaternion.identity);
+        shieldInstance = Instantiate(shield, playerHealth.transform.position, Quaternion.identity);
     }
 
     public void Do()
     {
-
         if (shieldInstance != null)
-        {
             shieldInstance.Play();
-        }
-        StartCoroutine(CharmOverTime());
+
+        StartCoroutine(ShieldRoutine());
     }
 
     public void Dispose()
     {
         StopAllCoroutines();
+        if (playerHealth != null)
+            playerHealth.isInvincible = false;
         if (shieldInstance != null)
             shieldInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         Destroy(gameObject);
     }
 
-    private IEnumerator CharmOverTime()
+    private IEnumerator ShieldRoutine()
     {
-        float total = 0f;
+        playerHealth.isInvincible = true;
 
+        float total = 0f;
         while (total < duration)
         {
             if (shieldInstance != null)
                 shieldInstance.transform.position = playerHealth.transform.position;
 
             total += Time.deltaTime;
-            yield return null; // wait one frame
+            yield return null;
         }
+
+        playerHealth.isInvincible = false;
 
         if (shieldInstance != null)
             shieldInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);

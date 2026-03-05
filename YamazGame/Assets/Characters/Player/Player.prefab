@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 10
   playerActions: {fileID: 0}
-  attackCollider: {fileID: 0}
+  attackCollider: {fileID: 8059695832315811722}
 --- !u!1 &5897921085173228654
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +727,7 @@ MonoBehaviour:
   gameOverAudioObject: {fileID: 0}
   deathPanel: {fileID: 0}
   deathPanelDelay: 0.5
+  isInvincible: 0
 --- !u!114 &4395188340007543857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,6 +743,7 @@ MonoBehaviour:
   input: {fileID: 5620701775207736557}
   anim: {fileID: 4731976069451397383}
   controller: {fileID: 2473590855028938758}
+  cardDatabase: {fileID: 0}
   comboWindow: 0.8
   abilityQCooldown: 3
   abilityECooldown: 5
