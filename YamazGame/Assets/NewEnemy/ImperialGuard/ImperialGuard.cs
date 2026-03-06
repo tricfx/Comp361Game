@@ -3,6 +3,7 @@ using UnityEngine;
 public class ImperialGuard : NewEnemy
 {
     [SerializeField] float dashSpeed = 50f;
+    [SerializeField] float dashDistanceMultiplier = 1.5f;
     bool isDashing = false;
     Vector2 dashTarget;
     float orbitSign;
@@ -101,7 +102,7 @@ public class ImperialGuard : NewEnemy
         Vector2 dir = (playerPos - enemyPos).normalized;
 
         float distance = Mathf.Abs(Vector2.Distance(enemyPos, playerPos));
-        float dashDistance = distance * 2f;
+        float dashDistance = distance * dashDistanceMultiplier;
 
         dashTarget = enemyPos + dir * dashDistance;
         isDashing = true;
