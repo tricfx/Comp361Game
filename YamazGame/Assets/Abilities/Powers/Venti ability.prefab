@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294bf4b36ebc5e846ac838e8f5474f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
+  mapBounds: {fileID: 0}
+  spawnOffset: 6
+  boundMargin: 3
+  duration: 3
+  pullRadius: 6
+  pullForce: 8
+  tickRate: 0.5
+  damageMultiplier: 0.0001
   playerHealth: {fileID: 0}
+  playerHurtbox: {fileID: 0}
   venti: {fileID: 8835860998730168980, guid: 5e8f7f63b4e337249ae54082da5acf6f, type: 3}

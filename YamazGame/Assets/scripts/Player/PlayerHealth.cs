@@ -24,6 +24,11 @@ public class PlayerHealth : MonoBehaviour
 
     private bool isDead = false;
     public bool IsDead => isDead;
+    public bool isInvincible = false;
+
+    [Header("Hit Flash")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float flashDuration = 0.15f;
 
     private void Awake()
     {
@@ -42,12 +47,13 @@ public class PlayerHealth : MonoBehaviour
         if (!anim) anim = GetComponent<PlayerAnimatorController>();
         if (!controller) controller = GetComponent<PlayerController2D>();
         if (!actions) actions = GetComponent<PlayerActions>();
+        if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         Debug.Log("PlayerHealth Awake: " + currentHealth);
     }
 
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
+        if (isDead || isInvincible) return;
 
         currentHealth -= damage;
         Debug.Log($"Player took {damage} damage. Health: {currentHealth}/{maxHealth}");
@@ -63,6 +69,8 @@ public class PlayerHealth : MonoBehaviour
         {
             MusicManager.Instance?.TriggerLowHealthEffect(currentHealth);
         }
+
+        StartCoroutine(HitFlash());
 
         if (currentHealth <= 0)
         {
@@ -109,6 +117,14 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
+
+    private System.Collections.IEnumerator HitFlash()
+    {
+        if (spriteRenderer == null) yield break;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = Color.white;
     }
 
     private System.Collections.IEnumerator PlayGameOverSequence()

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public abstract class NewEnemy : MonoBehaviour, INewEnemy
 {
-    public int MaxHealth {
+    public int MaxHealth
+    {
         get
         {
             return _maxHealth;
@@ -135,6 +136,13 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected bool _canMove = true;
     protected bool _moving = false;
     private Color originalColor;
+    protected float _slowMultiplier = 1f;
+
+    public float SlowMultiplier
+    {
+        get { return _slowMultiplier; }
+        set { _slowMultiplier = Mathf.Clamp(value, 0.01f, 1f); }
+    }
 
     protected virtual void Start()
     {
@@ -171,7 +179,10 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         else if (CanMove && Targetable && detectionRange.PlayerInRange)
         {
             Moving = true;
+            int originalSpeed = _moveSpeed;
+            _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
             Move(transform.position, detectionRange.PlayerPosition);
+            _moveSpeed = originalSpeed;
         }
         else
         {
@@ -217,12 +228,13 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     {
         if (direction.x > 0)
         {
-                faceDirection.localScale = new Vector3(1, 1, 1);
-                spriteRenderer.flipX = false;
-        } else
+            faceDirection.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
+        }
+        else
         {
-                faceDirection.localScale = new Vector3(-1, 1, 1);
-                spriteRenderer.flipX = true;
+            faceDirection.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
     }
 

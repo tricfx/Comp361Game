@@ -15,7 +15,7 @@ public class PlayerController2D : MonoBehaviour
 
     [Header("Dash")]
     public float dashSpeed = 20f;       // How fast the dash moves
-    public float dashDistance = 5f;     // How far the dash travels in units (for buffs)
+    public float dashDistance = 5f;     // How far the dash travels in units
     public float dashDuration = 0.5f;
     public float dashCooldown = 0.8f;
 

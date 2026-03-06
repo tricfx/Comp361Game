@@ -6,9 +6,12 @@ public class Ground : MonoBehaviour, IAbility
 {
     [SerializeField] private Collider2D mapBounds;
     [SerializeField] private float spawnOffset = 5f;
-    [SerializeField] private float boundMargin = 3f; // spawn 2f before the wall/bound
+    [SerializeField] private float boundMargin = 3f;
     [SerializeField] private float duration = 5f;
+    [SerializeField] private float hitRadius = 3f;          // Area of effect radius
+    [SerializeField] private float damageMultiplier = 1.5f; // Multiplier on player attackDamage
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PlayerHurtbox playerHurtbox;
     [SerializeField] private Vector3 effectRotationEuler = new Vector3(33.31f, -0.84f, 0f);
 
     public ParticleSystem ground;
@@ -20,8 +23,10 @@ public class Ground : MonoBehaviour, IAbility
     {
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
-
-        Vector3 spawnPosition = playerHealth.transform.position;
+        if (!playerHurtbox)
+            playerHurtbox = playerHealth.transform.root.GetComponentInChildren<PlayerHurtbox>();
+        if (playerHurtbox == null)
+            Debug.LogError("Ground: Could not find PlayerHurtbox on player!");
 
         Quaternion effectRotation = Quaternion.Euler(effectRotationEuler);
         groundInstance = Instantiate(ground, GetSpawnPosition(), effectRotation);
@@ -52,14 +57,33 @@ public class Ground : MonoBehaviour, IAbility
 
     private IEnumerator CharmOverTime()
     {
+        Vector3 effectPos = groundInstance.transform.position;
         float total = 0f;
+        float tickTimer = 0f;
+        int burstDamage = Mathf.Max(1, Mathf.RoundToInt(playerHurtbox.attackDamage * damageMultiplier));
 
         while (total < duration)
         {
+            tickTimer += Time.deltaTime;
 
+            // Burst damage once per second
+            if (tickTimer >= 1f)
+            {
+                tickTimer = 0f;
+
+                Collider2D[] hits = Physics2D.OverlapCircleAll(effectPos, hitRadius);
+                foreach (var col in hits)
+                {
+                    if (col.CompareTag("EnemyHitbox"))
+                    {
+                        NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
+                        enemy?.TakeDamage(burstDamage);
+                    }
+                }
+            }
 
             total += Time.deltaTime;
-            yield return null; // wait one frame
+            yield return null;
         }
 
         if (groundInstance != null)
@@ -83,7 +107,7 @@ public class Ground : MonoBehaviour, IAbility
         {
             if (!hit.collider) continue;
 
-            // ignore player’s own colliders
+            // ignore playerï¿½s own colliders
             if (hit.collider.transform.IsChildOf(playerHealth.transform.root)) continue;
 
             // treat these as map bounds (tilemap walls/floor composites)

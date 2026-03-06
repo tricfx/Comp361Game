@@ -41,16 +41,31 @@ public class DataPersistenceManager : MonoBehaviour
     public void LoadGame()
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-        Debug.Log("Found " + dataPersistenceObjects.Count + " data persistence objects in the scene.");
+
+        // Try load from file
         this.gameData = dataHandler.Load();
-        if (this.gameData == null && BackendManager.Instance.SessionManager.AccessToken != null)
+
+        // If no file exists, create defaults instead of crashing
+        if (this.gameData == null)
         {
-            StartCoroutine(BackendManager.Instance.GetPlayerState()); // this already handles the case where they don't have any data -> initializing default values
+            this.gameData = new GameData();
+             dataHandler.Save(this.gameData);
+        }
+
+        if (BackendManager.Instance.SessionManager.AccessToken != null)
+        {
+
+            StartCoroutine(BackendManager.Instance.GetPlayerState(
+                () =>
+                {
+                    dataHandler.Save(this.gameData);
+                }
+            ));
         }
 
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            dataPersistenceObj.LoadData(gameData);
+            dataPersistenceObj.LoadData(gameData); // now always non-null
         }
     }
 
