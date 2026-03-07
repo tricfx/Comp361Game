@@ -362,7 +362,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.787, y: 0.621, z: 0.019102333}
-  m_LocalScale: {x: 3.0496094, y: 2.480625, z: 1}
+  m_LocalScale: {x: 2.65, y: 2.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4764814998829397479}
@@ -487,8 +487,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00790994, y: 0.0024680041}
-  m_Size: {x: 0.1428894, y: 0.025245748}
+  m_Offset: {x: 0.0075396183, y: 0.010412737}
+  m_Size: {x: 0.1705949, y: 0.041135613}
   m_Direction: 1
 --- !u!95 &7540873434250881079
 Animator:
@@ -524,8 +524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017f4df8fb574a929a8a963c066ebb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 4623960157684452460}
-  hurtbox: {fileID: 0}
   faceDirection: {fileID: 4780606943734477868}
   detectionRange: {fileID: 9092103154612472699}
   attackRange: {fileID: 8324734251027002773}

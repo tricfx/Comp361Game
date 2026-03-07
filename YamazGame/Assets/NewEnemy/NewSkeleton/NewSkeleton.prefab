@@ -156,8 +156,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0007565929, y: 0.010715575}
-  m_Size: {x: 0.16932458, y: 0.04311258}
+  m_Offset: {x: -0.00015557297, y: 0.009819034}
+  m_Size: {x: 0.20526895, y: 0.041319754}
   m_Direction: 1
 --- !u!95 &8765223924464969071
 Animator:
@@ -193,8 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d77925b17b94e9e88680c43a116e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 7929122026899671448}
-  hurtbox: {fileID: 3548950214057549109}
   faceDirection: {fileID: 6919719421441425951}
   detectionRange: {fileID: 3538662739765094555}
   attackRange: {fileID: 1591120705167467719}

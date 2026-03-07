@@ -533,8 +533,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.008513643, y: 0.006103912}
-  m_Size: {x: 0.25088364, y: 0.03307381}
+  m_Offset: {x: -0.009158281, y: 0.018606693}
+  m_Size: {x: 0.28472123, y: 0.040953834}
   m_Direction: 1
 --- !u!95 &2721119162240442920
 Animator:
@@ -580,6 +580,7 @@ MonoBehaviour:
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
   dashSpeed: 50
+  dashDistanceMultiplier: 1.5
 --- !u!1 &8854117760306899535
 GameObject:
   m_ObjectHideFlags: 0
