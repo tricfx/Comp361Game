@@ -46,6 +46,9 @@ public class PlayerController2D : MonoBehaviour
     private Vector2 velocity;
     private Vector2 lastAimDir = Vector2.down;
 
+    [Header("Attack Movement")]
+    [SerializeField] private float attackMoveMultiplier = 0.3f;
+
     private float dashTimer;
     private float dashCooldownTimer;
     private bool isDashing;
@@ -121,9 +124,11 @@ public class PlayerController2D : MonoBehaviour
         }
         if (actions != null && actions.IsAttacking)
         {
-
-            rb.linearVelocity = Vector2.zero;
-            velocity = Vector2.zero;
+            Vector2 attackMove = input.Move;
+            Vector2 attackMoveDir = attackMove.sqrMagnitude > 0.0001f ? attackMove.normalized : Vector2.zero;
+            Vector2 attackTarget = attackMoveDir * moveSpeed * attackMoveMultiplier;
+            velocity = Vector2.MoveTowards(velocity, attackTarget, decel * Time.fixedDeltaTime);
+            rb.linearVelocity = velocity;
             return;
         }
 

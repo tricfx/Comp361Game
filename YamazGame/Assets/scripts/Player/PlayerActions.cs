@@ -15,8 +15,10 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
     private int comboStep = 0;
     private float lastAttackTime = -999f;
     private bool canCombo = false;
+    private bool comboBuffered = false; // Input pressed before canCombo was true
 
     public bool IsAttacking => comboStep > 0;
+    public int ComboStep => comboStep;
 
     [Header("Ability Cooldowns")]
     [SerializeField] private float abilityQCooldown = 0f;
@@ -33,7 +35,7 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
     private IAbility abilityE;
     private GameObject abilityQObject;
     private GameObject abilityEObject;
-    
+
 
 
 
@@ -70,7 +72,12 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             ResetCombo();
 
         if (input.AttackPressed)
-            PerformAttack();
+        {
+            if (comboStep == 0 || canCombo)
+                PerformAttack();
+            else
+                comboBuffered = true; // Buffer the input for when canCombo becomes true
+        }
 
         if (input.QPressed && Time.time >= lastAbilityQ + abilityQCooldown)
         {
@@ -137,12 +144,20 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
     {
         comboStep = 0;
         canCombo = false;
+        comboBuffered = false;
         anim?.ResetAttackStep();
     }
 
     public void AllowNextCombo()
     {
         canCombo = true;
+
+        // If player already pressed attack while waiting, fire it immediately
+        if (comboBuffered)
+        {
+            comboBuffered = false;
+            PerformAttack();
+        }
     }
 
     // Equip an ability into the first free slot (Q then E)
@@ -182,7 +197,7 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
 
     private void EquipToSlot(AbilityCard card, bool toQ)
     {
-       
+
         GameObject abilityObj = Instantiate(card.abilityPrefab, transform);
 
         IAbility ability = abilityObj.GetComponent<IAbility>();
@@ -212,7 +227,7 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             Debug.Log($"Equipped {card.abilityID} to E");
         }
         hud?.SetSlotIcon(toQ, card.icon);
-        
+
     }
 
     private void EquipByIdToSlot(string cardId, bool toQ)
@@ -237,10 +252,10 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
     }
 
     public void LoadData(GameData data)
-    {   
+    {
         if (data?.abilities == null || data.abilities.Length < 2) return;
         if (cardDatabase == null) return;
-       
+
         EquipByIdToSlot(data.abilities[0], true);  // Q
         EquipByIdToSlot(data.abilities[1], false); // E
     }
