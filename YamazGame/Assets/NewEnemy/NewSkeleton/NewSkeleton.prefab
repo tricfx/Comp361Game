@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 89394695309548364}
   - component: {fileID: 2500219155258586321}
   - component: {fileID: 1591120705167467719}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 792308552470018032}
   - component: {fileID: 624488594281922452}
   - component: {fileID: 3548950214057549109}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Hurtbox
   m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ Transform:
   m_GameObject: {fileID: 4881115091429829661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01141274, y: -0.27216947, z: -0.021909067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -451,7 +451,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.26540765, y: 0.29188278}
+  m_Offset: {x: 0.26609552, y: 0.042387307}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -461,7 +461,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.46138066, y: 0.15089816}
+  m_Size: {x: 0.46000496, y: 0.14971906}
   m_EdgeRadius: 0
 --- !u!114 &3548950214057549109
 MonoBehaviour:
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 475461214103687152}
   - component: {fileID: 8952574046705920098}
   - component: {fileID: 3538662739765094555}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: DetectionRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6919719421441425951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FaceDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 8476507724350602319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01141274, y: 0.27216947, z: 0.021909067}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
