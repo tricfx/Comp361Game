@@ -2,6 +2,21 @@ using UnityEngine;
 
 public abstract class NewEnemy : MonoBehaviour, INewEnemy
 {
+    public enum Team
+    {
+        Ally,
+        Enemy
+    }
+
+    public Team CurrentTeam = Team.Enemy;
+
+    private bool _isCharmed = false;
+    private float _charmTimer = 0f;
+
+    public static System.Collections.Generic.List<NewEnemy> allEnemies = new System.Collections.Generic.List<NewEnemy>();
+
+protected Transform currentTarget;
+public Transform CurrentTarget => currentTarget;
     public int MaxHealth
     {
         get
@@ -148,10 +163,32 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         CurrentHealth = MaxHealth;
         animator.SetBool("alive", true);
+        if (!allEnemies.Contains(this))
+            allEnemies.Add(this);
+
+        currentTarget = null;
+    }
+
+    private void OnDestroy()
+    {
+        if (allEnemies.Contains(this))
+            allEnemies.Remove(this);
     }
 
     public void Update()
     {
+        if (_isCharmed)
+        {
+            _charmTimer -= Time.deltaTime;
+
+            if (_charmTimer <= 0f)
+            {
+                _isCharmed = false;
+                CurrentTeam = Team.Enemy;
+                currentTarget = null;
+            }
+        }
+
         if (Invincible)
         {
             _invincibilityTimeElapsed += Time.deltaTime;
@@ -165,23 +202,127 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void FixedUpdate()
     {
-        if (CanAttack && attackRange.PlayerInRange)
+        if (!Targetable) return;
+
+        Vector2 targetPosition;
+
+        if (_isCharmed)
         {
-            Moving = false;
-            Attack();
+            if (currentTarget == null || !(currentTarget is object && currentTarget.GetComponent<NewEnemy>() != null && currentTarget.GetComponent<NewEnemy>().Targetable))
+            {
+                // Clear invalid or dead target
+                currentTarget = null;
+
+                NewEnemy newTarget = FindClosestEnemy();
+                if (newTarget != null)
+                    currentTarget = newTarget.transform;
+            }
+
+            if (currentTarget == null)
+            {
+                Moving = false;
+                return;
+            }
+
+            targetPosition = currentTarget.position;
+
+            // Attack using the same behaviour used against the player
+            float attackDistance = Vector2.Distance(transform.position, targetPosition);
+
+            if (CanAttack && attackDistance < 6f)
+            {
+                Moving = false;
+                Attack();
+                return;
+            }
         }
-        else if (CanMove && Targetable && detectionRange.PlayerInRange)
+        else
+        {
+            NewEnemy allyTarget = FindClosestEnemy();
+
+            if (allyTarget != null && allyTarget.CurrentTeam != CurrentTeam)
+            {
+                targetPosition = allyTarget.transform.position;
+
+                if (CanAttack && Vector2.Distance(transform.position, targetPosition) < 1.5f)
+                {
+                    Moving = false;
+                    Attack();
+                    return;
+                }
+            }
+            else
+            {
+                if (CanAttack && attackRange.PlayerInRange)
+                {
+                    Moving = false;
+                    Attack();
+                    return;
+                }
+
+                if (!detectionRange.PlayerInRange)
+                {
+                    Moving = false;
+                    return;
+                }
+
+                targetPosition = detectionRange.PlayerPosition;
+            }
+        }
+
+        if (CanMove)
         {
             Moving = true;
             int originalSpeed = _moveSpeed;
             _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
-            Move(transform.position, detectionRange.PlayerPosition);
+            Move(transform.position, targetPosition);
             _moveSpeed = originalSpeed;
         }
         else
         {
             Moving = false;
         }
+    }
+    
+    public void ApplyCharm(float duration)
+    {
+        // Always reset charm state
+        _isCharmed = true;
+        _charmTimer = duration;
+
+        // Force the enemy onto the Ally team again
+        CurrentTeam = Team.Ally;
+
+        // Clear any previous target
+        currentTarget = null;
+
+        // Pick a fresh enemy target
+        NewEnemy targetEnemy = FindClosestEnemy();
+        if (targetEnemy != null)
+            currentTarget = targetEnemy.transform;
+    }
+
+    protected NewEnemy FindClosestEnemy()
+    {
+        float closest = Mathf.Infinity;
+        NewEnemy best = null;
+
+        foreach (var enemy in allEnemies)
+        {
+            if (enemy == this) continue;
+            if (!enemy.Targetable) continue;
+            if (enemy.CurrentTeam == this.CurrentTeam) continue;
+
+            float dist = Vector2.Distance(transform.position, enemy.transform.position);
+
+            if (dist < closest)
+            {
+                closest = dist;
+                best = enemy;
+            }
+        }
+
+        return best;
     }
 
     public void TakeDamage(int damage, Vector2 knockback)
@@ -220,15 +361,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void flipDirection(Vector2 direction)
     {
-        if (direction.x > 0)
+        float sign = direction.x > 0 ? 1f : -1f;
+
+        faceDirection.localScale = new Vector3(sign, 1, 1);
+        spriteRenderer.flipX = sign < 0;
+
+        // Ensure hitbox flips with the enemy so melee attacks work on both sides
+        if (hitbox != null)
         {
-            faceDirection.localScale = new Vector3(1, 1, 1);
-            spriteRenderer.flipX = false;
-        }
-        else
-        {
-            faceDirection.localScale = new Vector3(-1, 1, 1);
-            spriteRenderer.flipX = true;
+            Vector3 scale = hitbox.transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * sign;
+            hitbox.transform.localScale = scale;
         }
     }
 
