@@ -12,6 +12,7 @@ TagManager:
   - EnemyHitbox
   - EnemyAttack
   - HUD
+  - TilemapCollider
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - PlayerHitbox
   - test
   - CameraBounds
-  - 
+  - TilemapCollider
   - 
   - 
   - 

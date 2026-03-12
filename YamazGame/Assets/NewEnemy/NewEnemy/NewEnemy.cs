@@ -116,11 +116,13 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected Transform faceDirection;
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
+
     public SpriteRenderer spriteRenderer { get; private set; }
     public Animator animator { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public Collider2D feetCollider { get; private set; }
 
+    [SerializeField] protected float _searchDuration = 5f;
     [SerializeField] protected int _maxHealth = 10;
     [SerializeField] protected int _moveSpeed = 2000;
     [SerializeField] protected float _attackCooldown = 1f;
@@ -128,6 +130,18 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected bool _enableInvincibilityWindow = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
 
+    public enum EnemyState
+    {
+        Idle,
+        Patrol,
+        Chase,
+        Attack,
+        Search
+    }
+
+    protected EnemyState _currentState;
+    protected Vector2 _lastSeenPlayerPosition;
+    protected float _searchTimer = 0f;
     protected int _currentHealth;
     protected bool _targetable = true;
     protected bool _invincible = false;
@@ -135,7 +149,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected bool _canAttack = true;
     protected bool _canMove = true;
     protected bool _moving = false;
-    private Color originalColor;
+    protected Color originalColor;
     protected float _slowMultiplier = 1f;
 
     public float SlowMultiplier
@@ -154,6 +168,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         CurrentHealth = MaxHealth;
         animator.SetBool("alive", true);
         originalColor = spriteRenderer.color;
+
+        _currentState = EnemyState.Idle;
     }
 
     public void Update()
@@ -169,9 +185,28 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    public void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (CanAttack && attackRange.PlayerInRange)
+        switch(_currentState)
+        {
+            case EnemyState.Idle:
+                HandleIdle();
+                break;
+
+            case EnemyState.Chase:
+                HandleChase();
+                break;
+            
+            case EnemyState.Attack:
+                HandleAttack();
+                break;
+
+            case EnemyState.Search:
+                HandleSearch();
+                break;
+        }
+
+        /* if (CanAttack && attackRange.PlayerInRange)
         {
             Moving = false;
             Attack();
@@ -187,6 +222,84 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         else
         {
             Moving = false;
+        } */
+    }
+
+    void HandleIdle()
+    {
+        Moving = false;
+
+        if (Targetable && detectionRange.PlayerInRange)
+        {
+            _currentState = EnemyState.Chase;
+        }
+    }
+
+    void HandleChase()
+    {
+        if (!detectionRange.PlayerInRange)
+        {
+            _lastSeenPlayerPosition = detectionRange.PlayerPosition;
+            _searchTimer = _searchDuration;
+            _currentState = EnemyState.Search;
+            return;
+        }
+
+        if (attackRange.PlayerInRange && CanAttack)
+        {
+            _currentState = EnemyState.Attack;
+            return;
+        }
+
+        if (CanMove)
+        {
+            Moving = true;
+
+            int originalSpeed = _moveSpeed;
+            _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
+
+            Move(feetCollider.bounds.center, detectionRange.PlayerPosition);
+
+            _moveSpeed = originalSpeed;
+        }
+    }
+
+    void HandleAttack()
+    {
+        Moving = false;
+
+        if (!attackRange.PlayerInRange)
+        {
+            _currentState = EnemyState.Chase;
+            return;
+        }
+
+        if (CanAttack)
+        {
+            Attack();
+        }
+    }
+
+    void HandleSearch()
+    {
+        if (detectionRange.PlayerInRange)
+        {
+            _currentState = EnemyState.Chase;
+            return;
+        }
+
+        if (_searchTimer <= 0f)
+        {
+            _currentState = EnemyState.Idle;
+            return;
+        }
+
+        _searchTimer -= Time.fixedDeltaTime;
+
+        if (CanMove)
+        {
+            Moving = true;
+            Move(feetCollider.bounds.center, _lastSeenPlayerPosition);
         }
     }
 

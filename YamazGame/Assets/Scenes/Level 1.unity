@@ -282400,7 +282400,7 @@ Transform:
   m_GameObject: {fileID: 887897576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.767335, y: 44.13998, z: -10}
+  m_LocalPosition: {x: 7.7645664, y: 44.14133, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -282722,9 +282722,9 @@ GameObject:
   - component: {fileID: 947088567}
   - component: {fileID: 947088566}
   - component: {fileID: 947088565}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Hitboxes
-  m_TagString: Untagged
+  m_TagString: TilemapCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
