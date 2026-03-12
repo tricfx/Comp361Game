@@ -4,8 +4,10 @@ public class ImperialGuard : NewEnemy
 {
     [SerializeField] float dashSpeed = 50f;
     [SerializeField] float dashDistanceMultiplier = 1.5f;
+    [SerializeField] float orbitNoiseStrength = 0.05f;
     bool isDashing = false;
     Vector2 dashTarget;
+    Vector2 committedDashTarget;
     float orbitSign;
 
     protected override void Start()
@@ -18,7 +20,7 @@ public class ImperialGuard : NewEnemy
     {
         if (isDashing)
         {
-            Move(feetCollider.bounds.center, detectionRange.PlayerPosition);
+            Move(feetCollider.bounds.center, committedDashTarget);
             return;
         }
 
@@ -28,6 +30,11 @@ public class ImperialGuard : NewEnemy
     public override void Attack()
     {
         if (!CanAttack) return;
+
+        committedDashTarget = detectionRange.PlayerInRange
+            ? detectionRange.PlayerPosition
+            : _lastSeenPlayerPosition;
+
         CanAttack = false;
         animator.SetTrigger("attack");
         Invoke(nameof(ResetAttack), _attackCooldown);
@@ -53,39 +60,57 @@ public class ImperialGuard : NewEnemy
             return;
         }
 
-        OrbitPlayer(startPosition, targetPosition);
+        HoverAtSide(startPosition, targetPosition);
     }
 
-    public void OrbitPlayer(Vector2 startPosition, Vector2 targetPosition) {
+    public void HoverAtSide(Vector2 startPosition, Vector2 targetPosition)
+    {
         CircleCollider2D circle = detectionRange.GetComponent<CircleCollider2D>();
         float radius = circle.radius * detectionRange.transform.lossyScale.x;
 
-        float desiredDistance = radius * 0.9f; // stay just inside
+        float desiredDistance = radius * 0.9f;
         float tolerance = 0.2f;
 
+        Vector2 rightPoint = targetPosition + new Vector2(desiredDistance, 0f);
+        Vector2 leftPoint  = targetPosition + new Vector2(-desiredDistance, 0f);
+
+        float distToRight = Vector2.Distance(startPosition, rightPoint);
+        float distToLeft  = Vector2.Distance(startPosition, leftPoint);
+
+        Vector2 desiredPoint = distToRight < distToLeft ? rightPoint : leftPoint;
+
+        Vector2 toDesired = desiredPoint - startPosition;
+        float distanceToDesired = toDesired.magnitude;
+
+        if (distanceToDesired < 0.001f)
+            return;
+
+        Vector2 seek = toDesired.normalized;
+
         Vector2 toPlayer = targetPosition - startPosition;
-        float distance = toPlayer.magnitude;
+        float playerDistance = toPlayer.magnitude;
 
-        if (distance < 0.001f) return;
-
-        Vector2 radialDir = toPlayer.normalized;
-        Vector2 tangentDir = new Vector2(-radialDir.y, radialDir.x) * orbitSign;
-        Vector2 moveDir = Vector2.zero;
-
-        if (distance > desiredDistance)
+        Vector2 radialCorrection = Vector2.zero;
+        if (playerDistance > desiredDistance + tolerance)
         {
-            moveDir += radialDir;
+            radialCorrection += toPlayer.normalized;
         }
-        else if (distance < desiredDistance - tolerance)
+        else if (playerDistance < desiredDistance - tolerance)
         {
-            moveDir -= radialDir;
+            radialCorrection -= toPlayer.normalized;
         }
 
-        moveDir += tangentDir;
-        moveDir.Normalize();
+        Vector2 separation = GetSeparationForce();
+        Vector2 avoid = GetObstacleAvoidance(seek);
+        Vector2 noise = Random.insideUnitCircle * orbitNoiseStrength;
 
-        rb.AddForce(moveDir * _moveSpeed * Time.fixedDeltaTime);
-        flipDirection(moveDir);
+        Vector2 finalDir = (seek + radialCorrection + separation + avoid + noise).normalized;
+
+        if (finalDir.sqrMagnitude < 0.001f)
+            return;
+
+        rb.AddForce(finalDir * _moveSpeed * Time.fixedDeltaTime);
+        FacePlayer(startPosition, targetPosition);
     }
 
     public override void ResetAttack()
@@ -95,13 +120,15 @@ public class ImperialGuard : NewEnemy
 
     public void DashTowardPlayer()
     {
-        if (!detectionRange.PlayerInRange) return;
-
         Vector2 enemyPos = feetCollider.bounds.center;
-        Vector2 playerPos = detectionRange.PlayerPosition;
-        Vector2 dir = (playerPos - enemyPos).normalized;
+        Vector2 playerPos = committedDashTarget;
 
-        float distance = Mathf.Abs(Vector2.Distance(enemyPos, playerPos));
+        Vector2 dir = (playerPos - enemyPos);
+        if (dir.sqrMagnitude < 0.001f) return;
+
+        dir.Normalize();
+
+        float distance = Vector2.Distance(enemyPos, playerPos);
         float dashDistance = distance * dashDistanceMultiplier;
 
         dashTarget = enemyPos + dir * dashDistance;

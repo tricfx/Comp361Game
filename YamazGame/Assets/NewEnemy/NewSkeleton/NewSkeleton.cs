@@ -18,8 +18,13 @@ public class NewSkeleton : NewEnemy
 
     public override void Move(Vector2 startPosition, Vector2 targetPosition)
     {
-        Vector2 direction = (targetPosition - startPosition).normalized;
-        rb.AddForce(direction * _moveSpeed * Time.fixedDeltaTime);
-        flipDirection(direction);
+        Vector2 seek = (targetPosition - startPosition).normalized;
+        Vector2 separation = GetSeparationForce();
+        Vector2 avoid = GetObstacleAvoidance(seek);
+        Vector2 noise = Random.insideUnitCircle * 0.1f;
+
+        Vector2 finalDir = (seek + separation + avoid + noise).normalized;
+        rb.AddForce(finalDir * _moveSpeed * Time.fixedDeltaTime);
+        FacePlayer(startPosition, targetPosition);
     }
 }

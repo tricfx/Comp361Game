@@ -145,7 +145,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.25
+  m_Radius: 3
 --- !u!114 &8324734251027002773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,10 +527,18 @@ MonoBehaviour:
   faceDirection: {fileID: 4780606943734477868}
   detectionRange: {fileID: 9092103154612472699}
   attackRange: {fileID: 8324734251027002773}
+  _searchDuration: 5
   _maxHealth: 5
   _moveSpeed: 3000
   _attackCooldown: 3
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   projectileSpawner: {fileID: 1034858515595350144}
+  preferredDistanceMultiplier: 0.8
+  distanceTolerance: 0.3
+  strafeStrength: 0.5
+  noiseStrength: 0.05

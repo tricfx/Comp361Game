@@ -129,6 +129,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected bool _disableSimulation = false;
     [SerializeField] protected bool _enableInvincibilityWindow = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
+    [SerializeField] protected LayerMask _obstacleLayer;
 
     public enum EnemyState
     {
@@ -225,7 +226,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         } */
     }
 
-    void HandleIdle()
+    protected virtual void HandleIdle()
     {
         Moving = false;
 
@@ -235,11 +236,14 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    void HandleChase()
+    protected virtual void HandleChase()
     {
-        if (!detectionRange.PlayerInRange)
+        if (detectionRange.PlayerInRange)
         {
             _lastSeenPlayerPosition = detectionRange.PlayerPosition;
+        }
+        else
+        {
             _searchTimer = _searchDuration;
             _currentState = EnemyState.Search;
             return;
@@ -247,6 +251,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         if (attackRange.PlayerInRange && CanAttack)
         {
+            Moving = false;
             _currentState = EnemyState.Attack;
             return;
         }
@@ -264,7 +269,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    void HandleAttack()
+    protected virtual void HandleAttack()
     {
         Moving = false;
 
@@ -280,7 +285,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    void HandleSearch()
+    protected virtual void HandleSearch()
     {
         if (detectionRange.PlayerInRange)
         {
@@ -290,6 +295,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         if (_searchTimer <= 0f)
         {
+            Moving = false;
             _currentState = EnemyState.Idle;
             return;
         }
@@ -300,6 +306,68 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             Moving = true;
             Move(feetCollider.bounds.center, _lastSeenPlayerPosition);
+        }
+    }
+
+    protected Vector2 GetSeparationForce(float radius = 1.0f, float strength = 2f)
+    {
+        Collider2D[] neighbors = Physics2D.OverlapCircleAll(
+            feetCollider.bounds.center,
+            radius
+        );
+
+        Vector2 force = Vector2.zero;
+
+        foreach (Collider2D c in neighbors)
+        {
+            if (c == feetCollider) continue;
+            NewEnemy other = c.GetComponent<NewEnemy>();
+            if (other == null) continue;
+
+            Vector2 diff = feetCollider.bounds.center - other.feetCollider.bounds.center;
+            float dist = diff.magnitude;
+
+            if (dist > 0)
+            {
+                force += diff.normalized / dist;
+            }
+        }
+
+        return force * strength;
+    }
+
+    protected Vector2 GetObstacleAvoidance(Vector2 moveDir, float checkDistance = 0.6f)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(
+            feetCollider.bounds.center,
+            moveDir,
+            checkDistance,
+            _obstacleLayer
+        );
+
+        if (hit.collider != null)
+        {
+            Vector2 avoidDir = hit.normal;
+            return avoidDir * 2f;
+        }
+
+        return Vector2.zero;
+    }
+
+    protected void FacePlayer(Vector2 enemyPos, Vector2 playerPos)
+    {
+        float dir = playerPos.x - enemyPos.x;
+        if (Mathf.Abs(dir) < 0.1f) return;
+
+        if (dir > 0)
+        {
+            faceDirection.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            faceDirection.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
     }
 
@@ -339,12 +407,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void flipDirection(Vector2 direction)
     {
-        if (direction.x > 0)
+        if (direction.x > 0.1f)
         {
             faceDirection.localScale = new Vector3(1, 1, 1);
             spriteRenderer.flipX = false;
         }
-        else
+        else if (direction.x < -0.1f)
         {
             faceDirection.localScale = new Vector3(-1, 1, 1);
             spriteRenderer.flipX = true;

@@ -573,12 +573,16 @@ MonoBehaviour:
   faceDirection: {fileID: 4601751760806937784}
   detectionRange: {fileID: 2344700382323681538}
   attackRange: {fileID: 1811877921182897045}
+  _searchDuration: 5
   _maxHealth: 10
   _moveSpeed: 5000
   _attackCooldown: 4
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   dashSpeed: 50
   dashDistanceMultiplier: 1.5
 --- !u!1 &8854117760306899535
