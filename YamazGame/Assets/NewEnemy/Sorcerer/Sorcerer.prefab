@@ -389,6 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5068533553103266958}
+  - component: {fileID: 8872322622575331237}
   m_Layer: 8
   m_Name: SorcererSpellSpawner
   m_TagString: Untagged
@@ -411,6 +412,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5691801322984428706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8872322622575331237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569695297970546569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd27b7c8d26946cfac9a47b8f8c0146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 671066167685975344, guid: ead833ae2ace4414b8dc256a6bfde8e8, type: 3}
 --- !u!1 &4537795751100239640
 GameObject:
   m_ObjectHideFlags: 0
