@@ -290,7 +290,7 @@ public Transform CurrentTarget => currentTarget;
         _isCharmed = true;
         _charmTimer = duration;
 
-        // Force the enemy onto the Ally team again
+        // Put the enemy onto the Ally team again
         CurrentTeam = Team.Ally;
 
         // Clear any previous target
