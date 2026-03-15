@@ -69,7 +69,7 @@ public class Venti : MonoBehaviour, IAbility
                 if (col.CompareTag("EnemyHitbox"))
                 {
                     NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
-                    if (enemy != null && enemy.Targetable)
+                    if (enemy != null && enemy.IsAlive)
                     {
                         Vector2 pullDir = (core - enemy.transform.position).normalized;
                         enemy.rb.AddForce(pullDir * pullForce, ForceMode2D.Force);

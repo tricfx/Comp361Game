@@ -35,27 +35,23 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
             _currentHealth = value;
 
-            if (_currentHealth <= 0)
+            if (_currentHealth <= 0 && _isAlive)
             {
-                animator.SetBool("alive", false);
-                Targetable = false;
+                _currentHealth = 0;
+                Die();
             }
         }
     }
 
-    public bool Targetable
+    public bool IsAlive
     {
         get
         {
-            return _targetable;
+            return _isAlive;
         }
         set
         {
-            _targetable = value;
-            if (_disableSimulation)
-            {
-                rb.simulated = false;
-            }
+            _isAlive = value;
             feetCollider.enabled = value;
         }
     }
@@ -126,8 +122,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected int _maxHealth = 10;
     [SerializeField] protected int _moveSpeed = 2000;
     [SerializeField] protected float _attackCooldown = 1f;
-    [SerializeField] protected bool _disableSimulation = false;
-    [SerializeField] protected bool _enableInvincibilityWindow = false;
+    [SerializeField] protected bool _enableIFrames = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
     [SerializeField] protected LayerMask _obstacleLayer;
 
@@ -144,7 +139,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected Vector2 _lastSeenPlayerPosition;
     protected float _searchTimer = 0f;
     protected int _currentHealth;
-    protected bool _targetable = true;
+    protected bool _isAlive = true;
     protected bool _invincible = false;
     protected float _invincibilityTimeElapsed = 0f;
     protected bool _canAttack = true;
@@ -188,6 +183,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     protected virtual void FixedUpdate()
     {
+        if (!IsAlive)
+        {
+            Moving = false;
+            return;
+        }
+
         switch(_currentState)
         {
             case EnemyState.Idle:
@@ -206,31 +207,13 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
                 HandleSearch();
                 break;
         }
-
-        /* if (CanAttack && attackRange.PlayerInRange)
-        {
-            Moving = false;
-            Attack();
-        }
-        else if (CanMove && Targetable && detectionRange.PlayerInRange)
-        {
-            Moving = true;
-            int originalSpeed = _moveSpeed;
-            _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
-            Move(transform.position, detectionRange.PlayerPosition);
-            _moveSpeed = originalSpeed;
-        }
-        else
-        {
-            Moving = false;
-        } */
     }
 
     protected virtual void HandleIdle()
     {
         Moving = false;
 
-        if (Targetable && detectionRange.PlayerInRange)
+        if (IsAlive && detectionRange.PlayerInRange)
         {
             _currentState = EnemyState.Chase;
         }
@@ -378,7 +361,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             CurrentHealth -= damage;
             TakeKnockback(knockback);
 
-            if (_enableInvincibilityWindow)
+            if (_enableIFrames)
             {
                 Invincible = true;
             }
@@ -391,11 +374,53 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             CurrentHealth -= damage;
 
-            if (_enableInvincibilityWindow)
+            if (_enableIFrames)
             {
                 Invincible = true;
             }
         }
+    }
+
+    protected virtual void Die()
+    {
+        _isAlive = false;
+        _canMove = false;
+        _canAttack = false;
+        _currentState = EnemyState.Idle;
+
+        Moving = false;
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.simulated = false;
+        }
+
+        if (feetCollider != null)
+        {
+            feetCollider.enabled = false;
+        }
+
+        if (detectionRange != null)
+        {
+            Collider2D detectionCollider = detectionRange.GetComponent<Collider2D>();
+            if (detectionCollider != null)
+            {
+                detectionCollider.enabled = false;
+            }
+        }
+
+        if (attackRange != null)
+        {
+            Collider2D attackCollider = attackRange.GetComponent<Collider2D>();
+            if (attackCollider != null)
+            {
+                attackCollider.enabled = false;
+            }
+        }
+
+        animator.SetBool("alive", false);
     }
 
     public void TakeKnockback(Vector2 knockback)
@@ -426,6 +451,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void UnlockMovement()
     {
+        if (!IsAlive) return;
         CanMove = true;
     }
 

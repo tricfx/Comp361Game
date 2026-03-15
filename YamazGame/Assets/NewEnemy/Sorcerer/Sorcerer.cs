@@ -16,7 +16,7 @@ public class Sorcerer : NewEnemy
     {
         while (true)
         {
-            if (!Targetable)
+            if (!IsAlive)
             {
                 yield break;
             }
