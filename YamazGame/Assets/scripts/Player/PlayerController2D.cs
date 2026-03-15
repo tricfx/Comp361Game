@@ -158,6 +158,7 @@ public class PlayerController2D : MonoBehaviour
             ? new Vector2(rawMove.x, rawMove.y * 0.5f).normalized
             : lastAimDir;
         isDashing = true;
+        GetComponent<PlayerActions>()?.ResetDashSound();
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
         anim?.TriggerDash();

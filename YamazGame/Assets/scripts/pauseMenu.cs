@@ -1,20 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 public class pauseMenu : MonoBehaviour
 {
     public CanvasGroup PauseMenu;
     public CanvasGroup Settings;
     public CanvasGroup Controls;
+    public GameObject BlurOverlay;
+    public AudioSource openPause;
+    public AudioSource closePause;
 
-    private bool isPaused = false;
+    [Header("Pause Audio")]
+    public AudioMixer audioMixer;
+    public string exposedVolumeParameter = "Music";
+    public float pausedVolumeDb = -15f;
+
+    public bool isPaused = false;
     private bool inSettings = false;
     private bool inControls = false;
+
+    [SerializeField] private SettingsManager settingsManager;
 
     void Start()
     {
         PauseMenu.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
+        BlurOverlay.SetActive(false);
     }
 
     void Update()
@@ -23,17 +35,18 @@ public class pauseMenu : MonoBehaviour
         {
             if (!isPaused)
             {
-                // Open pause menu
                 isPaused = true;
                 PauseMenu.gameObject.SetActive(true);
+                openPause.Play();
+                BlurOverlay.SetActive(true);
+
+                ReduceTargetAudio();
                 Time.timeScale = 0f;
                 return;
             }
 
-            // If in Controls → go back to Settings
             if (inControls)
             {
-                Debug.Log("Leaving Controls, going back to Settings");
                 Controls.gameObject.SetActive(false);
                 Settings.gameObject.SetActive(true);
                 inControls = false;
@@ -41,16 +54,15 @@ public class pauseMenu : MonoBehaviour
                 return;
             }
 
-            // If in Settings → go back to Pause
             if (inSettings)
             {
                 Settings.gameObject.SetActive(false);
                 PauseMenu.gameObject.SetActive(true);
                 inSettings = false;
+                ReduceTargetAudio();
                 return;
             }
 
-            // Otherwise → resume game
             Resume();
         }
     }
@@ -61,16 +73,25 @@ public class pauseMenu : MonoBehaviour
         PauseMenu.gameObject.SetActive(false);
         inSettings = true;
         inControls = false;
+
+        //RestoreTargetAudio(); //  let settings preview actual volume
     }
 
     public void pauseMenuScreen()
     {
         Settings.gameObject.SetActive(false);
+        Controls.gameObject.SetActive(false);
         PauseMenu.gameObject.SetActive(true);
+        BlurOverlay.SetActive(true);
+
+        ReduceTargetAudio();
+
         inSettings = false;
         inControls = false;
         isPaused = true;
+        Time.timeScale = 0f;
     }
+
     public void ControlsMenu()
     {
         Controls.gameObject.SetActive(true);
@@ -81,9 +102,13 @@ public class pauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        closePause.Play();
         PauseMenu.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
+        BlurOverlay.SetActive(false);
+
+        RestoreTargetAudio();
 
         Time.timeScale = 1f;
         isPaused = false;
@@ -98,14 +123,43 @@ public class pauseMenu : MonoBehaviour
 
         Application.Quit();
     }
+
     public void LeavingSettings()
-        {
+    {
         inSettings = false;
         inControls = true;
     }
+
     public void LeavingControls()
     {
         inControls = false;
         inSettings = true;
+    }
+
+    private void ReduceTargetAudio()
+    {
+        if (audioMixer == null) return;
+
+        float userDb = ToDb(GameSettingsStore.Load().music);
+        audioMixer.SetFloat(exposedVolumeParameter, userDb + pausedVolumeDb);
+    }
+
+    private void RestoreTargetAudio()
+    {
+        if (settingsManager != null)
+        {
+            settingsManager.SetMusicVolume(GameSettingsStore.Load().music);
+        }
+        else if (audioMixer != null)
+        {
+            float userDb = ToDb(GameSettingsStore.Load().music);
+            audioMixer.SetFloat(exposedVolumeParameter, userDb);
+        }
+    }
+
+    private float ToDb(float value)
+    {
+        value = Mathf.Clamp(value, 0.0001f, 1f);
+        return Mathf.Log10(value) * 20f;
     }
 }

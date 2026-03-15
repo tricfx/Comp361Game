@@ -14,6 +14,7 @@ public class CardUIManager : MonoBehaviour
     public GameObject rewardPanel;
     public GameObject replacementPanel;
     public Button rerollButton;
+    public GameObject BlurOverlay;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -52,6 +53,7 @@ public class CardUIManager : MonoBehaviour
     {
         if (player != null)
             playerBuffs = player.GetComponent<PlayerBuffs>();
+        BlurOverlay.SetActive(false);
     }
 
     void Update()
@@ -59,6 +61,7 @@ public class CardUIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             OpenRewardScreen();
+            BlurOverlay.SetActive(true);
         }
         if(Input.GetKeyDown(KeyCode.T))
         {
@@ -70,6 +73,7 @@ public class CardUIManager : MonoBehaviour
     {
         Roll3Rewards();
         rewardPanel.SetActive(true);
+        BlurOverlay.SetActive(true);
         Time.timeScale = 0f;
     }
 
@@ -141,6 +145,7 @@ public class CardUIManager : MonoBehaviour
         }
 
         rewardPanel.SetActive(false);
+        BlurOverlay.SetActive(false);
         rerolls = 3;
         rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Reroll  ( {rerolls} left )";
         Time.timeScale = 1f;
