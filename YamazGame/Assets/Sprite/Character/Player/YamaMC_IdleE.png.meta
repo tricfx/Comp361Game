@@ -121,12 +121,12 @@ TextureImporter:
       name: YamaMC_IdleE_0
       rect:
         serializedVersion: 2
-        x: 14
+        x: 13
         y: 5
         width: 29
         height: 55
-      alignment: 9
-      pivot: {x: 0.7100142, y: 0.05706156}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,7 +143,7 @@ TextureImporter:
       name: YamaMC_IdleE_1
       rect:
         serializedVersion: 2
-        x: 78
+        x: 79
         y: 5
         width: 29
         height: 55
@@ -271,6 +271,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: YamaMC_IdleE_7
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 383
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d447436bdeb347ddb6007e627825752
+      internalID: 2691099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -292,6 +314,7 @@ TextureImporter:
       YamaMC_IdleE_4: -5148348311028519400
       YamaMC_IdleE_5: 7740266910957779042
       YamaMC_IdleE_6: 8672856082575089303
+      YamaMC_IdleE_7: 2691099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
