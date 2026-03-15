@@ -10,6 +10,13 @@ public class WizardProjectile : MonoBehaviour
     Rigidbody2D rb;
     Collider2D hurtbox;
 
+    NewEnemy ownerEnemy;
+
+    public void SetOwner(NewEnemy owner)
+    {
+        ownerEnemy = owner;
+    }
+
     Collider2D targetHitbox;
     float timer;
     bool exploded = false;
@@ -34,13 +41,26 @@ public class WizardProjectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (targetHitbox == null || exploded)
+        if (exploded)
         {
             return;
         }
 
-        Vector2 playerPosition = targetHitbox.bounds.center;
-        Vector2 direction = (playerPosition - (Vector2) transform.position).normalized;
+        Vector2 targetPosition;
+
+        if (ownerEnemy != null && ownerEnemy.CurrentTarget != null)
+        {
+            // Wizard has a target (enemy or player)
+            targetPosition = ownerEnemy.CurrentTarget.position;
+        }
+        else
+        {
+            // Fallback to the original target (usually the player)
+            if (targetHitbox == null) return;
+            targetPosition = targetHitbox.bounds.center;
+        }
+
+        Vector2 direction = (targetPosition - (Vector2) transform.position).normalized;
         rb.AddForce(direction * projectileSpeed * Time.fixedDeltaTime);
 
         if (rb.linearVelocity.sqrMagnitude > 0.001f)
@@ -72,7 +92,32 @@ public class WizardProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Ignore collisions with the wizard that fired the projectile
+        NewEnemy hitEnemy = other.GetComponentInParent<NewEnemy>();
+        if (ownerEnemy != null && hitEnemy == ownerEnemy)
+        {
+            return;
+        }
+
+        // If wizard is charmed, projectile should damage enemies
+        if (ownerEnemy != null && ownerEnemy.CurrentTeam == NewEnemy.Team.Ally)
+        {
+            if (ownerEnemy.CurrentTarget == null) return;
+
+            NewEnemy targetEnemy = ownerEnemy.CurrentTarget.GetComponent<NewEnemy>();
+            if (targetEnemy == null || !targetEnemy.Targetable) return;
+
+            // Only explode when hitting the enemy's main body collider (feetCollider)
+            if (other != targetEnemy.feetCollider) return;
+
+            targetEnemy.TakeDamage(2);
+            Explode();
+            return;
+        }
+
+        // Normal behaviour → damage player
         if (!other.CompareTag("PlayerHitbox")) return;
+
         Explode();
     }
 }
