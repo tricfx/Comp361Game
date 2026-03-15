@@ -15,8 +15,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public static System.Collections.Generic.List<NewEnemy> allEnemies = new System.Collections.Generic.List<NewEnemy>();
 
-protected Transform currentTarget;
-public Transform CurrentTarget => currentTarget;
+    protected Transform currentTarget;
+    public Transform CurrentTarget => currentTarget;
     public int MaxHealth
     {
         get
