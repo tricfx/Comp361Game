@@ -24,6 +24,15 @@ public class WizardProjectileSpawner : MonoBehaviour
 
         GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         WizardProjectile projectile = proj.GetComponent<WizardProjectile>();
+
+        // set player target (default behavior)
         projectile.SetTarget(targetHitbox);
+
+        // pass the wizard that fired the projectile
+        NewEnemy owner = GetComponentInParent<NewEnemy>();
+        if (owner != null)
+        {
+            projectile.SetOwner(owner);
+        }
     }
 }

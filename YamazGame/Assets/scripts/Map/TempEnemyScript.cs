@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        enemyManager = FindObjectOfType<EnemyManager>();
+        enemyManager = FindFirstObjectByType<EnemyManager>();
         enemyManager.RegisterEnemy();
     }
 
