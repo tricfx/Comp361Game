@@ -15,8 +15,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public static System.Collections.Generic.List<NewEnemy> allEnemies = new System.Collections.Generic.List<NewEnemy>();
 
-protected Transform currentTarget;
-public Transform CurrentTarget => currentTarget;
+    protected Transform currentTarget;
+    public Transform CurrentTarget => currentTarget;
     public int MaxHealth
     {
         get
@@ -290,7 +290,7 @@ public Transform CurrentTarget => currentTarget;
         _isCharmed = true;
         _charmTimer = duration;
 
-        // Force the enemy onto the Ally team again
+        // Put the enemy onto the Ally team again
         CurrentTeam = Team.Ally;
 
         // Clear any previous target
