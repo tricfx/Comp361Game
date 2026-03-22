@@ -1,146 +1,277 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class ShopLogic : MonoBehaviour
 {
-    [Serializable]
-    public class Item
-    {
-        [Header("Unique ID (e.g. buff1)")]
-        public string id;
-
-        [Header("Cost")]
-        public int cost = 50;
-
-        [Header("UI")]
-        public Button buyButton;
-        public TextMeshProUGUI costText;
-        public TextMeshProUGUI buttonLabel;
-
-        [Header("Optional effect to enable on purchase")]
-        public MonoBehaviour enableComponent;
-        public GameObject enableObject;
-    }
-
     [Header("References")]
+    [SerializeField] private CardDatabase rewardDatabase;
+    [SerializeField] private ShopCardUI[] shopSlots;
+    [SerializeField] private GameObject player;
     [SerializeField] private PlayerGems playerGems;
     [SerializeField] private TextMeshProUGUI gemCountText;
+    [SerializeField] private AudioSource purchaseAudioSource;
+    [SerializeField] private AudioSource cannotPurchaseAudioSource;
 
-    [Header("Rules")]
-    [SerializeField] private int maxAbilitiesTotal = 2;
+    private PlayerBuffs playerBuffs;
+    private PlayerActions playerActions;
 
-    [Header("Items")]
-    [SerializeField] private Item[] items;
+    private static readonly List<string> sessionCardIDs = new();
+    private static readonly HashSet<string> purchasedCardIDs = new();
 
-    private int totalPurchased = 0;
+    public static void ResetSessionShop()
+    {
+        sessionCardIDs.Clear();
+        purchasedCardIDs.Clear();
+    }
 
     private void Awake()
     {
-        if (playerGems == null)
-            playerGems = FindFirstObjectByType<PlayerGems>();
-
-        foreach (var item in items)
-        {
-            if (item == null || item.buyButton == null) continue;
-
-            string capturedId = item.id;
-            item.buyButton.onClick.RemoveAllListeners();
-            item.buyButton.onClick.AddListener(() => TryBuy(capturedId));
-        }
+        CacheReferences();
+        if (sessionCardIDs.Count == 0) GenerateSessionCards();
+        HideAllUnavailablePopups();
+        BuildUI();
     }
 
     private void OnEnable()
     {
+        CacheReferences();
+        HideAllUnavailablePopups();
+        RefreshUI();
+    }
+
+    private void CacheReferences()
+    {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+
+        playerBuffs = player.GetComponent<PlayerBuffs>();
+        playerActions = player.GetComponent<PlayerActions>();
+
         if (playerGems == null)
             playerGems = FindFirstObjectByType<PlayerGems>();
+    }
+
+    private void GenerateSessionCards()
+    {
+        sessionCardIDs.Clear();
+
+        List<Card> selected = new();
+        int rolls = 0;
+
+        while (selected.Count < 3 && rolls < 300)
+        {
+            Card reward = rewardDatabase.GetRandomReward();
+
+            if (!IsValidForShopSelection(reward, selected))
+            {
+                rolls++;
+                continue;
+            }
+
+            selected.Add(reward);
+            rolls++;
+        }
+
+        if (selected.Count < 3)
+            Debug.LogWarning("less than 3 valid cards found");
+
+        for (int i = 0; i < selected.Count; i++)
+            sessionCardIDs.Add(selected[i].cardID);
+    }
+
+    private bool IsValidForShopSelection(Card reward, List<Card> selected)
+    {
+        if (reward == null)
+            return false;
+
+        if (selected.Contains(reward))
+            return false;
+
+        if (!string.IsNullOrEmpty(reward.dependency))
+        {
+            if (playerBuffs == null || !playerBuffs.HasBuff(reward.dependency))
+                return false;
+        }
+
+        if (playerActions != null)
+        {
+            if (playerActions.qAbilityCard != null && playerActions.qAbilityCard.cardID == reward.cardID)
+                return false;
+
+            if (playerActions.eAbilityCard != null && playerActions.eAbilityCard.cardID == reward.cardID)
+                return false;
+        }
+
+        if (playerBuffs != null && playerBuffs.HasBuff(reward.cardID))
+            return false;
+
+        return true;
+    }
+
+    private void BuildUI()
+    {
+        if (shopSlots == null || shopSlots.Length == 0)
+            return;
+
+        for (int i = 0; i < shopSlots.Length; i++)
+        {
+            if (shopSlots[i] == null)
+                continue;
+
+            if (i >= sessionCardIDs.Count)
+            {
+                shopSlots[i].gameObject.SetActive(false);
+                continue;
+            }
+
+            Card card = rewardDatabase.GetCardByID(sessionCardIDs[i]);
+
+            if (card == null)
+            {
+                shopSlots[i].gameObject.SetActive(false);
+                continue;
+            }
+
+            shopSlots[i].gameObject.SetActive(true);
+            shopSlots[i].Setup(this, card);
+        }
 
         RefreshUI();
     }
 
-    private void TryBuy(string id)
+    public void TryBuy(Card card, ShopCardUI clickedSlot)
     {
-        Item item = FindItem(id);
-        if (item == null || playerGems == null) return;
+        CacheReferences();
 
-        if (IsPurchased(item)) { RefreshUI(); return; }
-        if (totalPurchased >= maxAbilitiesTotal) { RefreshUI(); return; }
+        if (card == null || player == null || playerGems == null)
+            return;
 
-        if (!playerGems.TrySpendGems(item.cost))
+        bool alreadyPurchased = purchasedCardIDs.Contains(card.cardID) || AlreadyOwned(card);
+
+        if (alreadyPurchased)
         {
+            cannotPurchaseAudioSource.Play();
+
+            clickedSlot.ShowUnavailablePopup("Already purchased!");
+
             RefreshUI();
             return;
         }
 
-        SetPurchased(item.id);
-        totalPurchased++;
+        if (card is AbilityCard)
+        {
+            bool slotsFull =
+                playerActions != null &&
+                playerActions.qAbilityCard != null &&
+                playerActions.eAbilityCard != null;
 
-        if (item.enableComponent != null) item.enableComponent.enabled = true;
-        if (item.enableObject != null) item.enableObject.SetActive(true);
+            if (slotsFull)
+            {
+                cannotPurchaseAudioSource.Play();
+                clickedSlot.ShowUnavailablePopup("Ability slots are full!");
+
+                RefreshUI();
+                return;
+            }
+        }
+
+        if (playerGems.CurrentGems < card.shopCost)
+        {
+            cannotPurchaseAudioSource.Play();
+            clickedSlot.ShowUnavailablePopup("Not enough gems!");
+            RefreshUI();
+            return;
+        }
+
+        if (!playerGems.TrySpendGems(card.shopCost))
+        {
+            cannotPurchaseAudioSource.Play();
+            clickedSlot.ShowUnavailablePopup("Not enough gems!");
+            RefreshUI();
+            return;
+        }
+
+        if (card is AbilityCard abilityCard)
+        {
+            playerActions.TryEquipAbility(abilityCard);
+        }
+        else
+        {
+            card.Apply(player);
+            purchaseAudioSource.Play();
+        }
+
+        purchasedCardIDs.Add(card.cardID);
+        purchaseAudioSource.Play();
 
         RefreshUI();
     }
 
+    private bool AlreadyOwned(Card card)
+    {
+        if (card == null)
+            return false;
+
+        if (card is AbilityCard abilityCard)
+        {
+            if (playerActions == null)
+                return false;
+
+            bool inQ = playerActions.qAbilityCard != null &&
+                       playerActions.qAbilityCard.cardID == abilityCard.cardID;
+
+            bool inE = playerActions.eAbilityCard != null &&
+                       playerActions.eAbilityCard.cardID == abilityCard.cardID;
+
+            return inQ || inE;
+        }
+
+        return playerBuffs != null && playerBuffs.HasBuff(card.cardID);
+    }
 
     private void RefreshUI()
     {
-        if (playerGems == null)
-        {
-            Debug.LogWarning("ShopLogic: PlayerGems not found yet.");
-            return;
-        }
         if (gemCountText != null && playerGems != null)
             gemCountText.text = playerGems.CurrentGems.ToString();
 
-        bool capReached = totalPurchased >= maxAbilitiesTotal;
+        if (shopSlots == null)
+            return;
 
-        foreach (var item in items)
+        for (int i = 0; i < shopSlots.Length; i++)
         {
-            if (item == null) continue;
+            if (shopSlots[i] == null || shopSlots[i].Card == null)
+                continue;
 
-            if (item.costText != null)
-                item.costText.text = item.cost.ToString();
+            Card card = shopSlots[i].Card;
 
-            bool purchased = IsPurchased(item);
-            bool canAfford = playerGems != null && playerGems.CurrentGems >= item.cost;
+            bool purchased = purchasedCardIDs.Contains(card.cardID);
+            bool owned = AlreadyOwned(card);
+            bool canAfford = playerGems != null && playerGems.CurrentGems >= card.shopCost;
 
-            if (item.buyButton != null)
-                item.buyButton.interactable = !purchased && !capReached && canAfford;
+            bool canBuy = !purchased && !owned && canAfford;
 
-            if (item.buttonLabel != null)
-            {
-                if (purchased) item.buttonLabel.text = "Purchased";
-                else if (capReached) item.buttonLabel.text = "Max";
-                else if (!canAfford) item.buttonLabel.text = "Need gems";
-                else item.buttonLabel.text = "Buy";
-            }
+            //string label;
+            //if (purchased) label = "Purchased";
+            //else if (owned) label = "Owned";
+            //else if (!canAfford) label = "Need gems";
+            //else label = "Buy";
+
+            bool greyOut = purchased || owned;
+
+            shopSlots[i].RefreshState(canBuy, greyOut);
         }
     }
 
-    private Item FindItem(string id)
+    private void HideAllUnavailablePopups()
     {
-        foreach (var item in items)
-            if (item != null && item.id == id)
-                return item;
-        return null;
-    }
-    private bool IsPurchased(Item item)
-    {
-        if (item == null || string.IsNullOrEmpty(item.id))
-            return false;
+        if (shopSlots == null) return;
 
-        return itemPurchasedFlags.TryGetValue(item.id, out bool v) && v;
-    }
-
-    private readonly System.Collections.Generic.Dictionary<string, bool> itemPurchasedFlags
-        = new System.Collections.Generic.Dictionary<string, bool>();
-
-    private void SetPurchased(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-            return;
-
-        itemPurchasedFlags[id] = true;
+        for (int i = 0; i < shopSlots.Length; i++)
+        {
+            if (shopSlots[i] != null)
+                shopSlots[i].HideUnavailablePopup();
+        }
     }
 }

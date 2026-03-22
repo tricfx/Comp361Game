@@ -17,7 +17,9 @@ MonoBehaviour:
   cardDescription: Increase dash distance by 3 points
   icon: {fileID: -360538525503843100, guid: b790824472cef324daf78c90c61f5d4c, type: 3}
   dependency: 
+  cooldownSeconds: 0
   type: 0
+  shopCost: 33
   buffID: DashDistance
   bonusDamage: 0
   bonusHealth: 0
