@@ -147,8 +147,8 @@ TextureImporter:
         serializedVersion: 2
         x: 15
         y: 444
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,8 +169,8 @@ TextureImporter:
         serializedVersion: 2
         x: 208
         y: 442
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +191,8 @@ TextureImporter:
         serializedVersion: 2
         x: 287
         y: 445
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
         serializedVersion: 2
         x: 368
         y: 445
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,8 +235,8 @@ TextureImporter:
         serializedVersion: 2
         x: 442
         y: 445
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,8 +255,8 @@ TextureImporter:
       name: Sprite-0002_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 368
+        x: 15
+        y: 367
         width: 64
         height: 64
       alignment: 0
@@ -279,8 +279,8 @@ TextureImporter:
         serializedVersion: 2
         x: 95
         y: 364
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,7 +299,7 @@ TextureImporter:
       name: Sprite-0002_7
       rect:
         serializedVersion: 2
-        x: 177
+        x: 176
         y: 397
         width: 64
         height: 34
@@ -321,12 +321,12 @@ TextureImporter:
       name: Sprite-0002_8
       rect:
         serializedVersion: 2
-        x: 245
-        y: 363
+        x: 15
+        y: 287
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.74292755, y: 0.8679743}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,7 +365,7 @@ TextureImporter:
       name: Sprite-0002_10
       rect:
         serializedVersion: 2
-        x: 16
+        x: 15
         y: 128
         width: 64
         height: 64
@@ -455,8 +455,8 @@ TextureImporter:
         serializedVersion: 2
         x: 15
         y: 205
-        width: 66
-        height: 66
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,7 +519,7 @@ TextureImporter:
       name: Sprite-0002_17
       rect:
         serializedVersion: 2
-        x: 96
+        x: 95
         y: 450
         width: 64
         height: 62
@@ -541,7 +541,7 @@ TextureImporter:
       name: Sprite-0002_18
       rect:
         serializedVersion: 2
-        x: 384
+        x: 383
         y: 368
         width: 64
         height: 64
@@ -563,7 +563,7 @@ TextureImporter:
       name: Sprite-0002_19
       rect:
         serializedVersion: 2
-        x: 96
+        x: 94
         y: 128
         width: 64
         height: 64
@@ -585,7 +585,7 @@ TextureImporter:
       name: Sprite-0002_20
       rect:
         serializedVersion: 2
-        x: 176
+        x: 175
         y: 127
         width: 64
         height: 64
@@ -607,8 +607,8 @@ TextureImporter:
       name: Sprite-0002_21
       rect:
         serializedVersion: 2
-        x: 96
-        y: 47
+        x: 95
+        y: 46
         width: 64
         height: 64
       alignment: 0
@@ -629,12 +629,12 @@ TextureImporter:
       name: Sprite-0002_22
       rect:
         serializedVersion: 2
-        x: 192
+        x: 191
         y: 37
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
