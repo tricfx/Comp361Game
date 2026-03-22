@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: b6fed904a64f21b438e3de320ead18a6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4443688081687759299
+    second: Boss atx S_0
+  - first:
+      213: 1009547499173837859
+    second: Boss atx S_1
+  - first:
+      213: -877556009352985566
+    second: Boss atx S_2
+  - first:
+      213: 2512438463630078935
+    second: Boss atx S_3
+  - first:
+      213: -5984495466073109337
+    second: Boss atx S_4
+  - first:
+      213: -2495387200839489022
+    second: Boss atx S_5
+  - first:
+      213: -6306649003505976269
+    second: Boss atx S_6
+  - first:
+      213: -2178010676201160382
+    second: Boss atx S_7
+  - first:
+      213: -5065304835764573707
+    second: Boss atx S_8
+  - first:
+      213: -3463765981449122002
+    second: Boss atx S_9
+  - first:
+      213: 6555308912054065402
+    second: Boss atx S_10
+  - first:
+      213: 3532374105318293262
+    second: Boss atx S_11
+  - first:
+      213: -6347663030564130655
+    second: Boss atx S_12
+  - first:
+      213: 975448351358169083
+    second: Boss atx S_13
+  - first:
+      213: -954045140214202438
+    second: Boss atx S_14
+  - first:
+      213: 4059641938275978956
+    second: Boss atx S_15
+  - first:
+      213: -5307596533444171111
+    second: Boss atx S_16
+  - first:
+      213: -2326153172127744300
+    second: Boss atx S_17
+  - first:
+      213: -4326926556411731080
+    second: Boss atx S_18
+  - first:
+      213: 6941780393942624630
+    second: Boss atx S_19
+  - first:
+      213: -8822477336668425211
+    second: Boss atx S_20
+  - first:
+      213: -1227250524927139799
+    second: Boss atx S_21
+  - first:
+      213: 4961072228504210868
+    second: Boss atx S_22
+  - first:
+      213: 8552597907555776081
+    second: Boss atx S_23
+  - first:
+      213: 423379167987971162
+    second: Boss atx S_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss atx S_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d363d5ebb39d452c0800000000000000
+      internalID: -4443688081687759299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 30
+        width: 110
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32cf3280a12a20e00800000000000000
+      internalID: 1009547499173837859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_2
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 21
+        width: 129
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2248100857b42d3f0800000000000000
+      internalID: -877556009352985566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_3
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 15
+        width: 132
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d3f2b0a879fdd220800000000000000
+      internalID: 2512438463630078935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_4
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 36
+        width: 129
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acc6c0b41dc2fca0800000000000000
+      internalID: -5984495466073109337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_5
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 39
+        width: 110
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ae7ecdf8a9e5dd0800000000000000
+      internalID: -2495387200839489022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_6
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 39
+        width: 110
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c74f635284a78a0800000000000000
+      internalID: -6306649003505976269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_7
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 37
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241850064d626c1e0800000000000000
+      internalID: -2178010676201160382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_8
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 36
+        width: 127
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f92f29c61c64b9b0800000000000000
+      internalID: -5065304835764573707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_9
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 23
+        width: 136
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f84a2113b3eefc0800000000000000
+      internalID: -3463765981449122002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_10
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 12
+        width: 128
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af85fe759b229fa50800000000000000
+      internalID: 6555308912054065402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_11
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 32
+        width: 113
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ff8419883850130800000000000000
+      internalID: 3532374105318293262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_12
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 28
+        width: 35
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a07855ea1298e7a0800000000000000
+      internalID: -6347663030564130655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_13
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 33
+        width: 113
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bffa17f7b1d798d00800000000000000
+      internalID: 975448351358169083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_14
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 34
+        width: 113
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf38ddeffc82c2f0800000000000000
+      internalID: -954045140214202438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_15
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccec73e75deb65830800000000000000
+      internalID: 4059641938275978956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_16
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a27fcd211a756b0800000000000000
+      internalID: -5307596533444171111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_17
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de7d22b308d7bfd0800000000000000
+      internalID: -2326153172127744300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_18
+      rect:
+        serializedVersion: 2
+        x: 3027
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873efd3d83ba3f3c0800000000000000
+      internalID: -4326926556411731080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_19
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679a8b93d78265060800000000000000
+      internalID: 6941780393942624630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_20
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504b1f41b93409580800000000000000
+      internalID: -8822477336668425211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_21
+      rect:
+        serializedVersion: 2
+        x: 3555
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9206e4b562ee7fee0800000000000000
+      internalID: -1227250524927139799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_22
+      rect:
+        serializedVersion: 2
+        x: 3731
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd8c0d28e449d440800000000000000
+      internalID: 4961072228504210868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_23
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 31
+        width: 110
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1567c9abb7ee0b670800000000000000
+      internalID: 8552597907555776081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss atx S_24
+      rect:
+        serializedVersion: 2
+        x: 4086
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5439313c1520e500800000000000000
+      internalID: 423379167987971162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss atx S_0: -4443688081687759299
+      Boss atx S_1: 1009547499173837859
+      Boss atx S_10: 6555308912054065402
+      Boss atx S_11: 3532374105318293262
+      Boss atx S_12: -6347663030564130655
+      Boss atx S_13: 975448351358169083
+      Boss atx S_14: -954045140214202438
+      Boss atx S_15: 4059641938275978956
+      Boss atx S_16: -5307596533444171111
+      Boss atx S_17: -2326153172127744300
+      Boss atx S_18: -4326926556411731080
+      Boss atx S_19: 6941780393942624630
+      Boss atx S_2: -877556009352985566
+      Boss atx S_20: -8822477336668425211
+      Boss atx S_21: -1227250524927139799
+      Boss atx S_22: 4961072228504210868
+      Boss atx S_23: 8552597907555776081
+      Boss atx S_24: 423379167987971162
+      Boss atx S_3: 2512438463630078935
+      Boss atx S_4: -5984495466073109337
+      Boss atx S_5: -2495387200839489022
+      Boss atx S_6: -6306649003505976269
+      Boss atx S_7: -2178010676201160382
+      Boss atx S_8: -5065304835764573707
+      Boss atx S_9: -3463765981449122002
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -45,6 +45,7 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 velocity;
     private Vector2 lastAimDir = Vector2.down;
+    private Vector2 dashDir = Vector2.down;
 
     [Header("Attack Movement")]
     [SerializeField] private float attackMoveMultiplier = 0.3f;
@@ -72,10 +73,10 @@ public class PlayerController2D : MonoBehaviour
     {
         Vector2 move = input.Move;
 
-        // Update last direction for facing (SNAP to cardinal to avoid wrong flashes)
+        // Update last direction for facing — prefer horizontal so N+E = face East
         if (move.sqrMagnitude > 0.001f)
         {
-            if (Mathf.Abs(move.x) > Mathf.Abs(move.y))
+            if (Mathf.Abs(move.x) >= Mathf.Abs(move.y) * 0.5f && move.x != 0f)
                 lastAimDir = new Vector2(Mathf.Sign(move.x), 0f);
             else
                 lastAimDir = new Vector2(0f, Mathf.Sign(move.y));
@@ -110,7 +111,7 @@ public class PlayerController2D : MonoBehaviour
 
             anim.SetMove(safeMove);          // Use safeMove instead of moveDir
             anim.SetSpeed(move.magnitude);
-            anim.SetFacing(lastAimDir);
+            anim.SetFacing(isDashing ? dashDir : lastAimDir);
             anim.SetDashing(isDashing);
         }
     }
@@ -119,7 +120,7 @@ public class PlayerController2D : MonoBehaviour
     {
         if (isDashing)
         {
-            rb.linearVelocity = lastAimDir * dashSpeed;
+            rb.linearVelocity = dashDir * dashSpeed;
             return;
         }
         if (actions != null && actions.IsAttacking)
@@ -134,12 +135,16 @@ public class PlayerController2D : MonoBehaviour
 
 
         Vector2 move = input.Move;
-        Vector2 moveDir = move.sqrMagnitude > 0.0001f ? move.normalized : Vector2.zero;
+
+        // For top-down 2D: scale Y input down so diagonal movement looks isometric
+        // X moves horizontally, Y moves vertically but at reduced scale so W+D = right not up-right
+        Vector2 adjustedMove = new Vector2(move.x, move.y * 0.5f);
+        Vector2 moveDir = adjustedMove.sqrMagnitude > 0.0001f ? adjustedMove.normalized : Vector2.zero;
 
         Vector2 target = moveDir * moveSpeed;
 
         // Use different acceleration when stopping
-        float currentAccel = (moveDir == Vector2.zero) ? decel : accel;
+        float currentAccel = (adjustedMove.sqrMagnitude < 0.0001f) ? decel : accel;
         velocity = Vector2.MoveTowards(velocity, target, currentAccel * Time.fixedDeltaTime);
 
         rb.linearVelocity = velocity;
@@ -147,10 +152,15 @@ public class PlayerController2D : MonoBehaviour
 
     private void StartDash()
     {
+        // Apply same Y scale as movement so diagonal dash matches movement direction
+        Vector2 rawMove = input.Move;
+        dashDir = rawMove.sqrMagnitude > 0.001f
+            ? new Vector2(rawMove.x, rawMove.y * 0.5f).normalized
+            : lastAimDir;
         isDashing = true;
+        GetComponent<PlayerActions>()?.ResetDashSound();
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
-
         anim?.TriggerDash();
     }
 

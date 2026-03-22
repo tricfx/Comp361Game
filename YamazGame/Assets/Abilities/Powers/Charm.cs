@@ -131,8 +131,9 @@ public class Charm : MonoBehaviour, IAbility
     {
         if (!detecting) return;
 
-        NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
+        if (!other.CompareTag("Enemy")) return; // Do not collide with things that are not enemies 
 
+        NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
         if (enemy != null)
         {
             float dist = Vector2.Distance(playerHealth.transform.position, enemy.transform.position);

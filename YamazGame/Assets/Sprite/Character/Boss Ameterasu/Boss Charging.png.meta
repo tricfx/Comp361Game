@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: f9bb2fd354e394b4e809a278260b3e67
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6770833636470165116
+    second: Boss Charging_0
+  - first:
+      213: 5966868013254239604
+    second: Boss Charging_1
+  - first:
+      213: 1395895237382047065
+    second: Boss Charging_2
+  - first:
+      213: -8793172020987320470
+    second: Boss Charging_3
+  - first:
+      213: -3373005533771507147
+    second: Boss Charging_4
+  - first:
+      213: -5999925073174689997
+    second: Boss Charging_5
+  - first:
+      213: -1977372397106831756
+    second: Boss Charging_6
+  - first:
+      213: -6751563912884166923
+    second: Boss Charging_7
+  - first:
+      213: -5863898485980979100
+    second: Boss Charging_8
+  - first:
+      213: -8246013220986560986
+    second: Boss Charging_9
+  - first:
+      213: -1291208418572984265
+    second: Boss Charging_10
+  - first:
+      213: 3980789204546386199
+    second: Boss Charging_11
+  - first:
+      213: -4464269555874411735
+    second: Boss Charging_12
+  - first:
+      213: -6468804948000438408
+    second: Boss Charging_13
+  - first:
+      213: 1646523019754293609
+    second: Boss Charging_14
+  - first:
+      213: -39647899207531295
+    second: Boss Charging_15
+  - first:
+      213: 7877729903761300627
+    second: Boss Charging_16
+  - first:
+      213: 5217900698660208454
+    second: Boss Charging_17
+  - first:
+      213: -5554258227505298542
+    second: Boss Charging_18
+  - first:
+      213: 5223136558101336510
+    second: Boss Charging_19
+  - first:
+      213: 249855826606641273
+    second: Boss Charging_20
+  - first:
+      213: 4871092732882900129
+    second: Boss Charging_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss Charging_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481fde85eaa2902a0800000000000000
+      internalID: -6770833636470165116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475e8af18d29ec250800000000000000
+      internalID: 5966868013254239604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_2
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95501d792573f5310800000000000000
+      internalID: 1395895237382047065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_3
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 38
+        width: 115
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67a52892a068f580800000000000000
+      internalID: -8793172020987320470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_4
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 38
+        width: 115
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53a5f16865da031d0800000000000000
+      internalID: -3373005533771507147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_5
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 37
+        width: 120
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33786765febfbbca0800000000000000
+      internalID: -5999925073174689997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_6
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 38
+        width: 126
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ed8c90846fe84e0800000000000000
+      internalID: -1977372397106831756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_7
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 38
+        width: 132
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe513e7460ad42a0800000000000000
+      internalID: -6751563912884166923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_8
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 37
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4602720356f3f9ea0800000000000000
+      internalID: -5863898485980979100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_9
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62edbed2aa6409d80800000000000000
+      internalID: -8246013220986560986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_10
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730a6ffc8c4b41ee0800000000000000
+      internalID: -1291208418572984265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_11
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 37
+        width: 132
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71972beb0ba9e3730800000000000000
+      internalID: 3980789204546386199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_12
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bc38cdd7abb02c0800000000000000
+      internalID: -4464269555874411735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_13
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87705294c203a36a0800000000000000
+      internalID: -6468804948000438408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_14
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 37
+        width: 132
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96945fa76ff99d610800000000000000
+      internalID: 1646523019754293609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_15
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e405ab1274237ff0800000000000000
+      internalID: -39647899207531295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_16
+      rect:
+        serializedVersion: 2
+        x: 3096
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c1a260c91535d60800000000000000
+      internalID: 7877729903761300627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_17
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 37
+        width: 132
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f77e03a05b96840800000000000000
+      internalID: 5217900698660208454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_18
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29381ced19f4be2b0800000000000000
+      internalID: -5554258227505298542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_19
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb19cf6b60f4c7840800000000000000
+      internalID: 5223136558101336510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_20
+      rect:
+        serializedVersion: 2
+        x: 3864
+        y: 37
+        width: 132
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97053fdec8aa77300800000000000000
+      internalID: 249855826606641273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Charging_21
+      rect:
+        serializedVersion: 2
+        x: 4056
+        y: 38
+        width: 132
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4d87b4809999340800000000000000
+      internalID: 4871092732882900129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss Charging_0: -6770833636470165116
+      Boss Charging_1: 5966868013254239604
+      Boss Charging_10: -1291208418572984265
+      Boss Charging_11: 3980789204546386199
+      Boss Charging_12: -4464269555874411735
+      Boss Charging_13: -6468804948000438408
+      Boss Charging_14: 1646523019754293609
+      Boss Charging_15: -39647899207531295
+      Boss Charging_16: 7877729903761300627
+      Boss Charging_17: 5217900698660208454
+      Boss Charging_18: -5554258227505298542
+      Boss Charging_19: 5223136558101336510
+      Boss Charging_2: 1395895237382047065
+      Boss Charging_20: 249855826606641273
+      Boss Charging_21: 4871092732882900129
+      Boss Charging_3: -8793172020987320470
+      Boss Charging_4: -3373005533771507147
+      Boss Charging_5: -5999925073174689997
+      Boss Charging_6: -1977372397106831756
+      Boss Charging_7: -6751563912884166923
+      Boss Charging_8: -5863898485980979100
+      Boss Charging_9: -8246013220986560986
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

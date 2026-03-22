@@ -58,6 +58,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         Debug.Log($"Player took {damage} damage. Health: {currentHealth}/{maxHealth}");
 
+
         // CAMERA SHAKE
         CameraShake shake = Camera.main.GetComponent<CameraShake>();
         if (shake != null)
@@ -67,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth > 0 && currentHealth <= 30)
         {
-            MusicManager.Instance?.TriggerLowHealthEffect(currentHealth);
+            SoundManager.Instance?.TriggerLowHealthEffect(currentHealth);
         }
 
         StartCoroutine(HitFlash());
@@ -75,7 +76,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            MusicManager.Instance?.StopLowHealthEffectImmediate();
+            SoundManager.Instance?.StopLowHealthEffectImmediate();
             Die();
         }
     }

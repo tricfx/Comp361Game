@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class PlayerActions : MonoBehaviour, IDataPersistence
@@ -36,8 +37,19 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
     private GameObject abilityQObject;
     private GameObject abilityEObject;
 
-
-
+    [Header("Audio")]
+    [SerializeField] private AudioSource attackAudioSource;
+    [SerializeField] private AudioClip attack1;
+    [SerializeField] private AudioClip attack2;
+    [SerializeField] private AudioClip attack3;
+    [SerializeField] private AudioSource runAudioSource;
+    [SerializeField] private AudioClip[] runSounds;
+    [SerializeField] private float footstepCooldown = 0.12f;
+    [SerializeField] private AudioSource dashAudioSource;
+    [SerializeField] private AudioSource abilityEquipAudioSource;
+    //private int nextRunSoundIndex = 0;
+    private bool alreadyPlayedDashSound = false;
+    private float lastFootstepTime = -99999f;
 
     private HUDController hud;
 
@@ -54,7 +66,9 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
 
     private void Update()
     {
-        // Block all actions during dialogue
+        if (FindFirstObjectByType<pauseMenu>().isPaused)
+            return;
+
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
             return;
 
@@ -138,6 +152,48 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
 
         anim?.TriggerAttackCombo(comboStep);
         canCombo = false;
+    }
+
+    public void PlayAttack1Sound()
+    {
+        if (comboStep != 1) return;
+        attackAudioSource.PlayOneShot(attack1);
+    }
+
+    public void PlayAttack2Sound()
+    {
+        if (comboStep != 2) return;
+        attackAudioSource.PlayOneShot(attack2);
+    }
+
+    public void PlayAttack3Sound()
+    {
+        if (comboStep != 3) return;
+        attackAudioSource.PlayOneShot(attack3);
+    }
+    public void PlayRunSounds()
+    {
+        if (Time.time - lastFootstepTime < footstepCooldown) return;
+        lastFootstepTime = Time.time;
+
+        //AudioClip clip = runSounds[nextRunSoundIndex];
+        //nextRunSoundIndex = (nextRunSoundIndex + 1) % runSounds.Length;
+        int index = Random.Range(0, runSounds.Length);
+        runAudioSource.pitch = Random.Range(0.95f, 1.05f);
+        //runAudioSource.PlayOneShot(clip);
+        runAudioSource.PlayOneShot(runSounds[index]);
+    }
+
+    public void PlayDashSound()
+    {
+        if (alreadyPlayedDashSound) return;
+        alreadyPlayedDashSound = true;
+        dashAudioSource.Stop();
+        dashAudioSource.Play();
+    }
+    public void ResetDashSound()
+    {
+        alreadyPlayedDashSound = false;
     }
 
     public void ResetCombo()
@@ -227,6 +283,7 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             Debug.Log($"Equipped {card.abilityID} to E");
         }
         hud?.SetSlotIcon(toQ, card.icon);
+        abilityEquipAudioSource.Play();
 
     }
 
