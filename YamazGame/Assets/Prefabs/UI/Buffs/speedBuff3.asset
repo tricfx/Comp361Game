@@ -17,11 +17,12 @@ MonoBehaviour:
   cardDescription: Increase character speed by 6 points
   icon: {fileID: 1865233837899814596, guid: 94fd4d19ec982924aa991b8da145b369, type: 3}
   dependency: speed2
+  cooldownSeconds: 0
   type: 0
+  shopCost: 33
   buffID: speed3
   bonusDamage: 0
   bonusHealth: 0
   bonusSpeed: 6
   dashCooldownDecrease: 0
-  bonusDashRange: 0
-  playerHealth: {fileID: 0}
+  dashDistanceBonus: 0

@@ -19,5 +19,6 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 20
   type: 1
+  shopCost: 33
   abilityID: Healing
   abilityPrefab: {fileID: 7984291775624426538, guid: 99aa3685bbf10c14a9fe9e897db2ebc2, type: 3}

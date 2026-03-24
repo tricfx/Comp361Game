@@ -7,12 +7,16 @@ public class GemManager : MonoBehaviour, IDataPersistence
 
     public event Action<int> OnGemsChanged;
 
+    [SerializeField] private int startingGems = 100;
+
     private int currentGems;
 
     public int CurrentGems => currentGems;
 
     private void Awake()
     {
+        currentGems = startingGems;
+
         if (DataPersistenceManager.instance != null)
         {
             DataPersistenceManager.instance.LoadGame();

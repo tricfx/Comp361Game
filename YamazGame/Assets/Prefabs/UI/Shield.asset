@@ -19,5 +19,6 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 15
   type: 1
+  shopCost: 33
   abilityID: Shield
   abilityPrefab: {fileID: 7007560943704542523, guid: 2e5d17610260533499c6e4d615423a7c, type: 3}

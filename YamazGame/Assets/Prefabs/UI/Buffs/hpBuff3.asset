@@ -17,11 +17,12 @@ MonoBehaviour:
   cardDescription: Increase character hp by 40 points
   icon: {fileID: -2905242622354299604, guid: 79b37abeb329bb1488b44f499879d6ce, type: 3}
   dependency: heal2
+  cooldownSeconds: 0
   type: 0
+  shopCost: 33
   buffID: heal3
   bonusDamage: 0
   bonusHealth: 60
   bonusSpeed: 0
   dashCooldownDecrease: 0
-  bonusDashRange: 0
-  playerHealth: {fileID: 0}
+  dashDistanceBonus: 0
