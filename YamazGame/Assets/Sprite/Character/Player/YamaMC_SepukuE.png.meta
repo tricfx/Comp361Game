@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 4fc562241444442f99c6bf3daa65fb8c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7686275479792969833
+    second: YamaMC_SepukuE_0
+  - first:
+      213: 5184311726076895221
+    second: YamaMC_SepukuE_1
+  - first:
+      213: -4722725858249293092
+    second: YamaMC_SepukuE_2
+  - first:
+      213: -5499403573640252434
+    second: YamaMC_SepukuE_3
+  - first:
+      213: -526110124664300835
+    second: YamaMC_SepukuE_4
+  - first:
+      213: -4926627059570746046
+    second: YamaMC_SepukuE_5
+  - first:
+      213: -1000349215104862581
+    second: YamaMC_SepukuE_6
+  - first:
+      213: 2397155659446172484
+    second: YamaMC_SepukuE_7
+  - first:
+      213: 5743383480851619628
+    second: YamaMC_SepukuE_8
+  - first:
+      213: 784155069958247863
+    second: YamaMC_SepukuE_9
+  - first:
+      213: -6773357484840845254
+    second: YamaMC_SepukuE_10
+  - first:
+      213: 9185722950049374585
+    second: YamaMC_SepukuE_11
+  - first:
+      213: 7071304371520796399
+    second: YamaMC_SepukuE_12
+  - first:
+      213: 864612820691414689
+    second: YamaMC_SepukuE_13
+  - first:
+      213: -2424463504403623736
+    second: YamaMC_SepukuE_14
+  - first:
+      213: 6727297496489151676
+    second: YamaMC_SepukuE_15
+  - first:
+      213: 8834258052663270759
+    second: YamaMC_SepukuE_16
+  - first:
+      213: -5348690324931793764
+    second: YamaMC_SepukuE_17
+  - first:
+      213: 8505666706141377406
+    second: YamaMC_SepukuE_18
+  - first:
+      213: 2111908271198568779
+    second: YamaMC_SepukuE_19
+  - first:
+      213: -812438510613946280
+    second: YamaMC_SepukuE_20
+  - first:
+      213: -3851420008614697203
+    second: YamaMC_SepukuE_21
+  - first:
+      213: -6001803760249778818
+    second: YamaMC_SepukuE_22
+  - first:
+      213: -7881159224440238125
+    second: YamaMC_SepukuE_23
+  - first:
+      213: 8849278710121659141
+    second: YamaMC_SepukuE_24
+  - first:
+      213: -7147300959327223316
+    second: YamaMC_SepukuE_25
+  - first:
+      213: 4060706376460036097
+    second: YamaMC_SepukuE_26
+  - first:
+      213: 4231479175601063898
+    second: YamaMC_SepukuE_27
+  - first:
+      213: 7627942458714176665
+    second: YamaMC_SepukuE_28
+  - first:
+      213: 1650662580439738735
+    second: YamaMC_SepukuE_29
+  - first:
+      213: -2798594499848660138
+    second: YamaMC_SepukuE_30
+  - first:
+      213: -6586782083841316222
+    second: YamaMC_SepukuE_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 5
+        width: 29
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 968ead243d22baa60800000000000000
+      internalID: 7686275479792969833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff94b51c0062f740800000000000000
+      internalID: 5184311726076895221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2cf7f9ad1857eb0800000000000000
+      internalID: -4722725858249293092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 5
+        width: 48
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3b8ac36913ea3b0800000000000000
+      internalID: -5499403573640252434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 35
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddad5aa01a1e2b8f0800000000000000
+      internalID: -526110124664300835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d557daaca11abb0800000000000000
+      internalID: -4926627059570746046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_6
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 5
+        width: 30
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b86755e50bb0e12f0800000000000000
+      internalID: -1000349215104862581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_7
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 5
+        width: 29
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b3b902f58644120800000000000000
+      internalID: 2397155659446172484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_8
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 6
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fd10998d894bf40800000000000000
+      internalID: 5743383480851619628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_9
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 5
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5dea9a1e0e1ea00800000000000000
+      internalID: 784155069958247863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_10
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 6
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30045b11433002a0800000000000000
+      internalID: -6773357484840845254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_11
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 5
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971a8d2ea5e3a7f70800000000000000
+      internalID: 9185722950049374585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_12
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 6
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6f92b4cd1522260800000000000000
+      internalID: 7071304371520796399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_13
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 5
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae6f8d87c8bffb00800000000000000
+      internalID: 864612820691414689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_14
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 6
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c09f11c9439a5ed0800000000000000
+      internalID: -2424463504403623736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_15
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 5
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc4c982e692c5d50800000000000000
+      internalID: 6727297496489151676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_16
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 6
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76dd02b94e6999a70800000000000000
+      internalID: 8834258052663270759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_17
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 5
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c2fd0fc72a5c5b0800000000000000
+      internalID: -5348690324931793764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_18
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 6
+        width: 15
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e737c65edc23a0670800000000000000
+      internalID: 8505666706141377406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_19
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 5
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41000f12610f4d10800000000000000
+      internalID: 2111908271198568779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_20
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 5
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8502205aa73a9b4f0800000000000000
+      internalID: -812438510613946280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_21
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 4
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0760b968e10d8ac0800000000000000
+      internalID: -3851420008614697203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_22
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 4
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d45ba674f45bca0800000000000000
+      internalID: -6001803760249778818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_23
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 4
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df42f8017f70a290800000000000000
+      internalID: -7881159224440238125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_24
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 3
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b7a33f914feca70800000000000000
+      internalID: 8849278710121659141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_25
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 1
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce10e7045afafcc90800000000000000
+      internalID: -7147300959327223316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_26
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 3
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10860125fe68a5830800000000000000
+      internalID: 4060706376460036097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_27
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 3
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad70a2014eb39ba30800000000000000
+      internalID: 4231479175601063898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_28
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 3
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c37ca6045ebd960800000000000000
+      internalID: 7627942458714176665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_29
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 2
+        width: 37
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69e32f0fd458e610800000000000000
+      internalID: 1650662580439738735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_30
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 3
+        width: 37
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b982641256929d0800000000000000
+      internalID: -2798594499848660138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YamaMC_SepukuE_31
+      rect:
+        serializedVersion: 2
+        x: 1486
+        y: 4
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a2bbfc79c0794a0800000000000000
+      internalID: -6586782083841316222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      YamaMC_SepukuE_0: 7686275479792969833
+      YamaMC_SepukuE_1: 5184311726076895221
+      YamaMC_SepukuE_10: -6773357484840845254
+      YamaMC_SepukuE_11: 9185722950049374585
+      YamaMC_SepukuE_12: 7071304371520796399
+      YamaMC_SepukuE_13: 864612820691414689
+      YamaMC_SepukuE_14: -2424463504403623736
+      YamaMC_SepukuE_15: 6727297496489151676
+      YamaMC_SepukuE_16: 8834258052663270759
+      YamaMC_SepukuE_17: -5348690324931793764
+      YamaMC_SepukuE_18: 8505666706141377406
+      YamaMC_SepukuE_19: 2111908271198568779
+      YamaMC_SepukuE_2: -4722725858249293092
+      YamaMC_SepukuE_20: -812438510613946280
+      YamaMC_SepukuE_21: -3851420008614697203
+      YamaMC_SepukuE_22: -6001803760249778818
+      YamaMC_SepukuE_23: -7881159224440238125
+      YamaMC_SepukuE_24: 8849278710121659141
+      YamaMC_SepukuE_25: -7147300959327223316
+      YamaMC_SepukuE_26: 4060706376460036097
+      YamaMC_SepukuE_27: 4231479175601063898
+      YamaMC_SepukuE_28: 7627942458714176665
+      YamaMC_SepukuE_29: 1650662580439738735
+      YamaMC_SepukuE_3: -5499403573640252434
+      YamaMC_SepukuE_30: -2798594499848660138
+      YamaMC_SepukuE_31: -6586782083841316222
+      YamaMC_SepukuE_4: -526110124664300835
+      YamaMC_SepukuE_5: -4926627059570746046
+      YamaMC_SepukuE_6: -1000349215104862581
+      YamaMC_SepukuE_7: 2397155659446172484
+      YamaMC_SepukuE_8: 5743383480851619628
+      YamaMC_SepukuE_9: 784155069958247863
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

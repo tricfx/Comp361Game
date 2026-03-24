@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: 6d2641eb5c58746e292cfc0e5eedd517
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5698730682259604270
+    second: Boss Phase2 attack W_0
+  - first:
+      213: 6978821457825128119
+    second: Boss Phase2 attack W_1
+  - first:
+      213: -2009294455483023684
+    second: Boss Phase2 attack W_2
+  - first:
+      213: 2394960825407366592
+    second: Boss Phase2 attack W_3
+  - first:
+      213: -1646908499950152685
+    second: Boss Phase2 attack W_4
+  - first:
+      213: -2106857515608228966
+    second: Boss Phase2 attack W_5
+  - first:
+      213: -158809989796365138
+    second: Boss Phase2 attack W_6
+  - first:
+      213: -5972940679525230692
+    second: Boss Phase2 attack W_7
+  - first:
+      213: 8335067271171890728
+    second: Boss Phase2 attack W_8
+  - first:
+      213: -7039602677362589953
+    second: Boss Phase2 attack W_9
+  - first:
+      213: 6131991850297151102
+    second: Boss Phase2 attack W_10
+  - first:
+      213: -3307081466680057590
+    second: Boss Phase2 attack W_11
+  - first:
+      213: -619403342667510782
+    second: Boss Phase2 attack W_12
+  - first:
+      213: 4096926632234193459
+    second: Boss Phase2 attack W_13
+  - first:
+      213: 3617930304310226081
+    second: Boss Phase2 attack W_14
+  - first:
+      213: -6893123967942251278
+    second: Boss Phase2 attack W_15
+  - first:
+      213: -4845792246658479139
+    second: Boss Phase2 attack W_16
+  - first:
+      213: -5500084402503449423
+    second: Boss Phase2 attack W_17
+  - first:
+      213: -923849823124740051
+    second: Boss Phase2 attack W_18
+  - first:
+      213: -8636195773300271837
+    second: Boss Phase2 attack W_19
+  - first:
+      213: 1561469526340793809
+    second: Boss Phase2 attack W_20
+  - first:
+      213: 3780024383575531845
+    second: Boss Phase2 attack W_21
+  - first:
+      213: 7976257806977558181
+    second: Boss Phase2 attack W_22
+  - first:
+      213: 6333020314232083210
+    second: Boss Phase2 attack W_23
+  - first:
+      213: 1449553845988771967
+    second: Boss Phase2 attack W_24
+  - first:
+      213: 8265444773983397904
+    second: Boss Phase2 attack W_25
+  - first:
+      213: 1778148524781494397
+    second: Boss Phase2 attack W_26
+  - first:
+      213: 177181658876762631
+    second: Boss Phase2 attack W_27
+  - first:
+      213: -7192634821809336064
+    second: Boss Phase2 attack W_28
+  - first:
+      213: -491693575495796921
+    second: Boss Phase2 attack W_29
+  - first:
+      213: -73639032369173216
+    second: Boss Phase2 attack W_30
+  - first:
+      213: 2077746264671487471
+    second: Boss Phase2 attack W_31
+  - first:
+      213: 8936464607463636408
+    second: Boss Phase2 attack W_32
+  - first:
+      213: -4459946632771568739
+    second: Boss Phase2 attack W_33
+  - first:
+      213: -2312387857873961456
+    second: Boss Phase2 attack W_34
+  - first:
+      213: -1375538530703438334
+    second: Boss Phase2 attack W_35
+  - first:
+      213: -737819058912540184
+    second: Boss Phase2 attack W_36
+  - first:
+      213: 2650890896269219997
+    second: Boss Phase2 attack W_37
+  - first:
+      213: 2180560063180229594
+    second: Boss Phase2 attack W_38
+  - first:
+      213: 4551983858163435310
+    second: Boss Phase2 attack W_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 35
+        width: 110
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dcfb4d33aa0ae0b0800000000000000
+      internalID: -5698730682259604270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 35
+        width: 110
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be5a88f321c9d060800000000000000
+      internalID: 6978821457825128119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_2
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 21
+        width: 133
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbeb5c3a65d8d14e0800000000000000
+      internalID: -2009294455483023684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_3
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 30
+        width: 133
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5e1618e2c9c3120800000000000000
+      internalID: 2394960825407366592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 37
+        width: 121
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31456eae1710529e0800000000000000
+      internalID: -1646908499950152685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_5
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 35
+        width: 110
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b3fcd8040f2c2e0800000000000000
+      internalID: -2106857515608228966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_6
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 35
+        width: 110
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac776bd72bcbcdf0800000000000000
+      internalID: -158809989796365138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_7
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 35
+        width: 128
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c971b64191adb1da0800000000000000
+      internalID: -5972940679525230692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_8
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 35
+        width: 128
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e5f25a58b1ca370800000000000000
+      internalID: 8335067271171890728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_9
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 27
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffef9ef89ae4e4e90800000000000000
+      internalID: -7039602677362589953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_10
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 31
+        width: 110
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e4d826916391550800000000000000
+      internalID: 6131991850297151102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_11
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 32
+        width: 113
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01e14f7de2ea12d0800000000000000
+      internalID: -3307081466680057590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_12
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 33
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c0d9b01ff6767f0800000000000000
+      internalID: -619403342667510782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_13
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 33
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3321829c0153bd830800000000000000
+      internalID: 4096926632234193459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_14
+      rect:
+        serializedVersion: 2
+        x: 2495
+        y: 33
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac28827178753230800000000000000
+      internalID: 3617930304310226081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_15
+      rect:
+        serializedVersion: 2
+        x: 2671
+        y: 33
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc2212c544b650a0800000000000000
+      internalID: -6893123967942251278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_16
+      rect:
+        serializedVersion: 2
+        x: 2847
+        y: 33
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb449230a940ccb0800000000000000
+      internalID: -4845792246658479139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_17
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 27
+        width: 133
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b48d1a6066cba3b0800000000000000
+      internalID: -5500084402503449423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_18
+      rect:
+        serializedVersion: 2
+        x: 3183
+        y: 27
+        width: 133
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d28a7da0b73dd23f0800000000000000
+      internalID: -923849823124740051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_19
+      rect:
+        serializedVersion: 2
+        x: 3359
+        y: 27
+        width: 133
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32515b163b1162880800000000000000
+      internalID: -8636195773300271837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_20
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 27
+        width: 133
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5f32dd2447ba510800000000000000
+      internalID: 1561469526340793809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_21
+      rect:
+        serializedVersion: 2
+        x: 3727
+        y: 33
+        width: 117
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541a5514628557430800000000000000
+      internalID: 3780024383575531845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_22
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 31
+        width: 110
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a665d5273c51be60800000000000000
+      internalID: 7976257806977558181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_23
+      rect:
+        serializedVersion: 2
+        x: 4086
+        y: 35
+        width: 111
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03d2290c6863e750800000000000000
+      internalID: 6333020314232083210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_24
+      rect:
+        serializedVersion: 2
+        x: 4239
+        y: 35
+        width: 131
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7846f8fa89dd1410800000000000000
+      internalID: 1449553845988771967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_25
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 35
+        width: 138
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018a3efca32c4b270800000000000000
+      internalID: 8265444773983397904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_26
+      rect:
+        serializedVersion: 2
+        x: 4577
+        y: 9
+        width: 137
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d706c7989a04da810800000000000000
+      internalID: 1778148524781494397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_27
+      rect:
+        serializedVersion: 2
+        x: 4751
+        y: 2
+        width: 139
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a501ea7c9757200800000000000000
+      internalID: 177181658876762631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_28
+      rect:
+        serializedVersion: 2
+        x: 4763
+        y: 105
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00113fedcb0ae2c90800000000000000
+      internalID: -7192634821809336064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_29
+      rect:
+        serializedVersion: 2
+        x: 4957
+        y: 10
+        width: 135
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7473b365c472d29f0800000000000000
+      internalID: -491693575495796921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_30
+      rect:
+        serializedVersion: 2
+        x: 5142
+        y: 35
+        width: 111
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d2802b0b16afef0800000000000000
+      internalID: -73639032369173216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_31
+      rect:
+        serializedVersion: 2
+        x: 4751
+        y: 33
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe583272833a5dc10800000000000000
+      internalID: 2077746264671487471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_32
+      rect:
+        serializedVersion: 2
+        x: 4755
+        y: 46
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd78bb8633b40c70800000000000000
+      internalID: 8936464607463636408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_33
+      rect:
+        serializedVersion: 2
+        x: 4757
+        y: 69
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b7374da261b12c0800000000000000
+      internalID: -4459946632771568739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_34
+      rect:
+        serializedVersion: 2
+        x: 4937
+        y: 49
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01efe7cae7fb8efd0800000000000000
+      internalID: -2312387857873961456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_35
+      rect:
+        serializedVersion: 2
+        x: 4943
+        y: 67
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e0f868efa19ece0800000000000000
+      internalID: -1375538530703438334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_36
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9410d997db2c5f0800000000000000
+      internalID: -737819058912540184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_37
+      rect:
+        serializedVersion: 2
+        x: 4951
+        y: 51
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d989172a93bd9c420800000000000000
+      internalID: 2650890896269219997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_38
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 32
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbc24903d7e24e10800000000000000
+      internalID: 2180560063180229594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 attack W_39
+      rect:
+        serializedVersion: 2
+        x: 4955
+        y: 37
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27c4299335eb2f30800000000000000
+      internalID: 4551983858163435310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss Phase2 attack W_0: -5698730682259604270
+      Boss Phase2 attack W_1: 6978821457825128119
+      Boss Phase2 attack W_10: 6131991850297151102
+      Boss Phase2 attack W_11: -3307081466680057590
+      Boss Phase2 attack W_12: -619403342667510782
+      Boss Phase2 attack W_13: 4096926632234193459
+      Boss Phase2 attack W_14: 3617930304310226081
+      Boss Phase2 attack W_15: -6893123967942251278
+      Boss Phase2 attack W_16: -4845792246658479139
+      Boss Phase2 attack W_17: -5500084402503449423
+      Boss Phase2 attack W_18: -923849823124740051
+      Boss Phase2 attack W_19: -8636195773300271837
+      Boss Phase2 attack W_2: -2009294455483023684
+      Boss Phase2 attack W_20: 1561469526340793809
+      Boss Phase2 attack W_21: 3780024383575531845
+      Boss Phase2 attack W_22: 7976257806977558181
+      Boss Phase2 attack W_23: 6333020314232083210
+      Boss Phase2 attack W_24: 1449553845988771967
+      Boss Phase2 attack W_25: 8265444773983397904
+      Boss Phase2 attack W_26: 1778148524781494397
+      Boss Phase2 attack W_27: 177181658876762631
+      Boss Phase2 attack W_28: -7192634821809336064
+      Boss Phase2 attack W_29: -491693575495796921
+      Boss Phase2 attack W_3: 2394960825407366592
+      Boss Phase2 attack W_30: -73639032369173216
+      Boss Phase2 attack W_31: 2077746264671487471
+      Boss Phase2 attack W_32: 8936464607463636408
+      Boss Phase2 attack W_33: -4459946632771568739
+      Boss Phase2 attack W_34: -2312387857873961456
+      Boss Phase2 attack W_35: -1375538530703438334
+      Boss Phase2 attack W_36: -737819058912540184
+      Boss Phase2 attack W_37: 2650890896269219997
+      Boss Phase2 attack W_38: 2180560063180229594
+      Boss Phase2 attack W_39: 4551983858163435310
+      Boss Phase2 attack W_4: -1646908499950152685
+      Boss Phase2 attack W_5: -2106857515608228966
+      Boss Phase2 attack W_6: -158809989796365138
+      Boss Phase2 attack W_7: -5972940679525230692
+      Boss Phase2 attack W_8: 8335067271171890728
+      Boss Phase2 attack W_9: -7039602677362589953
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
