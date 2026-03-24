@@ -12,12 +12,12 @@ public class Welcome : MonoBehaviour
         if (Input.anyKey)
         {
             sfx.Play();
-            Fader.StartFade(welcome, next);
+            
             StartCoroutine(BackendManager.Instance.GetBestRuns(
             runs =>
             {
                 leaderboard.SetEntries(runs);
-                
+                Fader.StartFade(welcome, next);
             }
             ));
         }

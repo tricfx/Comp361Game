@@ -1,0 +1,1157 @@
+fileFormatVersion: 2
+guid: a570a248025424c17be85c512c7e678a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5560025945927311384
+    second: Boss Phase2 atx S_0
+  - first:
+      213: -1835336922102321204
+    second: Boss Phase2 atx S_1
+  - first:
+      213: -4521582244572091611
+    second: Boss Phase2 atx S_2
+  - first:
+      213: -5671719800906307600
+    second: Boss Phase2 atx S_3
+  - first:
+      213: -2809281543730285209
+    second: Boss Phase2 atx S_4
+  - first:
+      213: 4172997276591771848
+    second: Boss Phase2 atx S_5
+  - first:
+      213: 6013399509314172586
+    second: Boss Phase2 atx S_6
+  - first:
+      213: 3693886486040715070
+    second: Boss Phase2 atx S_7
+  - first:
+      213: 887034689588665023
+    second: Boss Phase2 atx S_8
+  - first:
+      213: 132225001423133390
+    second: Boss Phase2 atx S_9
+  - first:
+      213: 6270607943929158405
+    second: Boss Phase2 atx S_10
+  - first:
+      213: -3219721421170921750
+    second: Boss Phase2 atx S_11
+  - first:
+      213: -8670398964139369417
+    second: Boss Phase2 atx S_12
+  - first:
+      213: -8353898266071647774
+    second: Boss Phase2 atx S_13
+  - first:
+      213: -7826667645108422578
+    second: Boss Phase2 atx S_14
+  - first:
+      213: 4414197877716197794
+    second: Boss Phase2 atx S_15
+  - first:
+      213: -4394624078878095560
+    second: Boss Phase2 atx S_16
+  - first:
+      213: -4483587737755341476
+    second: Boss Phase2 atx S_17
+  - first:
+      213: -8042785090975665145
+    second: Boss Phase2 atx S_18
+  - first:
+      213: 8101547384189712086
+    second: Boss Phase2 atx S_19
+  - first:
+      213: 2264079137888123182
+    second: Boss Phase2 atx S_20
+  - first:
+      213: 3293594510501945052
+    second: Boss Phase2 atx S_21
+  - first:
+      213: -5455538788518425523
+    second: Boss Phase2 atx S_22
+  - first:
+      213: -7760401737960013690
+    second: Boss Phase2 atx S_23
+  - first:
+      213: 4396989566012219228
+    second: Boss Phase2 atx S_24
+  - first:
+      213: -3433607732150569335
+    second: Boss Phase2 atx S_25
+  - first:
+      213: 8431866505375932492
+    second: Boss Phase2 atx S_26
+  - first:
+      213: -26267317137806976
+    second: Boss Phase2 atx S_27
+  - first:
+      213: 8762255730741349214
+    second: Boss Phase2 atx S_28
+  - first:
+      213: -8053637497407108462
+    second: Boss Phase2 atx S_29
+  - first:
+      213: -1242150230190695342
+    second: Boss Phase2 atx S_30
+  - first:
+      213: 5896607117681973594
+    second: Boss Phase2 atx S_31
+  - first:
+      213: 3371277275243713551
+    second: Boss Phase2 atx S_32
+  - first:
+      213: 7398698510002923096
+    second: Boss Phase2 atx S_33
+  - first:
+      213: 1600618711314809988
+    second: Boss Phase2 atx S_34
+  - first:
+      213: -6921749446059351605
+    second: Boss Phase2 atx S_35
+  - first:
+      213: 6413595620019157012
+    second: Boss Phase2 atx S_36
+  - first:
+      213: -8666313270544923535
+    second: Boss Phase2 atx S_37
+  - first:
+      213: 784959216784366247
+    second: Boss Phase2 atx S_38
+  - first:
+      213: 391489119406141813
+    second: Boss Phase2 atx S_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef1c074cd1d6d2b0800000000000000
+      internalID: -5560025945927311384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 30
+        width: 110
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfaeea1bc29786e0800000000000000
+      internalID: -1835336922102321204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_2
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 21
+        width: 129
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52b2199a7ec1041c0800000000000000
+      internalID: -4521582244572091611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_3
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 15
+        width: 132
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f72e6124e00a41b0800000000000000
+      internalID: -5671719800906307600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_4
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 36
+        width: 129
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76535e7f15d6309d0800000000000000
+      internalID: -2809281543730285209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_5
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 39
+        width: 110
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c0dcefd9e679e930800000000000000
+      internalID: 4172997276591771848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_6
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 39
+        width: 110
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6fd2d4ef2e37350800000000000000
+      internalID: 6013399509314172586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_7
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 37
+        width: 128
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f92112032534330800000000000000
+      internalID: 3693886486040715070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_8
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 36
+        width: 127
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba9168b9516f4c00800000000000000
+      internalID: 887034689588665023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_9
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 23
+        width: 136
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca504030f1c5d100800000000000000
+      internalID: 132225001423133390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_10
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 12
+        width: 128
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50bd3afa3bca50750800000000000000
+      internalID: 6270607943929158405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_11
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 32
+        width: 113
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee246f1d604153d0800000000000000
+      internalID: -3219721421170921750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_12
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 33
+        width: 113
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73cde81741e8ca780800000000000000
+      internalID: -8670398964139369417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_13
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 34
+        width: 113
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e93c01b9cdf01c80800000000000000
+      internalID: -8353898266071647774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_14
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48f4468e37126390800000000000000
+      internalID: -7826667645108422578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_15
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1ae851591624d30800000000000000
+      internalID: 4414197877716197794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_16
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837c7191fa82303c0800000000000000
+      internalID: -4394624078878095560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_17
+      rect:
+        serializedVersion: 2
+        x: 3027
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5dabc325b817c1c0800000000000000
+      internalID: -4483587737755341476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_18
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 704769f7299426090800000000000000
+      internalID: -8042785090975665145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_19
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d67f9d0c6a7e6070800000000000000
+      internalID: 8101547384189712086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_20
+      rect:
+        serializedVersion: 2
+        x: 3555
+        y: 14
+        width: 113
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29b135faff9b6f10800000000000000
+      internalID: 2264079137888123182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_21
+      rect:
+        serializedVersion: 2
+        x: 3731
+        y: 35
+        width: 113
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde15a0d1c235bd20800000000000000
+      internalID: 3293594510501945052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_22
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 31
+        width: 110
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c8ef360680a44b0800000000000000
+      internalID: -5455538788518425523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_23
+      rect:
+        serializedVersion: 2
+        x: 4086
+        y: 35
+        width: 111
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680c1965cb38d4490800000000000000
+      internalID: -7760401737960013690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_24
+      rect:
+        serializedVersion: 2
+        x: 4239
+        y: 35
+        width: 131
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fd14bc6be350d30800000000000000
+      internalID: 4396989566012219228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_25
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 35
+        width: 138
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986712ba5ff5950d0800000000000000
+      internalID: -3433607732150569335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_26
+      rect:
+        serializedVersion: 2
+        x: 4577
+        y: 9
+        width: 137
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c406276a9e1040570800000000000000
+      internalID: 8431866505375932492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_27
+      rect:
+        serializedVersion: 2
+        x: 4751
+        y: 2
+        width: 139
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0896cc4a30ea2aff0800000000000000
+      internalID: -26267317137806976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_28
+      rect:
+        serializedVersion: 2
+        x: 4763
+        y: 105
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b08f5a929c99970800000000000000
+      internalID: 8762255730741349214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_29
+      rect:
+        serializedVersion: 2
+        x: 4957
+        y: 10
+        width: 135
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a8849bd5bbb3090800000000000000
+      internalID: -8053637497407108462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_30
+      rect:
+        serializedVersion: 2
+        x: 5142
+        y: 35
+        width: 111
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c50d362fef2cee0800000000000000
+      internalID: -1242150230190695342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_31
+      rect:
+        serializedVersion: 2
+        x: 5318
+        y: 37
+        width: 110
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5959759ee4f4d150800000000000000
+      internalID: 5896607117681973594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_32
+      rect:
+        serializedVersion: 2
+        x: 4751
+        y: 33
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f049f3ee1de29ce20800000000000000
+      internalID: 3371277275243713551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_33
+      rect:
+        serializedVersion: 2
+        x: 4755
+        y: 46
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856afe848157da660800000000000000
+      internalID: 7398698510002923096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_34
+      rect:
+        serializedVersion: 2
+        x: 4757
+        y: 69
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48443cccc3a863610800000000000000
+      internalID: 1600618711314809988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_35
+      rect:
+        serializedVersion: 2
+        x: 4937
+        y: 49
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc120634d8101ff90800000000000000
+      internalID: -6921749446059351605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_36
+      rect:
+        serializedVersion: 2
+        x: 4943
+        y: 67
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4183e385c3ba10950800000000000000
+      internalID: 6413595620019157012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_37
+      rect:
+        serializedVersion: 2
+        x: 4951
+        y: 51
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1748aec1ff11bb780800000000000000
+      internalID: -8666313270544923535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_38
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 28
+        width: 35
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aad99faf3cb4ea00800000000000000
+      internalID: 784959216784366247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss Phase2 atx S_39
+      rect:
+        serializedVersion: 2
+        x: 4955
+        y: 37
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57132a7a749de6500800000000000000
+      internalID: 391489119406141813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss Phase2 atx S_0: -5560025945927311384
+      Boss Phase2 atx S_1: -1835336922102321204
+      Boss Phase2 atx S_10: 6270607943929158405
+      Boss Phase2 atx S_11: -3219721421170921750
+      Boss Phase2 atx S_12: -8670398964139369417
+      Boss Phase2 atx S_13: -8353898266071647774
+      Boss Phase2 atx S_14: -7826667645108422578
+      Boss Phase2 atx S_15: 4414197877716197794
+      Boss Phase2 atx S_16: -4394624078878095560
+      Boss Phase2 atx S_17: -4483587737755341476
+      Boss Phase2 atx S_18: -8042785090975665145
+      Boss Phase2 atx S_19: 8101547384189712086
+      Boss Phase2 atx S_2: -4521582244572091611
+      Boss Phase2 atx S_20: 2264079137888123182
+      Boss Phase2 atx S_21: 3293594510501945052
+      Boss Phase2 atx S_22: -5455538788518425523
+      Boss Phase2 atx S_23: -7760401737960013690
+      Boss Phase2 atx S_24: 4396989566012219228
+      Boss Phase2 atx S_25: -3433607732150569335
+      Boss Phase2 atx S_26: 8431866505375932492
+      Boss Phase2 atx S_27: -26267317137806976
+      Boss Phase2 atx S_28: 8762255730741349214
+      Boss Phase2 atx S_29: -8053637497407108462
+      Boss Phase2 atx S_3: -5671719800906307600
+      Boss Phase2 atx S_30: -1242150230190695342
+      Boss Phase2 atx S_31: 5896607117681973594
+      Boss Phase2 atx S_32: 3371277275243713551
+      Boss Phase2 atx S_33: 7398698510002923096
+      Boss Phase2 atx S_34: 1600618711314809988
+      Boss Phase2 atx S_35: -6921749446059351605
+      Boss Phase2 atx S_36: 6413595620019157012
+      Boss Phase2 atx S_37: -8666313270544923535
+      Boss Phase2 atx S_38: 784959216784366247
+      Boss Phase2 atx S_39: 391489119406141813
+      Boss Phase2 atx S_4: -2809281543730285209
+      Boss Phase2 atx S_5: 4172997276591771848
+      Boss Phase2 atx S_6: 6013399509314172586
+      Boss Phase2 atx S_7: 3693886486040715070
+      Boss Phase2 atx S_8: 887034689588665023
+      Boss Phase2 atx S_9: 132225001423133390
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
