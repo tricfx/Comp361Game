@@ -6,6 +6,9 @@ public class LeaderboardUI : MonoBehaviour
     [SerializeField] private TMP_Text[] rankTexts;
     [SerializeField] private TMP_Text[] nameTexts;
     [SerializeField] private TMP_Text[] timeTexts;
+    [SerializeField] private TMP_Text playerBestRunTimeText;
+    [SerializeField] private TMP_Text playerBestRunRankText;
+    [SerializeField] private TMP_Text playerBestRunUsernameText;
 
     public void SetEntries(BestRunResponse[] entries)
     {
@@ -24,6 +27,13 @@ public class LeaderboardUI : MonoBehaviour
                 timeTexts[i].text = "--:--:--";
             }
         }
+    }
+
+    public void SetPlayerBestRun(BestRunResponse bestRun)
+    {
+        playerBestRunRankText.text = bestRun.rank > 0 ? bestRun.rank.ToString() : "N/A";
+        playerBestRunUsernameText.text = bestRun.username;
+        playerBestRunTimeText.text = FormatTime(bestRun.best_time);
     }
         
     private string FormatTime(long time)

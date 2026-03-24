@@ -198,6 +198,21 @@ public class BackendManager : MonoBehaviour
         );
     }
 
+    public IEnumerator GetBestRun(Action<BestRunResponse> onSuccess)
+    {
+        Debug.Log("Fetching best run");
+        yield return GameClient.GetPlayerBestRun(SessionManager.AccessToken,
+        response =>
+        {
+            onSuccess?.Invoke(response);
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        }
+        );
+    }
+
     [System.Serializable]
     private class SupabaseError
     {
