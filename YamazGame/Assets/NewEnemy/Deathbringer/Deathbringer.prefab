@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7403cbcd7591f89418602f6dcb21ce5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceDirection: {fileID: 0}
+  faceDirection: {fileID: 3009248211403828123}
   detectionRange: {fileID: 8353518750175172719}
   attackRange: {fileID: 0}
   _searchDuration: 5
@@ -453,3 +453,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461d5d3ca91f344f492d20bfec1b1216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 0}
+  detectionRange: {fileID: 0}
