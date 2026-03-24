@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7069574310694570193}
   - component: {fileID: 8765223924464969071}
   - component: {fileID: 3946294408930087025}
+  - component: {fileID: 34450436289812272}
   m_Layer: 8
   m_Name: NewSkeleton
   m_TagString: Enemy
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d77925b17b94e9e88680c43a116e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentTeam: 1
   hitbox: {fileID: 7929122026899671448}
   hurtbox: {fileID: 3548950214057549109}
   faceDirection: {fileID: 6919719421441425951}
@@ -204,6 +206,18 @@ MonoBehaviour:
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+--- !u!114 &34450436289812272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153261031417381223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998cad803e8d14816be21c5903c204a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4466537174138201665
 GameObject:
   m_ObjectHideFlags: 0

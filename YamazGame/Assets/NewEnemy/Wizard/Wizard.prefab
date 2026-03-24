@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 7690822564691405911}
   - component: {fileID: 7540873434250881079}
   - component: {fileID: 6407917262768909906}
+  - component: {fileID: 2373036340607009102}
   m_Layer: 8
   m_Name: Wizard
   m_TagString: Enemy
@@ -524,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017f4df8fb574a929a8a963c066ebb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentTeam: 1
   hitbox: {fileID: 4623960157684452460}
   hurtbox: {fileID: 0}
   faceDirection: {fileID: 4780606943734477868}
@@ -531,10 +533,20 @@ MonoBehaviour:
   attackRange: {fileID: 8324734251027002773}
   _maxHealth: 5
   _moveSpeed: 3000
-  _attackDamage: 2
-  _knockbackForce: 10
   _attackCooldown: 3
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
   projectileSpawner: {fileID: 1034858515595350144}
+--- !u!114 &2373036340607009102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865457932143640122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998cad803e8d14816be21c5903c204a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

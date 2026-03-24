@@ -1,17 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
 using System;
 using System.Diagnostics;
 
 public class EnemyManager : MonoBehaviour
 {
     public static event Action OnAllEnemiesDefeated;
+    private bool hasStartedSpawning = false;
 
     private int aliveEnemies = 0;
 
     private void Start()
     {
         UnityEngine.Debug.Log($"Total enemies {aliveEnemies}");
-        if (aliveEnemies == 0)
+        if (hasStartedSpawning && aliveEnemies == 0)
         {
             UnityEngine.Debug.LogWarning("No enemies registered in scene.");
             OnAllEnemiesDefeated.Invoke();
@@ -32,5 +34,10 @@ public class EnemyManager : MonoBehaviour
             UnityEngine.Debug.Log("All enemies defeated");
             OnAllEnemiesDefeated?.Invoke();
         }
+    }
+
+    public void NotifySpawningStarted()
+    {
+        hasStartedSpawning = true;
     }
 }
