@@ -40,31 +40,33 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             if (value < _currentHealth)
             {
                 animator.SetTrigger("hit");
+                UnlockMovement();
+                if (spriteRenderer)
+                {
+                    spriteRenderer.color = Color.red;
+                    Invoke("ResetColor", 0.1f);
+                }
             }
 
             _currentHealth = value;
 
-            if (_currentHealth <= 0)
+            if (_currentHealth <= 0 && _isAlive)
             {
-                animator.SetBool("alive", false);
-                Targetable = false;
+                _currentHealth = 0;
+                Die();
             }
         }
     }
 
-    public bool Targetable
+    public bool IsAlive
     {
         get
         {
-            return _targetable;
+            return _isAlive;
         }
         set
         {
-            _targetable = value;
-            if (_disableSimulation)
-            {
-                rb.simulated = false;
-            }
+            _isAlive = value;
             feetCollider.enabled = value;
         }
     }
@@ -122,30 +124,43 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    [SerializeField] protected EnemyHitbox hitbox;
-    [SerializeField] protected EnemyHurtbox hurtbox;
     [SerializeField] protected Transform faceDirection;
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
+
     public SpriteRenderer spriteRenderer { get; private set; }
     public Animator animator { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public Collider2D feetCollider { get; private set; }
 
+    [SerializeField] protected float _searchDuration = 5f;
     [SerializeField] protected int _maxHealth = 10;
     [SerializeField] protected int _moveSpeed = 2000;
     [SerializeField] protected float _attackCooldown = 1f;
-    [SerializeField] protected bool _disableSimulation = false;
-    [SerializeField] protected bool _enableInvincibilityWindow = false;
+    [SerializeField] protected bool _enableIFrames = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
+    [SerializeField] protected LayerMask _obstacleLayer;
 
+    public enum EnemyState
+    {
+        Idle,
+        Patrol,
+        Chase,
+        Attack,
+        Search
+    }
+
+    protected EnemyState _currentState;
+    protected Vector2 _lastSeenPlayerPosition;
+    protected float _searchTimer = 0f;
     protected int _currentHealth;
-    protected bool _targetable = true;
+    protected bool _isAlive = true;
     protected bool _invincible = false;
     protected float _invincibilityTimeElapsed = 0f;
     protected bool _canAttack = true;
     protected bool _canMove = true;
     protected bool _moving = false;
+    protected Color originalColor;
     protected float _slowMultiplier = 1f;
 
     public float SlowMultiplier
@@ -163,10 +178,14 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         CurrentHealth = MaxHealth;
         animator.SetBool("alive", true);
-        if (!allEnemies.Contains(this))
-            allEnemies.Add(this);
-
+        originalColor = spriteRenderer.color;
+        _currentState = EnemyState.Idle;
         currentTarget = null;
+
+        if (!allEnemies.Contains(this))
+        {
+            allEnemies.Add(this);
+        }
     }
 
     private void OnDestroy()
@@ -200,87 +219,176 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
-    public void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (!Targetable) return;
-
-        Vector2 targetPosition;
-
-        if (_isCharmed)
+        if (!IsAlive)
         {
-            if (currentTarget == null || !(currentTarget is object && currentTarget.GetComponent<NewEnemy>() != null && currentTarget.GetComponent<NewEnemy>().Targetable))
-            {
-                // Clear invalid or dead target
-                currentTarget = null;
+            Moving = false;
+            return;
+        }
 
-                NewEnemy newTarget = FindClosestEnemy();
-                if (newTarget != null)
-                    currentTarget = newTarget.transform;
-            }
+        switch(_currentState)
+        {
+            case EnemyState.Idle:
+                HandleIdle();
+                break;
 
-            if (currentTarget == null)
-            {
-                Moving = false;
-                return;
-            }
+            case EnemyState.Chase:
+                HandleChase();
+                break;
+            
+            case EnemyState.Attack:
+                HandleAttack();
+                break;
 
-            targetPosition = currentTarget.position;
+            case EnemyState.Search:
+                HandleSearch();
+                break;
+        }
+    }
 
-            // Attack using the same behaviour used against the player
-            float attackDistance = Vector2.Distance(transform.position, targetPosition);
+    protected virtual void HandleIdle()
+    {
+        Moving = false;
 
-            if (CanAttack && attackDistance < 6f)
-            {
-                Moving = false;
-                Attack();
-                return;
-            }
+        if (IsAlive && detectionRange.PlayerInRange)
+        {
+            _currentState = EnemyState.Chase;
+        }
+    }
+
+    protected virtual void HandleChase()
+    {
+        if (detectionRange.PlayerInRange)
+        {
+            _lastSeenPlayerPosition = detectionRange.PlayerPosition;
         }
         else
         {
-            NewEnemy allyTarget = FindClosestEnemy();
+            _searchTimer = _searchDuration;
+            _currentState = EnemyState.Search;
+            return;
+        }
 
-            if (allyTarget != null && allyTarget.CurrentTeam != CurrentTeam)
-            {
-                targetPosition = allyTarget.transform.position;
-
-                if (CanAttack && Vector2.Distance(transform.position, targetPosition) < 1.5f)
-                {
-                    Moving = false;
-                    Attack();
-                    return;
-                }
-            }
-            else
-            {
-                if (CanAttack && attackRange.PlayerInRange)
-                {
-                    Moving = false;
-                    Attack();
-                    return;
-                }
-
-                if (!detectionRange.PlayerInRange)
-                {
-                    Moving = false;
-                    return;
-                }
-
-                targetPosition = detectionRange.PlayerPosition;
-            }
+        if (attackRange.PlayerInRange && CanAttack)
+        {
+            Moving = false;
+            _currentState = EnemyState.Attack;
+            return;
         }
 
         if (CanMove)
         {
             Moving = true;
+
             int originalSpeed = _moveSpeed;
             _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
-            Move(transform.position, targetPosition);
+
+            Move(feetCollider.bounds.center, detectionRange.PlayerPosition);
+
             _moveSpeed = originalSpeed;
+        }
+    }
+
+    protected virtual void HandleAttack()
+    {
+        Moving = false;
+
+        if (!attackRange.PlayerInRange)
+        {
+            _currentState = EnemyState.Chase;
+            return;
+        }
+
+        if (CanAttack)
+        {
+            Attack();
+        }
+    }
+
+    protected virtual void HandleSearch()
+    {
+        if (detectionRange.PlayerInRange)
+        {
+            _currentState = EnemyState.Chase;
+            return;
+        }
+
+        if (_searchTimer <= 0f)
+        {
+            Moving = false;
+            _currentState = EnemyState.Idle;
+            return;
+        }
+
+        _searchTimer -= Time.fixedDeltaTime;
+
+        if (CanMove)
+        {
+            Moving = true;
+            Move(feetCollider.bounds.center, _lastSeenPlayerPosition);
+        }
+    }
+
+    protected Vector2 GetSeparationForce(float radius = 1.0f, float strength = 2f)
+    {
+        Collider2D[] neighbors = Physics2D.OverlapCircleAll(
+            feetCollider.bounds.center,
+            radius
+        );
+
+        Vector2 force = Vector2.zero;
+
+        foreach (Collider2D c in neighbors)
+        {
+            if (c == feetCollider) continue;
+            NewEnemy other = c.GetComponent<NewEnemy>();
+            if (other == null) continue;
+
+            Vector2 diff = feetCollider.bounds.center - other.feetCollider.bounds.center;
+            float dist = diff.magnitude;
+
+            if (dist > 0)
+            {
+                force += diff.normalized / dist;
+            }
+        }
+
+        return force * strength;
+    }
+
+    protected Vector2 GetObstacleAvoidance(Vector2 moveDir, float checkDistance = 0.6f)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(
+            feetCollider.bounds.center,
+            moveDir,
+            checkDistance,
+            _obstacleLayer
+        );
+
+        if (hit.collider != null)
+        {
+            Vector2 avoidDir = hit.normal;
+            return avoidDir * 2f;
+        }
+
+        return Vector2.zero;
+    }
+
+    protected void FacePlayer(Vector2 enemyPos, Vector2 playerPos)
+    {
+        float dir = playerPos.x - enemyPos.x;
+        if (Mathf.Abs(dir) < 0.1f) return;
+
+        if (dir > 0)
+        {
+            faceDirection.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
         }
         else
         {
-            Moving = false;
+            faceDirection.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
     }
     
@@ -310,7 +418,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         foreach (var enemy in allEnemies)
         {
             if (enemy == this) continue;
-            if (!enemy.Targetable) continue;
+            if (!enemy.IsAlive) continue;
             if (enemy.CurrentTeam == this.CurrentTeam) continue;
 
             float dist = Vector2.Distance(transform.position, enemy.transform.position);
@@ -332,7 +440,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             CurrentHealth -= damage;
             TakeKnockback(knockback);
 
-            if (_enableInvincibilityWindow)
+            if (_enableIFrames)
             {
                 Invincible = true;
             }
@@ -345,11 +453,53 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             CurrentHealth -= damage;
 
-            if (_enableInvincibilityWindow)
+            if (_enableIFrames)
             {
                 Invincible = true;
             }
         }
+    }
+
+    protected virtual void Die()
+    {
+        _isAlive = false;
+        _canMove = false;
+        _canAttack = false;
+        _currentState = EnemyState.Idle;
+
+        Moving = false;
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.simulated = false;
+        }
+
+        if (feetCollider != null)
+        {
+            feetCollider.enabled = false;
+        }
+
+        if (detectionRange != null)
+        {
+            Collider2D detectionCollider = detectionRange.GetComponent<Collider2D>();
+            if (detectionCollider != null)
+            {
+                detectionCollider.enabled = false;
+            }
+        }
+
+        if (attackRange != null)
+        {
+            Collider2D attackCollider = attackRange.GetComponent<Collider2D>();
+            if (attackCollider != null)
+            {
+                attackCollider.enabled = false;
+            }
+        }
+
+        animator.SetBool("alive", false);
     }
 
     public void TakeKnockback(Vector2 knockback)
@@ -361,17 +511,15 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void flipDirection(Vector2 direction)
     {
-        float sign = direction.x > 0 ? 1f : -1f;
-
-        faceDirection.localScale = new Vector3(sign, 1, 1);
-        spriteRenderer.flipX = sign < 0;
-
-        // Ensure hitbox flips with the enemy so melee attacks work on both sides
-        if (hitbox != null)
+        if (direction.x > 0.1f)
         {
-            Vector3 scale = hitbox.transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * sign;
-            hitbox.transform.localScale = scale;
+            faceDirection.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
+        }
+        else if (direction.x < -0.1f)
+        {
+            faceDirection.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
         }
     }
 
@@ -382,12 +530,21 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     public void UnlockMovement()
     {
+        if (!IsAlive) return;
         CanMove = true;
     }
 
     public void OnObjectDestroyed()
     {
         Destroy(gameObject);
+    }
+
+    private void ResetColor()
+    {
+        if (spriteRenderer)
+        {
+            spriteRenderer.color = originalColor;
+        }
     }
 
     public abstract void Attack();

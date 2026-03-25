@@ -4,7 +4,7 @@ public interface INewEnemy {
     
     int MaxHealth { set; get; }
     int CurrentHealth { set; get; }
-    bool Targetable { set; get; }
+    bool IsAlive { set; get; }
     bool Invincible { set; get; }
 
     bool CanAttack { set; get; }
