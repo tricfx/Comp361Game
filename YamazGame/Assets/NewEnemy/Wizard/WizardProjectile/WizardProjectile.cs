@@ -105,7 +105,7 @@ public class WizardProjectile : MonoBehaviour
             if (ownerEnemy.CurrentTarget == null) return;
 
             NewEnemy targetEnemy = ownerEnemy.CurrentTarget.GetComponent<NewEnemy>();
-            if (targetEnemy == null || !targetEnemy.Targetable) return;
+            if (targetEnemy == null || !targetEnemy.IsAlive) return;
 
             // Only explode when hitting the enemy's main body collider (feetCollider)
             if (other != targetEnemy.feetCollider) return;

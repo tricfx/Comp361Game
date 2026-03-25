@@ -46,7 +46,7 @@ public class EnemyHurtbox : MonoBehaviour
         // Damage enemy if on opposite team (for charm fights)
         NewEnemy targetEnemy = other.GetComponentInParent<NewEnemy>();
 
-        if (targetEnemy != null && targetEnemy != attacker && targetEnemy.Targetable && targetEnemy.CurrentTeam != attacker.CurrentTeam)
+        if (targetEnemy != null && targetEnemy != attacker && targetEnemy.IsAlive && targetEnemy.CurrentTeam != attacker.CurrentTeam)
         {
             targetEnemy.TakeDamage(_attackDamage);
         }
