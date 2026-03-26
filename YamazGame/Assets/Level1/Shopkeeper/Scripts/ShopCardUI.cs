@@ -122,7 +122,7 @@ public class ShopCardUI : MonoBehaviour
 
     private System.Collections.IEnumerator HidePopupAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(5f);
+        yield return new WaitForSecondsRealtime(10f);
         unavailablePopupRoot.SetActive(false);
         hidePopupCoroutine = null;
     }

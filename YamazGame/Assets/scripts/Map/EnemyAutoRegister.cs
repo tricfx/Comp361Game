@@ -7,7 +7,7 @@ public class EnemyAutoRegister : MonoBehaviour
 
     private void Start()
     {
-        enemyManager = FindObjectOfType<EnemyManager>();
+        enemyManager = FindFirstObjectByType<EnemyManager>();
 
         if (enemyManager != null)
         {
