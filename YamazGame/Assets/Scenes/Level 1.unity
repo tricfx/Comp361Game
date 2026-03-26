@@ -444506,6 +444506,22 @@ PrefabInstance:
       propertyPath: attackMoveSpeedMultiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2672562042140796447, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_Size.x
+      value: 0.09686912
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672562042140796447, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_Size.y
+      value: 0.08776323
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672562042140796447, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.028191267
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672562042140796447, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.04862641
+      objectReference: {fileID: 0}
     - target: {fileID: 2852108223747113490, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_Size.x
       value: 0.14527814

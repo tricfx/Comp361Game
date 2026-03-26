@@ -185,6 +185,9 @@ MonoBehaviour:
   attackDamage: 10
   playerActions: {fileID: 0}
   attackCollider: {fileID: 8059695832315811722}
+  attack3Multiplier: 1.5
+  xtraMultiplier: 1.5
+  xtraMultiplierChance: 0.08
 --- !u!1 &5897921085173228654
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +395,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!70 &2672562042140796447
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -427,8 +430,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0018612932, y: -0.000575983}
-  m_Size: {x: 0.061439414, y: 0.016755797}
+  m_Offset: {x: 0.028191276, y: 0.034848943}
+  m_Size: {x: 0.06645509, y: 0.06020818}
   m_Direction: 1
 --- !u!50 &4512945187162635060
 Rigidbody2D:
@@ -662,6 +665,7 @@ MonoBehaviour:
   dashDistance: 5
   dashDuration: 1
   dashCooldown: 0.8
+  attackMoveMultiplier: 0.3
 --- !u!114 &5620701775207736557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +700,9 @@ MonoBehaviour:
   deathPanel: {fileID: 0}
   deathPanelDelay: 0.5
   isInvincible: 0
+  spriteRenderer: {fileID: 0}
+  flashDuration: 0.15
+  hitSound: {fileID: 0}
 --- !u!114 &4395188340007543857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +724,15 @@ MonoBehaviour:
   abilityECooldown: 5
   qAbilityCard: {fileID: 0}
   eAbilityCard: {fileID: 0}
+  attackAudioSource: {fileID: 0}
+  attack1: {fileID: 0}
+  attack2: {fileID: 0}
+  attack3: {fileID: 0}
+  runAudioSource: {fileID: 0}
+  runSounds: []
+  footstepCooldown: 0.12
+  dashAudioSource: {fileID: 0}
+  abilityEquipAudioSource: {fileID: 0}
 --- !u!114 &8315656966709912735
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -566313,6 +566313,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -306072507
       objectReference: {fileID: 0}
+    - target: {fileID: 6799350317173006556, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: player
       value: 
