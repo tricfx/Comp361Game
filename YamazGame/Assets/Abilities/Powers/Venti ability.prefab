@@ -47,9 +47,9 @@ MonoBehaviour:
   mapBounds: {fileID: 0}
   spawnOffset: 6
   boundMargin: 3
-  duration: 3
-  pullRadius: 6
-  pullForce: 8
+  duration: 20
+  pullRadius: 10
+  pullForce: 20
   tickRate: 0.5
   damageMultiplier: 0.0001
   playerHealth: {fileID: 0}

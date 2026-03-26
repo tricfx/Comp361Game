@@ -21,11 +21,6 @@ public class GemManager : MonoBehaviour, IDataPersistence
         {
             DataPersistenceManager.instance.LoadGame();
         }
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
 
         Instance = this;
         DontDestroyOnLoad(gameObject);

@@ -107,4 +107,20 @@ public class SupabaseGameClient
             onError
         );
     }
+
+    public IEnumerator GetPlayerBestRun(string accessToken, System.Action<BestRunResponse> onSuccess, System.Action<string> onError)
+    {
+        string url = $"{baseUrl}/get_my_time";
+
+        yield return SupabaseHttp.SendRequest(url, "POST", null, apikey, accessToken,
+            response =>
+            {
+                var wrapper = JsonUtility.FromJson<Wrapper<BestRunResponse>>("{\"items\":" + response + "}");
+                var array = wrapper.items;
+                var bestRun = array.Length > 0 ? array[0] : new BestRunResponse { best_time = 0, username = "N/A", rank = 0 };
+                onSuccess?.Invoke(bestRun);
+            },
+            onError
+        );
+    }
 }

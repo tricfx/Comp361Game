@@ -185,6 +185,9 @@ MonoBehaviour:
   attackDamage: 10
   playerActions: {fileID: 0}
   attackCollider: {fileID: 8059695832315811722}
+  attack3Multiplier: 1.5
+  xtraMultiplier: 1.5
+  xtraMultiplierChance: 0.08
 --- !u!1 &5897921085173228654
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,75 +295,6 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
---- !u!1 &8680477353073072649
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6401810074037653959}
-  - component: {fileID: 6065679768550912435}
-  m_Layer: 9
-  m_Name: FeetCollider
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6401810074037653959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8680477353073072649}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.203, y: -0.0071393, z: 0.06490763}
-  m_LocalScale: {x: 0.15495718, y: 0.0135594215, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6365615291235604374}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &6065679768550912435
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8680477353073072649}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -1.2942531, y: 0.4583149}
-  m_Size: {x: 0.36472464, y: 1.126728}
-  m_Direction: 1
 --- !u!1 &8994838657509954306
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6365615291235604374}
   - component: {fileID: 6799350317173006556}
+  - component: {fileID: 2672562042140796447}
   - component: {fileID: 4512945187162635060}
   - component: {fileID: 3920970003775374591}
   - component: {fileID: 8123051474615805345}
@@ -403,7 +338,6 @@ Transform:
   m_Children:
   - {fileID: 3507256746603836707}
   - {fileID: 2761626675665742220}
-  - {fileID: 6401810074037653959}
   - {fileID: 3252475988178463308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -461,7 +395,44 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!70 &2672562042140796447
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8994838657509954306}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.028191276, y: 0.034848943}
+  m_Size: {x: 0.06645509, y: 0.06020818}
+  m_Direction: 1
 --- !u!50 &4512945187162635060
 Rigidbody2D:
   serializedVersion: 5
@@ -694,6 +665,7 @@ MonoBehaviour:
   dashDistance: 5
   dashDuration: 1
   dashCooldown: 0.8
+  attackMoveMultiplier: 0.3
 --- !u!114 &5620701775207736557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,6 +700,9 @@ MonoBehaviour:
   deathPanel: {fileID: 0}
   deathPanelDelay: 0.5
   isInvincible: 0
+  spriteRenderer: {fileID: 0}
+  flashDuration: 0.15
+  hitSound: {fileID: 0}
 --- !u!114 &4395188340007543857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +724,15 @@ MonoBehaviour:
   abilityECooldown: 5
   qAbilityCard: {fileID: 0}
   eAbilityCard: {fileID: 0}
+  attackAudioSource: {fileID: 0}
+  attack1: {fileID: 0}
+  attack2: {fileID: 0}
+  attack3: {fileID: 0}
+  runAudioSource: {fileID: 0}
+  runSounds: []
+  footstepCooldown: 0.12
+  dashAudioSource: {fileID: 0}
+  abilityEquipAudioSource: {fileID: 0}
 --- !u!114 &8315656966709912735
 MonoBehaviour:
   m_ObjectHideFlags: 0

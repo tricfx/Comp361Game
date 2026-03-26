@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemies()
     {
-        EnemyManager manager = FindObjectOfType<EnemyManager>();
+        EnemyManager manager = FindFirstObjectByType<EnemyManager>();
         if (manager != null)
         {
             manager.NotifySpawningStarted();

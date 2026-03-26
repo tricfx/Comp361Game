@@ -9,15 +9,11 @@ public class HUDController : MonoBehaviour
     [SerializeField] private PlayerActions playerActions;
     [SerializeField] private HealthBarView healthBarView;
     [SerializeField] private HealthTextView healthTextView;
-    [SerializeField] private AbilitySlotView dashAbilityView;
     [SerializeField] private AbilitySlotView abilityQView;
     [SerializeField] private AbilitySlotView abilityEView;
     [SerializeField] private BloodSplatterView bloodSplatterView;
 
-    [Header("Dialogue")]
-    [SerializeField] private CanvasGroup hudCanvasGroup;
-
-
+    [Header("Set Icons for Slots")]
     [SerializeField] private AbilitySlotView qSlot;
     [SerializeField] private AbilitySlotView eSlot;
 
@@ -26,11 +22,6 @@ public class HUDController : MonoBehaviour
 
         if (toQ) qSlot.SetIcon(icon);
         else eSlot.SetIcon(icon);
-    }
-
-    void Start()
-    {
-        playerHealth = FindFirstObjectByType<PlayerHealth>();
     }
 
     void Update()
@@ -42,46 +33,13 @@ public class HUDController : MonoBehaviour
         }
         if (playerActions == null) return;
 
-        // health bar - only update when we have the view so no missing ref
-        if (healthBarView != null)
-            healthBarView.SetHealth(
-                playerHealth.CurrentHealth,
-                playerHealth.MaxHealth
-            );
+        // Update health bar and health bar text 
+        healthBarView.SetHealth(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+        healthTextView.SetHealth(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+        bloodSplatterView.SetHealth(playerHealth.CurrentHealth, playerHealth.MaxHealth);
 
-        if (healthTextView != null)
-        {
-            healthTextView.SetHealth(
-                playerHealth.CurrentHealth,
-                playerHealth.MaxHealth
-            );
-        }
-        if (bloodSplatterView != null)
-        {
-            bloodSplatterView.SetHealth(
-                playerHealth.CurrentHealth,
-                playerHealth.MaxHealth
-            );
-        }
-
-        // all three ability slots (dash, Q, E)
-        if (playerActions != null)
-        {
-            if (dashAbilityView != null)
-                dashAbilityView.SetCooldownNormalized(playerActions.DashCooldownNormalized);
-            if (abilityQView != null)
-                abilityQView.SetCooldownNormalized(playerActions.AbilityQCooldownNormalized);
-            if (abilityEView != null)
-                abilityEView.SetCooldownNormalized(playerActions.AbilityECooldownNormalized);
-        }
-
-        // hide HUD when talking to npc so it doesn't sit on top of dialogue
-        if (hudCanvasGroup != null && DialogueManager.Instance != null)
-        {
-            if (DialogueManager.Instance.isDialogueActive)
-                hudCanvasGroup.alpha = 0f;
-            else
-                hudCanvasGroup.alpha = 1f;
-        }
+        // Ability slots Q, E
+        abilityQView.SetCooldownNormalized(playerActions.AbilityQCooldownNormalized);
+        abilityEView.SetCooldownNormalized(playerActions.AbilityECooldownNormalized);
     }
 }
