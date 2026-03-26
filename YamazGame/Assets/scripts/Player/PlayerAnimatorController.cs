@@ -67,6 +67,12 @@ public class PlayerAnimatorController : MonoBehaviour
 
     }
 
+    public void TriggerSepuku()
+    {
+        if (!animator) return;
+        animator.SetTrigger("Seppuku");
+    }
+
     public void ResetAttackStep()
     {
         if (!animator) return;

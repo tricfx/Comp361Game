@@ -29,6 +29,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapTest.unity
     guid: 6bfcc9cf58a1d40eea906a9c90dc83c8
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: 4737afdca1e71414cacc083c52ac2de1
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
+    guid: f5cced18fc80b422799aff739cb84f4b
+  - enabled: 1
+    path: Assets/Scenes/Level 4.unity
+    guid: f129c21bbc77245878568fc8c0f09cad
+  - enabled: 1
+    path: Assets/Scenes/Level 5.unity
+    guid: 456ed0c21089048a182a14f3c013d993
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

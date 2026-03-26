@@ -30,6 +30,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.15f;
 
+    [SerializeField] private AudioSource hitSound;
+
     private void Awake()
     {
         if (deathPanel != null)
@@ -55,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead || isInvincible) return;
 
+        hitSound.Play();
         currentHealth -= damage;
         Debug.Log($"Player took {damage} damage. Health: {currentHealth}/{maxHealth}");
 
