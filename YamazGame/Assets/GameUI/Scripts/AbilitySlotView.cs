@@ -56,7 +56,7 @@ public class AbilitySlotView : MonoBehaviour {
     // 0 = on cooldown, 1 = ready (HUDController passes player's cooldown value)
     public void SetCooldownNormalized(float normalized){
         if (cooldownFillImage == null) return;
-        // overlay full when on cd, empty when ready
+        // overlay full when on cooldown, empty when ready
         float fill = 1f - normalized;
         cooldownFillImage.fillAmount = Mathf.Clamp01(fill);
         isOnCooldown = normalized < 0.999f;

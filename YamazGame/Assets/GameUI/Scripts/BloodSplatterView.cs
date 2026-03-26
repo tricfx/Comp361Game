@@ -19,7 +19,6 @@ public class BloodSplatterView : MonoBehaviour
         if (bloodImage == null) return;
 
         float hpPercent = (float)current / max;
-        float intensity = 1f - hpPercent;
 
         // Threshold where splatter exactly fits screen
         float thresholdHPPercent = 0.2f; // 20% HP
