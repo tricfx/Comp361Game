@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1403890789074495156}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05264938, y: 0.2496318, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1034858515595350144}
   m_Layer: 8
   m_Name: WizardProjectileSpawner
-  m_TagString: EnemyHurtbox
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.25
+  m_Radius: 3
 --- !u!114 &8324734251027002773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 7690822564691405911}
   - component: {fileID: 7540873434250881079}
   - component: {fileID: 6407917262768909906}
+  - component: {fileID: 2373036340607009102}
   m_Layer: 8
   m_Name: Wizard
   m_TagString: Enemy
@@ -362,7 +363,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.787, y: 0.621, z: 0.019102333}
-  m_LocalScale: {x: 3.0496094, y: 2.480625, z: 1}
+  m_LocalScale: {x: 2.65, y: 2.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4764814998829397479}
@@ -487,8 +488,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00790994, y: 0.0024680041}
-  m_Size: {x: 0.1428894, y: 0.025245748}
+  m_Offset: {x: 0.0075396183, y: 0.010412737}
+  m_Size: {x: 0.1705949, y: 0.041135613}
   m_Direction: 1
 --- !u!95 &7540873434250881079
 Animator:
@@ -524,17 +525,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017f4df8fb574a929a8a963c066ebb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentTeam: 1
   hitbox: {fileID: 4623960157684452460}
   hurtbox: {fileID: 0}
   faceDirection: {fileID: 4780606943734477868}
   detectionRange: {fileID: 9092103154612472699}
   attackRange: {fileID: 8324734251027002773}
+  _searchDuration: 5
   _maxHealth: 5
   _moveSpeed: 3000
-  _attackDamage: 2
-  _knockbackForce: 10
   _attackCooldown: 3
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   projectileSpawner: {fileID: 1034858515595350144}
+--- !u!114 &2373036340607009102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865457932143640122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998cad803e8d14816be21c5903c204a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preferredDistanceMultiplier: 0.8
+  distanceTolerance: 0.3
+  strafeStrength: 0.5
+  noiseStrength: 0.05

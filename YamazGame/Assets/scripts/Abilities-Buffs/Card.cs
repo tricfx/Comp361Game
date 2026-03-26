@@ -9,6 +9,7 @@ public abstract class Card : ScriptableObject
     public string dependency;
     public int cooldownSeconds;
     public CardType type;
+    [Min(0)] public int shopCost;
 
     public abstract void Apply(GameObject playerObject);
 }

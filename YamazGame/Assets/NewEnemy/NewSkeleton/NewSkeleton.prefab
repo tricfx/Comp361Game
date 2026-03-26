@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7069574310694570193}
   - component: {fileID: 8765223924464969071}
   - component: {fileID: 3946294408930087025}
+  - component: {fileID: 34450436289812272}
   m_Layer: 8
   m_Name: NewSkeleton
   m_TagString: Enemy
@@ -156,8 +157,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0007565929, y: 0.010715575}
-  m_Size: {x: 0.16932458, y: 0.04311258}
+  m_Offset: {x: -0.00015557297, y: 0.009819034}
+  m_Size: {x: 0.20526895, y: 0.041319754}
   m_Direction: 1
 --- !u!95 &8765223924464969071
 Animator:
@@ -193,17 +194,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d77925b17b94e9e88680c43a116e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentTeam: 1
   hitbox: {fileID: 7929122026899671448}
   hurtbox: {fileID: 3548950214057549109}
   faceDirection: {fileID: 6919719421441425951}
   detectionRange: {fileID: 3538662739765094555}
   attackRange: {fileID: 1591120705167467719}
+  _searchDuration: 5
   _maxHealth: 8
   _moveSpeed: 4000
   _attackCooldown: 1
   _disableSimulation: 0
   _enableInvincibilityWindow: 0
   _invincibilityLimit: 0.3
+--- !u!114 &34450436289812272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153261031417381223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998cad803e8d14816be21c5903c204a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!1 &4466537174138201665
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +324,7 @@ GameObject:
   - component: {fileID: 89394695309548364}
   - component: {fileID: 2500219155258586321}
   - component: {fileID: 1591120705167467719}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +415,7 @@ GameObject:
   - component: {fileID: 792308552470018032}
   - component: {fileID: 624488594281922452}
   - component: {fileID: 3548950214057549109}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Hurtbox
   m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
@@ -413,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 4881115091429829661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01141274, y: -0.27216947, z: -0.021909067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -453,7 +471,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.26540765, y: 0.29188278}
+  m_Offset: {x: 0.26609552, y: 0.042387307}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -463,7 +481,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.46138066, y: 0.15089816}
+  m_Size: {x: 0.46000496, y: 0.14971906}
   m_EdgeRadius: 0
 --- !u!114 &3548950214057549109
 MonoBehaviour:
@@ -477,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a973369d2fc7c4777a2783950ab490a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 2
+  _attackDamage: 5
   _knockbackForce: 10
 --- !u!1 &6712337824860022052
 GameObject:
@@ -490,7 +508,7 @@ GameObject:
   - component: {fileID: 475461214103687152}
   - component: {fileID: 8952574046705920098}
   - component: {fileID: 3538662739765094555}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: DetectionRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6919719421441425951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FaceDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 8476507724350602319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01141274, y: 0.27216947, z: 0.021909067}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

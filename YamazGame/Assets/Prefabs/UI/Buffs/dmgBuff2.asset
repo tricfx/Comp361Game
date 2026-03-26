@@ -17,11 +17,12 @@ MonoBehaviour:
   cardDescription: Increase character damage by 20 points
   icon: {fileID: 6413552206698252740, guid: f23739457998d4c49945133b260a735d, type: 3}
   dependency: dmg1
+  cooldownSeconds: 0
   type: 0
+  shopCost: 33
   buffID: dmg2
   bonusDamage: 20
   bonusHealth: 0
   bonusSpeed: 0
   dashCooldownDecrease: 0
-  bonusDashRange: 0
-  playerHealth: {fileID: 0}
+  dashDistanceBonus: 0

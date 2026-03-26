@@ -19,5 +19,6 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 20
   type: 1
+  shopCost: 33
   abilityID: Venti
   abilityPrefab: {fileID: 3410464993873763626, guid: 6305eb499bb871d49b9226b560a346a1, type: 3}

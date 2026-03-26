@@ -20,8 +20,10 @@ public class BuffCard : Card
         // Max health lives on PlayerHealth
         var health = playerObject.GetComponent<PlayerHealth>();
         if (health != null)
+        {
             health.currentHealth += bonusHealth;
             health.maxHealth += bonusHealth;
+        }
 
         // Move speed lives on PlayerController2D
         var controller = playerObject.GetComponent<PlayerController2D>();

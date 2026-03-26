@@ -8,6 +8,7 @@ public class LoginUI : MonoBehaviour
     [SerializeField] private Fader fader;
     [SerializeField] private CanvasGroup from;
     [SerializeField] private CanvasGroup to;
+    [SerializeField] private LeaderboardUI leaderboard;
 
     public void OnSignInClicked()
     {
@@ -19,7 +20,12 @@ public class LoginUI : MonoBehaviour
         {
             if (session != null)
             {
-                fader.StartFade(from, to);
+                StartCoroutine(BackendManager.Instance.GetBestRun(
+                bestRun =>
+                {
+                    leaderboard.SetPlayerBestRun(bestRun);
+                    fader.StartFade(from, to);
+                }));
             }
         }
         ));
