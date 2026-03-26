@@ -74,9 +74,10 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
             if (animController != null)
             {
                 //Replace this by the sepuku animation
-                animController.TriggerDeath();
+                animController.TriggerSepuku();
             }
         }
+        yield return new WaitForSeconds(2f);
 
         music.Play();
 
