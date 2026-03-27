@@ -4335,7 +4335,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1157467470777423004, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5866608304594041606, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1987250612388311951, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
       insertIndex: 0
@@ -6692,15 +6693,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc13fa0f3e94408a8059c04420e9882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  playerActions: {fileID: 0}
+  playerHealth: {fileID: 1332874946080679998}
+  playerActions: {fileID: 1332874946080679999}
   healthBarView: {fileID: 959012676}
   healthTextView: {fileID: 1081073142}
-  dashAbilityView: {fileID: 0}
   abilityQView: {fileID: 1357506397}
   abilityEView: {fileID: 1325203378}
   bloodSplatterView: {fileID: 1604158015}
-  hudCanvasGroup: {fileID: 0}
   qSlot: {fileID: 1357506397}
   eSlot: {fileID: 1325203378}
 --- !u!114 &467552664
@@ -559994,7 +559993,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8735179352402358602, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: bc287494c1b37f247ae7ac6ee90eeed2, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0271a513e23763a42a100702cd52b17c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -566437,6 +566436,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1723188263}
   m_SourcePrefab: {fileID: 100100000, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+--- !u!114 &1332874946080679998 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+  m_PrefabInstance: {fileID: 1332874946080679997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690713646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebb4a36303ba46018222e62961cb1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1332874946080679999 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}

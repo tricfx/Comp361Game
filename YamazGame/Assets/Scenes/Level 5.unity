@@ -386414,7 +386414,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1157467470777423004, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5866608304594041606, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1987250612388311951, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
       insertIndex: 0
@@ -388783,11 +388784,9 @@ MonoBehaviour:
   playerActions: {fileID: 1332874946080679999}
   healthBarView: {fileID: 959012676}
   healthTextView: {fileID: 1081073142}
-  dashAbilityView: {fileID: 0}
   abilityQView: {fileID: 1357506397}
   abilityEView: {fileID: 1325203378}
   bloodSplatterView: {fileID: 1604158015}
-  hudCanvasGroup: {fileID: 0}
   qSlot: {fileID: 1357506397}
   eSlot: {fileID: 1325203378}
 --- !u!114 &467552664
@@ -690157,7 +690156,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8735179352402358602, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: bc287494c1b37f247ae7ac6ee90eeed2, type: 3}
+  m_Resource: {fileID: 8300000, guid: eb24be995f48097499f32cf89d895fb8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1

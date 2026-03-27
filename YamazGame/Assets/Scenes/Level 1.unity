@@ -53171,7 +53171,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1157467470777423004, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5866608304594041606, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1987250612388311951, guid: 1b7465fdc25a0b54599feaf347cd3536, type: 3}
       insertIndex: 0
@@ -54615,11 +54616,9 @@ MonoBehaviour:
   playerActions: {fileID: 1332874946080679999}
   healthBarView: {fileID: 959012676}
   healthTextView: {fileID: 1081073142}
-  dashAbilityView: {fileID: 0}
   abilityQView: {fileID: 1357506397}
   abilityEView: {fileID: 1325203378}
   bloodSplatterView: {fileID: 1604158015}
-  hudCanvasGroup: {fileID: 0}
   qSlot: {fileID: 1357506397}
   eSlot: {fileID: 1325203378}
 --- !u!114 &467552664
@@ -285029,7 +285028,7 @@ Transform:
   m_GameObject: {fileID: 887897576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.3, y: 43.8, z: -10}
+  m_LocalPosition: {x: 7.648441, y: 44.19556, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
