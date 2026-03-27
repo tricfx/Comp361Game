@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d811323fe6584b36889548b63f702f2, type: 3}
+  m_Name: critrate2
+  m_EditorClassIdentifier: 
+  cardID: critrate2
+  cardName: Kitsune Precision
+  cardDescription: 'Increase character crite rate by 20% '
+  icon: {fileID: -862659620070987507, guid: 98ccad35fa3ce79459ad97f1603c5e04, type: 3}
+  dependency: critrate1
+  cooldownSeconds: 0
+  type: 0
+  shopCost: 33
+  buffID: critrate2
+  bonusDamage: 0
+  bonusHealth: 0
+  bonusSpeed: 0
+  dashCooldownDecrease: 0
+  dashDistanceBonus: 0
+  critRate: 0.2
+  critDmg: 0

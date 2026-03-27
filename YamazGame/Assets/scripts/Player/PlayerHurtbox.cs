@@ -7,9 +7,9 @@ public class PlayerHurtbox : MonoBehaviour
     public Collider2D attackCollider;
 
     [Header("Combo Multipliers")]
-    [SerializeField] private float attack3Multiplier = 1.5f;
-    [SerializeField] private float xtraMultiplier = 1.5f;
-    [SerializeField] private float xtraMultiplierChance = 0.08f; // 8%
+    public float attack3Multiplier = 1.5f;
+    public float xtraMultiplier = 1.5f;
+    public float xtraMultiplierChance = 0.08f; // 8%
 
     private void Awake()
     {
