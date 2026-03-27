@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: critdmg3
   cardName: Sharp Instinct
-  cardDescription: 'Increase character crite rate by 10% '
+  cardDescription: Increase character crite damage by 100%
   icon: {fileID: -1317026252678793333, guid: 710cac01c27cadf4891c7ce9f59a46ff, type: 3}
   dependency: critdmg2
   cooldownSeconds: 0
