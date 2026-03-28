@@ -45,10 +45,10 @@ public class TimeManager : MonoBehaviour
 
         if (timeText != null)
             timeText.text = $"{minutes:00}:{seconds:00}";
-        if (time >= 10f)
+
+        if (Input.GetKeyDown(KeyCode.B))
 {
-Debug.Log("Running");
-    StopTimerAndSubmit();
+   StopTimerAndSubmit();
 }
     }
 
@@ -58,27 +58,16 @@ Debug.Log("Running");
         countTime = true;
     }
 
-
     public void StopTimerAndSubmit()
-{
-    if (!countTime) return;
-
-    countTime = false;
-
-    long timeInMS = (long)(time * 1000);
-
-    Debug.Log("StopTimerAndSubmit called");
-    Debug.Log("BackendManager.Instance = " + BackendManager.Instance);
-
-    if (BackendManager.Instance == null)
     {
-        Debug.LogError("BackendManager.Instance is NULL");
-        return;
+        countTime = false;
+
+        long timeInMS = (long)(time * 1000);
+
+
+        BackendManager.Instance.SubmitRun(timeInMS, true, 
+        () => {
+            Debug.Log("Run submitted successfully");
+        });
     }
-
-    BackendManager.Instance.SubmitRun(timeInMS, true, () =>
-    {
-        Debug.Log("Run submitted successfully");
-    });
-}
 }
