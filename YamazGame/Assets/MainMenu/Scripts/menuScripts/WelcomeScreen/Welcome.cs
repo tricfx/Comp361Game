@@ -14,7 +14,7 @@ public class Welcome : MonoBehaviour
         {
             sfx.Play();
             
-        
+            Fader.StartFade(welcome, next);
             StartCoroutine(BackendManager.Instance.GetBestRuns(
             runs =>
             {

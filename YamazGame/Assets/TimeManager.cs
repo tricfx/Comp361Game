@@ -65,9 +65,9 @@ public class TimeManager : MonoBehaviour
         long timeInMS = (long)(time * 1000);
 
 
-        BackendManager.Instance.SubmitRun(timeInMS, true, 
-        () => {
+        StartCoroutine(BackendManager.Instance.SubmitRun(timeInMS, true, () =>
+        {
             Debug.Log("Run submitted successfully");
-        });
+        }));
     }
 }
