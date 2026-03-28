@@ -163,6 +163,10 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected Color originalColor;
     protected float _slowMultiplier = 1f;
 
+   protected bool isagro = false;
+    private bool isCountedInAgro = false;
+    private SepukuManager sepukuManager;
+
     public float SlowMultiplier
     {
         get { return _slowMultiplier; }
@@ -182,6 +186,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         _currentState = EnemyState.Idle;
         currentTarget = null;
 
+         sepukuManager = FindFirstObjectByType<SepukuManager>();
+
         if (!allEnemies.Contains(this))
         {
             allEnemies.Add(this);
@@ -192,10 +198,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     {
         if (allEnemies.Contains(this))
             allEnemies.Remove(this);
+        if (isCountedInAgro && sepukuManager != null)
+            {
+                sepukuManager.RemoveEnnemy();
+                isCountedInAgro = false;
+            }
     }
 
     public void Update()
     {
+
+        HandleAgroCount();
         if (_isCharmed)
         {
             _charmTimer -= Time.deltaTime;
@@ -218,6 +231,21 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             }
         }
     }
+    private void HandleAgroCount()
+{
+    if (sepukuManager == null) return;
+
+    if (isagro && !isCountedInAgro)
+    {
+        sepukuManager.AddEnnemy();
+        isCountedInAgro = true;
+    }
+    else if (!isagro && isCountedInAgro)
+    {
+        sepukuManager.RemoveEnnemy();
+        isCountedInAgro = false;
+    }
+}
 
     protected virtual void FixedUpdate()
     {
@@ -254,6 +282,11 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         if (IsAlive && detectionRange.PlayerInRange)
         {
             _currentState = EnemyState.Chase;
+               isagro = true;
+        }
+          else
+        {
+            isagro = false;
         }
     }
 
@@ -288,6 +321,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
             _moveSpeed = originalSpeed;
         }
+
     }
 
     protected virtual void HandleAttack()
@@ -308,6 +342,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     protected virtual void HandleSearch()
     {
+         isagro = true;
         if (detectionRange.PlayerInRange)
         {
             _currentState = EnemyState.Chase;

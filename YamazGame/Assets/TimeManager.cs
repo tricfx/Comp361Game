@@ -45,6 +45,11 @@ public class TimeManager : MonoBehaviour
 
         if (timeText != null)
             timeText.text = $"{minutes:00}:{seconds:00}";
+        if (time >= 10f)
+{
+Debug.Log("Running");
+    StopTimerAndSubmit();
+}
     }
 
     public void StartNewGame()
@@ -53,16 +58,27 @@ public class TimeManager : MonoBehaviour
         countTime = true;
     }
 
+
     public void StopTimerAndSubmit()
+{
+    if (!countTime) return;
+
+    countTime = false;
+
+    long timeInMS = (long)(time * 1000);
+
+    Debug.Log("StopTimerAndSubmit called");
+    Debug.Log("BackendManager.Instance = " + BackendManager.Instance);
+
+    if (BackendManager.Instance == null)
     {
-        countTime = false;
-
-        long timeInMS = (long)(time * 1000);
-
-
-        BackendManager.Instance.SubmitRun(timeInMS, true, 
-        () => {
-            Debug.Log("Run submitted successfully");
-        });
+        Debug.LogError("BackendManager.Instance is NULL");
+        return;
     }
+
+    BackendManager.Instance.SubmitRun(timeInMS, true, () =>
+    {
+        Debug.Log("Run submitted successfully");
+    });
+}
 }

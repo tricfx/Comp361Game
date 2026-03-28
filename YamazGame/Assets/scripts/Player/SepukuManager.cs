@@ -11,7 +11,10 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     [SerializeField] private bool SepukuEnabled = false;
     public CanvasGroup SepukuExplanation;
     public AudioSource music;
-        
+        private void Awake()
+{
+    Debug.Log("TimeManager is attached to: " + gameObject.name, this);
+}
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

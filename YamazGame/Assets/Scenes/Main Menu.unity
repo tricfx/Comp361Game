@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: playerData.json
-  useEncryption: 1
+  useEncryption: 0
   gameData:
     sceneIndex: 0
     gemsCollected: 0
@@ -10260,7 +10260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18, y: -16}
+  m_AnchoredPosition: {x: -17.999878, y: -16}
   m_SizeDelta: {x: -1138.82, y: -695.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419190222
