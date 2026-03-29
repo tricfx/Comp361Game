@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class NewEnemy : MonoBehaviour, INewEnemy
@@ -41,6 +42,9 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             {
                 animator.SetTrigger("hit");
                 UnlockMovement();
+
+                PlaySound(hurtClip, hurtVolume);
+
                 if (spriteRenderer)
                 {
                     spriteRenderer.color = Color.red;
@@ -128,6 +132,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
 
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioClip moveClip;
+    [SerializeField] protected AudioClip attackClip;
+    [SerializeField] protected AudioClip hurtClip;
+    [SerializeField] protected AudioClip deathClip;
+    [SerializeField] protected float moveVolume = 1f;
+    [SerializeField] protected float attackVolume = 1f;
+    [SerializeField] protected float hurtVolume = 1f;
+    [SerializeField] protected float deathVolume = 1f;
+
+
     public SpriteRenderer spriteRenderer { get; private set; }
     public Animator animator { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -179,6 +194,11 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         feetCollider = GetComponent<Collider2D>();
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         CurrentHealth = MaxHealth;
         animator.SetBool("alive", true);
@@ -504,6 +524,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         Moving = false;
 
+        PlaySound(deathClip, deathVolume);
+
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -580,6 +602,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             spriteRenderer.color = originalColor;
         }
+    }
+
+    protected void PlaySound(AudioClip clip, float volume = 1f)
+    {
+        if (audioSource == null || clip == null) return;
+        audioSource.PlayOneShot(clip, volume);
+    }
+
+    public void PlayAttackSound()
+    {
+        PlaySound(attackClip, attackVolume);
     }
 
     public abstract void Attack();
