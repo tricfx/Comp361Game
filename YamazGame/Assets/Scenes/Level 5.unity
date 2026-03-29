@@ -696557,6 +696557,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3920970003775374591, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: buffDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 19cfb413ad9d7374ca25ab84986d0ebd, type: 2}
     - target: {fileID: 4355084252441972179, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: playerActions
       value: 

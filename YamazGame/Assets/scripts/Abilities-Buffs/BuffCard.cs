@@ -49,7 +49,6 @@ public class BuffCard : Card
              // Attack + crit stats live on PlayerHurtbox
         if (hurtbox != null)
         {
-            hurtbox.attackDamage += bonusDamage;
             hurtbox.xtraMultiplierChance += critRate;
             hurtbox.xtraMultiplier += critDmg;
             hurtbox.attack3Multiplier += critDmg;
