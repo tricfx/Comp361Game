@@ -86,6 +86,7 @@ public class Wizard : NewEnemy
     public void FireProjectile()
     {
         projectileSpawner.SpawnProjectile();
+        PlayAttackSound();
     }
 
     public override void Move(Vector2 startPosition, Vector2 targetPosition)

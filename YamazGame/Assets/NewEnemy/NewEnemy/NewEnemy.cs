@@ -38,26 +38,28 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
         set
         {
-            if (value < _currentHealth)
+            int prevHealth = _currentHealth;
+            _currentHealth = value;
+
+            if (_currentHealth < prevHealth)
             {
                 animator.SetTrigger("hit");
-                UnlockMovement();
-
-                PlaySound(hurtClip, hurtVolume);
-
                 if (spriteRenderer)
                 {
                     spriteRenderer.color = Color.red;
                     Invoke("ResetColor", 0.1f);
                 }
-            }
 
-            _currentHealth = value;
-
-            if (_currentHealth <= 0 && _isAlive)
-            {
-                _currentHealth = 0;
-                Die();
+                if (_currentHealth <= 0 && _isAlive)
+                {
+                    _currentHealth = 0;
+                    Die();
+                }
+                else if (_currentHealth > 0 && _isAlive)
+                {
+                    UnlockMovement();
+                    PlaySound(hurtClip, hurtVolume);
+                }
             }
         }
     }

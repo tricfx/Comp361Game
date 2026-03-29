@@ -5,6 +5,9 @@ public class WizardProjectile : MonoBehaviour
 {
     [SerializeField] int projectileSpeed = 5000;
     [SerializeField] float projectileDuration = 2f;
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioClip clip;
+    [SerializeField] protected float volume = 1f;
 
     Animator animator;
     Rigidbody2D rb;
@@ -26,6 +29,10 @@ public class WizardProjectile : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         hurtbox = GetComponent<Collider2D>();
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -79,6 +86,8 @@ public class WizardProjectile : MonoBehaviour
     {   
         if (exploded) return;
         exploded = true;
+
+        audioSource.PlayOneShot(clip, volume);
 
         rb.linearVelocity = Vector2.zero;
         animator.SetTrigger("explode");
