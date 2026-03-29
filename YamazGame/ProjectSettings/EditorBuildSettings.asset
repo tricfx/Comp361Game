@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boss-Phase-2.unity
     guid: bd7ad8e0cd13c0b4a8684b21c7bfeac2
+  - enabled: 1
+    path: Assets/Scenes/Final Cinematic.unity
+    guid: ec28caca73298834a8a473e0f2fd31a6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
