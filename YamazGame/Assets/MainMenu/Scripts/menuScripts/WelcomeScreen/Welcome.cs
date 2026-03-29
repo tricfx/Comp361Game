@@ -13,7 +13,7 @@ public class Welcome : MonoBehaviour
         if (Input.anyKey && !notfirst)
         {
             sfx.Play();
-            
+            notfirst = true;
 
             StartCoroutine(BackendManager.Instance.GetBestRuns(
             runs =>
