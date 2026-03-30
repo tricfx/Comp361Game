@@ -8,21 +8,27 @@ public class Welcome : MonoBehaviour
     public AudioSource sfx;
     private bool notfirst;
     [SerializeField] private LeaderboardUI leaderboard;
+
+    private void Start()
+    {
+         StartCoroutine(BackendManager.Instance.GetBestRuns(
+            runs =>
+            {
+                
+                leaderboard.SetEntries(runs);
+                
+            }
+            ));
+
+    }
     private void Update()
     {
         if (Input.anyKey && !notfirst)
         {
             sfx.Play();
             notfirst = true;
-
-            StartCoroutine(BackendManager.Instance.GetBestRuns(
-            runs =>
-            {
-                Fader.StartFade(welcome, next);
-                leaderboard.SetEntries(runs);
-                
-            }
-            ));
+            Fader.StartFade(welcome, next);
+           
         }
     }
     // Update is called once per frame
