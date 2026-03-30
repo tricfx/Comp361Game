@@ -11,6 +11,11 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     [SerializeField] private bool SepukuEnabled = false;
     public CanvasGroup SepukuExplanation;
     public AudioSource music;
+
+    void awake()
+    {
+        DataPersistenceManager.instance.LoadGame();
+    }
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

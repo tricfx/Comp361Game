@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d811323fe6584b36889548b63f702f2, type: 3}
+  m_Name: critdmg3
+  m_EditorClassIdentifier: 
+  cardID: critdmg3
+  cardName: Sharp Instinct
+  cardDescription: Increase character crite damage by 100%
+  icon: {fileID: -1317026252678793333, guid: 710cac01c27cadf4891c7ce9f59a46ff, type: 3}
+  dependency: critdmg2
+  cooldownSeconds: 0
+  type: 0
+  shopCost: 33
+  buffID: critdmg3
+  bonusDamage: 0
+  bonusHealth: 0
+  bonusSpeed: 0
+  dashCooldownDecrease: 0
+  dashDistanceBonus: 0
+  critRate: 0
+  critDmg: 2

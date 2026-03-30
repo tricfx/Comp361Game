@@ -11,6 +11,8 @@ public class Door : MonoBehaviour
         if (!other.CompareTag("PlayerHitbox")) return;
 
         PlayerSpawn.nextSpawn = spawnPosition;
+        DataPersistenceManager manager = FindFirstObjectByType<DataPersistenceManager>();
+        manager.SaveGame();
         SceneManager.LoadScene(targetScene);
     }
 }

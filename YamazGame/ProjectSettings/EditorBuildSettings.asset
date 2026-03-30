@@ -15,18 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1.unity
     guid: 5a3a50f6a45a3bc47bddc9213d977bb1
   - enabled: 1
-    path: Assets/Scenes/Boss-Cinematic.unity
-    guid: 7111f6f01e95e704dbc11f2fc9686868
-  - enabled: 1
-    path: Assets/Scenes/Boss-Phase-1.unity
-    guid: 15ca806170e335340a2b75b0c7d99294
-  - enabled: 1
-    path: Assets/Scenes/Boss-Cinematic-2.unity
-    guid: 2287c40671da58c459c6afbdbfed2a85
-  - enabled: 1
-    path: Assets/Scenes/Boss-Phase-2.unity
-    guid: bd7ad8e0cd13c0b4a8684b21c7bfeac2
-  - enabled: 1
     path: Assets/Scenes/MapTest.unity
     guid: 6bfcc9cf58a1d40eea906a9c90dc83c8
   - enabled: 1
@@ -41,6 +29,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 5.unity
     guid: 4e58edd35efcc4234802d1cdf08e3f80
+  - enabled: 1
+    path: Assets/Scenes/Boss-Cinematic.unity
+    guid: 7111f6f01e95e704dbc11f2fc9686868
+  - enabled: 1
+    path: Assets/Scenes/Boss-Phase-1.unity
+    guid: 15ca806170e335340a2b75b0c7d99294
+  - enabled: 1
+    path: Assets/Scenes/Boss-Cinematic-2.unity
+    guid: 2287c40671da58c459c6afbdbfed2a85
+  - enabled: 1
+    path: Assets/Scenes/Boss-Phase-2.unity
+    guid: bd7ad8e0cd13c0b4a8684b21c7bfeac2
+  - enabled: 1
+    path: Assets/Scenes/Final Cinematic.unity
+    guid: ec28caca73298834a8a473e0f2fd31a6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

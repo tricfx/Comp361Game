@@ -45,6 +45,11 @@ public class TimeManager : MonoBehaviour
 
         if (timeText != null)
             timeText.text = $"{minutes:00}:{seconds:00}";
+
+        if (Input.GetKeyDown(KeyCode.B))
+{
+   StopTimerAndSubmit();
+}
     }
 
     public void StartNewGame()
@@ -60,9 +65,9 @@ public class TimeManager : MonoBehaviour
         long timeInMS = (long)(time * 1000);
 
 
-        BackendManager.Instance.SubmitRun(timeInMS, true, 
-        () => {
+        StartCoroutine(BackendManager.Instance.SubmitRun(timeInMS, true, () =>
+        {
             Debug.Log("Run submitted successfully");
-        });
+        }));
     }
 }

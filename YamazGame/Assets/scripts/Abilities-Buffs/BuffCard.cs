@@ -9,6 +9,8 @@ public class BuffCard : Card
     public float bonusSpeed;
     public float dashCooldownDecrease;
     public float dashDistanceBonus;
+    public float critRate;
+    public float critDmg;
 
     public override void Apply(GameObject playerObject)
     {
@@ -43,6 +45,16 @@ public class BuffCard : Card
         var distance = playerObject.GetComponent<PlayerController2D>();
         if (distance != null)
             distance.dashDistance += dashDistanceBonus;
+
+             // Attack + crit stats live on PlayerHurtbox
+        if (hurtbox != null)
+        {
+            hurtbox.xtraMultiplierChance += critRate;
+            hurtbox.xtraMultiplier += critDmg;
+            hurtbox.attack3Multiplier += critDmg;
+        }
+            
+
 
     }
 }
