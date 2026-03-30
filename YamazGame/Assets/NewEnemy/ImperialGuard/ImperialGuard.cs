@@ -136,5 +136,6 @@ public class ImperialGuard : NewEnemy
 
         rb.linearVelocity = Vector2.zero;
         flipDirection(dir);
+        PlayAttackSound();
     }
 }
