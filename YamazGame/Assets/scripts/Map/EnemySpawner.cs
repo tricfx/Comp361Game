@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 [System.Serializable]
 public class EnemyEntry
 {
@@ -22,71 +23,54 @@ public class EnemySpawner : MonoBehaviour
     {
         EnemyManager manager = FindFirstObjectByType<EnemyManager>();
         if (manager != null)
-        {
             manager.NotifySpawningStarted();
-        }
-        
+
         int availableTypes = Mathf.Min(Mathf.Max(2, levelNumber), allEnemies.Count);
 
         List<Transform> shuffledSpawnPoints = new List<Transform>(spawnPoints);
         for (int i = 0; i < shuffledSpawnPoints.Count; i++)
         {
-            Transform temp = shuffledSpawnPoints[i];
-            int randomIndex = Random.Range(i, shuffledSpawnPoints.Count);
-            shuffledSpawnPoints[i] = shuffledSpawnPoints[randomIndex];
-            shuffledSpawnPoints[randomIndex] = temp;
+            int r = Random.Range(i, shuffledSpawnPoints.Count);
+            Transform tmp = shuffledSpawnPoints[i];
+            shuffledSpawnPoints[i] = shuffledSpawnPoints[r];
+            shuffledSpawnPoints[r] = tmp;
         }
 
         List<Vector3> usedPositions = new List<Vector3>();
 
         for (int i = 0; i < totalEnemiesToSpawn; i++)
         {
-            int randomIndex = Random.Range(0, availableTypes);
-            GameObject prefab = allEnemies[randomIndex].prefab;
-
+            GameObject prefab = allEnemies[Random.Range(0, availableTypes)].prefab;
             Transform spawnPoint = shuffledSpawnPoints[i % shuffledSpawnPoints.Count];
 
             Vector3 spawnPosition = spawnPoint.position;
-            bool validPosition = false;
-            int attempts = 0;
 
-            while (!validPosition && attempts < 10)
+            for (int attempt = 0; attempt < 15; attempt++)
             {
-                Vector3 offset = new Vector3(
-                    Random.Range(-2.5f, 2.5f),
-                    Random.Range(-2.5f, 2.5f),
+                Vector3 candidate = spawnPoint.position + new Vector3(
+                    Random.Range(-8f, 8f),
+                    Random.Range(-8f, 8f),
                     0
                 );
 
-                Vector3 candidatePosition = spawnPoint.position + offset;
-
-                // Prevent enemies spawning too close to each other
                 bool tooClose = false;
-                foreach (var pos in usedPositions)
+                foreach (Vector3 used in usedPositions)
                 {
-                    if (Vector3.Distance(pos, candidatePosition) < 1.5f)
+                    if (Vector3.Distance(candidate, used) < 2f)
                     {
                         tooClose = true;
                         break;
                     }
                 }
 
-                if (tooClose)
+                int blockingMask = LayerMask.GetMask("Walls", "Lava");
+                bool nearCollider = Physics2D.OverlapCircle(candidate, 0.5f, blockingMask) != null;
+
+                if (!tooClose && !nearCollider)
                 {
-                    attempts++;
-                    continue;
+                    spawnPosition = candidate;
+                    break;
                 }
-
-                // Check ANY collider at position (ignore triggers)
-                Collider2D hit = Physics2D.OverlapCircle(candidatePosition, 0.4f);
-
-                if (hit == null)
-                {
-                    spawnPosition = candidatePosition;
-                    validPosition = true;
-                }
-
-                attempts++;
             }
 
             usedPositions.Add(spawnPosition);
