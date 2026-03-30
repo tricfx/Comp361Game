@@ -52869,6 +52869,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8637080755793485759, guid: a59c2c76060499744a6e239921d772d5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 562122754}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -55358,6 +55362,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518975572}
   m_CullTransparentMesh: 1
+--- !u!95 &562122754 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6310803234298042004, guid: a59c2c76060499744a6e239921d772d5, type: 3}
+  m_PrefabInstance: {fileID: 266578152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583944462
 GameObject:
   m_ObjectHideFlags: 0
@@ -343053,6 +343062,7 @@ MonoBehaviour:
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
   isPaused: 0
+  levelloader: {fileID: 0}
   settingsManager: {fileID: 0}
 --- !u!114 &2077678602
 MonoBehaviour:
