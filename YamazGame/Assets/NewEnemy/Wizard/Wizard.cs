@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Wizard : NewEnemy
 {
+    [Header("Wizard")]
     [SerializeField] WizardProjectileSpawner projectileSpawner;
     [SerializeField] float preferredDistanceMultiplier = 0.8f;
     [SerializeField] float distanceTolerance = 0.3f;

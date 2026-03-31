@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class NewSkeleton : NewEnemy
 {
+    [Header("Skeleton")]
     [SerializeField] float sideApproachMultiplier = 0.8f;
     [SerializeField] float sideBiasStrength = 0.75f;
 

@@ -306,14 +306,21 @@ MonoBehaviour:
   hurtVolume: 1
   deathVolume: 1
   _searchDuration: 5
-  _maxHealth: 50
-  _moveSpeed: 4000
-  _attackCooldown: 1
   _enableIFrames: 0
   _invincibilityLimit: 0.3
   _obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
+  _baseMaxHealth: 30
+  _baseMoveSpeed: 2000
+  _baseAttackCooldown: 1
+  healthScalePerLevel: 0.2
+  speedScalePerLevel: 0.05
+  cooldownReductionPerLevel: 0.04
+  damageScalePerLevel: 0.15
+  minAttackCooldown: 0.25
+  sideApproachMultiplier: 0.8
+  sideBiasStrength: 0.75
 --- !u!114 &34450436289812272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a973369d2fc7c4777a2783950ab490a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 5
+  _baseAttackDamage: 2
   _knockbackForce: 10
 --- !u!1 &6712337824860022052
 GameObject:

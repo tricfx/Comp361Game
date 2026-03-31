@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Deathbringer : NewEnemy
 {
+    [Header("Deathbringer")]
     [SerializeField] DeathbringerSpellSpawner spellSpawner;
     [SerializeField] EnemyAttackRange meleeRange;
 

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Sorcerer : NewEnemy
 {
+    [Header("Sorcerer")]
     [SerializeField] SorcererSpellSpawner spellSpawner;
     [SerializeField] float spellTimer = 1f;
 
