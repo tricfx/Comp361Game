@@ -29,9 +29,9 @@ TagManager:
   - test
   - CameraBounds
   - TilemapCollider
-  - 
-  - 
-  - 
+  - Walls
+  - Floor
+  - Lava
   - 
   - 
   - 

@@ -2062,6 +2062,7 @@ MonoBehaviour:
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
   isPaused: 0
+  levelloader: {fileID: 0}
   settingsManager: {fileID: 214757297}
 --- !u!114 &762129108
 MonoBehaviour:
@@ -2465,7 +2466,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045395460}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: cad06b6d7600ac949872655dc5c318f5, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: ed55e1b457eda914baf50a4f01ff3fb0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

@@ -19,10 +19,14 @@ public class pauseMenu : MonoBehaviour
     private bool inSettings = false;
     private bool inControls = false;
 
+    [SerializeField] private LevelLoader levelloader;
+
     [SerializeField] private SettingsManager settingsManager;
+
 
     void Start()
     {
+        levelloader = FindObjectOfType<LevelLoader>();
         PauseMenu.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
@@ -120,8 +124,9 @@ public class pauseMenu : MonoBehaviour
     {
         if (DataPersistenceManager.instance != null)
             DataPersistenceManager.instance.SaveGame();
-
-        Application.Quit();
+        Destroy(DataPersistenceManager.instance);
+         Time.timeScale = 1f;
+       levelloader.LoadLevel(0);
     }
 
     public void LeavingSettings()
