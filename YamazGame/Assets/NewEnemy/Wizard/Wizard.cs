@@ -85,7 +85,8 @@ public class Wizard : NewEnemy
 
     public void FireProjectile()
     {
-        projectileSpawner.SpawnProjectile();
+        GameObject projectile = projectileSpawner.SpawnProjectile();
+        ApplyScalingToSpawnedObject(projectile);
         PlayAttackSound();
     }
 

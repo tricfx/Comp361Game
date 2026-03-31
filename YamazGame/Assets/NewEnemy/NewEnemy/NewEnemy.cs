@@ -18,6 +18,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     protected Transform currentTarget;
     public Transform CurrentTarget => currentTarget;
+
     public int MaxHealth
     {
         get
@@ -151,12 +152,30 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     public Collider2D feetCollider { get; private set; }
 
     [SerializeField] protected float _searchDuration = 5f;
-    [SerializeField] protected int _maxHealth = 10;
-    [SerializeField] protected int _moveSpeed = 2000;
-    [SerializeField] protected float _attackCooldown = 1f;
     [SerializeField] protected bool _enableIFrames = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
     [SerializeField] protected LayerMask _obstacleLayer;
+
+    public int SpawnLevel { get; private set; } = 1;
+    public float DamageMultiplier { get; private set; } = 1f;
+
+    private bool _statsInitialized = false;
+
+    [Header("Base Stats (Level 1)")]
+    [SerializeField] private int _baseMaxHealth = 30;
+    [SerializeField] private int _baseMoveSpeed = 2000;
+    [SerializeField] private float _baseAttackCooldown = 1f;
+
+    protected int _maxHealth;
+    protected int _moveSpeed;
+    protected float _attackCooldown;
+
+    [Header("Level Scaling")]
+    [SerializeField] protected float healthScalePerLevel = 0.20f;
+    [SerializeField] protected float speedScalePerLevel = 0.05f;
+    [SerializeField] protected float cooldownReductionPerLevel = 0.04f;
+    [SerializeField] protected float damageScalePerLevel = 0.15f;
+    [SerializeField] protected float minAttackCooldown = 0.25f;
 
     public enum EnemyState
     {
@@ -190,7 +209,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         set { _slowMultiplier = Mathf.Clamp(value, 0.01f, 1f); }
     }
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -201,8 +220,15 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             audioSource = GetComponent<AudioSource>();
         }
+    }
 
-        CurrentHealth = MaxHealth;
+    protected virtual void Start()
+    {
+        if (!_statsInitialized)
+        {
+            InitializeForLevel(1);
+        }
+
         animator.SetBool("alive", true);
         originalColor = spriteRenderer.color;
         _currentState = EnemyState.Idle;
@@ -213,6 +239,42 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         if (!allEnemies.Contains(this))
         {
             allEnemies.Add(this);
+        }
+    }
+
+    public virtual void InitializeForLevel(int level = 1)
+    {
+        if (_statsInitialized) return;
+
+        SpawnLevel = Mathf.Max(1, level);
+
+        float levelOffset = SpawnLevel - 1;
+        _maxHealth = Mathf.RoundToInt(_baseMaxHealth * (1f + healthScalePerLevel * levelOffset));
+        _moveSpeed = Mathf.RoundToInt(_baseMoveSpeed * (1f + speedScalePerLevel * levelOffset));
+        _attackCooldown = Mathf.Max(
+            minAttackCooldown,
+            _baseAttackCooldown * (1f - cooldownReductionPerLevel * levelOffset)
+        );
+
+        DamageMultiplier = 1f + damageScalePerLevel * levelOffset;
+
+        CurrentHealth = _maxHealth;
+
+        EnemyHurtbox[] hurtboxes = GetComponentsInChildren<EnemyHurtbox>(true);
+        foreach (EnemyHurtbox hurtbox in hurtboxes)
+        {
+            hurtbox.ApplyDamageMultiplier(DamageMultiplier);
+        }
+
+        _statsInitialized = true;
+    }
+
+    public void ApplyScalingToSpawnedObject(GameObject spawnedObject)
+    {
+        EnemyHurtbox hurtbox = spawnedObject.GetComponent<EnemyHurtbox>();
+        if (hurtbox != null)
+        {
+            hurtbox.ApplyDamageMultiplier(DamageMultiplier);
         }
     }
 
@@ -227,7 +289,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             }
     }
 
-    public void Update()
+    protected virtual void Update()
     {
 
         HandleAgroCount();

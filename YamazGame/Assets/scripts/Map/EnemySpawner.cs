@@ -74,7 +74,14 @@ public class EnemySpawner : MonoBehaviour
             }
 
             usedPositions.Add(spawnPosition);
-            Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+            GameObject enemyObject = Instantiate(prefab, spawnPosition, Quaternion.identity);
+
+            NewEnemy enemy = enemyObject.GetComponent<NewEnemy>();
+            if (enemy != null)
+            {
+                enemy.InitializeForLevel(levelNumber);
+            }
         }
     }
 

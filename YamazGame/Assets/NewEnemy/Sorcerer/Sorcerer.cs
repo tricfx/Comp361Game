@@ -23,7 +23,8 @@ public class Sorcerer : NewEnemy
 
             if (detectionRange.PlayerInRange)
             {
-                spellSpawner.SpawnSpell();
+                GameObject spell = spellSpawner.SpawnSpell();
+                ApplyScalingToSpawnedObject(spell);
                 yield return new WaitForSeconds(spellTimer);
             }
             else

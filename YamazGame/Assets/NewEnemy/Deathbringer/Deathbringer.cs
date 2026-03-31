@@ -16,7 +16,8 @@ public class Deathbringer : NewEnemy
 
     public void Spell()
     {
-        spellSpawner.SpawnSpell();
+        GameObject spell = spellSpawner.SpawnSpell();
+        ApplyScalingToSpawnedObject(spell);
     }
 
     public override void Move(Vector2 startPosition, Vector2 targetPosition)
