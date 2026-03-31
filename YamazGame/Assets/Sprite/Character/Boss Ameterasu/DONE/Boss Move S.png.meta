@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 85b2e14d429964e47b2028c7ee78370d
+guid: 8ee52a0167b79c345ba125446937f16b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1570895393853854790
-    second: Boss Move W_0
+      213: -3759979800520875243
+    second: Boss Move S_0
   - first:
-      213: 3843849214258482880
-    second: Boss Move W_1
+      213: -874997122576758597
+    second: Boss Move S_1
   - first:
-      213: 7903540787280191610
-    second: Boss Move W_2
+      213: -1680741727810752699
+    second: Boss Move S_2
   - first:
-      213: 9014875091593458750
-    second: Boss Move W_3
+      213: 5766301077311150151
+    second: Boss Move S_3
   - first:
-      213: 3603818593870349091
-    second: Boss Move W_4
+      213: 5938273107736052060
+    second: Boss Move S_4
   - first:
-      213: -2890483231750814684
-    second: Boss Move W_5
+      213: -7912207315922999659
+    second: Boss Move S_5
   - first:
-      213: -934753006716427753
-    second: Boss Move W_6
+      213: -4920997740615749084
+    second: Boss Move S_6
   - first:
-      213: 3750242378269794764
-    second: Boss Move W_7
-  - first:
-      213: -8070646665673193315
-    second: Boss Move W_8
-  - first:
-      213: 7299554719346908890
-    second: Boss Move W_9
+      213: 8856226171349948938
+    second: Boss Move S_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,221 +121,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss Move W_0
+      name: Boss Move S_0
       rect:
         serializedVersion: 2
         x: 22
-        y: 11
+        y: 13
         width: 110
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 120
+      alignment: 9
+      pivot: {x: 0.46281314, y: 0.05003999}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 644d4f9a901fcc510800000000000000
-      internalID: 1570895393853854790
+      spriteID: 5132f4bea4ed1dbc0800000000000000
+      internalID: -3759979800520875243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_1
+      name: Boss Move S_1
       rect:
         serializedVersion: 2
         x: 166
-        y: 11
+        y: 14
         width: 110
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 120
+      alignment: 9
+      pivot: {x: 0.46663207, y: 0.04119005}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ce8a0aae78185530800000000000000
-      internalID: 3843849214258482880
+      spriteID: bb8c251c0c26bd3f0800000000000000
+      internalID: -874997122576758597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_2
+      name: Boss Move S_2
       rect:
         serializedVersion: 2
         x: 310
-        y: 13
-        width: 111
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 14
+        width: 110
+        height: 121
+      alignment: 9
+      pivot: {x: 0.46292448, y: 0.03824092}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a70a5a5a8740fad60800000000000000
-      internalID: 7903540787280191610
+      spriteID: 54fe9a2bd4ecca8e0800000000000000
+      internalID: -1680741727810752699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_3
+      name: Boss Move S_3
       rect:
         serializedVersion: 2
         x: 454
-        y: 11
-        width: 112
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 13
+        width: 110
+        height: 123
+      alignment: 9
+      pivot: {x: 0.45180193, y: 0.0391178}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e34f1f802254b1d70800000000000000
-      internalID: 9014875091593458750
+      spriteID: 74855155744060050800000000000000
+      internalID: 5766301077311150151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_4
+      name: Boss Move S_4
       rect:
         serializedVersion: 2
         x: 598
-        y: 11
-        width: 112
+        y: 14
+        width: 110
         height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.45921743, y: 0.025311392}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3230792dae5530230800000000000000
-      internalID: 3603818593870349091
+      spriteID: c51ccddddebf86250800000000000000
+      internalID: 5938273107736052060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_5
+      name: Boss Move S_5
       rect:
         serializedVersion: 2
         x: 742
-        y: 12
-        width: 112
-        height: 121
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 14
+        width: 110
+        height: 122
+      alignment: 9
+      pivot: {x: 0.444387, y: 0.02865427}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 424054ea0d0f2e7d0800000000000000
-      internalID: -2890483231750814684
+      spriteID: 596a929ed51323290800000000000000
+      internalID: -7912207315922999659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_6
+      name: Boss Move S_6
       rect:
         serializedVersion: 2
         x: 886
-        y: 11
-        width: 112
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 13
+        width: 110
+        height: 123
+      alignment: 9
+      pivot: {x: 0.44438753, y: 0.029170696}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71260f9c7171703f0800000000000000
-      internalID: -934753006716427753
+      spriteID: 4223912a0aa15bbb0800000000000000
+      internalID: -4920997740615749084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss Move W_7
+      name: Boss Move S_7
       rect:
         serializedVersion: 2
         x: 1030
-        y: 11
-        width: 112
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 13
+        width: 110
+        height: 123
+      alignment: 9
+      pivot: {x: 0.4480946, y: 0.035802096}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc1236ac2998b0430800000000000000
-      internalID: 3750242378269794764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss Move W_8
-      rect:
-        serializedVersion: 2
-        x: 1174
-        y: 12
-        width: 112
-        height: 121
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d98cbd02e9d4fff80800000000000000
-      internalID: -8070646665673193315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss Move W_9
-      rect:
-        serializedVersion: 2
-        x: 1318
-        y: 11
-        width: 112
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aded231b75a3d4560800000000000000
-      internalID: 7299554719346908890
+      spriteID: a0ad4d1d7c2a7ea70800000000000000
+      internalID: 8856226171349948938
       vertices: []
       indices: 
       edges: []
@@ -350,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9cd0ee8b157e34e82a30f411010e3896
     internalID: 0
     vertices: []
     indices: 
@@ -360,16 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Boss Move W_0: 1570895393853854790
-      Boss Move W_1: 3843849214258482880
-      Boss Move W_2: 7903540787280191610
-      Boss Move W_3: 9014875091593458750
-      Boss Move W_4: 3603818593870349091
-      Boss Move W_5: -2890483231750814684
-      Boss Move W_6: -934753006716427753
-      Boss Move W_7: 3750242378269794764
-      Boss Move W_8: -8070646665673193315
-      Boss Move W_9: 7299554719346908890
+      Boss Move S_0: -3759979800520875243
+      Boss Move S_1: -874997122576758597
+      Boss Move S_2: -1680741727810752699
+      Boss Move S_3: 5766301077311150151
+      Boss Move S_4: 5938273107736052060
+      Boss Move S_5: -7912207315922999659
+      Boss Move S_6: -4920997740615749084
+      Boss Move S_7: 8856226171349948938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

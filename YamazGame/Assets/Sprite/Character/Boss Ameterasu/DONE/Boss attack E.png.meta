@@ -1,0 +1,1851 @@
+fileFormatVersion: 2
+guid: e7f9cc5d306b25c4c88036f00978b0c8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5144502239265990724
+    second: Boss attack E_0
+  - first:
+      213: 9161155761460471320
+    second: Boss attack E_1
+  - first:
+      213: -883453075467918728
+    second: Boss attack E_2
+  - first:
+      213: -1000846021254336521
+    second: Boss attack E_3
+  - first:
+      213: 156263076622279257
+    second: Boss attack E_4
+  - first:
+      213: -409954432822016534
+    second: Boss attack E_5
+  - first:
+      213: 5086379500184349043
+    second: Boss attack E_6
+  - first:
+      213: -1850520377707223809
+    second: Boss attack E_7
+  - first:
+      213: -8490106075009802508
+    second: Boss attack E_8
+  - first:
+      213: -1667345447128350470
+    second: Boss attack E_9
+  - first:
+      213: -4501477882067113080
+    second: Boss attack E_10
+  - first:
+      213: -6255508904106012340
+    second: Boss attack E_11
+  - first:
+      213: 4249415419382883545
+    second: Boss attack E_12
+  - first:
+      213: -20644916654708928
+    second: Boss attack E_13
+  - first:
+      213: 1434217336512709646
+    second: Boss attack E_14
+  - first:
+      213: -6772876880647812379
+    second: Boss attack E_15
+  - first:
+      213: 5023096810438778223
+    second: Boss attack E_16
+  - first:
+      213: -3282847600458821910
+    second: Boss attack E_17
+  - first:
+      213: 4521106303688140237
+    second: Boss attack E_18
+  - first:
+      213: 600037019471187541
+    second: Boss attack E_19
+  - first:
+      213: -1913531353652995806
+    second: Boss attack E_20
+  - first:
+      213: -6862531467380227679
+    second: Boss attack E_21
+  - first:
+      213: 9200091094163348029
+    second: Boss attack E_22
+  - first:
+      213: -577363459795776616
+    second: Boss attack E_23
+  - first:
+      213: 2619198469293592241
+    second: Boss attack E_24
+  - first:
+      213: -6165101984524059308
+    second: Boss attack E_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss attack E_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 37
+        width: 2
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb7595a587e0b98b0800000000000000
+      internalID: -5144502239265990724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 34
+        width: 91
+        height: 124
+      alignment: 9
+      pivot: {x: 0.49183863, y: 0.050770175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816efdd80a6f22f70800000000000000
+      internalID: 9161155761460471320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872220dcb185db3f0800000000000000
+      internalID: -883453075467918728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 34
+        width: 90
+        height: 124
+      alignment: 9
+      pivot: {x: 0.49174803, y: 0.05676011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffa54ca8d74c12f0800000000000000
+      internalID: -1000846021254336521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_4
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 952a495b0782b2200800000000000000
+      internalID: 156263076622279257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_5
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 28
+        width: 120
+        height: 130
+      alignment: 9
+      pivot: {x: 0.36424103, y: 0.09557023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae50c898d9c8f4af0800000000000000
+      internalID: -409954432822016534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_6
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3792155e433769640800000000000000
+      internalID: 5086379500184349043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_7
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 28
+        width: 120
+        height: 130
+      alignment: 9
+      pivot: {x: 0.34572855, y: 0.09557023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4a32d5581a156e0800000000000000
+      internalID: -1850520377707223809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_8
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe97add1851d2a80800000000000000
+      internalID: -8490106075009802508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_9
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 30
+        width: 109
+        height: 128
+      alignment: 9
+      pivot: {x: 0.3845086, y: 0.100821435}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0cc0a56266cd8e0800000000000000
+      internalID: -1667345447128350470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_10
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88bac1357b98781c0800000000000000
+      internalID: -4501477882067113080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_11
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 34
+        width: 97
+        height: 124
+      alignment: 9
+      pivot: {x: 0.40075746, y: 0.040170237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41d7797bc7ff29a0800000000000000
+      internalID: -6255508904106012340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_12
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4626f3fc4f8fa30800000000000000
+      internalID: 4249415419382883545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_13
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 35
+        width: 97
+        height: 124
+      alignment: 9
+      pivot: {x: 0.45419595, y: 0.04017027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047e064ce87a6bff0800000000000000
+      internalID: -20644916654708928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_14
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e040c89911d57e310800000000000000
+      internalID: 1434217336512709646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_15
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 34
+        width: 115
+        height: 124
+      alignment: 9
+      pivot: {x: 0.43560845, y: 0.07600114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea088d7c58e102a0800000000000000
+      internalID: -6772876880647812379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_16
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6dd9928fef95b540800000000000000
+      internalID: 5023096810438778223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_17
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 34
+        width: 115
+        height: 124
+      alignment: 9
+      pivot: {x: 0.46136528, y: 0.046142057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aee88ea208bf072d0800000000000000
+      internalID: -3282847600458821910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_18
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc56c17ba323ebe30800000000000000
+      internalID: 4521106303688140237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_19
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 26
+        width: 118
+        height: 132
+      alignment: 9
+      pivot: {x: 0.48117426, y: 0.08486846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e0aa57d72c35800800000000000000
+      internalID: 600037019471187541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_20
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229d0f64f55c175e0800000000000000
+      internalID: -1913531353652995806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_21
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 32
+        width: 101
+        height: 126
+      alignment: 9
+      pivot: {x: 0.49266973, y: 0.06510017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a18cda5df363c0a0800000000000000
+      internalID: -6862531467380227679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_22
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a57d02b1a4daf70800000000000000
+      internalID: 9200091094163348029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_23
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 34
+        width: 89
+        height: 124
+      alignment: 9
+      pivot: {x: 0.4916814, y: 0.06405751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b05980efaccf7f0800000000000000
+      internalID: -577363459795776616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_24
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1becd767123495420800000000000000
+      internalID: 2619198469293592241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_25
+      rect:
+        serializedVersion: 2
+        x: 2154
+        y: 34
+        width: 91
+        height: 124
+      alignment: 9
+      pivot: {x: 0.51627696, y: 0.07002932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d3360c868217aa0800000000000000
+      internalID: -6165101984524059308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_26
+      rect:
+        serializedVersion: 2
+        x: 2315
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4523640f7e1324bcf8de414f0a579ca8
+      internalID: 960426504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_27
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 34
+        width: 90
+        height: 124
+      alignment: 9
+      pivot: {x: 0.50823027, y: 0.058085687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52464376894bf49a8abc58486c1bb0a9
+      internalID: -2064783505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_28
+      rect:
+        serializedVersion: 2
+        x: 2490
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381e7b99b462c4fce840a146bcaea5f5
+      internalID: 1948542593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_29
+      rect:
+        serializedVersion: 2
+        x: 2507
+        y: 34
+        width: 89
+        height: 124
+      alignment: 9
+      pivot: {x: 0.49168003, y: 0.040170237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03b7af4d8dc24591afbd1fb43b1b115
+      internalID: 1684666482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_30
+      rect:
+        serializedVersion: 2
+        x: 2666
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 154f77f65c798488d9482a264855c689
+      internalID: -521000795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_31
+      rect:
+        serializedVersion: 2
+        x: 2682
+        y: 34
+        width: 91
+        height: 124
+      alignment: 9
+      pivot: {x: 0.49186286, y: 0.040170237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66addd09f69f46bf979a040436cb55d
+      internalID: -651996488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_32
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217ca749e92c5416d894f98c6580e055
+      internalID: 409133187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_33
+      rect:
+        serializedVersion: 2
+        x: 2858
+        y: 36
+        width: 90
+        height: 122
+      alignment: 9
+      pivot: {x: 0.50000274, y: 0.06298062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9b23b0ee159421aaae857142e1880e
+      internalID: 2140314261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_34
+      rect:
+        serializedVersion: 2
+        x: 3018
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bca24071c06549daa68297824a4dd0a
+      internalID: -1152882227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_35
+      rect:
+        serializedVersion: 2
+        x: 3035
+        y: 26
+        width: 120
+        height: 132
+      alignment: 9
+      pivot: {x: 0.36424154, y: 0.12413768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f7b52594e004f36b2dcb1ae6f2bc12
+      internalID: -429525619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_36
+      rect:
+        serializedVersion: 2
+        x: 3194
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a07dac43cda4892bb8e24f7d5a87c6
+      internalID: 1695910731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_37
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 26
+        width: 120
+        height: 132
+      alignment: 9
+      pivot: {x: 0.35190022, y: 0.118527785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b547f77b5f44a4795bac919438499f4d
+      internalID: 201766760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_38
+      rect:
+        serializedVersion: 2
+        x: 3371
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3be4b1799c554d219fe9e6d272dde3b
+      internalID: -1181482220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_39
+      rect:
+        serializedVersion: 2
+        x: 3386
+        y: 26
+        width: 121
+        height: 132
+      alignment: 9
+      pivot: {x: 0.34088486, y: 0.14657722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4b4a3e692c94d93bb98e13cc00b27d
+      internalID: -923083360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_40
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 94
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e01b58531edb470faf002e267f73cbd
+      internalID: 1103378950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_41
+      rect:
+        serializedVersion: 2
+        x: 3563
+        y: 26
+        width: 120
+        height: 132
+      alignment: 9
+      pivot: {x: 0.37658283, y: 0.12974757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f3c4c3655d64ea9af39a8fb897a43c
+      internalID: -757643642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_42
+      rect:
+        serializedVersion: 2
+        x: 3722
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7cad22f28d2b4490870c2c4cdfe9988
+      internalID: 2058299215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_43
+      rect:
+        serializedVersion: 2
+        x: 3738
+        y: 36
+        width: 91
+        height: 122
+      alignment: 9
+      pivot: {x: 0.52441406, y: 0.06298062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38c12d1a3e7443179b7e5b02c1abb5b
+      internalID: -15823107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_44
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61bc5e95fee14bd39bdbb18df85319c
+      internalID: -908367623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_45
+      rect:
+        serializedVersion: 2
+        x: 3914
+        y: 34
+        width: 90
+        height: 124
+      alignment: 9
+      pivot: {x: 0.4753201, y: 0.07600114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4962695a74e4440ad3221fcce60e09
+      internalID: 673220341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_46
+      rect:
+        serializedVersion: 2
+        x: 4091
+        y: 34
+        width: 91
+        height: 124
+      alignment: 9
+      pivot: {x: 0.5, y: 0.07600114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9ec77eecf3946aeabb30e43f7fda51
+      internalID: -759606090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_47
+      rect:
+        serializedVersion: 2
+        x: 4192
+        y: 94
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da507fbc62984e55aa5476915ac828c
+      internalID: -1266427555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_48
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea19605877e204c76a301175e480bbf6
+      internalID: -1519374527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_49
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 53
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bca22b6e15143e59d70638c90374cc
+      internalID: 1486380886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_50
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0ecc48bf9b54413a85911b7d69c618
+      internalID: -2113826808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_51
+      rect:
+        serializedVersion: 2
+        x: 2245
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e72b14621014e94a05cc77787b3fcc
+      internalID: 418242758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_52
+      rect:
+        serializedVersion: 2
+        x: 2421
+        y: 53
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc781bd8f929443a9fac5021bf444e6
+      internalID: 1721173193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_53
+      rect:
+        serializedVersion: 2
+        x: 2598
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fdec35f337c4df69750c65ed59afc3
+      internalID: 1958420239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_54
+      rect:
+        serializedVersion: 2
+        x: 2773
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c139d2189e6743fea8a8ee56d609ebe
+      internalID: 1371430012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_55
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 53
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d26969568f74570b94ca6dad02bebf
+      internalID: -1938147091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_56
+      rect:
+        serializedVersion: 2
+        x: 3829
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53fd1343b2d0473c8abd07f76dd43a0
+      internalID: 1454957514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_57
+      rect:
+        serializedVersion: 2
+        x: 4005
+        y: 53
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ac099dadc594299b432d08e7099125
+      internalID: -174436837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_58
+      rect:
+        serializedVersion: 2
+        x: 4182
+        y: 53
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca2b4fe11336447aad1b3191077232f
+      internalID: -1269323428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_59
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 35
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58c74cc7aa104da78284b9b9e2ca89c
+      internalID: 1811676939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_60
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 34
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc17e8e9f3fa41858c30e3bfae854f9
+      internalID: -867835478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_61
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 30
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cd24e4f3ddf45d8afb3ad2ac71a284
+      internalID: -1405780810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_62
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 30
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5054e920c5634f69a8bae08b310188b
+      internalID: 1576060925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_63
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 32
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e241df623f8f24f5fb5b3651384b476c
+      internalID: 22113349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_64
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 32
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709e82d7e780f46a191648e0f50932a3
+      internalID: -1840337681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_65
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 32
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b61bc7340b97b497f88efe4ae8eeb8bb
+      internalID: -1065809502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_66
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 32
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2817aa0dc224e441f8f66e83d7136e06
+      internalID: 1579929088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_67
+      rect:
+        serializedVersion: 2
+        x: 2957
+        y: 32
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb48d306e18041f3aa1fce9d2427aaf
+      internalID: -1939342842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_68
+      rect:
+        serializedVersion: 2
+        x: 3836
+        y: 32
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661dcb0688e844cf88c0dae07839e46a
+      internalID: -1294132951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_69
+      rect:
+        serializedVersion: 2
+        x: 4003
+        y: 30
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00fb75e9eb414464b2faaf0447ce75e
+      internalID: 1991371542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_70
+      rect:
+        serializedVersion: 2
+        x: 4180
+        y: 35
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c323f3172e38f4173b579e120585ec10
+      internalID: 1866299313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss attack E_71
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 20
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210d0bcd05ff545d69846a610fd4d48a
+      internalID: -2105487260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 08bef48bc86704ac293743809b65a5b4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss attack E_0: -5144502239265990724
+      Boss attack E_1: 9161155761460471320
+      Boss attack E_10: -4501477882067113080
+      Boss attack E_11: -6255508904106012340
+      Boss attack E_12: 4249415419382883545
+      Boss attack E_13: -20644916654708928
+      Boss attack E_14: 1434217336512709646
+      Boss attack E_15: -6772876880647812379
+      Boss attack E_16: 5023096810438778223
+      Boss attack E_17: -3282847600458821910
+      Boss attack E_18: 4521106303688140237
+      Boss attack E_19: 600037019471187541
+      Boss attack E_2: -883453075467918728
+      Boss attack E_20: -1913531353652995806
+      Boss attack E_21: -6862531467380227679
+      Boss attack E_22: 9200091094163348029
+      Boss attack E_23: -577363459795776616
+      Boss attack E_24: 2619198469293592241
+      Boss attack E_25: -6165101984524059308
+      Boss attack E_26: 960426504
+      Boss attack E_27: -2064783505
+      Boss attack E_28: 1948542593
+      Boss attack E_29: 1684666482
+      Boss attack E_3: -1000846021254336521
+      Boss attack E_30: -521000795
+      Boss attack E_31: -651996488
+      Boss attack E_32: 409133187
+      Boss attack E_33: 2140314261
+      Boss attack E_34: -1152882227
+      Boss attack E_35: -429525619
+      Boss attack E_36: 1695910731
+      Boss attack E_37: 201766760
+      Boss attack E_38: -1181482220
+      Boss attack E_39: -923083360
+      Boss attack E_4: 156263076622279257
+      Boss attack E_40: 1103378950
+      Boss attack E_41: -757643642
+      Boss attack E_42: 2058299215
+      Boss attack E_43: -15823107
+      Boss attack E_44: -908367623
+      Boss attack E_45: 673220341
+      Boss attack E_46: -759606090
+      Boss attack E_47: -1266427555
+      Boss attack E_48: -1519374527
+      Boss attack E_49: 1486380886
+      Boss attack E_5: -409954432822016534
+      Boss attack E_50: -2113826808
+      Boss attack E_51: 418242758
+      Boss attack E_52: 1721173193
+      Boss attack E_53: 1958420239
+      Boss attack E_54: 1371430012
+      Boss attack E_55: -1938147091
+      Boss attack E_56: 1454957514
+      Boss attack E_57: -174436837
+      Boss attack E_58: -1269323428
+      Boss attack E_59: 1811676939
+      Boss attack E_6: 5086379500184349043
+      Boss attack E_60: -867835478
+      Boss attack E_61: -1405780810
+      Boss attack E_62: 1576060925
+      Boss attack E_63: 22113349
+      Boss attack E_64: -1840337681
+      Boss attack E_65: -1065809502
+      Boss attack E_66: 1579929088
+      Boss attack E_67: -1939342842
+      Boss attack E_68: -1294132951
+      Boss attack E_69: 1991371542
+      Boss attack E_7: -1850520377707223809
+      Boss attack E_70: 1866299313
+      Boss attack E_71: -2105487260
+      Boss attack E_8: -8490106075009802508
+      Boss attack E_9: -1667345447128350470
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
