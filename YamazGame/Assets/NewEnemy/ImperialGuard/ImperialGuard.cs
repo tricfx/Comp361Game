@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ImperialGuard : NewEnemy
 {
+    [Header("Imperial Guard")]
     [SerializeField] float dashSpeed = 50f;
     [SerializeField] float dashDistanceMultiplier = 1.5f;
     [SerializeField] float orbitNoiseStrength = 0.05f;
@@ -136,5 +137,6 @@ public class ImperialGuard : NewEnemy
 
         rb.linearVelocity = Vector2.zero;
         flipDirection(dir);
+        PlayAttackSound();
     }
 }

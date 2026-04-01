@@ -4,7 +4,7 @@ public class WizardProjectileSpawner : MonoBehaviour
 {
     [SerializeField] GameObject projectilePrefab;
 
-    public void SpawnProjectile()
+    public GameObject SpawnProjectile()
     {
         GameObject hitboxObj = GameObject.FindGameObjectWithTag("PlayerHitbox");
 
@@ -18,7 +18,7 @@ public class WizardProjectileSpawner : MonoBehaviour
         if (targetHitbox == null)
         {
             Debug.LogWarning("Player hitbox not set");
-            return;
+            return null;
         }
 
         GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
@@ -33,5 +33,7 @@ public class WizardProjectileSpawner : MonoBehaviour
         {
             projectile.SetOwner(owner);
         }
+
+        return proj;
     }
 }

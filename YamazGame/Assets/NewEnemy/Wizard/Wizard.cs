@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Wizard : NewEnemy
 {
+    [Header("Wizard")]
     [SerializeField] WizardProjectileSpawner projectileSpawner;
     [SerializeField] float preferredDistanceMultiplier = 0.8f;
     [SerializeField] float distanceTolerance = 0.3f;
@@ -85,7 +86,9 @@ public class Wizard : NewEnemy
 
     public void FireProjectile()
     {
-        projectileSpawner.SpawnProjectile();
+        GameObject projectile = projectileSpawner.SpawnProjectile();
+        ApplyScalingToSpawnedObject(projectile);
+        PlayAttackSound();
     }
 
     public override void Move(Vector2 startPosition, Vector2 targetPosition)

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class NewEnemy : MonoBehaviour, INewEnemy
@@ -17,6 +18,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     protected Transform currentTarget;
     public Transform CurrentTarget => currentTarget;
+
     public int MaxHealth
     {
         get
@@ -37,23 +39,28 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
         set
         {
-            if (value < _currentHealth)
+            int prevHealth = _currentHealth;
+            _currentHealth = value;
+
+            if (_currentHealth < prevHealth)
             {
                 animator.SetTrigger("hit");
-                UnlockMovement();
                 if (spriteRenderer)
                 {
                     spriteRenderer.color = Color.red;
                     Invoke("ResetColor", 0.1f);
                 }
-            }
 
-            _currentHealth = value;
-
-            if (_currentHealth <= 0 && _isAlive)
-            {
-                _currentHealth = 0;
-                Die();
+                if (_currentHealth <= 0 && _isAlive)
+                {
+                    _currentHealth = 0;
+                    Die();
+                }
+                else if (_currentHealth > 0 && _isAlive)
+                {
+                    UnlockMovement();
+                    PlaySound(hurtClip, hurtVolume);
+                }
             }
         }
     }
@@ -128,18 +135,47 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
 
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioClip moveClip;
+    [SerializeField] protected AudioClip attackClip;
+    [SerializeField] protected AudioClip hurtClip;
+    [SerializeField] protected AudioClip deathClip;
+    [SerializeField] protected float moveVolume = 1f;
+    [SerializeField] protected float attackVolume = 1f;
+    [SerializeField] protected float hurtVolume = 1f;
+    [SerializeField] protected float deathVolume = 1f;
+
+
     public SpriteRenderer spriteRenderer { get; private set; }
     public Animator animator { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public Collider2D feetCollider { get; private set; }
 
     [SerializeField] protected float _searchDuration = 5f;
-    [SerializeField] protected int _maxHealth = 10;
-    [SerializeField] protected int _moveSpeed = 2000;
-    [SerializeField] protected float _attackCooldown = 1f;
     [SerializeField] protected bool _enableIFrames = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
     [SerializeField] protected LayerMask _obstacleLayer;
+
+    public int SpawnLevel { get; private set; } = 1;
+    public float DamageMultiplier { get; private set; } = 1f;
+
+    private bool _statsInitialized = false;
+
+    [Header("Base Stats (Level 1)")]
+    [SerializeField] private int _baseMaxHealth = 30;
+    [SerializeField] private int _baseMoveSpeed = 2000;
+    [SerializeField] private float _baseAttackCooldown = 1f;
+
+    protected int _maxHealth;
+    protected int _moveSpeed;
+    protected float _attackCooldown;
+
+    [Header("Level Scaling")]
+    [SerializeField] protected float healthScalePerLevel = 0.20f;
+    [SerializeField] protected float speedScalePerLevel = 0.05f;
+    [SerializeField] protected float cooldownReductionPerLevel = 0.04f;
+    [SerializeField] protected float damageScalePerLevel = 0.15f;
+    [SerializeField] protected float minAttackCooldown = 0.25f;
 
     public enum EnemyState
     {
@@ -173,14 +209,26 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         set { _slowMultiplier = Mathf.Clamp(value, 0.01f, 1f); }
     }
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         feetCollider = GetComponent<Collider2D>();
 
-        CurrentHealth = MaxHealth;
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+    }
+
+    protected virtual void Start()
+    {
+        if (!_statsInitialized)
+        {
+            InitializeForLevel(1);
+        }
+
         animator.SetBool("alive", true);
         originalColor = spriteRenderer.color;
         _currentState = EnemyState.Idle;
@@ -191,6 +239,42 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         if (!allEnemies.Contains(this))
         {
             allEnemies.Add(this);
+        }
+    }
+
+    public virtual void InitializeForLevel(int level = 1)
+    {
+        if (_statsInitialized) return;
+
+        SpawnLevel = Mathf.Max(1, level);
+
+        float levelOffset = SpawnLevel - 1;
+        _maxHealth = Mathf.RoundToInt(_baseMaxHealth * (1f + healthScalePerLevel * levelOffset));
+        _moveSpeed = Mathf.RoundToInt(_baseMoveSpeed * (1f + speedScalePerLevel * levelOffset));
+        _attackCooldown = Mathf.Max(
+            minAttackCooldown,
+            _baseAttackCooldown * (1f - cooldownReductionPerLevel * levelOffset)
+        );
+
+        DamageMultiplier = 1f + damageScalePerLevel * levelOffset;
+
+        CurrentHealth = _maxHealth;
+
+        EnemyHurtbox[] hurtboxes = GetComponentsInChildren<EnemyHurtbox>(true);
+        foreach (EnemyHurtbox hurtbox in hurtboxes)
+        {
+            hurtbox.ApplyDamageMultiplier(DamageMultiplier);
+        }
+
+        _statsInitialized = true;
+    }
+
+    public void ApplyScalingToSpawnedObject(GameObject spawnedObject)
+    {
+        EnemyHurtbox hurtbox = spawnedObject.GetComponent<EnemyHurtbox>();
+        if (hurtbox != null)
+        {
+            hurtbox.ApplyDamageMultiplier(DamageMultiplier);
         }
     }
 
@@ -205,7 +289,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             }
     }
 
-    public void Update()
+    protected virtual void Update()
     {
 
         HandleAgroCount();
@@ -504,6 +588,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         Moving = false;
 
+        PlaySound(deathClip, deathVolume);
+
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -580,6 +666,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             spriteRenderer.color = originalColor;
         }
+    }
+
+    protected void PlaySound(AudioClip clip, float volume = 1f)
+    {
+        if (audioSource == null || clip == null) return;
+        audioSource.PlayOneShot(clip, volume);
+    }
+
+    public void PlayAttackSound()
+    {
+        PlaySound(attackClip, attackVolume);
     }
 
     public abstract void Attack();

@@ -5,9 +5,9 @@ public class SorcererSpellSpawner : MonoBehaviour
     [SerializeField] GameObject spellPrefab;
     [SerializeField] EnemyDetectionRange detectionRange;
 
-    public void SpawnSpell()
+    public GameObject SpawnSpell()
     {
-        if (!detectionRange.PlayerInRange) return;
-        Instantiate(spellPrefab, detectionRange.PlayerPosition, Quaternion.identity);
+        if (!detectionRange.PlayerInRange) return null;
+        return Instantiate(spellPrefab, detectionRange.PlayerPosition, Quaternion.identity);
     }
 }

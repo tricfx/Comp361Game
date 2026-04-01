@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Sorcerer : NewEnemy
 {
+    [Header("Sorcerer")]
     [SerializeField] SorcererSpellSpawner spellSpawner;
     [SerializeField] float spellTimer = 1f;
 
@@ -23,7 +24,8 @@ public class Sorcerer : NewEnemy
 
             if (detectionRange.PlayerInRange)
             {
-                spellSpawner.SpawnSpell();
+                GameObject spell = spellSpawner.SpawnSpell();
+                ApplyScalingToSpawnedObject(spell);
                 yield return new WaitForSeconds(spellTimer);
             }
             else
