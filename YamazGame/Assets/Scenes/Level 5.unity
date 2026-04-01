@@ -684191,6 +684191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelChangeDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 3320136513888443082, guid: 7fd60e1d95eb14ca08459bd6f76c5f4e, type: 3}
+      propertyPath: targetScene
+      value: Boss-Cinematic
+      objectReference: {fileID: 0}
     - target: {fileID: 6709701830448485701, guid: 7fd60e1d95eb14ca08459bd6f76c5f4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 96.774
