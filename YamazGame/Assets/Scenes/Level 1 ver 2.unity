@@ -30445,11 +30445,9 @@ MonoBehaviour:
   playerActions: {fileID: 1332874946080679999}
   healthBarView: {fileID: 959012676}
   healthTextView: {fileID: 1081073142}
-  dashAbilityView: {fileID: 0}
   abilityQView: {fileID: 1357506397}
   abilityEView: {fileID: 1325203378}
   bloodSplatterView: {fileID: 1604158015}
-  hudCanvasGroup: {fileID: 0}
   qSlot: {fileID: 1357506397}
   eSlot: {fileID: 1325203378}
 --- !u!114 &467552664
@@ -31244,7 +31242,7 @@ Transform:
   m_GameObject: {fileID: 607249696}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -366311,6 +366309,7 @@ MonoBehaviour:
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
   isPaused: 0
+  levelloader: {fileID: 0}
   settingsManager: {fileID: 0}
 --- !u!114 &2077678602
 MonoBehaviour:
