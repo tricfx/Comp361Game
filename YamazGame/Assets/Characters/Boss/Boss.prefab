@@ -196,9 +196,9 @@ GameObject:
   - component: {fileID: 8176566917613700150}
   - component: {fileID: 6636329178607238446}
   - component: {fileID: 2176244513345230814}
+  - component: {fileID: 2319409152396961737}
   - component: {fileID: 5838685491082654279}
   - component: {fileID: 8724187955840502114}
-  - component: {fileID: 8475260305854287846}
   - component: {fileID: 5243261647570753683}
   - component: {fileID: 4294833000172466609}
   m_Layer: 8
@@ -366,6 +366,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2319409152396961737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294099538363740678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cbe37b5db7a4d1fa52dcaa6e3a02fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  anim: {fileID: 0}
 --- !u!114 &5838685491082654279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,21 +408,7 @@ MonoBehaviour:
   attackDamage: 20
   attackCooldown: 2
   anim: {fileID: 5838685491082654279}
-  movement: {fileID: 8475260305854287846}
---- !u!114 &8475260305854287846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8294099538363740678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc046a9c420ac472ab375641af868d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  anim: {fileID: 5838685491082654279}
+  movement: {fileID: 0}
 --- !u!114 &5243261647570753683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,10 +439,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 5243261647570753683}
-  movement: {fileID: 8475260305854287846}
+  movement: {fileID: 0}
   attack: {fileID: 8724187955840502114}
   detectionRadius: 15
   player: {fileID: 0}
   roamRadius: 5
+  moveDuration: 3
   minRoamWait: 1
   maxRoamWait: 3
