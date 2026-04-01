@@ -42,12 +42,16 @@ public class BossHealth : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 
+    [Header("Death")]
+    [SerializeField] private float destroyDelay = 1f; // time to let death animation play
+
     private void Die()
     {
         if (isDead) return;
         isDead = true;
         Debug.Log("Boss died!");
         // TODO: trigger death animation, rewards, cutscene etc.
+        Destroy(gameObject, destroyDelay);
     }
 
     private IEnumerator HitFlash()

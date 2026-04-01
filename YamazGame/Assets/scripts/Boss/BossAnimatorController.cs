@@ -13,6 +13,7 @@ public class BossAnimatorController : MonoBehaviour
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int AttackID = Animator.StringToHash("AttackID"); // Which attack (1,2,3...)
     private static readonly int Charge = Animator.StringToHash("Charge");
+    private static readonly int AttackStage = Animator.StringToHash("AttackStage");
 
     private void Awake()
     {
@@ -45,6 +46,11 @@ public class BossAnimatorController : MonoBehaviour
     public void TriggerCharge()
     {
         animator.SetTrigger(Charge);
+    }
+
+    public void SetAttackStage(int stage)
+    {
+        animator.SetInteger(AttackStage, stage);
     }
 
     public void TriggerDeath()

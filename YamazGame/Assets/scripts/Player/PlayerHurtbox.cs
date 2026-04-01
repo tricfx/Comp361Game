@@ -42,29 +42,34 @@ public class PlayerHurtbox : MonoBehaviour
     {
         Debug.Log($"PlayerHitbox collided with: {other.gameObject.name}, Tag: {other.tag}");
 
-        if (playerActions != null && playerActions.IsAttacking)
-        {
-            Debug.Log($"Player IS attacking! Checking if enemy...");
-
-            if (other.CompareTag("EnemyHitbox"))
-            {
-                Debug.Log($"Hit an enemy hitbox! Looking for EnemyHealth...");
-
-                NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
-                if (enemy == null)
-                {
-                    Debug.LogWarning("Failed to find enemy component");
-                    return;
-                }
-
-                int damage = GetCurrentDamage();
-                Debug.Log($"Called TakeDamage on enemy for {damage} damage (combo step {playerActions.ComboStep})");
-                enemy.TakeDamage(damage);
-            }
-        }
-        else
+        if (playerActions == null || !playerActions.IsAttacking)
         {
             Debug.Log("Player is NOT attacking, ignoring collision");
+            return;
         }
+
+        if (!other.CompareTag("EnemyHitbox")) return;
+
+        int damage = GetCurrentDamage();
+
+        // Try regular enemy first
+        NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
+        if (enemy != null)
+        {
+            Debug.Log($"Hit NewEnemy for {damage} damage (combo step {playerActions.ComboStep})");
+            enemy.TakeDamage(damage);
+            return;
+        }
+
+        // Try boss
+        BossHitbox boss = other.GetComponentInParent<BossHitbox>();
+        if (boss != null)
+        {
+            Debug.Log($"Hit Boss for {damage} damage (combo step {playerActions.ComboStep})");
+            boss.TakeDamage(damage);
+            return;
+        }
+
+        Debug.LogWarning($"Hit EnemyHitbox on {other.gameObject.name} but found no NewEnemy or BossHitbox on parent!");
     }
 }
