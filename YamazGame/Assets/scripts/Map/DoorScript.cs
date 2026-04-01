@@ -13,6 +13,11 @@ public class Door : MonoBehaviour
         PlayerSpawn.nextSpawn = spawnPosition;
         // DataPersistenceManager manager = FindFirstObjectByType<DataPersistenceManager>();
         // manager.SaveGame();
-        SceneManager.LoadScene(targetScene);
+         if(targetScene == ""){
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else {
+            SceneManager.LoadScene(targetScene);
+        }
     }
 }
