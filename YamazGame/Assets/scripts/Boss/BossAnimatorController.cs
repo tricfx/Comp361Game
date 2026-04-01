@@ -11,7 +11,7 @@ public class BossAnimatorController : MonoBehaviour
     private static readonly int FaceY = Animator.StringToHash("FaceY");
     private static readonly int Death = Animator.StringToHash("Death");
     private static readonly int Attack = Animator.StringToHash("Attack");
-    private static readonly int AttackID = Animator.StringToHash("AttackID"); // Which attack (1,2,3...)
+    private static readonly int AttackID = Animator.StringToHash("AttackID");
     private static readonly int Charge = Animator.StringToHash("Charge");
     private static readonly int AttackStage = Animator.StringToHash("AttackStage");
 

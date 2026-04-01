@@ -13,6 +13,9 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.15f;
 
+    [Header("Death")]
+    [SerializeField] private float destroyDelay = 1f; // time to let death animation play
+
     private bool isDead = false;
     public bool IsDead => isDead;
 
@@ -41,9 +44,6 @@ public class BossHealth : MonoBehaviour
         if (isDead) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
-
-    [Header("Death")]
-    [SerializeField] private float destroyDelay = 1f; // time to let death animation play
 
     private void Die()
     {

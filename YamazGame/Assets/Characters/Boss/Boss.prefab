@@ -196,9 +196,9 @@ GameObject:
   - component: {fileID: 627027324317542296}
   - component: {fileID: 3232633787058850915}
   - component: {fileID: 4829999723770880311}
+  - component: {fileID: 851795538481104475}
   - component: {fileID: 1369828907175766065}
   - component: {fileID: 3166048765472741553}
-  - component: {fileID: 6950580269467898802}
   - component: {fileID: 4838821647322263267}
   - component: {fileID: 7456855487464106320}
   m_Layer: 0
@@ -366,6 +366,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &851795538481104475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776716307778403212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cbe37b5db7a4d1fa52dcaa6e3a02fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  anim: {fileID: 0}
 --- !u!114 &1369828907175766065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,21 +408,7 @@ MonoBehaviour:
   attackDamage: 20
   attackCooldown: 2
   anim: {fileID: 1369828907175766065}
-  movement: {fileID: 6950580269467898802}
---- !u!114 &6950580269467898802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6776716307778403212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc046a9c420ac472ab375641af868d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  anim: {fileID: 1369828907175766065}
+  movement: {fileID: 0}
 --- !u!114 &4838821647322263267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +425,7 @@ MonoBehaviour:
   currentHealth: 500
   spriteRenderer: {fileID: 3232633787058850915}
   flashDuration: 0.15
+  destroyDelay: 1
 --- !u!114 &7456855487464106320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +439,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 4838821647322263267}
-  movement: {fileID: 6950580269467898802}
+  movement: {fileID: 0}
   attack: {fileID: 3166048765472741553}
   detectionRadius: 15
   player: {fileID: 0}
+  roamRadius: 5
+  minRoamWait: 1
+  maxRoamWait: 3

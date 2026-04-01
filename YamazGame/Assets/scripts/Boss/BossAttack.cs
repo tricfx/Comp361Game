@@ -69,7 +69,6 @@ public class BossAttack : MonoBehaviour
 
         Vector2 dir = (player.position - transform.position).normalized;
 
-        // Compare absolute x and y to pick dominant axis
         if (Mathf.Abs(dir.x) >= Mathf.Abs(dir.y))
             return dir.x >= 0 ? Vector2.right : Vector2.left;   // E or W
         else

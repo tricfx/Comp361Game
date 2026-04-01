@@ -12,14 +12,16 @@ public class BossAI : MonoBehaviour
     [SerializeField] private Transform player;
 
     [Header("Roam Settings")]
-    [SerializeField] private float roamRadius = 5f;       // how far from origin it can wander
-    [SerializeField] private float minRoamWait = 1f;      // min pause between roam steps
-    [SerializeField] private float maxRoamWait = 3f;      // max pause between roam steps
+    [SerializeField] private float roamRadius = 5f;
+    [SerializeField] private float moveDuration = 3f;   // how long it moves before stopping
+    [SerializeField] private float minRoamWait = 1f;
+    [SerializeField] private float maxRoamWait = 2f;
 
-    private Vector2 origin;           // where the boss started
-    private Vector2 roamTarget;       // current destination
-    private float roamWaitTimer = 0f; // counts down before picking next target
-    private bool isRoaming = false;
+    private Vector2 origin;
+    private Vector2 roamTarget;
+    private float roamWaitTimer = 0f;
+    private float moveTimer = 0f;
+    private bool isWaiting = false;
 
     private void Awake()
     {
@@ -48,16 +50,24 @@ public class BossAI : MonoBehaviour
 
     private void Roam()
     {
-        if (isRoaming)
+        if (isWaiting)
         {
-            // Move toward target
+            roamWaitTimer -= Time.deltaTime;
+            if (roamWaitTimer <= 0f)
+                PickNewRoamTarget();
+        }
+        else
+        {
+            // Count down move duration
+            moveTimer -= Time.deltaTime;
+
             Vector2 toTarget = roamTarget - (Vector2)transform.position;
 
-            if (toTarget.magnitude <= 0.15f)
+            // Stop either when time is up or when we've arrived
+            if (moveTimer <= 0f || toTarget.magnitude <= 0.15f)
             {
-                // Arrived — stop and start waiting
                 movement.Stop();
-                isRoaming = false;
+                isWaiting = true;
                 roamWaitTimer = Random.Range(minRoamWait, maxRoamWait);
             }
             else
@@ -65,33 +75,26 @@ public class BossAI : MonoBehaviour
                 movement.SetMoveDirection(toTarget.normalized);
             }
         }
-        else
-        {
-            // Waiting
-            roamWaitTimer -= Time.deltaTime;
-            if (roamWaitTimer <= 0f)
-                PickNewRoamTarget();
-        }
     }
 
     private void PickNewRoamTarget()
     {
-        // Pick a random point within roamRadius of the spawn origin
         Vector2 offset = Random.insideUnitCircle * roamRadius;
         roamTarget = origin + offset;
-        isRoaming = true;
+        moveTimer = moveDuration;
+        isWaiting = false;
     }
 
     // ---- Phase stubs (fill in later) ----
 
     private void Phase1()
     {
-        // TODO: patrol, basic attacks
+        // TODO: chase player, trigger close range attack when in range
     }
 
     private void Phase2()
     {
-        // TODO: enraged behaviour, new attack patterns
+        // TODO: enraged behaviour, tail swing added to close range combo, new patterns
     }
 
     private void OnDrawGizmosSelected()
@@ -99,7 +102,6 @@ public class BossAI : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
 
-        // Show roam boundary
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(Application.isPlaying ? (Vector3)origin : transform.position, roamRadius);
     }
