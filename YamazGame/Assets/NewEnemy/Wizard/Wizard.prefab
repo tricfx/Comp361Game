@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 6885241915499328709}
   - component: {fileID: 7690822564691405911}
   - component: {fileID: 7540873434250881079}
+  - component: {fileID: 8809175218332662839}
   - component: {fileID: 6407917262768909906}
   - component: {fileID: 2373036340607009102}
   m_Layer: 8
@@ -513,6 +514,103 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &8809175218332662839
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865457932143640122}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.15
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &6407917262768909906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,22 +624,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentTeam: 1
-  hitbox: {fileID: 4623960157684452460}
-  hurtbox: {fileID: 0}
   faceDirection: {fileID: 4780606943734477868}
   detectionRange: {fileID: 9092103154612472699}
   attackRange: {fileID: 8324734251027002773}
+  audioSource: {fileID: 8809175218332662839}
+  moveClip: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: c2e1a904d388342d9915cf98f197a13d, type: 3}
+  hurtClip: {fileID: 8300000, guid: 473923c7679d24b3c99f7f86bb3aef82, type: 3}
+  deathClip: {fileID: 8300000, guid: b3021a2281871437eb8bec3178ee6d53, type: 3}
+  moveVolume: 1
+  attackVolume: 1
+  hurtVolume: 1
+  deathVolume: 1
   _searchDuration: 5
-  _maxHealth: 5
+  _maxHealth: 40
   _moveSpeed: 3000
   _attackCooldown: 3
-  _disableSimulation: 0
-  _enableInvincibilityWindow: 0
+  _enableIFrames: 0
   _invincibilityLimit: 0.3
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
   projectileSpawner: {fileID: 1034858515595350144}
+  preferredDistanceMultiplier: 0.8
+  distanceTolerance: 0.3
+  strafeStrength: 0.5
+  noiseStrength: 0.05
 --- !u!114 &2373036340607009102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +662,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998cad803e8d14816be21c5903c204a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preferredDistanceMultiplier: 0.8
-  distanceTolerance: 0.3
-  strafeStrength: 0.5
-  noiseStrength: 0.05

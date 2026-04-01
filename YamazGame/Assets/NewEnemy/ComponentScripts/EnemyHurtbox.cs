@@ -18,14 +18,26 @@ public class EnemyHurtbox : MonoBehaviour
         }
     }
 
-    [SerializeField] int _attackDamage = 2;
-    [SerializeField] int _knockbackForce = 10;
+    [Header("Base Stats (Level 1)")]
+    [SerializeField] private int _baseAttackDamage = 2;
+    [SerializeField] private int _knockbackForce = 10;
+    
+    private int _attackDamage;
+    private Collider2D hurtbox;
 
-    Collider2D hurtbox;
+    void Awake()
+    {
+        _attackDamage = _baseAttackDamage;
+    }
 
     void Start()
     {
         hurtbox = GetComponent<Collider2D>();
+    }
+
+    public void ApplyDamageMultiplier(float multiplier)
+    {
+        _attackDamage = Mathf.Max(1, Mathf.RoundToInt(_baseAttackDamage * multiplier));
     }
 
     void OnTriggerEnter2D(Collider2D other)

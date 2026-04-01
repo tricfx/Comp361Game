@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 582613700744770228}
   - component: {fileID: 1950579583884517978}
   - component: {fileID: 2721119162240442920}
+  - component: {fileID: 7341095132813929798}
   - component: {fileID: 1554802101594711708}
   m_Layer: 8
   m_Name: ImperialGuard
@@ -558,6 +559,103 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &7341095132813929798
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626399099273824282}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.15
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1554802101594711708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,21 +668,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524bd95c732bde743b4a104b5a4c2edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentTeam: 1
   faceDirection: {fileID: 4601751760806937784}
   detectionRange: {fileID: 2344700382323681538}
   attackRange: {fileID: 1811877921182897045}
+  audioSource: {fileID: 7341095132813929798}
+  moveClip: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: a2338a4da626849e5aa2bf0c0a4682ec, type: 3}
+  hurtClip: {fileID: 8300000, guid: 473923c7679d24b3c99f7f86bb3aef82, type: 3}
+  deathClip: {fileID: 8300000, guid: b3021a2281871437eb8bec3178ee6d53, type: 3}
+  moveVolume: 1
+  attackVolume: 5
+  hurtVolume: 1
+  deathVolume: 1
   _searchDuration: 5
-  _maxHealth: 10
+  _maxHealth: 60
   _moveSpeed: 5000
   _attackCooldown: 4
-  _disableSimulation: 0
-  _enableInvincibilityWindow: 0
+  _enableIFrames: 0
   _invincibilityLimit: 0.3
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
   dashSpeed: 50
   dashDistanceMultiplier: 1.5
+  orbitNoiseStrength: 0.05
 --- !u!1 &8854117760306899535
 GameObject:
   m_ObjectHideFlags: 0
