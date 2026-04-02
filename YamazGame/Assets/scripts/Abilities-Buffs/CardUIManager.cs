@@ -47,6 +47,9 @@ public class CardUIManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        EnemyManager.OnAllEnemiesDefeated += OpenRewardScreen;
+
     }
 
     void Start()
@@ -74,6 +77,7 @@ public class CardUIManager : MonoBehaviour
         Roll3Rewards();
         rewardPanel.SetActive(true);
         BlurOverlay.SetActive(true);
+        player.GetComponent<PlayerActions>().enabled = false;
         Time.timeScale = 0f;
     }
 
@@ -138,6 +142,11 @@ public class CardUIManager : MonoBehaviour
         if (reward is AbilityCard abilityCard)
         {
             player.GetComponent<PlayerActions>().TryEquipAbility(abilityCard);
+            if (replacementPanel.activeSelf)
+            {
+                rewardPanel.SetActive(false);
+                return;
+            }
         }
         else
         {
@@ -148,6 +157,7 @@ public class CardUIManager : MonoBehaviour
         BlurOverlay.SetActive(false);
         rerolls = 3;
         rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Reroll  ( {rerolls} left )";
+        player.GetComponent<PlayerActions>().enabled = true;
         Time.timeScale = 1f;
     }
 
@@ -157,6 +167,7 @@ public class CardUIManager : MonoBehaviour
         replacementSlots[0].Setup(player.GetComponent<PlayerActions>().qAbilityCard);
         replacementSlots[1].Setup(player.GetComponent<PlayerActions>().eAbilityCard);
         replacementPanel.SetActive(true);
+        player.GetComponent<PlayerActions>().enabled = false;
         Time.timeScale = 0f;
 
     }
@@ -168,6 +179,7 @@ public class CardUIManager : MonoBehaviour
 
         pendingReplacementCard = null;
         replacementPanel.SetActive(false);
+        player.GetComponent<PlayerActions>().enabled = true;
         Time.timeScale = 1f;
     }
     
