@@ -10,8 +10,9 @@ public class BossMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 moveDir;
-    private Vector2 lastFacingDir = Vector2.down;
+    private Vector2 lastFacingDir = Vector2.down; // fallback so blend tree always has a valid dir
     public bool CanMove { get; set; } = true;
+    public bool isInVertex = false; // set by BossAI when the boss is in a vertex of the nav graph
 
     private void Awake()
     {
@@ -21,6 +22,11 @@ public class BossMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isInVertex)
+        {
+            Stop();
+            return;
+        }
         if (!CanMove)
         {
             rb.linearVelocity = Vector2.zero;
@@ -33,16 +39,17 @@ public class BossMovement : MonoBehaviour
             lastFacingDir = moveDir;
 
         anim?.SetSpeed(moveDir.magnitude);
-        anim?.SetMove(lastFacingDir);
+        anim?.SetMove(lastFacingDir); // always a valid direction, never (0,0)
     }
 
+    // Called by AI to set movement direction
     public void SetMoveDirection(Vector2 dir)
     {
-        CanMove = true; // re-enable movement whenever the AI gives a new direction
         moveDir = dir;
         if (dir.sqrMagnitude > 0.001f)
         {
             lastFacingDir = dir;
+            // Push immediately so the setup blend tree has direction on the very first frame
             anim?.SetFacing(dir);
             anim?.SetMove(dir);
         }
@@ -53,7 +60,5 @@ public class BossMovement : MonoBehaviour
         moveDir = Vector2.zero;
         rb.linearVelocity = Vector2.zero;
         anim?.SetSpeed(0f);
-        // Note: does NOT set CanMove = false — that's intentional.
-        // CanMove is only for external locks (e.g. cutscenes). Stop() just zeroes velocity.
     }
 }

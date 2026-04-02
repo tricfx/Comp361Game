@@ -77,7 +77,10 @@ public class Ground : MonoBehaviour, IAbility
                     if (col.CompareTag("EnemyHitbox"))
                     {
                         NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
-                        enemy?.TakeDamage(burstDamage);
+                        if (enemy != null)
+                            enemy.TakeDamage(burstDamage);
+                        else
+                            col.GetComponentInParent<BossHitbox>()?.TakeDamage(burstDamage);
                     }
                 }
             }
