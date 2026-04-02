@@ -5,7 +5,7 @@ public class DoorController : MonoBehaviour
 {
     private Animator animator;
     private Collider2D doorCollider;
-
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();

@@ -204,6 +204,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     private bool isCountedInAgro = false;
     private SepukuManager sepukuManager;
     private RewardEngine _rewardEngine;
+    private EnemyManager _enemyManager;
 
     public float SlowMultiplier
     {
@@ -238,12 +239,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         sepukuManager = FindFirstObjectByType<SepukuManager>();
         _rewardEngine = FindFirstObjectByType<RewardEngine>();
+        _enemyManager = FindFirstObjectByType<EnemyManager>();
         if (_rewardEngine == null)
             Debug.LogWarning("NewEnemy: No RewardEngine found in scene — gem rewards will not work.");
 
         if (!allEnemies.Contains(this))
         {
             allEnemies.Add(this);
+        }
+        if (_enemyManager != null)
+        {
+            _enemyManager.RegisterEnemy();
         }
     }
 
@@ -631,6 +637,11 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             int gems = _rewardEngine.Calculate(SpawnLevel, baseGemValue);
             GemManager.Instance.AddGems(gems);
+        }
+
+        if (_enemyManager != null)
+        {
+            _enemyManager.UnregisterEnemy();
         }
     }
 

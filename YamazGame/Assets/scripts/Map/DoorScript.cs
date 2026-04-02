@@ -9,8 +9,8 @@ public class Door : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("PlayerHitbox")) return;
-        DataPersistenceManager.instance.SaveGame();
-        PlayerSpawn.nextSpawn = spawnPosition;
+        // DataPersistenceManager.instance.SaveGame();
+        // PlayerSpawn.nextSpawn = spawnPosition;
         // DataPersistenceManager manager = FindFirstObjectByType<DataPersistenceManager>();
         // manager.SaveGame();
          if(targetScene == ""){
