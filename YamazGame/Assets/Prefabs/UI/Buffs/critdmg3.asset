@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: critdmg3
   m_EditorClassIdentifier: 
   cardID: critdmg3
-  cardName: Sharp Instinct
+  cardName: "Heaven\u2019s Gate"
   cardDescription: Increase character crite damage by 100%
   icon: {fileID: -1317026252678793333, guid: 710cac01c27cadf4891c7ce9f59a46ff, type: 3}
   dependency: critdmg2
   cooldownSeconds: 0
   type: 0
-  shopCost: 33
+  shopCost: 150
   buffID: critdmg3
   bonusDamage: 0
   bonusHealth: 0

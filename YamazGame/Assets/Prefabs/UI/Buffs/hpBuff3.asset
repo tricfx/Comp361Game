@@ -19,10 +19,12 @@ MonoBehaviour:
   dependency: heal2
   cooldownSeconds: 0
   type: 0
-  shopCost: 33
+  shopCost: 150
   buffID: heal3
   bonusDamage: 0
   bonusHealth: 60
   bonusSpeed: 0
   dashCooldownDecrease: 0
   dashDistanceBonus: 0
+  critRate: 0
+  critDmg: 0

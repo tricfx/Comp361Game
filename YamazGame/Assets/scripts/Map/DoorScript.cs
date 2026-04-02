@@ -9,10 +9,15 @@ public class Door : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("PlayerHitbox")) return;
-
+        DataPersistenceManager.instance.SaveGame();
         PlayerSpawn.nextSpawn = spawnPosition;
-        DataPersistenceManager manager = FindFirstObjectByType<DataPersistenceManager>();
-        manager.SaveGame();
-        SceneManager.LoadScene(targetScene);
+        // DataPersistenceManager manager = FindFirstObjectByType<DataPersistenceManager>();
+        // manager.SaveGame();
+         if(targetScene == ""){
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else {
+            SceneManager.LoadScene(targetScene);
+        }
     }
 }

@@ -100,10 +100,12 @@ public class SkipPromptController : MonoBehaviour
     void LoadNextScene()
     {
         CancelInvoke(nameof(HidePrompt));
-
-        if (!string.IsNullOrEmpty(nextSceneName))
+        if(nextSceneName == ""){
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else {
             SceneManager.LoadScene(nextSceneName);
-        else
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+       
     }
 }

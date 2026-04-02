@@ -17,8 +17,8 @@ MonoBehaviour:
   cardDescription: Stars fall from the sky on your foes
   icon: {fileID: 3836954968553550457, guid: ff92aa236bd45504c94b6d3ae389bc1d, type: 3}
   dependency: 
-  cooldownSeconds: 10
+  cooldownSeconds: 5
   type: 1
-  shopCost: 33
+  shopCost: 500
   abilityID: Skyfall
   abilityPrefab: {fileID: 1703236983586644648, guid: ad3481761efc5e3469640f7a541bfcdc, type: 3}

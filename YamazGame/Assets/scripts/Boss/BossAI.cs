@@ -8,18 +8,20 @@ public class BossAI : MonoBehaviour
     [SerializeField] private BossAttack attack;
 
     [Header("Detection")]
-    [SerializeField] private float detectionRadius = 15f;
+    [SerializeField] private float detectionRadius = 20f;
     [SerializeField] private Transform player;
+    [SerializeField] private PlayerHealth playerHealth;
 
     [Header("Chase & Attack")]
-    [SerializeField] private float chaseStopDistance = 7f;
-    [SerializeField] private float attackRange = 4f;
+    // chaseStopDistance must be <= attackRange, or the boss will stop moving before it can attack
+    [SerializeField] private float chaseStopDistance = 3f;
+    [SerializeField] private float attackRange = 3f;
 
     [Header("Roam Settings")]
     [SerializeField] private float roamRadius = 5f;
     [SerializeField] private float moveDuration = 3f;
     [SerializeField] private float minRoamWait = 1f;
-    [SerializeField] private float maxRoamWait = 2f;
+    [SerializeField] private float maxRoamWait = 3f;
 
     private enum State { Roam, Chase, Attack }
     private State currentState = State.Roam;
@@ -39,7 +41,11 @@ public class BossAI : MonoBehaviour
         if (player == null)
         {
             var playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null) player = playerObj.transform;
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+                playerHealth = playerObj.GetComponent<PlayerHealth>();
+            }
         }
 
         origin = transform.position;
@@ -49,6 +55,17 @@ public class BossAI : MonoBehaviour
     private void Update()
     {
         if (health.IsDead || player == null) return;
+
+        // If the player is dead, stop everything and go idle
+        if (playerHealth != null && playerHealth.IsDead)
+        {
+            if (attack.IsAttacking) attack.CancelAttack();
+            movement.Stop();
+            // Force into waiting-roam so the animator sees Speed 0 and plays idle
+            currentState = State.Roam;
+            isWaiting = true;
+            return;
+        }
 
         float distToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -67,24 +84,18 @@ public class BossAI : MonoBehaviour
                     break;
                 }
                 Chase(distToPlayer);
-                // Only enter attack state from Chase — never from within Attack
                 if (distToPlayer <= attackRange && attack.CanAttack)
                     EnterAttack();
                 break;
 
             case State.Attack:
-                // Just wait for the attack to finish, then go back to Chase
-                // PerformCloseRangeAttack handles its own loop internally
                 if (!attack.IsAttacking)
-                {
-                    // Attack fully done — go back to chase, which will re-enter attack if still in range
                     EnterChase();
-                }
                 break;
         }
     }
 
-    // ---- State enter methods (no recursion risk) ----
+    // ---- State transitions ----
 
     private void EnterRoam()
     {
@@ -95,9 +106,7 @@ public class BossAI : MonoBehaviour
 
     private void EnterChase()
     {
-        if (attack.IsAttacking) attack.CancelAttack();
         currentState = State.Chase;
-        movement.Stop();
     }
 
     private void EnterAttack()
@@ -147,6 +156,13 @@ public class BossAI : MonoBehaviour
 
     private void Chase(float distToPlayer)
     {
+        // Wait in place during attack cooldown — only chase when ready to attack again
+        if (!attack.CanAttack)
+        {
+            movement.Stop();
+            return;
+        }
+
         if (distToPlayer <= chaseStopDistance)
             movement.Stop();
         else
