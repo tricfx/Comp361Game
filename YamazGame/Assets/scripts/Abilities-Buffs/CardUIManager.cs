@@ -47,6 +47,9 @@ public class CardUIManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        EnemyManager.OnAllEnemiesDefeated += OpenRewardScreen;
+
     }
 
     void Start()

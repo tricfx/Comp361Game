@@ -5,10 +5,11 @@ public class DoorController : MonoBehaviour
 {
     private Animator animator;
     private Collider2D doorCollider;
-
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        cardUI = GetComponent<CardUIManager>();
         doorCollider = GetComponent<Collider2D>();
         if (doorCollider)
             doorCollider.enabled = false;
