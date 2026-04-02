@@ -385966,11 +385966,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8637080755793485759, guid: a59c2c76060499744a6e239921d772d5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 266578153}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59c2c76060499744a6e239921d772d5, type: 3}
+--- !u!95 &266578153 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6310803234298042004, guid: a59c2c76060499744a6e239921d772d5, type: 3}
+  m_PrefabInstance: {fileID: 266578152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &271053366
 PrefabInstance:
   m_ObjectHideFlags: 0
