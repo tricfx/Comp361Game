@@ -156,22 +156,30 @@ public class BossAI : MonoBehaviour
 
     private void Chase(float distToPlayer)
     {
-        // Wait in place during attack cooldown — only chase when ready to attack again
         if (!attack.CanAttack)
+        {
+            movement.Stop();
+            movement.CanDash = false;
+            return;
+        }
+
+        movement.CanDash = true;
+
+        if (distToPlayer <= chaseStopDistance)
         {
             movement.Stop();
             return;
         }
 
-        if (distToPlayer <= chaseStopDistance)
-            movement.Stop();
-        else
-        {
-            Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
-            movement.SetMoveDirection(dir);
-        }
-    }
+        Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
 
+        float dashChancePerSecond = 0.4f;
+
+        if (distToPlayer > 3f && Random.value < dashChancePerSecond * Time.deltaTime)
+            movement.Dash(dir);
+        else
+            movement.SetMoveDirection(dir);
+    }
     // ---- Phase stubs ----
 
     private void Phase2()

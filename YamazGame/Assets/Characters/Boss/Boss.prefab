@@ -801,6 +801,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   anim: {fileID: 5838685491082654279}
+  dashSpeed: 35
+  dashDuration: 0.2
+  dashCooldown: 2
+  isInVertex: 0
 --- !u!114 &5838685491082654279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,8 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c882caf81be444ff89df4435cdba8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 5
-  attackCooldown: 4
+  attackCooldown: 2.25
   anim: {fileID: 5838685491082654279}
   movement: {fileID: 2319409152396961737}
   stageTimeout: 5
@@ -845,6 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   currentHealth: 500
+  levelLoader: {fileID: 0}
   spriteRenderer: {fileID: 7489115577716577993}
   flashDuration: 0.15
   destroyDelay: 1
