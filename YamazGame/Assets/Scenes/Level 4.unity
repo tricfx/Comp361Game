@@ -47554,7 +47554,7 @@ Transform:
   m_GameObject: {fileID: 887897576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 219.0899, y: -172.60669, z: -20}
+  m_LocalPosition: {x: 218, y: -174.01, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -563985,7 +563985,7 @@ GameObject:
   - component: {fileID: 2003529028}
   m_Layer: 0
   m_Name: NPCShopkeeper
-  m_TagString: Untagged
+  m_TagString: Shopkeeper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564091,7 +564091,7 @@ Transform:
   m_GameObject: {fileID: 2003529018}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.17, y: 10.57, z: 9.990368}
+  m_LocalPosition: {x: 215.37, y: -217.78, z: -0.05644989}
   m_LocalScale: {x: 0.8888889, y: 0.7913763, z: 1.1977526}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -566943,11 +566943,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6365615291235604374, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 212.45
+      value: 209.7
       objectReference: {fileID: 0}
     - target: {fileID: 6365615291235604374, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -218.07
+      value: -217.81
       objectReference: {fileID: 0}
     - target: {fileID: 6365615291235604374, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: m_LocalPosition.z

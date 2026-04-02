@@ -53,7 +53,8 @@ public class PlayerController2D : MonoBehaviour
     private float dashTimer;
     private float dashCooldownTimer;
     private bool isDashing;
-
+    private Vector2 lastMinimapDir = Vector2.down;
+    public Vector2 MinimapDir => isDashing ? dashDir : lastMinimapDir;
     public Vector2 MoveDir => lastAimDir;
     public bool IsDashing => isDashing;
 
@@ -73,6 +74,12 @@ public class PlayerController2D : MonoBehaviour
     private void Update()
     {
         Vector2 move = input.Move;
+
+        Vector2 minimapMove = new Vector2(move.x, move.y * 0.5f);
+        if (minimapMove.sqrMagnitude > 0.001f)
+        {
+            lastMinimapDir = minimapMove.normalized;
+        }
 
         // Update last direction for facing — prefer horizontal so N+E = face East
         if (move.sqrMagnitude > 0.001f)
