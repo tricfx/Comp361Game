@@ -740,3 +740,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 318911083249927296, guid: 1b37fbec63d924ca58514d7600f8fa18, type: 3}
   detectionRange: {fileID: 8353518750175172719}
+  shadowOffset: {x: 0.08, y: -0.85}
