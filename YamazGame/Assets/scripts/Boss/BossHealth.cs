@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class BossHealth : MonoBehaviour
     public int currentHealth;
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
+    public LevelLoader levelLoader;
 
     [Header("Hit Flash")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -34,8 +36,18 @@ public class BossHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            if (SceneManager.GetActiveScene().buildIndex == 9)
+            {
+                Time.timeScale = 0f;
+                levelLoader.LoadLevel(10);
+                Time.timeScale = 1f;
+            }
+            else
+            {
             currentHealth = 0;
-            Die();
+            Die();     
+            }
+           
         }
     }
 
