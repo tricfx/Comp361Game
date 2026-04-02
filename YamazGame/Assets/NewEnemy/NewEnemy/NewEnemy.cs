@@ -165,6 +165,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] private int _baseMaxHealth = 30;
     [SerializeField] private int _baseMoveSpeed = 2000;
     [SerializeField] private float _baseAttackCooldown = 1f;
+    [SerializeField] private int baseGemValue = 5;
 
     protected int _maxHealth;
     protected int _moveSpeed;
@@ -202,6 +203,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
    protected bool isagro = false;
     private bool isCountedInAgro = false;
     private SepukuManager sepukuManager;
+    private RewardEngine _rewardEngine;
 
     public float SlowMultiplier
     {
@@ -234,7 +236,10 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         _currentState = EnemyState.Idle;
         currentTarget = null;
 
-         sepukuManager = FindFirstObjectByType<SepukuManager>();
+        sepukuManager = FindFirstObjectByType<SepukuManager>();
+        _rewardEngine = FindFirstObjectByType<RewardEngine>();
+        if (_rewardEngine == null)
+            Debug.LogWarning("NewEnemy: No RewardEngine found in scene — gem rewards will not work.");
 
         if (!allEnemies.Contains(this))
         {
@@ -621,6 +626,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
 
         animator.SetBool("alive", false);
+
+        if (_rewardEngine != null && GemManager.Instance != null)
+        {
+            int gems = _rewardEngine.Calculate(SpawnLevel, baseGemValue);
+            GemManager.Instance.AddGems(gems);
+        }
     }
 
     public void TakeKnockback(Vector2 knockback)

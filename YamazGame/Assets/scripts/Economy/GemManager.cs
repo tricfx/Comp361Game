@@ -25,6 +25,7 @@ public class GemManager : MonoBehaviour, IDataPersistence
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    
 
     public void AddGems(int amount)
     {

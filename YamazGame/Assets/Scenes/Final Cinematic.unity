@@ -1360,6 +1360,7 @@ MonoBehaviour:
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
   isPaused: 0
+  levelloader: {fileID: 0}
   settingsManager: {fileID: 1360193562}
 --- !u!114 &665654214
 MonoBehaviour:
@@ -1973,7 +1974,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 1808390861}
   visibleDuration: 5
   fadeDuration: 0.4
-  nextSceneName: Level 1
+  nextSceneName: Main Menu
 --- !u!114 &1045395464
 MonoBehaviour:
   m_ObjectHideFlags: 0

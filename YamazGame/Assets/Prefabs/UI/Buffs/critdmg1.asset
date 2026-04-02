@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: critdmg1
   m_EditorClassIdentifier: 
   cardID: critdmg1
-  cardName: Sharp Instinct
+  cardName: Spirit Gate
   cardDescription: Increase character crite damage by 20%
   icon: {fileID: 3589117536062990964, guid: ebfb96531249cc140a1996782cf3b8a5, type: 3}
   dependency: 
   cooldownSeconds: 0
   type: 0
-  shopCost: 33
+  shopCost: 150
   buffID: critdmg1
   bonusDamage: 0
   bonusHealth: 0
