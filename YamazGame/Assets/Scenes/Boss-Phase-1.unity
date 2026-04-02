@@ -268197,6 +268197,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 469917545}
     m_Modifications:
+    - target: {fileID: 807134858329490410, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954717033914788975, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3919119714788306780, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.34
@@ -268237,6 +268245,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3999525043293978945, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4294833000172466609, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: player
       value: 
@@ -268245,9 +268257,29 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 572500192}
+    - target: {fileID: 4963373014800593988, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064173324789908961, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459266012553913427, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752480530717114972, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8294099538363740678, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879521611596795597, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: attackDamage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

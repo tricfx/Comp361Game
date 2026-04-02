@@ -14,6 +14,7 @@ public class Ice : MonoBehaviour, IAbility
     [SerializeField] private float slowMultiplier = 0.3f; // 0.3 = 30% of original speed
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerHurtbox playerHurtbox;
+    [SerializeField] private BossMovement bossMovement = null;
     [SerializeField] private Vector3 effectRotationEuler = new Vector3(10.93f, -10.05f, -13.7f);
     [SerializeField] private Vector3 effectScale = new Vector3(0.5f, 0.83f, 1f);
     public ParticleSystem ice;
@@ -71,6 +72,16 @@ public class Ice : MonoBehaviour, IAbility
                     enemy.TakeDamage(burstDamage);
                     StartCoroutine(SlowEnemy(enemy));
                 }
+                else
+                {
+                    BossHealth boss = col.GetComponentInParent<BossHealth>();
+                    bossMovement = col.GetComponentInParent<BossMovement>();
+                    if (boss != null)
+                    {
+                        boss.TakeDamage(burstDamage);
+                        StartCoroutine(SlowBoss(bossMovement.moveSpeed));
+                    }
+                }
             }
         }
 
@@ -93,6 +104,17 @@ public class Ice : MonoBehaviour, IAbility
         if (enemy != null)
             enemy.SlowMultiplier = 1f;
     }
+
+    private IEnumerator SlowBoss(float originalSpeed)
+    {
+        if (bossMovement != null)
+        {
+            bossMovement.moveSpeed = originalSpeed * slowMultiplier;
+            yield return new WaitForSeconds(slowDuration);
+            bossMovement.moveSpeed = originalSpeed;
+        }
+    }
+
     private Vector3 GetSpawnPosition()
     {
         var controller = playerHealth.GetComponentInParent<PlayerController2D>();

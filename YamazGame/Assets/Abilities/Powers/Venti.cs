@@ -14,7 +14,9 @@ public class Venti : MonoBehaviour, IAbility
     [SerializeField] private float damageMultiplier = 0.5f;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerHurtbox playerHurtbox;
-    public ParticleSystem venti;
+    [SerializeField] private BossMovement bossMovement = null;
+
+    [SerializeField] private ParticleSystem venti;
     private ParticleSystem ventiInstance;
 
 
@@ -60,6 +62,7 @@ public class Venti : MonoBehaviour, IAbility
         float tickTimer = 0f;
         int tickDamage = Mathf.Max(1, Mathf.RoundToInt(playerHurtbox.attackDamage * damageMultiplier));
 
+
         while (total < duration)
         {
             // Pull all enemies in radius toward core every frame
@@ -73,6 +76,19 @@ public class Venti : MonoBehaviour, IAbility
                     {
                         Vector2 pullDir = (core - enemy.transform.position).normalized;
                         enemy.rb.AddForce(pullDir * pullForce, ForceMode2D.Force);
+                    }
+                    else
+                    {
+                        Rigidbody2D bossRb = col.GetComponentInParent<Rigidbody2D>();
+                        bossMovement = col.GetComponentInParent<BossMovement>();
+                        if (bossRb != null)
+                        {
+                            Vector2 pullDir = ((Vector2)core - (Vector2)col.transform.position).normalized;
+                            bossRb.AddForce(pullDir * pullForce, ForceMode2D.Force);
+                            bossMovement.isInVertex = true; // prevent boss from moving itself and fighting the pull
+
+
+                        }
                     }
                 }
             }
@@ -88,7 +104,10 @@ public class Venti : MonoBehaviour, IAbility
                     if (col.CompareTag("EnemyHitbox"))
                     {
                         NewEnemy enemy = col.GetComponentInParent<NewEnemy>();
-                        enemy?.TakeDamage(tickDamage);
+                        if (enemy != null)
+                            enemy.TakeDamage(tickDamage);
+                        else
+                            col.GetComponentInParent<BossHitbox>()?.TakeDamage(tickDamage);
                     }
                 }
             }
@@ -99,6 +118,9 @@ public class Venti : MonoBehaviour, IAbility
 
         if (ventiInstance != null)
             ventiInstance.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        if (bossMovement != null)
+            bossMovement.isInVertex = false; // allow boss to move again after effect ends
+
     }
     private Vector3 GetSpawnPosition()
     {
