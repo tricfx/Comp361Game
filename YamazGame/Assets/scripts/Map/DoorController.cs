@@ -26,6 +26,7 @@ public class DoorController : MonoBehaviour
 
     public void OpenDoor()
     {
+         DataPersistenceManager.instance.SaveGame();
         UnityEngine.Debug.Log("Door Opening");
         animator.SetTrigger("Open");
         doorCollider.enabled = true;
