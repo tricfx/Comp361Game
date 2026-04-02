@@ -115,13 +115,13 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void LoadDefaultSpeaker()
     {
-        var character = firstTimeDialogue.dialogueLines[0].character;
-        if (character == null) return;
-
         var dm = DialogueManager.Instance;
         if (dm == null) return;
 
+        var character = firstTimeDialogue.dialogueLines[0].character;
+        if (character == null) return;
+
         dm.characterIcon.sprite = character.icon;
-        dm.characterName.text = character.name;
+        dm.characterName.text = "Sherma";
     }
 }
