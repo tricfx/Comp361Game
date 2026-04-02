@@ -13,6 +13,7 @@ TagManager:
   - EnemyAttack
   - HUD
   - TilemapCollider
+  - Shopkeeper
   layers:
   - Default
   - TransparentFX
@@ -34,8 +35,6 @@ TagManager:
   - Lava
   - MinimapWorld
   - MinimapIcon
-  - 
-  - 
   - 
   - 
   - 
@@ -81,6 +80,9 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 3523546293
+    locked: 0
+  - name: minimapmarkers
+    uniqueID: 2246601469
     locked: 0
   m_RenderingLayers:
   - Default

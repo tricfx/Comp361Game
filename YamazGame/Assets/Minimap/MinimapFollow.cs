@@ -3,12 +3,10 @@ using UnityEngine;
 public class MinimapFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float zPosition = -10f;
+    [SerializeField] private float zPosition = -1f;
 
     private void LateUpdate()
     {
-        if (target == null) return;
-
         transform.position = new Vector3(
             target.position.x,
             target.position.y,
