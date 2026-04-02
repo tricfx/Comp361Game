@@ -4932,6 +4932,7 @@ GameObject:
   - component: {fileID: 968447780476397767}
   - component: {fileID: 7221718550222938184}
   - component: {fileID: 6695503865964214144}
+  - component: {fileID: -8718804358593535526}
   m_Layer: 0
   m_Name: Crystals crossfade 2 1
   m_TagString: Untagged
@@ -9822,6 +9823,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!210 &-8718804358593535526
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797051120815553657}
+  m_Enabled: 1
+  m_SortingLayerID: -306072507
+  m_SortingLayer: 4
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &847597630102783951
 GameObject:
   m_ObjectHideFlags: 0
