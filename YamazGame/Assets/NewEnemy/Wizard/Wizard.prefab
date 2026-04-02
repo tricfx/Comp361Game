@@ -637,14 +637,19 @@ MonoBehaviour:
   hurtVolume: 1
   deathVolume: 1
   _searchDuration: 5
-  _maxHealth: 40
-  _moveSpeed: 3000
-  _attackCooldown: 3
   _enableIFrames: 0
   _invincibilityLimit: 0.3
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
+  _baseMaxHealth: 30
+  _baseMoveSpeed: 3000
+  _baseAttackCooldown: 3
+  healthScalePerLevel: 0.2
+  speedScalePerLevel: 0.05
+  cooldownReductionPerLevel: 0.04
+  damageScalePerLevel: 0.15
+  minAttackCooldown: 0.25
   projectileSpawner: {fileID: 1034858515595350144}
   preferredDistanceMultiplier: 0.8
   distanceTolerance: 0.3

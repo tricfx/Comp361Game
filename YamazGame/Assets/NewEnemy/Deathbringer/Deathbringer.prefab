@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a973369d2fc7c4777a2783950ab490a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDamage: 10
+  _baseAttackDamage: 2
   _knockbackForce: 10
 --- !u!1 &1813362963374470990
 GameObject:
@@ -493,18 +493,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7403cbcd7591f89418602f6dcb21ce5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentTeam: 1
   faceDirection: {fileID: 3009248211403828123}
   detectionRange: {fileID: 8353518750175172719}
   attackRange: {fileID: 9048540828237332598}
+  audioSource: {fileID: 0}
+  moveClip: {fileID: 0}
+  attackClip: {fileID: 0}
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 0}
+  moveVolume: 1
+  attackVolume: 1
+  hurtVolume: 1
+  deathVolume: 1
   _searchDuration: 5
-  _maxHealth: 20
-  _moveSpeed: 7000
-  _attackCooldown: 2
   _enableIFrames: 0
   _invincibilityLimit: 0.3
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
+  _baseMaxHealth: 80
+  _baseMoveSpeed: 5000
+  _baseAttackCooldown: 2
+  healthScalePerLevel: 0.2
+  speedScalePerLevel: 0.05
+  cooldownReductionPerLevel: 0.04
+  damageScalePerLevel: 0.15
+  minAttackCooldown: 0.25
   spellSpawner: {fileID: 5272633235159193402}
   meleeRange: {fileID: 1556946929570647878}
 --- !u!1 &5060381170100823339
