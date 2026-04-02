@@ -267144,6 +267144,7 @@ Transform:
   - {fileID: 1804766627}
   - {fileID: 623333561}
   - {fileID: 1031900540}
+  - {fileID: 966783408}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719376266
@@ -294169,6 +294170,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964947991}
   m_CullTransparentMesh: 1
+--- !u!1 &966783407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966783408}
+  - component: {fileID: 966783409}
+  m_Layer: 0
+  m_Name: RewardEngine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &966783408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966783407}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 706983825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966783409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966783407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc96de93b70c84de2a132606a68602c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyMod: 1.2
+  floorBonusBase: 10
 --- !u!1 &991400022
 GameObject:
   m_ObjectHideFlags: 0
@@ -295034,7 +295081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b36faca0b3442a695f5bc4e98128bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingGems: 34
+  startingGems: 0
 --- !u!4 &1098369466
 Transform:
   m_ObjectHideFlags: 0
