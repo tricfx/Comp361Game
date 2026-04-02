@@ -11,11 +11,18 @@ public class BossAI : MonoBehaviour
     [SerializeField] private float detectionRadius = 15f;
     [SerializeField] private Transform player;
 
+    [Header("Chase & Attack")]
+    [SerializeField] private float chaseStopDistance = 7f;
+    [SerializeField] private float attackRange = 4f;
+
     [Header("Roam Settings")]
     [SerializeField] private float roamRadius = 5f;
-    [SerializeField] private float moveDuration = 3f;   // how long it moves before stopping
+    [SerializeField] private float moveDuration = 3f;
     [SerializeField] private float minRoamWait = 1f;
     [SerializeField] private float maxRoamWait = 2f;
+
+    private enum State { Roam, Chase, Attack }
+    private State currentState = State.Roam;
 
     private Vector2 origin;
     private Vector2 roamTarget;
@@ -41,9 +48,63 @@ public class BossAI : MonoBehaviour
 
     private void Update()
     {
-        if (health.IsDead) return;
+        if (health.IsDead || player == null) return;
 
-        Roam();
+        float distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        switch (currentState)
+        {
+            case State.Roam:
+                Roam();
+                if (distToPlayer <= detectionRadius)
+                    EnterChase();
+                break;
+
+            case State.Chase:
+                if (distToPlayer > detectionRadius)
+                {
+                    EnterRoam();
+                    break;
+                }
+                Chase(distToPlayer);
+                // Only enter attack state from Chase — never from within Attack
+                if (distToPlayer <= attackRange && attack.CanAttack)
+                    EnterAttack();
+                break;
+
+            case State.Attack:
+                // Just wait for the attack to finish, then go back to Chase
+                // PerformCloseRangeAttack handles its own loop internally
+                if (!attack.IsAttacking)
+                {
+                    // Attack fully done — go back to chase, which will re-enter attack if still in range
+                    EnterChase();
+                }
+                break;
+        }
+    }
+
+    // ---- State enter methods (no recursion risk) ----
+
+    private void EnterRoam()
+    {
+        if (attack.IsAttacking) attack.CancelAttack();
+        currentState = State.Roam;
+        PickNewRoamTarget();
+    }
+
+    private void EnterChase()
+    {
+        if (attack.IsAttacking) attack.CancelAttack();
+        currentState = State.Chase;
+        movement.Stop();
+    }
+
+    private void EnterAttack()
+    {
+        currentState = State.Attack;
+        movement.Stop();
+        attack.PerformCloseRangeAttack();
     }
 
     // ---- Roam ----
@@ -58,12 +119,9 @@ public class BossAI : MonoBehaviour
         }
         else
         {
-            // Count down move duration
             moveTimer -= Time.deltaTime;
-
             Vector2 toTarget = roamTarget - (Vector2)transform.position;
 
-            // Stop either when time is up or when we've arrived
             if (moveTimer <= 0f || toTarget.magnitude <= 0.15f)
             {
                 movement.Stop();
@@ -85,12 +143,20 @@ public class BossAI : MonoBehaviour
         isWaiting = false;
     }
 
-    // ---- Phase stubs (fill in later) ----
+    // ---- Chase ----
 
-    private void Phase1()
+    private void Chase(float distToPlayer)
     {
-        // TODO: chase player, trigger close range attack when in range
+        if (distToPlayer <= chaseStopDistance)
+            movement.Stop();
+        else
+        {
+            Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
+            movement.SetMoveDirection(dir);
+        }
     }
+
+    // ---- Phase stubs ----
 
     private void Phase2()
     {
@@ -101,6 +167,12 @@ public class BossAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, chaseStopDistance);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(Application.isPlaying ? (Vector3)origin : transform.position, roamRadius);

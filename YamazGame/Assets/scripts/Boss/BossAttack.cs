@@ -13,6 +13,10 @@ public class BossAttack : MonoBehaviour
     private Transform player;
     private float lastAttackTime = -Mathf.Infinity;
     private bool stageComplete = false;
+    private float stageStartTime = 0f;
+
+    [Header("Attack Timing")]
+    [SerializeField] private float stageTimeout = 2.5f; // fallback if animation event is missing
 
     public bool IsAttacking { get; private set; } = false;
     public bool CanAttack => Time.time >= lastAttackTime + attackCooldown && !IsAttacking;
@@ -31,35 +35,62 @@ public class BossAttack : MonoBehaviour
     {
         if (!CanAttack) return;
 
+        StopAllCoroutines();
         IsAttacking = true;
         lastAttackTime = Time.time;
         movement?.Stop();
         StartCoroutine(CloseRangeRoutine());
     }
 
+    // Called when AI needs to interrupt the attack (e.g. player left range)
+    public void CancelAttack()
+    {
+        StopAllCoroutines();
+        anim.SetAttackStage(0);
+        IsAttacking = false;
+    }
+
     private IEnumerator CloseRangeRoutine()
     {
+        IsAttacking = true;
+
         // Stage 1 — Sword Left
         anim.SetFacing(GetCardinalToPlayer());
         anim.SetAttackStage(1);
+        anim.TriggerAttack(1); // ← THIS was missing — pokes the animator to transition
         stageComplete = false;
-        yield return new WaitUntil(() => stageComplete);
+        stageStartTime = Time.time;
+        yield return new WaitUntil(() => stageComplete || WaitTimeout(stageTimeout));
 
         // Stage 2 — Sword Right
         anim.SetFacing(GetCardinalToPlayer());
         anim.SetAttackStage(2);
+        anim.TriggerAttack(2);
         stageComplete = false;
-        yield return new WaitUntil(() => stageComplete);
+        stageStartTime = Time.time;
+        yield return new WaitUntil(() => stageComplete || WaitTimeout(stageTimeout));
 
         // Stage 3 — Laser
         anim.SetFacing(GetCardinalToPlayer());
         anim.SetAttackStage(3);
+        anim.TriggerAttack(3);
         stageComplete = false;
-        yield return new WaitUntil(() => stageComplete);
+        stageStartTime = Time.time;
+        yield return new WaitUntil(() => stageComplete || WaitTimeout(stageTimeout));
 
-        // Done — return to idle
+        // Reset and wait one frame before checking idle
+        // (gives animator time to actually start transitioning back)
         anim.SetAttackStage(0);
         IsAttacking = false;
+    }
+
+    private Animator _animator;
+    private bool IsInIdleState()
+    {
+        if (_animator == null) _animator = GetComponentInChildren<Animator>();
+        AnimatorStateInfo info = _animator.GetCurrentAnimatorStateInfo(0);
+        // Must be in idle AND not in any transition
+        return info.IsName("Idle") && !_animator.IsInTransition(0);
     }
 
     // Snaps direction to nearest cardinal (N/S/E/W)
@@ -79,5 +110,10 @@ public class BossAttack : MonoBehaviour
     public void OnStageComplete()
     {
         stageComplete = true;
+    }
+
+    private bool WaitTimeout(float timeout)
+    {
+        return Time.time - stageStartTime >= timeout;
     }
 }
