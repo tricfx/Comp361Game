@@ -45458,7 +45458,7 @@ MonoBehaviour:
   replacementPanel: {fileID: 656867644}
   rerollButton: {fileID: 298732911}
   BlurOverlay: {fileID: 604476229}
-  player: {fileID: 0}
+  player: {fileID: 1690713646}
 --- !u!4 &801964912
 Transform:
   m_ObjectHideFlags: 0
