@@ -4,7 +4,6 @@ using System.Collections;
 public class BossAttack : MonoBehaviour
 {
     [Header("Attack Settings")]
-    [SerializeField] public int attackDamage = 5;
     [SerializeField] public float attackCooldown = 4f;
 
     [SerializeField] private BossAnimatorController anim;
