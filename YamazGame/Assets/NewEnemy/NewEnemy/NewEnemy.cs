@@ -131,6 +131,14 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
+    public Vector3 CurrentPosition
+    {
+        get
+        {
+            return feetCollider.bounds.center;
+        }
+    }
+
     [SerializeField] protected Transform faceDirection;
     [SerializeField] protected EnemyDetectionRange detectionRange;
     [SerializeField] protected EnemyAttackRange attackRange;
@@ -412,7 +420,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             int originalSpeed = _moveSpeed;
             _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
 
-            Move(feetCollider.bounds.center, detectionRange.PlayerPosition);
+            Move(CurrentPosition, detectionRange.PlayerPosition);
 
             _moveSpeed = originalSpeed;
         }
@@ -431,6 +439,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         if (CanAttack)
         {
+            FacePlayer(CurrentPosition, attackRange.PlayerPosition);
             Attack();
         }
     }
@@ -456,14 +465,14 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         if (CanMove)
         {
             Moving = true;
-            Move(feetCollider.bounds.center, _lastSeenPlayerPosition);
+            Move(CurrentPosition, _lastSeenPlayerPosition);
         }
     }
 
     protected Vector2 GetSeparationForce(float radius = 1.0f, float strength = 2f)
     {
         Collider2D[] neighbors = Physics2D.OverlapCircleAll(
-            feetCollider.bounds.center,
+            CurrentPosition,
             radius
         );
 
@@ -475,7 +484,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             NewEnemy other = c.GetComponent<NewEnemy>();
             if (other == null) continue;
 
-            Vector2 diff = feetCollider.bounds.center - other.feetCollider.bounds.center;
+            Vector2 diff = CurrentPosition - other.CurrentPosition;
             float dist = diff.magnitude;
 
             if (dist > 0)
@@ -490,7 +499,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     protected Vector2 GetObstacleAvoidance(Vector2 moveDir, float checkDistance = 0.6f)
     {
         RaycastHit2D hit = Physics2D.Raycast(
-            feetCollider.bounds.center,
+            CurrentPosition,
             moveDir,
             checkDistance,
             _obstacleLayer
@@ -505,7 +514,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         return Vector2.zero;
     }
 
-    protected void FacePlayer(Vector2 enemyPos, Vector2 playerPos)
+    protected virtual void FacePlayer(Vector2 enemyPos, Vector2 playerPos)
     {
         float dir = playerPos.x - enemyPos.x;
         if (Mathf.Abs(dir) < 0.1f) return;
@@ -652,7 +661,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
-    public void flipDirection(Vector2 direction)
+    public virtual void flipDirection(Vector2 direction)
     {
         if (direction.x > 0.1f)
         {

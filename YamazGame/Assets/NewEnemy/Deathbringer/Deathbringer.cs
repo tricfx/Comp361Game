@@ -37,4 +37,111 @@ public class Deathbringer : NewEnemy
     {
         CanAttack = true;
     }
+
+    // override state handlers, deathbringer has 2 attack range components
+    protected override void HandleChase()
+    {
+        if (detectionRange.PlayerInRange)
+        {
+            _lastSeenPlayerPosition = detectionRange.PlayerPosition;
+        }
+        else
+        {
+            _searchTimer = _searchDuration;
+            _currentState = EnemyState.Search;
+            return;
+        }
+
+        if (meleeRange.PlayerInRange)
+        {
+            Moving = false;
+            _currentState = EnemyState.Attack;
+            return;
+        }
+
+        if (CanAttack)
+        {
+            Moving = false;
+            _currentState = EnemyState.Attack;
+            return;
+        }
+
+        if (CanMove)
+        {
+            Moving = true;
+
+            int originalSpeed = _moveSpeed;
+            _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
+
+            Move(feetCollider.bounds.center, detectionRange.PlayerPosition);
+
+            _moveSpeed = originalSpeed;
+        }
+        else
+        {
+            Moving = false;
+        }
+    }
+
+    protected override void HandleAttack()
+    {
+        Moving = false;
+
+        if (!detectionRange.PlayerInRange)
+        {
+            _searchTimer = _searchDuration;
+            _currentState = EnemyState.Search;
+            return;
+        }
+
+        if (meleeRange.PlayerInRange)
+        {
+            if (CanAttack)
+            {
+                FacePlayer(CurrentPosition, meleeRange.PlayerPosition);
+                Attack();
+            }
+            return;
+        }
+
+        if (CanAttack)
+        {
+            FacePlayer(CurrentPosition, attackRange.PlayerPosition);
+            Attack();
+        }
+
+        _currentState = EnemyState.Chase;
+    }
+
+    // deathbringer sprites are flipped by default
+    public override void flipDirection(Vector2 direction)
+    {
+        if (direction.x > 0.1f)
+        {
+            faceDirection.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
+        }
+        else if (direction.x < -0.1f)
+        {
+            faceDirection.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
+        }
+    }
+
+    protected override void FacePlayer(Vector2 enemyPos, Vector2 playerPos)
+    {
+        float dir = playerPos.x - enemyPos.x;
+        if (Mathf.Abs(dir) < 0.1f) return;
+
+        if (dir > 0)
+        {
+            faceDirection.localScale = new Vector3(-1, 1, 1);
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            faceDirection.localScale = new Vector3(1, 1, 1);
+            spriteRenderer.flipX = false;
+        }
+    }
 }
