@@ -45,9 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapBounds: {fileID: 0}
-  spawnOffset: 10
+  spawnOffset: 0
   boundMargin: 3
   duration: 5
+  hitRadius: 3
+  damageMultiplier: 1.5
   playerHealth: {fileID: 0}
+  playerHurtbox: {fileID: 0}
   effectRotationEuler: {x: 33.31, y: -0.84, z: 0}
   ground: {fileID: 3732600909772915855, guid: a7c8ab4763849de4fab44619b42f5e56, type: 3}
