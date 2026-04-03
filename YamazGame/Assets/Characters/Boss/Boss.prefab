@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc23aed5fdc4be3b071285996f20b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 6
 --- !u!1 &2562929388403019171
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2562929388403019171}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc23aed5fdc4be3b071285996f20b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 5
+  attackDamage: 3
 --- !u!1 &3999525043293978945
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,17 +368,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.61499643, y: 0.067156896}
+    - - {x: 0.8051422, y: -0.17426182}
+      - {x: 0.84839547, y: -0.067518406}
+      - {x: 0.77717674, y: 0.056973003}
+      - {x: 0.65076387, y: -0.040970497}
+      - {x: 0.66542095, y: 0.12878686}
+      - {x: 0.5328109, y: 0.12072054}
+      - {x: 0.5195088, y: 0.3086124}
       - {x: 0.2881996, y: 0.42601126}
       - {x: 0.24197705, y: 0.51731646}
       - {x: 0.025797665, y: 0.5260956}
-      - {x: 0.08585354, y: 0.37419775}
-      - {x: 0.4226534, y: -0.11400641}
-      - {x: 0.4923048, y: -0.33113566}
-      - {x: 0.54187614, y: -0.34679747}
-      - {x: 0.6210665, y: -0.36978784}
+      - {x: 0.018621154, y: 0.3798008}
+      - {x: 0.014330916, y: 0.21943931}
+      - {x: 0.32025743, y: -0.12813881}
+      - {x: 0.43909347, y: -0.28501782}
+      - {x: 0.47464335, y: -0.3860165}
+      - {x: 0.57064205, y: -0.42581496}
       - {x: 0.8521002, y: -0.3814491}
-      - {x: 0.85121405, y: -0.14287278}
+      - {x: 0.8679941, y: -0.23935933}
   m_UseDelaunayMesh: 0
 --- !u!114 &8879521611596795597
 MonoBehaviour:
@@ -392,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc23aed5fdc4be3b071285996f20b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 6
 --- !u!1 &7064173324789908961
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc23aed5fdc4be3b071285996f20b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 6
 --- !u!1 &7459266012553913427
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc23aed5fdc4be3b071285996f20b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 6
 --- !u!1 &8294099538363740678
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,8 +877,8 @@ MonoBehaviour:
   detectionRadius: 20
   player: {fileID: 0}
   playerHealth: {fileID: 0}
-  chaseStopDistance: 3
-  attackRange: 3
+  chaseStopDistance: 2
+  attackRange: 2
   roamRadius: 5
   moveDuration: 3
   minRoamWait: 1

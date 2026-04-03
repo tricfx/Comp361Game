@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
 
@@ -8,6 +9,8 @@ public class BossAttack : MonoBehaviour
 
     [SerializeField] private BossAnimatorController anim;
     [SerializeField] private BossMovement movement;
+
+    private bool isPhase2 = false;
 
     private Transform player;
     private float lastAttackTime = -Mathf.Infinity;
@@ -27,6 +30,9 @@ public class BossAttack : MonoBehaviour
 
         var playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) player = playerObj.transform;
+
+        // Phase 2 is determined purely by which scene we're in
+        isPhase2 = SceneManager.GetActiveScene().name == "Boss-Phase-2";
     }
 
     public void PerformCloseRangeAttack()
@@ -57,7 +63,8 @@ public class BossAttack : MonoBehaviour
         // Face player once at the start of the combo only
         anim.SetFacing(GetCardinalToPlayer());
 
-        for (int stage = 1; stage <= 3; stage++)
+        int totalStages = isPhase2 ? 4 : 3;
+        for (int stage = 1; stage <= totalStages; stage++)
         {
             anim.SetAttackStage(stage);
             stageComplete = false;
