@@ -91,7 +91,7 @@ public class PlayerController2D : MonoBehaviour
         }
 
         // Dash trigger - ONLY WHILE MOVING
-        if (input.DashPressed && dashCooldownTimer <= 0f && !isDashing && move.sqrMagnitude > 0.1f)
+        if (input.DashPressed && dashCooldownTimer <= 0f && !isDashing && move.sqrMagnitude > 0.1f && !actions.IsAttacking)
             StartDash();
 
         // Timers
@@ -160,9 +160,6 @@ public class PlayerController2D : MonoBehaviour
 
     private void StartDash()
     {
-        // Reset combo so attacking during/after dash starts at Attack 1
-        actions?.ResetCombo();
-
         // Apply same Y scale as movement so diagonal dash matches movement direction
         Vector2 rawMove = input.Move;
         dashDir = rawMove.sqrMagnitude > 0.001f
@@ -175,7 +172,7 @@ public class PlayerController2D : MonoBehaviour
         anim?.TriggerDash();
     }
 
-    public void EndDash()
+    private void EndDash()
     {
         isDashing = false;
     }
