@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97a620e7e95a24787a49e551f9eca9cc
+guid: e57ac5bdea8e3473c9afd7ad5ba3bd59
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 6596617931644657277
     second: Fall_2
+  - first:
+      213: 7514022213351704123
+    second: Fall_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,10 +112,10 @@ TextureImporter:
       name: Fall_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 43
-        width: 37
-        height: 58
+        x: 106
+        y: 82
+        width: 67
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +134,10 @@ TextureImporter:
       name: Fall_1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 43
-        width: 37
-        height: 58
+        x: 153
+        y: 161
+        width: 8
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +156,10 @@ TextureImporter:
       name: Fall_2
       rect:
         serializedVersion: 2
-        x: 332
-        y: 43
-        width: 37
-        height: 58
+        x: 356
+        y: 82
+        width: 66
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,6 +170,28 @@ TextureImporter:
       bones: []
       spriteID: d7ed6a6fe05eb8b50800000000000000
       internalID: 6596617931644657277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fall_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 163
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36093d546b274860800000000000000
+      internalID: 7514022213351704123
       vertices: []
       indices: 
       edges: []
@@ -188,6 +213,7 @@ TextureImporter:
       Fall_0: -5966621866309598838
       Fall_1: -2069157278089061004
       Fall_2: 6596617931644657277
+      Fall_3: 7514022213351704123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
