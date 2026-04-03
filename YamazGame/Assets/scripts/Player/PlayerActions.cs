@@ -79,7 +79,16 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             GetComponent<PlayerHealth>()?.TakeDamage(100);
 
         if (controller && controller.IsDashing)
+        {
+            // Allow attack 1 during dash — cut dash movement immediately
+            if (input.AttackPressed)
+            {
+                controller.EndDash();
+                ResetCombo();
+                PerformAttack();
+            }
             return;
+        }
 
         // Check if combo window expired
         if (comboStep > 0 && Time.time - lastAttackTime > comboWindow)
