@@ -104,11 +104,11 @@ GameObject:
   - component: {fileID: 7752480530717114972}
   m_Layer: 8
   m_Name: HurtboxLazerS
-  m_TagString: Untagged
+  m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7406813669733901431
 Transform:
   m_ObjectHideFlags: 0
@@ -302,11 +302,11 @@ GameObject:
   - component: {fileID: 8879521611596795597}
   m_Layer: 8
   m_Name: HurtboxLazerE
-  m_TagString: Untagged
+  m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3148031038862534337
 Transform:
   m_ObjectHideFlags: 0
@@ -371,16 +371,19 @@ PolygonCollider2D:
     - - {x: 0.8051422, y: -0.17426182}
       - {x: 0.84839547, y: -0.067518406}
       - {x: 0.77717674, y: 0.056973003}
-      - {x: 0.65076387, y: -0.040970497}
-      - {x: 0.66542095, y: 0.12878686}
-      - {x: 0.5328109, y: 0.12072054}
+      - {x: 0.73322934, y: 0.029124975}
+      - {x: 0.632435, y: 0.07106095}
+      - {x: 0.5451805, y: 0.21143238}
       - {x: 0.5195088, y: 0.3086124}
       - {x: 0.2881996, y: 0.42601126}
       - {x: 0.24197705, y: 0.51731646}
       - {x: 0.025797665, y: 0.5260956}
       - {x: 0.018621154, y: 0.3798008}
       - {x: 0.014330916, y: 0.21943931}
+      - {x: 0.26737744, y: -0.015018605}
       - {x: 0.32025743, y: -0.12813881}
+      - {x: 0.37128183, y: -0.2441699}
+      - {x: 0.3924766, y: -0.29631174}
       - {x: 0.43909347, y: -0.28501782}
       - {x: 0.47464335, y: -0.3860165}
       - {x: 0.57064205, y: -0.42581496}
@@ -413,11 +416,11 @@ GameObject:
   - component: {fileID: 4963373014800593988}
   m_Layer: 8
   m_Name: HurtboxLazerN
-  m_TagString: Untagged
+  m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2218384710455382072
 Transform:
   m_ObjectHideFlags: 0
@@ -520,11 +523,11 @@ GameObject:
   - component: {fileID: 807134858329490410}
   m_Layer: 8
   m_Name: HurtboxLazerW
-  m_TagString: Untagged
+  m_TagString: EnemyHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8513840118207670646
 Transform:
   m_ObjectHideFlags: 0
@@ -611,6 +614,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 6
+--- !u!1 &7648309286866988571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4100295894980122730}
+  m_Layer: 8
+  m_Name: SwordSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4100295894980122730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648309286866988571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.049, y: 1.004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3919119714788306780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8294099538363740678
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +685,7 @@ Transform:
   m_Children:
   - {fileID: 4756298107099453477}
   - {fileID: 8821770936646033944}
+  - {fileID: 4100295894980122730}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7489115577716577993
@@ -742,8 +777,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.110346265, y: 0.057467077}
-  m_Size: {x: 0.6258719, y: 0.20884815}
+  m_Offset: {x: 0.010010142, y: 0.057467062}
+  m_Size: {x: 0.4282743, y: 0.20885046}
   m_Direction: 1
 --- !u!50 &6636329178607238446
 Rigidbody2D:
@@ -841,6 +876,14 @@ MonoBehaviour:
   anim: {fileID: 5838685491082654279}
   movement: {fileID: 2319409152396961737}
   stageTimeout: 5
+  swordProjectilePrefab: {fileID: 6124941454225497037, guid: 2365001a094af49428ee18f0176394ba, type: 3}
+  swordSpawnPoint: {fileID: 4100295894980122730}
+  swordFireInterval: 0.3
+  chargeUpDuration: 1.5
+  rangedAttackDuration: 3.5
+  swordSpeed: 12.5
+  rangedCooldown: 4
+  safeZoneRadius: 5
 --- !u!114 &5243261647570753683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +921,10 @@ MonoBehaviour:
   player: {fileID: 0}
   playerHealth: {fileID: 0}
   chaseStopDistance: 2
-  attackRange: 2
+  attackRange: 3
+  rangedOuterZone: 20
+  rangedInnerZone: 5
+  rangedAttackProbability: 0.18
   roamRadius: 5
   moveDuration: 3
   minRoamWait: 1

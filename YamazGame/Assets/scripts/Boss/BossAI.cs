@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class BossAI : MonoBehaviour
@@ -13,9 +14,14 @@ public class BossAI : MonoBehaviour
     [SerializeField] private PlayerHealth playerHealth;
 
     [Header("Chase & Attack")]
-    // chaseStopDistance must be <= attackRange, or the boss will stop moving before it can attack
     [SerializeField] private float chaseStopDistance = 3f;
     [SerializeField] private float attackRange = 3f;
+
+    [Header("Ranged Attack Zones")]
+    [SerializeField] private float rangedOuterZone = 20f;
+    [SerializeField] private float rangedInnerZone = 5f;
+    [Range(0f, 1f)]
+    [SerializeField] private float rangedAttackProbability = 0.18f;
 
     [Header("Roam Settings")]
     [SerializeField] private float roamRadius = 5f;
@@ -23,8 +29,10 @@ public class BossAI : MonoBehaviour
     [SerializeField] private float minRoamWait = 1f;
     [SerializeField] private float maxRoamWait = 3f;
 
-    private enum State { Roam, Chase, Attack }
+    private enum State { Roam, Chase, Attack, Ranged }
+    private bool rangedRollDone = false;
     private State currentState = State.Roam;
+    private State lastLoggedState = (State)(-1); // for logging state changes only
 
     private Vector2 origin;
     private Vector2 roamTarget;
@@ -54,14 +62,23 @@ public class BossAI : MonoBehaviour
 
     private void Update()
     {
+        // Log state changes so we can see flicker transitions
+        if (currentState != lastLoggedState)
+        {
+
+            lastLoggedState = currentState;
+        }
+
         if (health.IsDead || player == null) return;
 
-        // If the player is dead, stop everything and go idle
         if (playerHealth != null && playerHealth.IsDead)
         {
-            if (attack.IsAttacking) attack.CancelAttack();
+            if (attack.IsAttacking)
+            {
+
+                attack.CancelAttack();
+            }
             movement.Stop();
-            // Force into waiting-roam so the animator sees Speed 0 and plays idle
             currentState = State.Roam;
             isWaiting = true;
             return;
@@ -74,23 +91,69 @@ public class BossAI : MonoBehaviour
             case State.Roam:
                 Roam();
                 if (distToPlayer <= detectionRadius)
+                {
                     EnterChase();
+                }
                 break;
 
             case State.Chase:
                 if (distToPlayer > detectionRadius)
                 {
+
                     EnterRoam();
                     break;
                 }
+
+                bool rangedAvailable = SceneManager.GetActiveScene().name == "Boss-Phase-2";
+
+                if (rangedAvailable && distToPlayer > rangedInnerZone && distToPlayer <= rangedOuterZone && attack.CanRangedAttack)
+                {
+                    if (!rangedRollDone)
+                    {
+                        rangedRollDone = true;
+                        float roll = Random.value;
+
+                        if (roll < rangedAttackProbability)
+                        {
+
+                            EnterRanged();
+                            break;
+                        }
+
+                    }
+                }
+                else
+                {
+                    rangedRollDone = false;
+                }
+
                 Chase(distToPlayer);
+
                 if (distToPlayer <= attackRange && attack.CanAttack)
+                {
+                    Debug.Log($"[BossAI] In melee range (dist={distToPlayer:F2}) and CanAttack=true — EnterAttack");
                     EnterAttack();
+                }
+                else if (distToPlayer <= attackRange && !attack.CanAttack)
+                {
+                    Debug.Log($"[BossAI] In melee range (dist={distToPlayer:F2}) but CanAttack=false (IsAttacking={attack.IsAttacking}, IsRangedAttacking={attack.IsRangedAttacking}) — waiting for cooldown");
+                }
                 break;
 
             case State.Attack:
                 if (!attack.IsAttacking)
+                {
+
                     EnterChase();
+                }
+                break;
+
+            case State.Ranged:
+                if (!attack.IsRangedAttacking)
+                {
+
+                    EnterChase();
+                }
                 break;
         }
     }
@@ -99,6 +162,7 @@ public class BossAI : MonoBehaviour
 
     private void EnterRoam()
     {
+
         if (attack.IsAttacking) attack.CancelAttack();
         currentState = State.Roam;
         PickNewRoamTarget();
@@ -106,14 +170,25 @@ public class BossAI : MonoBehaviour
 
     private void EnterChase()
     {
+
         currentState = State.Chase;
     }
 
     private void EnterAttack()
     {
+
         currentState = State.Attack;
         movement.Stop();
         attack.PerformCloseRangeAttack();
+    }
+
+    private void EnterRanged()
+    {
+
+        currentState = State.Ranged;
+        rangedRollDone = false;
+        movement.Stop();
+        attack.PerformRangedAttack();
     }
 
     // ---- Roam ----
@@ -172,19 +247,12 @@ public class BossAI : MonoBehaviour
         }
 
         Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
-
         float dashChancePerSecond = 0.4f;
 
         if (distToPlayer > 3f && Random.value < dashChancePerSecond * Time.deltaTime)
             movement.Dash(dir);
         else
             movement.SetMoveDirection(dir);
-    }
-    // ---- Phase stubs ----
-
-    private void Phase2()
-    {
-        // TODO: enraged behaviour, tail swing added to close range combo, new patterns
     }
 
     private void OnDrawGizmosSelected()
@@ -200,5 +268,11 @@ public class BossAI : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(Application.isPlaying ? (Vector3)origin : transform.position, roamRadius);
+
+        Gizmos.color = new Color(1f, 0.5f, 0f);
+        Gizmos.DrawWireSphere(transform.position, rangedOuterZone);
+
+        Gizmos.color = new Color(0f, 1f, 1f, 0.5f);
+        Gizmos.DrawWireSphere(transform.position, rangedInnerZone);
     }
 }
