@@ -1,6 +1,4 @@
 using UnityEngine;
-
-// Deals damage to player (tag this GameObject "EnemyHurtbox")
 public class BossHurtbox : MonoBehaviour
 {
     [SerializeField] private int attackDamage = 3;

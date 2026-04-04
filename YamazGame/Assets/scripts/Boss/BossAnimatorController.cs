@@ -14,6 +14,8 @@ public class BossAnimatorController : MonoBehaviour
     private static readonly int AttackID = Animator.StringToHash("AttackID");
     private static readonly int Charge = Animator.StringToHash("Charge");
     private static readonly int AttackStage = Animator.StringToHash("AttackStage");
+    private static readonly int IsCharging = Animator.StringToHash("IsCharging");
+    private static readonly int IsCastIdle = Animator.StringToHash("IsCastIdle");
 
     private void Awake()
     {
@@ -56,5 +58,15 @@ public class BossAnimatorController : MonoBehaviour
     public void TriggerDeath()
     {
         animator.SetTrigger(Death);
+    }
+
+    public void SetCharging(bool value)
+    {
+        animator.SetBool(IsCharging, value);
+    }
+
+    public void SetCastIdle(bool value)
+    {
+        animator.SetBool(IsCastIdle, value);
     }
 }
