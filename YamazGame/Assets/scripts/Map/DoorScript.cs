@@ -12,9 +12,12 @@ public class Door : MonoBehaviour
         // DataPersistenceManager.instance.SaveGame();
         // PlayerSpawn.nextSpawn = spawnPosition;
         DataPersistenceManager manager = FindFirstObjectByType<DataPersistenceManager>();
-        manager.SaveGame();
-         if(targetScene == ""){
-             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (manager)
+        {
+            manager.SaveGame();
+        }
+        if(targetScene == ""){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else {
             SceneManager.LoadScene(targetScene);
