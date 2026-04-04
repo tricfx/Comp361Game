@@ -29,9 +29,9 @@ public class ShopLogic : MonoBehaviour
     private void Awake()
     {
         CacheReferences();
-        if (sessionCardIDs.Count == 0) GenerateSessionCards();
         HideAllUnavailablePopups();
-        BuildUI();
+        //if (sessionCardIDs.Count == 0) GenerateSessionCards();
+        //BuildUI();
     }
 
     private void OnEnable()
@@ -273,5 +273,13 @@ public class ShopLogic : MonoBehaviour
             if (shopSlots[i] != null)
                 shopSlots[i].HideUnavailablePopup();
         }
+    }
+    public void PrepareShop()
+    {
+        CacheReferences();
+        HideAllUnavailablePopups();
+
+        if (sessionCardIDs.Count == 0) GenerateSessionCards();
+        BuildUI();
     }
 }

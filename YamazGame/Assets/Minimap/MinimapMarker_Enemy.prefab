@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6631401175327128760}
   - component: {fileID: 7233096175708499451}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: MinimapMarker_Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

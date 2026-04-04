@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine shopFadeCoroutine;
     private float shopOgVolume;
     public VideoPlayer shopkeeperVideo;
+    [SerializeField] private ShopLogic shopLogic;
 
     public AudioSource levelMusic;
     public AudioFadeMemory audioFade;
@@ -275,6 +276,7 @@ public class DialogueManager : MonoBehaviour
             continueButton.SetActive(false);
             choicePanel.SetActive(false);
             animator.Play("BoxOut");
+            shopLogic.PrepareShop();
 
             var rt = shopCG.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector2(0f, fader.slideOffset);
