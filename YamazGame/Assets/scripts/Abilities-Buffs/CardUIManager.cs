@@ -41,16 +41,22 @@ public class CardUIManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            EnemyManager.OnAllEnemiesDefeated -= OpenRewardScreen;
             Destroy(gameObject);
             return;
         }
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
+    }
+    
+    private void OnEnable()
+    {
         EnemyManager.OnAllEnemiesDefeated += OpenRewardScreen;
+    }
 
+    private void OnDisable()
+    {
+        EnemyManager.OnAllEnemiesDefeated -= OpenRewardScreen;
     }
 
     void Start()
@@ -75,10 +81,22 @@ public class CardUIManager : MonoBehaviour
 
     public void OpenRewardScreen()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player"); 
+            if (player != null) playerBuffs = player.GetComponent<PlayerBuffs>();
+        }
+
+        if (player == null) {
+            Debug.LogError("CardUIManager: No Player found in this scene!");
+            return;
+        }
+
         Roll3Rewards();
         rewardPanel.SetActive(true);
         BlurOverlay.SetActive(true);
-        player.GetComponent<PlayerActions>().enabled = false;
+        var actions = player.GetComponent<PlayerActions>();
+        if (actions != null) actions.enabled = false;
         Time.timeScale = 0f;
     }
 
