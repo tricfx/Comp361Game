@@ -2745,7 +2745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &218389853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2780,6 +2780,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62644dfebd3f04b8d94ebdeb4f06bd22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossHealth: {fileID: 1292986619}
+  healthBarView: {fileID: 568231866}
+  healthTextView: {fileID: 598862076}
 --- !u!1 &239290475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8792,6 +8795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568231864}
   - component: {fileID: 568231865}
+  - component: {fileID: 568231866}
   m_Layer: 5
   m_Name: BossHealthBar
   m_TagString: Untagged
@@ -8871,6 +8875,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &568231866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568231863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0152903cc3af64213819b5a0a8aabdba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillImage: {fileID: 1722427747}
 --- !u!1 &569135782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9409,6 +9426,7 @@ GameObject:
   - component: {fileID: 598862073}
   - component: {fileID: 598862075}
   - component: {fileID: 598862074}
+  - component: {fileID: 598862076}
   m_Layer: 5
   m_Name: BossHealth
   m_TagString: Untagged
@@ -9535,6 +9553,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598862072}
   m_CullTransparentMesh: 1
+--- !u!114 &598862076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598862072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51aaafef1aaf4b68b05408f9b6d0928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 598862074}
 --- !u!1 &602281560
 GameObject:
   m_ObjectHideFlags: 0
@@ -265315,6 +265346,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 948306746}
   m_SourcePrefab: {fileID: 100100000, guid: 74411b9be492af14cb0798103be0d632, type: 3}
+--- !u!114 &1292986619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+  m_PrefabInstance: {fileID: 1589253419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539424ed8aa6c497eb89cf67cc46bb55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1293694490
 GameObject:
   m_ObjectHideFlags: 0
