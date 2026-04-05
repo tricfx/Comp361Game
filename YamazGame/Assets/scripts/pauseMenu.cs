@@ -26,7 +26,7 @@ public class pauseMenu : MonoBehaviour
 
     void Start()
     {
-        levelloader = FindObjectOfType<LevelLoader>();
+        levelloader = FindFirstObjectByType<LevelLoader>();
         PauseMenu.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);

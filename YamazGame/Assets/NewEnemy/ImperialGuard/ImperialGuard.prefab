@@ -459,8 +459,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -771421003
-  m_SortingLayer: 10
+  m_SortingLayerID: -306072507
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 9cf553b5d543140b69412ab8e668a794, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -472,7 +472,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &582613700744770228
 Rigidbody2D:
   serializedVersion: 5
@@ -690,6 +690,7 @@ MonoBehaviour:
   _baseMaxHealth: 50
   _baseMoveSpeed: 4000
   _baseAttackCooldown: 5
+  baseGemValue: 5
   healthScalePerLevel: 0.2
   speedScalePerLevel: 0.05
   cooldownReductionPerLevel: 0.04

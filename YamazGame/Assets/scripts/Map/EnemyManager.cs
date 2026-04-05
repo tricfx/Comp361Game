@@ -10,6 +10,13 @@ public class EnemyManager : MonoBehaviour
 
     private int aliveEnemies = 0;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            OnAllEnemiesDefeated?.Invoke();
+        }
+    }
 
     public void RegisterEnemy()
     {

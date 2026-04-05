@@ -555990,6 +555990,7 @@ MonoBehaviour:
   shopMenuMusic: {fileID: 2145703849}
   shermaSong: {fileID: 2003529024}
   shopkeeperVideo: {fileID: 2070148870}
+  shopLogic: {fileID: 1732723906}
   levelMusic: {fileID: 1800814037}
   audioFade: {fileID: 1464559357}
   uiSfxSource: {fileID: 2007743218}
@@ -556008,7 +556009,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c99cd8dd1ee2ce347bb143abb599f518, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -564746,7 +564747,7 @@ Transform:
   m_GameObject: {fileID: 2003529018}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.37, y: -217.78, z: -0.05644989}
+  m_LocalPosition: {x: 215.37, y: -217.78, z: 10}
   m_LocalScale: {x: 0.8888889, y: 0.7913763, z: 1.1977526}
   m_ConstrainProportionsScale: 1
   m_Children:

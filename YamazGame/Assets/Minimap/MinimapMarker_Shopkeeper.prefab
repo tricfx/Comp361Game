@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8608928373440250084}
   - component: {fileID: 6776629337018703653}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: MinimapMarker_Shopkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
