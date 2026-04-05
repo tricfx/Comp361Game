@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Text;
 
 public class BossHealth : MonoBehaviour
 {
@@ -21,11 +22,14 @@ public class BossHealth : MonoBehaviour
 
     private bool isDead = false;
     public bool IsDead => isDead;    
+    private EnemyManager _enemyManager;
+
 
     private void Awake()
     {
         currentHealth = maxHealth;
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _enemyManager.RegisterEnemy();
     }
 
     public void TakeDamage(int damage)
@@ -65,6 +69,7 @@ public class BossHealth : MonoBehaviour
         Debug.Log("Boss died!");
         // TODO: trigger death animation, rewards, cutscene etc.
         roomController.UnlockArena();
+        _enemyManager.UnregisterEnemy();
         Destroy(gameObject, destroyDelay);
 
     }
