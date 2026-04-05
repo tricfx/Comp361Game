@@ -3970,7 +3970,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 1808390861}
   visibleDuration: 5
   fadeDuration: 0.4
-  nextSceneName: 
+  nextSceneName: Boss-Phase-2
 --- !u!114 &1045395464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3984,6 +3984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1045395461}
+  nextSceneName: Boss-Phase-2
 --- !u!1 &1379980542
 GameObject:
   m_ObjectHideFlags: 0

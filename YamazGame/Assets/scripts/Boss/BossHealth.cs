@@ -41,7 +41,7 @@ public class BossHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 9 || SceneManager.GetActiveScene().buildIndex == 11)
+            if (SceneManager.GetActiveScene().buildIndex == 9 )
             {
                 Time.timeScale = 0f;
                 levelLoader.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);

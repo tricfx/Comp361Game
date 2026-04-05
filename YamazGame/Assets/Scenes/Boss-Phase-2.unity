@@ -76091,7 +76091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a70bbec031934e00a9c18c7f925f907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 1949068949}
 --- !u!60 &1390955384
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -270085,6 +270085,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4294833000172466609, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 512289466}
+    - target: {fileID: 4294833000172466609, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 512289472}
+    - target: {fileID: 4294833000172466609, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: rangedAttackProbability
       value: 0.22
       objectReference: {fileID: 0}
@@ -270104,6 +270112,10 @@ PrefabInstance:
       propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: roomController
+      value: 
+      objectReference: {fileID: 1949068949}
     - target: {fileID: 8294099538363740678, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: m_Name
       value: Boss

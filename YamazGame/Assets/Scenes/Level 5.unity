@@ -684487,6 +684487,7 @@ MonoBehaviour:
   shopMenuMusic: {fileID: 2145703849}
   shermaSong: {fileID: 2003529024}
   shopkeeperVideo: {fileID: 2070148870}
+  shopLogic: {fileID: 1732723906}
   levelMusic: {fileID: 1800814037}
   audioFade: {fileID: 1464559357}
   uiSfxSource: {fileID: 2007743218}
