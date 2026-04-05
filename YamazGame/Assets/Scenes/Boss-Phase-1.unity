@@ -904,6 +904,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 572500198}
     - target: {fileID: 6364294616262943051, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364294616262943051, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 572500205}
@@ -3807,7 +3811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &338197846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -265715,7 +265719,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.7
+  orthographic size: 8.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
