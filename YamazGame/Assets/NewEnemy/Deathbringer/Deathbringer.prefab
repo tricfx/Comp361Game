@@ -494,6 +494,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentTeam: 1
+  charmVFXPrefab: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5, type: 3}
+  charmVFXScale: 0.2
   faceDirection: {fileID: 3009248211403828123}
   detectionRange: {fileID: 8353518750175172719}
   attackRange: {fileID: 9048540828237332598}
@@ -512,6 +514,7 @@ MonoBehaviour:
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
+  _charmedAttackRange: 1.5
   _baseMaxHealth: 80
   _baseMoveSpeed: 5000
   _baseAttackCooldown: 2
