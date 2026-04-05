@@ -91,7 +91,11 @@ public class BossHealth : MonoBehaviour
 
         if (_enemyManager) _enemyManager.UnregisterEnemy();
         Destroy(gameObject, destroyDelay);
-        
+       TimeManager timeManager = FindFirstObjectByType<TimeManager>();
+        if (timeManager != null)
+        {
+            timeManager.StopTimerAndSubmit();
+        } 
         
 
     }
