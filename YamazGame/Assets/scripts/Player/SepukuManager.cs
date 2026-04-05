@@ -36,6 +36,7 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     public void AddEnnemy()
     { 
     AgroEnnmies++;
+    Debug.Log("ennemy added");
     }
     public void RemoveEnnemy()
     {
@@ -86,7 +87,7 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
 
         music.Play();
 
-        // 2️ Show explanation UI with fade
+
         if (SepukuExplanation != null)
         {
             SepukuExplanation.gameObject.SetActive(true);
@@ -109,7 +110,6 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
             SepukuExplanation.blocksRaycasts = true;
         }
 
-        // 3️ Wait 5 seconds fully visible
         yield return new WaitForSeconds(6f);
 
 

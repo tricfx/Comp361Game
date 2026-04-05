@@ -1,3 +1,4 @@
+
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -355,6 +356,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     if (isagro && !isCountedInAgro)
     {
         sepukuManager.AddEnnemy();
+        Debug.Log("agro");
         isCountedInAgro = true;
     }
     else if (!isagro && isCountedInAgro)
