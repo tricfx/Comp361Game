@@ -29,7 +29,8 @@ public class BossHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _enemyManager.RegisterEnemy();
+        _enemyManager = FindFirstObjectByType<EnemyManager>();
+        if (_enemyManager) _enemyManager.RegisterEnemy();
     }
 
     public void TakeDamage(int damage)
@@ -69,7 +70,7 @@ public class BossHealth : MonoBehaviour
         Debug.Log("Boss died!");
         // TODO: trigger death animation, rewards, cutscene etc.
         roomController.UnlockArena();
-        _enemyManager.UnregisterEnemy();
+        if (_enemyManager) _enemyManager.UnregisterEnemy();
         Destroy(gameObject, destroyDelay);
 
     }
