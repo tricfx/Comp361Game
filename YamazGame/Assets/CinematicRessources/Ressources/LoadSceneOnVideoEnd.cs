@@ -27,6 +27,12 @@ public class LoadSceneOnVideoEnd : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer vp)
     {
+        if (SceneManager.GetActiveScene().buildIndex== 12)
+        {
+            if (DataPersistenceManager.instance != null)
+            DataPersistenceManager.instance.NewGame();
+        Destroy(DataPersistenceManager.instance);
+        }
         if(nextSceneName == ""){
              SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

@@ -99,6 +99,12 @@ public class SkipPromptController : MonoBehaviour
 
     void LoadNextScene()
     {
+        if (SceneManager.GetActiveScene().buildIndex== 12)
+        {
+            if (DataPersistenceManager.instance != null)
+            DataPersistenceManager.instance.NewGame();
+        Destroy(DataPersistenceManager.instance);
+        }
         CancelInvoke(nameof(HidePrompt));
         if(nextSceneName == ""){
              SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
