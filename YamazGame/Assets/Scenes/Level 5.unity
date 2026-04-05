@@ -683268,7 +683268,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealth: {fileID: 0}
   healthBarView: {fileID: 0}
-  healthTextView: {fileID: 0}
 --- !u!1001 &1562999792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688397,7 +688396,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8735179352402358602, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: eb24be995f48097499f32cf89d895fb8, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6d28d0fd7774ebd4b99e5307eacd20cf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1

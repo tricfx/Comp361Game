@@ -61428,7 +61428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealth: {fileID: 603009034}
   healthBarView: {fileID: 2061471456}
-  healthTextView: {fileID: 1735404833}
 --- !u!1 &498338289
 GameObject:
   m_ObjectHideFlags: 0
@@ -62387,7 +62386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: maxHealth
-      value: 4000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: deathDelay
@@ -62397,6 +62396,10 @@ PrefabInstance:
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 955800801}
+    - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6839188271553356197, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: gameOverSource
       value: 
@@ -64788,7 +64791,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8735179352402358602, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: ae99d5e23c5ef07408154945a7354a85, type: 3}
+  m_Resource: {fileID: 8300000, guid: eb24be995f48097499f32cf89d895fb8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
@@ -76777,9 +76780,17 @@ PrefabInstance:
       value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: maxHealth
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: levelLoader
       value: 
       objectReference: {fileID: 1616397486}
+    - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: currentHealth
+      value: 20000
+      objectReference: {fileID: 0}
     - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: roomController
       value: 

@@ -365433,7 +365433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealth: {fileID: 0}
   healthBarView: {fileID: 0}
-  healthTextView: {fileID: 0}
 --- !u!1 &1574046496
 GameObject:
   m_ObjectHideFlags: 0

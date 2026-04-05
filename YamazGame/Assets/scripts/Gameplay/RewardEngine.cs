@@ -3,7 +3,7 @@ using UnityEngine;
 public class RewardEngine : MonoBehaviour
 {
     [SerializeField] private float difficultyMod = 1.2f;
-    [SerializeField] private int floorBonusBase = 10;
+    [SerializeField] private int floorBonusBase = 1;
 
     public int Calculate(int floor, int baseKills)
     {

@@ -5,7 +5,6 @@ public class BossHUDController : MonoBehaviour
     [Header("Boss & Views")]
     [SerializeField] private BossHealth bossHealth;
     [SerializeField] private HealthBarView healthBarView;
-    [SerializeField] private HealthTextView healthTextView;
 
     void Update()
     {
@@ -16,7 +15,6 @@ public class BossHUDController : MonoBehaviour
         }
 
         healthBarView.SetHealth(bossHealth.CurrentHealth, bossHealth.MaxHealth);
-        healthTextView.SetHealth(bossHealth.CurrentHealth, bossHealth.MaxHealth);
     }
 }
 
