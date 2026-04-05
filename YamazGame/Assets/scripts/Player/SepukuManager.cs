@@ -12,10 +12,6 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     public CanvasGroup SepukuExplanation;
     public AudioSource music;
 
-    void awake()
-    {
-        DataPersistenceManager.instance.LoadGame();
-    }
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,13 +32,17 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     public void AddEnnemy()
     { 
     AgroEnnmies++;
-    Debug.Log("ennemy added");
+     Debug.Log($"ennemy added on {gameObject.name}, count = {AgroEnnmies}");
     }
     public void RemoveEnnemy()
     {
         AgroEnnmies--;
     }
 
+void upadate()
+    {
+        Debug.Log(AgroEnnmies);
+    }
 
     public void SaveData(ref GameData data)
     {
