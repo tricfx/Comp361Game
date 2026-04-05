@@ -29,8 +29,10 @@ public class LoadSceneOnVideoEnd : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex== 12)
         {
-            if (DataPersistenceManager.instance != null)
+            if (DataPersistenceManager.instance != null){
             DataPersistenceManager.instance.NewGame();
+            DataPersistenceManager.instance.SaveGame();
+            }
         Destroy(DataPersistenceManager.instance);
         }
         if(nextSceneName == ""){
