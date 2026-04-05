@@ -17,7 +17,7 @@ MonoBehaviour:
   cardDescription: Create a vortex pulling in ennemies and damaging them
   icon: {fileID: 3145422626473575850, guid: 5b9fef0a221e2f74cb26e20ef2d1f669, type: 3}
   dependency: 
-  cooldownSeconds: 12
+  cooldownSeconds: 21
   type: 1
   shopCost: 500
   abilityID: Venti
