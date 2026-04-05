@@ -14,12 +14,13 @@ public class BossHealth : MonoBehaviour
     [Header("Hit Flash")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.15f;
+    [SerializeField] private BossRoomController roomController;
 
     [Header("Death")]
     [SerializeField] private float destroyDelay = 1f; // time to let death animation play
 
     private bool isDead = false;
-    public bool IsDead => isDead;
+    public bool IsDead => isDead;    
 
     private void Awake()
     {
@@ -63,7 +64,9 @@ public class BossHealth : MonoBehaviour
         isDead = true;
         Debug.Log("Boss died!");
         // TODO: trigger death animation, rewards, cutscene etc.
+        roomController.UnlockArena();
         Destroy(gameObject, destroyDelay);
+
     }
 
     private IEnumerator HitFlash()
