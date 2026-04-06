@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 7433663762760439250}
   - component: {fileID: 1450571133194013693}
   - component: {fileID: 3574312743132997732}
+  - component: {fileID: 5209666013302579098}
   - component: {fileID: 401043100192670015}
   m_Layer: 8
   m_Name: Deathbringer
@@ -481,6 +482,103 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &5209666013302579098
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906496958910643967}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.15
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &401043100192670015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,11 +595,11 @@ MonoBehaviour:
   faceDirection: {fileID: 3009248211403828123}
   detectionRange: {fileID: 8353518750175172719}
   attackRange: {fileID: 9048540828237332598}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 5209666013302579098}
   moveClip: {fileID: 0}
-  attackClip: {fileID: 0}
-  hurtClip: {fileID: 0}
-  deathClip: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: c6d5edf5afe8f41d8ab975f09e2c8ac4, type: 3}
+  hurtClip: {fileID: 8300000, guid: 473923c7679d24b3c99f7f86bb3aef82, type: 3}
+  deathClip: {fileID: 8300000, guid: b3021a2281871437eb8bec3178ee6d53, type: 3}
   moveVolume: 1
   attackVolume: 1
   hurtVolume: 1
@@ -522,6 +620,8 @@ MonoBehaviour:
   minAttackCooldown: 0.25
   spellSpawner: {fileID: 5272633235159193402}
   meleeRange: {fileID: 1556946929570647878}
+  spellClip: {fileID: 8300000, guid: 7302102a501b648e4831c6f40027e6b1, type: 3}
+  spellVolume: 1
 --- !u!1 &5060381170100823339
 GameObject:
   m_ObjectHideFlags: 0

@@ -88,7 +88,6 @@ public class Wizard : NewEnemy
     {
         GameObject projectile = projectileSpawner.SpawnProjectile();
         ApplyScalingToSpawnedObject(projectile);
-        PlayAttackSound();
     }
 
     public override void Move(Vector2 startPosition, Vector2 targetPosition)
