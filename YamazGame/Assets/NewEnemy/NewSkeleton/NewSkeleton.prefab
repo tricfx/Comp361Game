@@ -298,7 +298,6 @@ MonoBehaviour:
   faceDirection: {fileID: 6919719421441425951}
   detectionRange: {fileID: 3538662739765094555}
   attackRange: {fileID: 1591120705167467719}
-  masterGroup: {fileID: 24300002, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   audioSource: {fileID: 4633241151000046497}
   moveClip: {fileID: 0}
   attackClip: {fileID: 8300000, guid: e4888a7425f054f13ad1a3b812c1caaa, type: 3}
@@ -318,7 +317,7 @@ MonoBehaviour:
   _baseMaxHealth: 40
   _baseMoveSpeed: 4000
   _baseAttackCooldown: 1.5
-  baseGemValue: 5
+  baseGemValue: 1
   healthScalePerLevel: 0.2
   speedScalePerLevel: 0.05
   cooldownReductionPerLevel: 0.04

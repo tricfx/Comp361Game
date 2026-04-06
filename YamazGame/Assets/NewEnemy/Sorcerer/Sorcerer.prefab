@@ -500,7 +500,7 @@ MonoBehaviour:
   _baseMaxHealth: 50
   _baseMoveSpeed: 4000
   _baseAttackCooldown: 2
-  baseGemValue: 5
+  baseGemValue: 1
   healthScalePerLevel: 0.2
   speedScalePerLevel: 0.05
   cooldownReductionPerLevel: 0.04

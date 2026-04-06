@@ -85,6 +85,8 @@ public class CardUIManager : MonoBehaviour
 
     public void OpenRewardScreen()
     {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player"); 
@@ -168,8 +170,6 @@ public class CardUIManager : MonoBehaviour
             if (replacementPanel.activeSelf)
             {
                 rewardPanel.SetActive(false);
-                if (CursorManager.Instance != null)
-                CursorManager.Instance.HideCursor();
                 return;
             }
         }
@@ -190,6 +190,8 @@ public class CardUIManager : MonoBehaviour
 
     public void OpenReplacementUI(AbilityCard newCard)
     {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
         pendingReplacementCard = newCard;
         replacementSlots[0].Setup(player.GetComponent<PlayerActions>().qAbilityCard);
         replacementSlots[1].Setup(player.GetComponent<PlayerActions>().eAbilityCard);
