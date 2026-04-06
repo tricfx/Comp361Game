@@ -70,11 +70,15 @@ public class CardUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+             if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
             OpenRewardScreen();
             BlurOverlay.SetActive(true);
         }
         if(Input.GetKeyDown(KeyCode.T))
         {
+            if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
             OpenReplacementUI(new AbilityCard { cardName = "Test Ability", cardDescription = "This is a test ability.", cardID = "test_ability" });
         }
     }
@@ -164,6 +168,8 @@ public class CardUIManager : MonoBehaviour
             if (replacementPanel.activeSelf)
             {
                 rewardPanel.SetActive(false);
+                if (CursorManager.Instance != null)
+                CursorManager.Instance.HideCursor();
                 return;
             }
         }
@@ -178,6 +184,8 @@ public class CardUIManager : MonoBehaviour
         rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Reroll  ( {rerolls} left )";
         player.GetComponent<PlayerActions>().enabled = true;
         Time.timeScale = 1f;
+        if (CursorManager.Instance != null)
+        CursorManager.Instance.HideCursor();
     }
 
     public void OpenReplacementUI(AbilityCard newCard)
@@ -200,6 +208,8 @@ public class CardUIManager : MonoBehaviour
         replacementPanel.SetActive(false);
         player.GetComponent<PlayerActions>().enabled = true;
         Time.timeScale = 1f;
+         if (CursorManager.Instance != null)
+         CursorManager.Instance.HideCursor();
     }
     
 }
