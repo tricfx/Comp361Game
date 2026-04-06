@@ -510093,7 +510093,7 @@ MonoBehaviour:
   AgroEnnmies: 0
   SepukuEnabled: 0
   SepukuExplanation: {fileID: 623333557}
-  music: {fileID: 44306462}
+  musicSources: []
 --- !u!114 &1332874946080680036 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8315656966709912735, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}

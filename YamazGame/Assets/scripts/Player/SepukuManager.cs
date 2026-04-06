@@ -10,12 +10,24 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     [SerializeField] private int AgroEnnmies = 0;
     [SerializeField] private bool SepukuEnabled = false;
     public CanvasGroup SepukuExplanation;
-    public AudioSource music;
+    public AudioSource[] musicSources;
 
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        GameObject obj = GameObject.Find("GameOverSFX");
+
+        if (obj != null)
+        {
+            musicSources = obj.GetComponents<AudioSource>();
+            Debug.Log($"Found {musicSources.Length} AudioSources on {obj.name}");
+        }
+        else
+        {
+            Debug.Log("GameOverSFX object not found");
+        }
 
         if (DataPersistenceManager.instance != null)
         {
@@ -85,7 +97,14 @@ void upadate()
         }
         yield return new WaitForSeconds(2f);
 
-        music.Play();
+        if (musicSources != null)
+{
+        foreach (AudioSource source in musicSources)
+        {
+            if (source != null)
+                source.Play();
+        }
+    }
 
 
         if (SepukuExplanation != null)
