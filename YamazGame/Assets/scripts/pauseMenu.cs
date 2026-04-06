@@ -43,6 +43,8 @@ public class pauseMenu : MonoBehaviour
                 PauseMenu.gameObject.SetActive(true);
                 openPause.Play();
                 BlurOverlay.SetActive(true);
+                 if (CursorManager.Instance != null)
+                CursorManager.Instance.ShowCursor();
 
                 ReduceTargetAudio();
                 Time.timeScale = 0f;
@@ -113,6 +115,8 @@ public class pauseMenu : MonoBehaviour
         BlurOverlay.SetActive(false);
 
         RestoreTargetAudio();
+         if (CursorManager.Instance != null)
+        CursorManager.Instance.HideCursor();
 
         Time.timeScale = 1f;
         isPaused = false;

@@ -327,6 +327,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
                 _isCharmed = false;
                 CurrentTeam = Team.Enemy;
                 currentTarget = null;
+                
 
                 if (activeCharmVFX != null)
                 {
