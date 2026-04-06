@@ -64,7 +64,10 @@ public class TimeManager : MonoBehaviour
 
         long timeInMS = (long)(time * 1000);
 
-
+        if (BackendManager.Instance.SessionManager.AccessToken == null)
+        {
+            return;
+        }
         StartCoroutine(BackendManager.Instance.SubmitRun(timeInMS, true, () =>
         {
             Debug.Log("Run submitted successfully");
