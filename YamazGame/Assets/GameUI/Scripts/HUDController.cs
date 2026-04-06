@@ -28,10 +28,18 @@ public class HUDController : MonoBehaviour
     {
         if (playerHealth == null)
         {
+             playerHealth = FindFirstObjectByType<PlayerHealth>();
+        if (playerHealth == null)
+        {
             Debug.LogError("HUDController: PlayerHealth reference is NULL.");
             return;
         }
+        }
+         if (playerActions == null)
+    {
+        playerActions = FindFirstObjectByType<PlayerActions>();
         if (playerActions == null) return;
+    }
 
         // Update health bar and health bar text 
         healthBarView.SetHealth(playerHealth.CurrentHealth, playerHealth.MaxHealth);

@@ -44183,6 +44183,7 @@ GameObject:
   - component: {fileID: 1051329999806914657}
   - component: {fileID: 3732600909772915855}
   - component: {fileID: 7343420900840756818}
+  - component: {fileID: -14534584237944257}
   m_Layer: 0
   m_Name: Laser AOE
   m_TagString: Untagged
@@ -49102,6 +49103,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!210 &-14534584237944257
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7974253478801834644}
+  m_Enabled: 1
+  m_SortingLayerID: -306072507
+  m_SortingLayer: 4
+  m_SortingOrder: 100
+  m_SortAtRoot: 0
 --- !u!1 &8066890625319351327
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Welcome : MonoBehaviour
 
     private void Start()
     {
+        CursorManager.Instance.ShowCursor();
          StartCoroutine(BackendManager.Instance.GetBestRuns(
             runs =>
             {

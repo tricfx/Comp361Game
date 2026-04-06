@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class DialogueCharacter
@@ -32,7 +33,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public GameObject interactPrompt;
 
-    private bool hasMet = false;
+    private static bool hasMet = false;
 
     private bool playerInRange = false;
     private PlayerInputHandler input;
@@ -71,6 +72,7 @@ public class DialogueTrigger : MonoBehaviour
         }
         else
         {
+            LoadDefaultSpeaker();
             DialogueManager.Instance.StartChoice(
                 repeat,
                 onYes: () =>
@@ -110,5 +112,16 @@ public class DialogueTrigger : MonoBehaviour
             input = null;
             interactPrompt.SetActive(false);
         }
+    }
+    private void LoadDefaultSpeaker()
+    {
+        var dm = DialogueManager.Instance;
+        if (dm == null) return;
+
+        var character = firstTimeDialogue.dialogueLines[0].character;
+        if (character == null) return;
+
+        dm.characterIcon.sprite = character.icon;
+        dm.characterName.text = "Sherma";
     }
 }

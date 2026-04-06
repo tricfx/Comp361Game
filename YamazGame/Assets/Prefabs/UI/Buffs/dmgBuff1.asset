@@ -19,10 +19,12 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 0
   type: 0
-  shopCost: 33
+  shopCost: 150
   buffID: dmg1
   bonusDamage: 10
   bonusHealth: 0
   bonusSpeed: 0
   dashCooldownDecrease: 0
   dashDistanceBonus: 0
+  critRate: 0
+  critDmg: 0

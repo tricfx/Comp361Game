@@ -32,9 +32,12 @@ public class ImperialGuard : NewEnemy
     {
         if (!CanAttack) return;
 
-        committedDashTarget = detectionRange.PlayerInRange
-            ? detectionRange.PlayerPosition
-            : _lastSeenPlayerPosition;
+        if (CurrentTeam == Team.Ally && CurrentTarget != null)
+            committedDashTarget = CurrentTarget.position;
+        else
+            committedDashTarget = detectionRange.PlayerInRange
+                ? detectionRange.PlayerPosition
+                : _lastSeenPlayerPosition;
 
         CanAttack = false;
         animator.SetTrigger("attack");

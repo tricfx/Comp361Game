@@ -16,42 +16,39 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int levelNumber;
     [SerializeField] private int totalEnemiesToSpawn = 10;
 
-    [Header("Spawn points")]
-    [SerializeField] private Transform[] spawnPoints;
+    [Header("Spawn areas")]
+    [SerializeField] private PolygonCollider2D[] spawnAreas;
 
     public void SpawnEnemies()
     {
+        if (spawnAreas == null || spawnAreas.Length == 0)
+        {
+            Debug.LogError("No spawn areas assigned!");
+            return;
+        }
+
         EnemyManager manager = FindFirstObjectByType<EnemyManager>();
         if (manager != null)
             manager.NotifySpawningStarted();
 
         int availableTypes = Mathf.Min(Mathf.Max(2, levelNumber), allEnemies.Count);
-
-        List<Transform> shuffledSpawnPoints = new List<Transform>(spawnPoints);
-        for (int i = 0; i < shuffledSpawnPoints.Count; i++)
-        {
-            int r = Random.Range(i, shuffledSpawnPoints.Count);
-            Transform tmp = shuffledSpawnPoints[i];
-            shuffledSpawnPoints[i] = shuffledSpawnPoints[r];
-            shuffledSpawnPoints[r] = tmp;
-        }
+        int blockingMask = LayerMask.GetMask("Walls", "Lava");
 
         List<Vector3> usedPositions = new List<Vector3>();
 
         for (int i = 0; i < totalEnemiesToSpawn; i++)
         {
             GameObject prefab = allEnemies[Random.Range(0, availableTypes)].prefab;
-            Transform spawnPoint = shuffledSpawnPoints[i % shuffledSpawnPoints.Count];
 
-            Vector3 spawnPosition = spawnPoint.position;
+            Vector3 spawnPosition = Vector3.positiveInfinity;
 
             for (int attempt = 0; attempt < 15; attempt++)
             {
-                Vector3 candidate = spawnPoint.position + new Vector3(
-                    Random.Range(-8f, 8f),
-                    Random.Range(-8f, 8f),
-                    0
-                );
+                PolygonCollider2D area = spawnAreas[Random.Range(0, spawnAreas.Length)];
+                Vector2 candidate = GetRandomPointInPolygon(area);
+
+                bool nearBlocking = Physics2D.OverlapCircle(candidate, 0.6f, blockingMask) != null;
+                if (nearBlocking) continue;
 
                 bool tooClose = false;
                 foreach (Vector3 used in usedPositions)
@@ -62,16 +59,13 @@ public class EnemySpawner : MonoBehaviour
                         break;
                     }
                 }
+                if (tooClose) continue;
 
-                int blockingMask = LayerMask.GetMask("Walls", "Lava");
-                bool nearCollider = Physics2D.OverlapCircle(candidate, 0.5f, blockingMask) != null;
-
-                if (!tooClose && !nearCollider)
-                {
-                    spawnPosition = candidate;
-                    break;
-                }
+                spawnPosition = candidate;
+                break;
             }
+
+            if (spawnPosition == Vector3.positiveInfinity) continue;
 
             usedPositions.Add(spawnPosition);
 
@@ -79,10 +73,26 @@ public class EnemySpawner : MonoBehaviour
 
             NewEnemy enemy = enemyObject.GetComponent<NewEnemy>();
             if (enemy != null)
-            {
                 enemy.InitializeForLevel(levelNumber);
-            }
         }
+    }
+
+    private Vector2 GetRandomPointInPolygon(PolygonCollider2D polygon)
+    {
+        Bounds bounds = polygon.bounds;
+
+        for (int i = 0; i < 30; i++)
+        {
+            Vector2 candidate = new Vector2(
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(bounds.min.y, bounds.max.y)
+            );
+
+            if (polygon.OverlapPoint(candidate))
+                return candidate;
+        }
+
+        return bounds.center;
     }
 
     private void Start()

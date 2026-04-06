@@ -1,0 +1,113 @@
+using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using System.Text;
+
+
+public class BossHealth : MonoBehaviour
+{
+    [Header("Health")]
+    [SerializeField] public int maxHealth = 500;
+    public int currentHealth;
+    public int CurrentHealth => currentHealth;
+    public int MaxHealth => maxHealth;
+    public LevelLoader levelLoader;
+
+    [Header("Hit Flash")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float flashDuration = 0.15f;
+    [SerializeField] private BossRoomController roomController;
+
+    [Header("Death")]
+    [SerializeField] private float destroyDelay = 1f; // time to let death animation play
+
+    private bool isDead = false;
+    public bool IsDead => isDead;    
+    private EnemyManager _enemyManager;
+
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+        if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _enemyManager = FindFirstObjectByType<EnemyManager>();
+        if (_enemyManager) _enemyManager.RegisterEnemy();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (isDead) return;
+
+        currentHealth -= damage;
+        StartCoroutine(HitFlash());
+
+        if (currentHealth <= 0)
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 9 )
+            {
+                Time.timeScale = 0f;
+                levelLoader.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+            currentHealth = 0;
+            Die();     
+            }
+           
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
+
+    private void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        Debug.Log("Boss died!");
+        // TODO: trigger death animation, rewards, cutscene etc.
+        roomController.UnlockArena();
+        GameObject obj = GameObject.Find("OverworldMusic");
+        if (obj != null)
+        {
+            AudioFader fader = obj.GetComponent<AudioFader>();
+            if (fader != null)
+            {
+                fader.FadeOut(2f);
+            }
+            else
+            {
+                Debug.Log("OverworldMusic has no AudioFader");
+            }
+        }
+        else
+        {
+            Debug.Log("OverworldMusic not found");
+        }
+
+        if (_enemyManager) _enemyManager.UnregisterEnemy();
+        Destroy(gameObject, destroyDelay);
+       TimeManager timeManager = FindFirstObjectByType<TimeManager>();
+        if (timeManager != null)
+        {
+            timeManager.StopTimerAndSubmit();
+        } 
+        
+
+    }
+
+    private IEnumerator HitFlash()
+    {
+        if (spriteRenderer == null) yield break;
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = Color.white;
+    }
+
+    
+}
+

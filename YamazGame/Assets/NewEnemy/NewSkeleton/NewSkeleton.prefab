@@ -83,8 +83,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -771421003
-  m_SortingLayer: 10
+  m_SortingLayerID: -306072507
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7219542275010057529, guid: 3841a0d7f4263417a874b7f21571132d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,7 +96,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &7178906980736412919
 Rigidbody2D:
   serializedVersion: 5
@@ -192,7 +192,7 @@ AudioSource:
   m_GameObject: {fileID: 4153261031417381223}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -293,9 +293,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentTeam: 1
+  charmVFXPrefab: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5, type: 3}
+  charmVFXScale: 0.2
   faceDirection: {fileID: 6919719421441425951}
   detectionRange: {fileID: 3538662739765094555}
   attackRange: {fileID: 1591120705167467719}
+  masterGroup: {fileID: 24300002, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   audioSource: {fileID: 4633241151000046497}
   moveClip: {fileID: 0}
   attackClip: {fileID: 8300000, guid: e4888a7425f054f13ad1a3b812c1caaa, type: 3}
@@ -311,9 +314,11 @@ MonoBehaviour:
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
+  _charmedAttackRange: 1.5
   _baseMaxHealth: 40
   _baseMoveSpeed: 4000
   _baseAttackCooldown: 1.5
+  baseGemValue: 5
   healthScalePerLevel: 0.2
   speedScalePerLevel: 0.05
   cooldownReductionPerLevel: 0.04

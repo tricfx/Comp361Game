@@ -1,3 +1,4 @@
+
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
     private bool _isCharmed = false;
     private float _charmTimer = 0f;
+
+    [SerializeField] private GameObject charmVFXPrefab;
+    [SerializeField] private float charmVFXScale = 1f;
+    private GameObject activeCharmVFX;
 
     public static System.Collections.Generic.List<NewEnemy> allEnemies = new System.Collections.Generic.List<NewEnemy>();
 
@@ -163,6 +168,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected bool _enableIFrames = false;
     [SerializeField] protected float _invincibilityLimit = 0.3f;
     [SerializeField] protected LayerMask _obstacleLayer;
+    [SerializeField] protected float _charmedAttackRange = 1.5f;
 
     public int SpawnLevel { get; private set; } = 1;
     public float DamageMultiplier { get; private set; } = 1f;
@@ -173,6 +179,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] private int _baseMaxHealth = 30;
     [SerializeField] private int _baseMoveSpeed = 2000;
     [SerializeField] private float _baseAttackCooldown = 1f;
+    [SerializeField] private int baseGemValue = 5;
 
     protected int _maxHealth;
     protected int _moveSpeed;
@@ -210,6 +217,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
    protected bool isagro = false;
     private bool isCountedInAgro = false;
     private SepukuManager sepukuManager;
+    private RewardEngine _rewardEngine;
+    private EnemyManager _enemyManager;
 
     public float SlowMultiplier
     {
@@ -242,11 +251,19 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         _currentState = EnemyState.Idle;
         currentTarget = null;
 
-         sepukuManager = FindFirstObjectByType<SepukuManager>();
+        sepukuManager = FindFirstObjectByType<SepukuManager>();
+        _rewardEngine = FindFirstObjectByType<RewardEngine>();
+        _enemyManager = FindFirstObjectByType<EnemyManager>();
+        if (_rewardEngine == null)
+            Debug.LogWarning("NewEnemy: No RewardEngine found in scene — gem rewards will not work.");
 
         if (!allEnemies.Contains(this))
         {
             allEnemies.Add(this);
+        }
+        if (_enemyManager != null)
+        {
+            _enemyManager.RegisterEnemy();
         }
     }
 
@@ -310,6 +327,16 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
                 _isCharmed = false;
                 CurrentTeam = Team.Enemy;
                 currentTarget = null;
+                
+
+                if (activeCharmVFX != null)
+                {
+                    Destroy(activeCharmVFX);
+                    activeCharmVFX = null;
+                }
+
+                if (spriteRenderer != null)
+                    spriteRenderer.color = originalColor;
             }
         }
 
@@ -330,6 +357,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     if (isagro && !isCountedInAgro)
     {
         sepukuManager.AddEnnemy();
+        Debug.Log("agro");
         isCountedInAgro = true;
     }
     else if (!isagro && isCountedInAgro)
@@ -344,6 +372,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         if (!IsAlive)
         {
             Moving = false;
+            return;
+        }
+
+        if (_isCharmed)
+        {
+            HandleCharmedBehavior();
             return;
         }
 
@@ -458,6 +492,53 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
     }
 
+    protected virtual float GetCharmedAttackRange()
+    {
+        CircleCollider2D c = attackRange.GetComponent<CircleCollider2D>();
+        return c != null ? c.radius * attackRange.transform.lossyScale.x : _charmedAttackRange;
+    }
+
+    protected virtual void HandleCharmedBehavior()
+    {
+        // Refresh target if it is gone, dead, or now on the same team 
+        if (currentTarget == null ||
+            !currentTarget.TryGetComponent(out NewEnemy targetEnemy) ||
+            !targetEnemy.IsAlive ||
+            targetEnemy.CurrentTeam == CurrentTeam)
+        {
+            currentTarget = null;
+            NewEnemy next = FindClosestEnemy();
+            if (next != null) currentTarget = next.transform;
+        }
+
+        if (currentTarget == null)
+        {
+            Moving = false;
+            return;
+        }
+
+        float dist = Vector2.Distance(CurrentPosition, currentTarget.position);
+
+        if (dist <= GetCharmedAttackRange() && CanAttack)
+        {
+            Moving = false;
+            FacePlayer(CurrentPosition, currentTarget.position);
+            Attack();
+        }
+        else if (CanMove)
+        {
+            Moving = true;
+            int originalSpeed = _moveSpeed;
+            _moveSpeed = Mathf.RoundToInt(_moveSpeed * _slowMultiplier);
+            Move(CurrentPosition, currentTarget.position);
+            _moveSpeed = originalSpeed;
+        }
+        else
+        {
+            Moving = false;
+        }
+    }
+
     protected Vector2 GetSeparationForce(float radius = 1.0f, float strength = 2f)
     {
         Collider2D[] neighbors = Physics2D.OverlapCircleAll(
@@ -536,6 +617,28 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         NewEnemy targetEnemy = FindClosestEnemy();
         if (targetEnemy != null)
             currentTarget = targetEnemy.transform;
+
+        // Spawn VFX only once per charm (guard against re-charm while active)
+        if (activeCharmVFX == null && charmVFXPrefab != null)
+        {
+            activeCharmVFX = Instantiate(charmVFXPrefab, transform);
+            activeCharmVFX.transform.localPosition = Vector3.zero;
+            activeCharmVFX.transform.localScale = Vector3.one * charmVFXScale;
+
+            ParticleSystemRenderer psRenderer = activeCharmVFX.GetComponent<ParticleSystemRenderer>();
+            if (psRenderer != null)
+            {
+                psRenderer.sortingLayerName = spriteRenderer.sortingLayerName;
+                psRenderer.sortingOrder = spriteRenderer.sortingOrder + 1;
+            }
+
+            ParticleSystem ps = activeCharmVFX.GetComponent<ParticleSystem>();
+            if (ps != null)
+                ps.Play();
+        }
+
+        if (spriteRenderer != null)
+            spriteRenderer.color = new Color(1f, 0.5f, 0.7f); // pink tint
     }
 
     protected NewEnemy FindClosestEnemy()
@@ -630,6 +733,17 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         }
 
         animator.SetBool("alive", false);
+
+        if (_rewardEngine != null && GemManager.Instance != null)
+        {
+            int gems = _rewardEngine.Calculate(SpawnLevel, baseGemValue);
+            GemManager.Instance.AddGems(gems);
+        }
+
+        if (_enemyManager != null)
+        {
+            _enemyManager.UnregisterEnemy();
+        }
     }
 
     public void TakeKnockback(Vector2 knockback)

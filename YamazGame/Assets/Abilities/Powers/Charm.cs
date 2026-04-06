@@ -1,8 +1,16 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Charm : MonoBehaviour, IAbility
 {
+    private static readonly HashSet<string> _blockedScenes = new HashSet<string>
+    {
+        "Boss-Phase-1",
+        "Boss-Phase-2"
+    };
+
     [SerializeField] private float duration = 15f;
     [SerializeField] private float charmDuration = 15f;
     [SerializeField] private float detectionWindow = 4f;
@@ -40,6 +48,8 @@ public class Charm : MonoBehaviour, IAbility
 
     public void Do()
     {
+        if (_blockedScenes.Contains(SceneManager.GetActiveScene().name)) return;
+
         // Stop any previous charm coroutine so timers reset correctly
         StopAllCoroutines();
 
@@ -147,6 +157,7 @@ public class Charm : MonoBehaviour, IAbility
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!detecting) return;
+        if (!other.CompareTag("Enemy")) return;
 
         NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
 

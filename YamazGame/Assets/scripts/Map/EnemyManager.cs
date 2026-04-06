@@ -10,13 +10,11 @@ public class EnemyManager : MonoBehaviour
 
     private int aliveEnemies = 0;
 
-    private void Start()
+    public void Update()
     {
-        UnityEngine.Debug.Log($"Total enemies {aliveEnemies}");
-        if (aliveEnemies == 0)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            UnityEngine.Debug.LogWarning("No enemies registered in scene.");
-            OnAllEnemiesDefeated.Invoke();
+            OnAllEnemiesDefeated?.Invoke();
         }
     }
 

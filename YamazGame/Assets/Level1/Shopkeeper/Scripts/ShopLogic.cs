@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ShopLogic : MonoBehaviour
@@ -19,19 +20,21 @@ public class ShopLogic : MonoBehaviour
 
     private static readonly List<string> sessionCardIDs = new();
     private static readonly HashSet<string> purchasedCardIDs = new();
+    private static string prevSceneName = "";
 
     public static void ResetSessionShop()
     {
         sessionCardIDs.Clear();
         purchasedCardIDs.Clear();
+        prevSceneName = "";
     }
 
     private void Awake()
     {
         CacheReferences();
-        if (sessionCardIDs.Count == 0) GenerateSessionCards();
         HideAllUnavailablePopups();
-        BuildUI();
+        //if (sessionCardIDs.Count == 0) GenerateSessionCards();
+        //BuildUI();
     }
 
     private void OnEnable()
@@ -273,5 +276,62 @@ public class ShopLogic : MonoBehaviour
             if (shopSlots[i] != null)
                 shopSlots[i].HideUnavailablePopup();
         }
+    }
+    public void PrepareShop()
+    {
+        CacheReferences();
+        HideAllUnavailablePopups();
+        string currSceneName = SceneManager.GetActiveScene().name;
+        if (prevSceneName != currSceneName)
+        {
+            sessionCardIDs.Clear();
+            purchasedCardIDs.Clear();
+            prevSceneName = currSceneName;
+        }
+
+        if (sessionCardIDs.Count == 0) GenerateSessionCards();
+        BuildUI();
+    }
+
+    public bool RerollAbilities()
+    {
+        CacheReferences();
+        HideAllUnavailablePopups();
+
+        List<string> newCardIDs = new();
+        HashSet<string> oldCardIDs = new(sessionCardIDs);
+        sessionCardIDs.Clear();
+
+        List<Card> selected = new();
+        int rolls = 0;
+
+        while (selected.Count < 3 && rolls < 500)
+        {
+            Card reward = rewardDatabase.GetRandomReward();
+            rolls++;
+
+            if (oldCardIDs.Contains(reward.cardID))
+                continue;
+
+            if (purchasedCardIDs.Contains(reward.cardID))
+                continue;
+
+            if (!IsValidForShopSelection(reward, selected))
+                continue;
+
+            selected.Add(reward);
+            newCardIDs.Add(reward.cardID);
+        }
+
+        if (newCardIDs.Count < 3)
+        {
+            Debug.LogWarning("on sait jamais");
+            return false;
+        }
+
+        sessionCardIDs.Clear();
+        sessionCardIDs.AddRange(newCardIDs);
+        BuildUI();
+        return true;
     }
 }

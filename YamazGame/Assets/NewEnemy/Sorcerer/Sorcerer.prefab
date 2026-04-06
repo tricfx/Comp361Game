@@ -266,8 +266,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -771421003
-  m_SortingLayer: 10
+  m_SortingLayerID: -306072507
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 3234629978573100161, guid: af4f376679f379545bff2a740b55b846, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -279,7 +279,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &4361058782847826423
 Rigidbody2D:
   serializedVersion: 5
@@ -476,6 +476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentTeam: 1
+  charmVFXPrefab: {fileID: 5766691976136461342, guid: 43d1d06cf70fcb2488255051aaae40a5, type: 3}
+  charmVFXScale: 0.2
   faceDirection: {fileID: 5691801322984428706}
   detectionRange: {fileID: 6548162140870561822}
   attackRange: {fileID: 2800175360439784916}
@@ -494,9 +496,11 @@ MonoBehaviour:
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 16384
+  _charmedAttackRange: 1.5
   _baseMaxHealth: 50
   _baseMoveSpeed: 4000
   _baseAttackCooldown: 2
+  baseGemValue: 5
   healthScalePerLevel: 0.2
   speedScalePerLevel: 0.05
   cooldownReductionPerLevel: 0.04

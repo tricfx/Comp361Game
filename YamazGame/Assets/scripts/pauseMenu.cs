@@ -18,6 +18,7 @@ public class pauseMenu : MonoBehaviour
     public bool isPaused = false;
     private bool inSettings = false;
     private bool inControls = false;
+    private float timeScaleBeforePause = 1f;
 
     [SerializeField] private LevelLoader levelloader;
 
@@ -26,7 +27,7 @@ public class pauseMenu : MonoBehaviour
 
     void Start()
     {
-        levelloader = FindObjectOfType<LevelLoader>();
+        levelloader = FindFirstObjectByType<LevelLoader>();
         PauseMenu.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
@@ -39,10 +40,13 @@ public class pauseMenu : MonoBehaviour
         {
             if (!isPaused)
             {
+                timeScaleBeforePause = Time.timeScale;
                 isPaused = true;
                 PauseMenu.gameObject.SetActive(true);
                 openPause.Play();
                 BlurOverlay.SetActive(true);
+                 if (CursorManager.Instance != null)
+                CursorManager.Instance.ShowCursor();
 
                 ReduceTargetAudio();
                 Time.timeScale = 0f;
@@ -83,6 +87,7 @@ public class pauseMenu : MonoBehaviour
 
     public void pauseMenuScreen()
     {
+        if (!isPaused) timeScaleBeforePause = Time.timeScale;
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
         PauseMenu.gameObject.SetActive(true);
@@ -113,8 +118,10 @@ public class pauseMenu : MonoBehaviour
         BlurOverlay.SetActive(false);
 
         RestoreTargetAudio();
+         if (CursorManager.Instance != null)
+        CursorManager.Instance.HideCursor();
 
-        Time.timeScale = 1f;
+        Time.timeScale = timeScaleBeforePause;
         isPaused = false;
         inSettings = false;
         inControls = false;

@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6149eac2c28c9a44c98fbc0a4a2e065c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 4
+  duration: 8
   playerHealth: {fileID: 0}
   shield: {fileID: 6930007750809856336, guid: e06572983044e8e4abcc10b8b06a7ca0, type: 3}

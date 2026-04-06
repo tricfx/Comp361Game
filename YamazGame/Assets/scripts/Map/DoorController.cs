@@ -5,7 +5,7 @@ public class DoorController : MonoBehaviour
 {
     private Animator animator;
     private Collider2D doorCollider;
-
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -26,7 +26,7 @@ public class DoorController : MonoBehaviour
 
     public void OpenDoor()
     {
-        UnityEngine.Debug.Log("Door Opening");
+        // UnityEngine.Debug.Log("Door Opening");
         animator.SetTrigger("Open");
         doorCollider.enabled = true;
     }

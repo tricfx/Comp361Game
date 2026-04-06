@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine shopFadeCoroutine;
     private float shopOgVolume;
     public VideoPlayer shopkeeperVideo;
+    [SerializeField] private ShopLogic shopLogic;
 
     public AudioSource levelMusic;
     public AudioFadeMemory audioFade;
@@ -125,6 +126,7 @@ public class DialogueManager : MonoBehaviour
 
     private void BeginSession()
     {
+        Time.timeScale = 0f;
         interactPrompt.SetActive(false);
         if (!dialogueWasVisible && uiSfxSource != null && dialogueOpenSfx != null)
             uiSfxSource.PlayOneShot(dialogueOpenSfx);
@@ -200,7 +202,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in line)
         {
             dialogueArea.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSecondsRealtime(typingSpeed);
         }
     }
 
@@ -233,6 +235,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        Time.timeScale = 1f;
         interactPrompt.SetActive(true);
         isDialogueActive = false;
         if (uiSfxSource != null && dialogueCloseSfx != null)
@@ -252,7 +255,6 @@ public class DialogueManager : MonoBehaviour
             audioFade.FadeInAndResume(levelMusic, fadeDuration);
             audioFade.FadeInAndResume(shermaSong, fadeDuration);
         }
-
 
         audioSource.mute = false;
     }
@@ -274,6 +276,7 @@ public class DialogueManager : MonoBehaviour
             continueButton.SetActive(false);
             choicePanel.SetActive(false);
             animator.Play("BoxOut");
+            shopLogic.PrepareShop();
 
             var rt = shopCG.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector2(0f, fader.slideOffset);
