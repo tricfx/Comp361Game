@@ -28,6 +28,12 @@ public class SelectScreen : MonoBehaviour
             return;
         }
 
+
+         if (TimeManager.Instance != null)
+        {
+            TimeManager.Instance.StartNewGame();
+        }
+
         levelLoader.LoadLevel(index);
     }
 
