@@ -3670,8 +3670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -130, y: -130}
-  m_SizeDelta: {x: 220, y: 220}
+  m_AnchoredPosition: {x: -100, y: -120}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &286477984
 PrefabInstance:
@@ -7139,6 +7139,10 @@ PrefabInstance:
     - target: {fileID: 8132300709761762394, guid: fc13e20bb7464b440a98911de9f824c4, type: 3}
       propertyPath: m_Name
       value: Shopkeeper
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132300709761762394, guid: fc13e20bb7464b440a98911de9f824c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9065303465687492410, guid: fc13e20bb7464b440a98911de9f824c4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -554396,7 +554400,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHealth: {fileID: 0}
   healthBarView: {fileID: 0}
-  healthTextView: {fileID: 0}
 --- !u!4 &1552652762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 544600692724046114, guid: 7d6eb168d93fb49b49451a8f825ffab4, type: 3}
@@ -564055,7 +564058,7 @@ MonoBehaviour:
   AgroEnnmies: 0
   SepukuEnabled: 0
   SepukuExplanation: {fileID: 623333557}
-  music: {fileID: 44306462}
+  musicSources: []
 --- !u!114 &1332874946080680036 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8315656966709912735, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}

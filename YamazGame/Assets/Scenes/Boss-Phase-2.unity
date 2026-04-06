@@ -1060,7 +1060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &77745830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -60005,7 +60005,7 @@ MonoBehaviour:
   - Enemy
   - Shopkeeper
   markerPrefabs:
-  - {fileID: 7336215806873925215, guid: d7b30e6fe6c3a184290522cbf4919762, type: 3}
+  - {fileID: 7336215806873925215, guid: bc462216c307f114ebd10768e2acf195, type: 3}
   - {fileID: 1996169620461150089, guid: 7b219929460fb5944ba587f1aca1527d, type: 3}
   scanInterval: 0.5
 --- !u!1 &363124250
@@ -64332,7 +64332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &699104789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64353,8 +64353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -130, y: -130}
-  m_SizeDelta: {x: 220, y: 220}
+  m_AnchoredPosition: {x: -100, y: -120}
+  m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &709523183
 GameObject:
