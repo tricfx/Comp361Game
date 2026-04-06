@@ -62611,7 +62611,7 @@ MonoBehaviour:
   AgroEnnmies: 0
   SepukuEnabled: 0
   SepukuExplanation: {fileID: 1121094114}
-  music: {fileID: 801786961}
+  musicSources: []
 --- !u!114 &512289477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75123,15 +75123,15 @@ RectTransform:
   m_GameObject: {fileID: 1325413712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2061471455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: 800, y: 30}
+  m_AnchoredPosition: {x: 8.6, y: -20}
+  m_SizeDelta: {x: 800, y: 41.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1325413714
 MonoBehaviour:
@@ -78400,8 +78400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 900, y: 90}
+  m_AnchoredPosition: {x: 32.1, y: 28.3}
+  m_SizeDelta: {x: 902.01, y: 209.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700472965
 MonoBehaviour:
@@ -78423,7 +78423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -952564866555739902, guid: 9082f0f35a7e4405bbfcda1490a75d2b, type: 3}
+  m_Sprite: {fileID: -7920038301615152136, guid: 0732e47f326da6b4ca7fc645ef4eef33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
