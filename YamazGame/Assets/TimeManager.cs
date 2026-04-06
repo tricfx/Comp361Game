@@ -35,6 +35,12 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+             if (timerTextGroup != null)
+            timerTextGroup.alpha = 0f;
+        }
+
         if (!countTime || SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 0) return;
 
         if (timerTextGroup != null) timerTextGroup.alpha = 1f;
@@ -47,9 +53,9 @@ public class TimeManager : MonoBehaviour
             timeText.text = $"{minutes:00}:{seconds:00}";
 
         if (Input.GetKeyDown(KeyCode.B))
-{
-   StopTimerAndSubmit();
-}
+        {
+        StopTimerAndSubmit();
+        }
     }
 
     public void StartNewGame()
