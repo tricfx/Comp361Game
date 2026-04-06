@@ -27,4 +27,4 @@ MonoBehaviour:
   dashCooldownDecrease: 0
   dashDistanceBonus: 0
   critRate: 0
-  critDmg: 2
+  critDmg: 0.5

@@ -17,7 +17,7 @@ MonoBehaviour:
   cardDescription: Charm one ennemy and turn them into an ally for 20 seconds
   icon: {fileID: 9111962250586777772, guid: 79371de7dd3be2a429cb6e4fde7ae8d6, type: 3}
   dependency: 
-  cooldownSeconds: 15
+  cooldownSeconds: 25
   type: 1
   shopCost: 500
   abilityID: Charm
