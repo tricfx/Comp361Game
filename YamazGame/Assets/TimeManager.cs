@@ -40,8 +40,8 @@ public class TimeManager : MonoBehaviour
              if (timerTextGroup != null)
             timerTextGroup.alpha = 0f;
         }
-
-        if (!countTime || SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 0) return;
+        int i = SceneManager.GetActiveScene().buildIndex;
+        if (!countTime ||i == 1 || i == 0 || i = 8|| i = 10|| i = 12) return;
 
         if (timerTextGroup != null) timerTextGroup.alpha = 1f;
         time += Time.deltaTime;
