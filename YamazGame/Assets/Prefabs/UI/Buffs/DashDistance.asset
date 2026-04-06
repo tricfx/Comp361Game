@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 0
   type: 0
-  shopCost: 150
+  shopCost: 400
   buffID: DashDistance
   bonusDamage: 0
   bonusHealth: 0

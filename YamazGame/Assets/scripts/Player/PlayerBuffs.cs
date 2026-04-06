@@ -5,7 +5,7 @@ public class PlayerBuffs : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private BuffDatabase buffDatabase;
 
-    private List<string> activeBuffs = new List<string>();
+    public List<string> activeBuffs = new List<string>();
     public List<string> ActiveBuffs => activeBuffs;
 
     private bool buffsAppliedFromLoad = false;
@@ -23,6 +23,7 @@ public class PlayerBuffs : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
+         Debug.Log("PlayerBuffs SaveData called. Buff count: " + activeBuffs.Count);
         data.buffs = activeBuffs != null
             ? activeBuffs.ToArray()
             : new string[0];

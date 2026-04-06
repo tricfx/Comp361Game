@@ -268596,6 +268596,10 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 5500423786111780523, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: attackDamage
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5634385132299863309, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
       value: 0.42717484
@@ -268807,6 +268811,18 @@ PrefabInstance:
     - target: {fileID: 8294099538363740678, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724187955840502114, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: swordSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724187955840502114, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: safeZoneRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724187955840502114, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: rangedAttackDuration
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8879521611596795597, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: attackDamage
