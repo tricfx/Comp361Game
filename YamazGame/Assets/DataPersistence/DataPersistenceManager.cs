@@ -58,15 +58,23 @@ public class DataPersistenceManager : MonoBehaviour
         {
             this.gameData = new GameData();
              dataHandler.Save(this.gameData);
-        }
+        }        
 
         if (BackendManager.Instance.SessionManager.AccessToken != null)
         {
 
             StartCoroutine(BackendManager.Instance.GetPlayerState(
-                () =>
+                state =>
                 {
-                    dataHandler.Save(this.gameData);
+                    gameData = new GameData
+                    {
+                        sceneIndex = state.scene_number,
+                        gemsCollected = state.gems_amount,
+                        abilities = state.abilities,
+                        left_during_combat = state.left_during_combat,
+                        buffs = state.buffs
+                    };
+                    dataHandler.Save(gameData);
                 }
             ));
         }
@@ -84,6 +92,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(ref gameData);
         }
+
         dataHandler.Save(gameData);
         if (BackendManager.Instance.SessionManager.AccessToken != null)
         {
@@ -96,12 +105,19 @@ public class DataPersistenceManager : MonoBehaviour
                 new_buffs = gameData.buffs
             };
             StartCoroutine(BackendManager.Instance.UpdatePlayerState(playerState));
+            
         }
         
     }
     private void OnApplicationQuit()
     {
         SaveGame();
+        if (BackendManager.Instance.SessionManager.AccessToken != null)
+        {
+            StartCoroutine(BackendManager.Instance.SignOut(
+            () => Debug.Log("Signed out successfully on application quit")
+            ));
+        }
     }
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {

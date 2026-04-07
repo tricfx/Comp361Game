@@ -131,6 +131,13 @@ public class pauseMenu : MonoBehaviour
     {
         if (DataPersistenceManager.instance != null)
             DataPersistenceManager.instance.SaveGame();
+            if (BackendManager.Instance.SessionManager.AccessToken != null)
+            {
+                StartCoroutine(BackendManager.Instance.SignOut(() =>
+                {
+                    Debug.Log("Sign out successful");
+                }));
+            }
         Destroy(DataPersistenceManager.instance);
          Time.timeScale = 1f;
        levelloader.LoadLevel(0);

@@ -132,7 +132,7 @@ public class BackendManager : MonoBehaviour
     {
         Debug.Log("Updating player state");
         yield return GameClient.UpdatePlayerState(SessionManager.AccessToken, newState,
-        _ =>
+        response =>
         {
             Debug.Log("Player state updated successfully");
         },
@@ -143,23 +143,14 @@ public class BackendManager : MonoBehaviour
         );
     }
 
-    public IEnumerator GetPlayerState(Action onSuccess)
+    public IEnumerator GetPlayerState(Action<PlayerStateResponse> onSuccess)
     {
         Debug.Log("Fetching player state");
         yield return GameClient.GetPlayerState(SessionManager.AccessToken,
         response =>
         {
-            GameData data = new GameData
-            {
-                sceneIndex = response.scene_number,
-                gemsCollected = response.gems_amount,
-                abilities = response.abilities,
-                left_during_combat = response.left_during_combat,
-                buffs = response.buffs
-            };
-
-            DataPersistenceManager.instance.gameData = data;
-            onSuccess?.Invoke();
+        
+            onSuccess?.Invoke(response);
         },
         error =>
         {
