@@ -7,7 +7,7 @@ public class RewardEngine : MonoBehaviour
 
     public int Calculate(int floor, int baseKills)
     {
-        int floorBonus = floor * floorBonusBase * 0.7;
+        int floorBonus = Mathf.RoundToInt(floor * floorBonusBase * 0.7f);
         int total = Mathf.RoundToInt((baseKills * difficultyMod) + floorBonus);
         return total;
     }
