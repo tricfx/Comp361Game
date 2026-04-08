@@ -28,7 +28,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue firstTimeDialogue;
 
     [Header("Repeat line")]
-    public string repeat = "Hell has rewarded you again… Will you claim what it offers through me?";
+    public string repeat = "Hell has rewarded you againï¿½ Will you claim what it offers through me?";
     public string noLine = "Then go. The chambers will test you further.";
 
     public GameObject interactPrompt;
@@ -84,6 +84,8 @@ public class DialogueTrigger : MonoBehaviour
                 onNo: () =>
                 {
                     DialogueManager.Instance.StartSingleLine(noLine);
+                    if (CursorManager.Instance != null)
+                     CursorManager.Instance.ShowCursor();
                 }
             );
         }

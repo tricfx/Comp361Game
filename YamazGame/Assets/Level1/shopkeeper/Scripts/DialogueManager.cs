@@ -237,8 +237,6 @@ public class DialogueManager : MonoBehaviour
         closeInstant = true;
         noAction?.Invoke();
         yesAction = noAction = null;
-        if (CursorManager.Instance != null)
-            CursorManager.Instance.HideCursor();
     }
 
     private void EndDialogue()
