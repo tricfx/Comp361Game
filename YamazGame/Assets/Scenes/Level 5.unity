@@ -661741,7 +661741,7 @@ Transform:
   m_GameObject: {fileID: 887897576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 206.42253, y: -166.90646, z: -20}
+  m_LocalPosition: {x: 206.418, y: -166.90651, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -663487,7 +663487,7 @@ MonoBehaviour:
   - prefab: {fileID: 8626399099273824282, guid: 390dff50e5189e445969332195c56f8a, type: 3}
   - prefab: {fileID: 2906496958910643967, guid: 3ac899b4aa371d543b42c74b4908c529, type: 3}
   levelNumber: 5
-  totalEnemiesToSpawn: 80
+  totalEnemiesToSpawn: 65
   spawnAreas:
   - {fileID: 1481373164}
   - {fileID: 341809501}

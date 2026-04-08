@@ -23,6 +23,9 @@ public class Charm : MonoBehaviour, IAbility
     public ParticleSystem charm;
     private ParticleSystem charmInstance;
 
+    [SerializeField] private int maxCharmedEnemies = 5;
+    private int charmedCount = 0;
+
     private float detectionTimer = 0f;
     private bool detecting = false;
 
@@ -60,6 +63,7 @@ public class Charm : MonoBehaviour, IAbility
                 rangeAuraInstance.SetActive(true);
             detectionTimer = 0f;
             detecting = true;
+            charmedCount = 0;
         }
 
         StartCoroutine(CharmOverTime());
@@ -140,8 +144,9 @@ public class Charm : MonoBehaviour, IAbility
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!detecting) return;
+        if (charmedCount >= maxCharmedEnemies) return;
 
-        if (!other.CompareTag("Enemy")) return; // Do not collide with things that are not enemies 
+        if (!other.CompareTag("Enemy")) return; // Do not collide with things that are not enemies
 
         NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
         if (enemy != null)
@@ -150,6 +155,7 @@ public class Charm : MonoBehaviour, IAbility
             if (dist <= charmRange)
             {
                 enemy.ApplyCharm(charmDuration);
+                charmedCount++;
             }
         }
     }
@@ -157,6 +163,7 @@ public class Charm : MonoBehaviour, IAbility
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!detecting) return;
+        if (charmedCount >= maxCharmedEnemies) return;
         if (!other.CompareTag("Enemy")) return;
 
         NewEnemy enemy = other.GetComponentInParent<NewEnemy>();
@@ -167,6 +174,7 @@ public class Charm : MonoBehaviour, IAbility
             if (dist <= charmRange)
             {
                 enemy.ApplyCharm(charmDuration);
+                charmedCount++;
             }
         }
     }
