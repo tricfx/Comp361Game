@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: speed2
   cooldownSeconds: 0
   type: 0
-  shopCost: 400
+  shopCost: 500
   buffID: speed3
   bonusDamage: 0
   bonusHealth: 0

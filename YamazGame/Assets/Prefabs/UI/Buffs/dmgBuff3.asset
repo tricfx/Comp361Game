@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: dmg2
   cooldownSeconds: 0
   type: 0
-  shopCost: 400
+  shopCost: 500
   buffID: dmg3
   bonusDamage: 20
   bonusHealth: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: heal1
   cooldownSeconds: 0
   type: 0
-  shopCost: 400
+  shopCost: 500
   buffID: heal2
   bonusDamage: 0
   bonusHealth: 30
