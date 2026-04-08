@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9afdda635c9f210448e76acf975f527d
+guid: 2139beae667cda74cbba77ed369da99e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8063375998118790642
-    second: settings_ingame2_cropped_0
+      213: 5438606444978746488
+    second: main_menu_finall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: settings_ingame2_cropped_0
+      name: main_menu_finall_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 163
-        width: 1127
-        height: 863
+        y: 0
+        width: 4096
+        height: 2728
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f5084aafbdd6ef60800000000000000
-      internalID: 8063375998118790642
+      spriteID: 874bb1a2fbfc97b40800000000000000
+      internalID: 5438606444978746488
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      settings_ingame2_cropped_0: 8063375998118790642
+      main_menu_finall_0: 5438606444978746488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

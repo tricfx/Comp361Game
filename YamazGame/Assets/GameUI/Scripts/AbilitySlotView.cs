@@ -18,6 +18,7 @@ public class AbilitySlotView : MonoBehaviour {
 
     [SerializeField] private AudioSource cooldownAudio;
     [SerializeField] private AudioSource abilityPressed;
+    private PlayerActions playerActions;
     private bool isOnCooldown;
 
     private void Start()
@@ -25,7 +26,7 @@ public class AbilitySlotView : MonoBehaviour {
         var player = GameObject.FindGameObjectWithTag("Player");
         if (player == null) return;
 
-        var playerActions = player.GetComponent<PlayerActions>();
+        playerActions = player.GetComponent<PlayerActions>();
         if (playerActions == null) return;
 
         if (isQSlot && playerActions.qAbilityCard != null)
@@ -42,20 +43,32 @@ public class AbilitySlotView : MonoBehaviour {
         if (isQSlot && Input.GetKeyDown(KeyCode.Q))
         {
             PlayPressedEffect();
-            if (isOnCooldown) cooldownAudio.Play();
-            else abilityPressed.Play();
+
+            if (!HasEquippedAbility() || isOnCooldown)
+                cooldownAudio.Play();
+            else
+                abilityPressed.Play();
         }
         else if (!isQSlot && Input.GetKeyDown(KeyCode.E))
         {
             PlayPressedEffect();
-            if (isOnCooldown) cooldownAudio.Play();
-            else abilityPressed.Play();
+
+            if (!HasEquippedAbility() || isOnCooldown)
+                cooldownAudio.Play();
+            else
+                abilityPressed.Play();
         }
     }
 
     // 0 = on cooldown, 1 = ready (HUDController passes player's cooldown value)
     public void SetCooldownNormalized(float normalized){
         if (cooldownFillImage == null) return;
+        if (!HasEquippedAbility())
+        {
+            cooldownFillImage.fillAmount = 0f;
+            isOnCooldown = false;
+            return;
+        }
         // overlay full when on cooldown, empty when ready
         float fill = 1f - normalized;
         cooldownFillImage.fillAmount = Mathf.Clamp01(fill);
@@ -86,5 +99,13 @@ public class AbilitySlotView : MonoBehaviour {
         yield return new WaitForSeconds(pressedDuration);
         keyImage.sprite = normalKeySprite;
         pressedRoutine = null;
+    }
+    private bool HasEquippedAbility()
+    {
+        if (playerActions == null) return false;
+
+        return isQSlot
+            ? playerActions.qAbilityCard != null
+            : playerActions.eAbilityCard != null;
     }
 }

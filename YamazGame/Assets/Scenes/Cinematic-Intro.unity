@@ -4718,7 +4718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 648, y: -409}
+  m_AnchoredPosition: {x: 648, y: -393}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808390859
@@ -4741,7 +4741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press x to skip
+  m_text: Press  <size=30><b>x</b></size> to skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78fa57836e7908746b11f9e26e1175b0, type: 2}
   m_sharedMaterial: {fileID: -8024455288437142836, guid: 78fa57836e7908746b11f9e26e1175b0, type: 2}

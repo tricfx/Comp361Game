@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 8
   playerHealth: {fileID: 0}
+  shieldOffset: {x: 0.05, y: -0.2, z: 0}
   shield: {fileID: 6930007750809856336, guid: e06572983044e8e4abcc10b8b06a7ca0, type: 3}

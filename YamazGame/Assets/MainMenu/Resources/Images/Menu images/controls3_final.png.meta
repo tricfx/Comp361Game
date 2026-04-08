@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 05ae3923849c25248ad119cde6fb5418
+guid: ec15af4dd7667d745be879831e58aa1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -519052415876542791
-    second: scroll_0
-  - first:
-      213: 4792454202395124893
-    second: scroll_1
+      213: 6501611262579769546
+    second: controls3_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scroll_0
+      name: controls3_final_0
       rect:
         serializedVersion: 2
-        x: 180
-        y: 102
-        width: 648
-        height: 492
+        x: 0
+        y: 0
+        width: 4096
+        height: 2728
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9becedbe394fbc8f0800000000000000
-      internalID: -519052415876542791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: scroll_1
-      rect:
-        serializedVersion: 2
-        x: 959
-        y: 24
-        width: 41
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d94e610a4b7328240800000000000000
-      internalID: 4792454202395124893
+      spriteID: ac00fbd0ffc5a3a50800000000000000
+      internalID: 6501611262579769546
       vertices: []
       indices: 
       edges: []
@@ -160,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scroll_0: -519052415876542791
-      scroll_1: 4792454202395124893
+      controls3_final_0: 6501611262579769546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -350388,6 +350388,7 @@ MonoBehaviour:
   replacementPanel: {fileID: 656867644}
   rerollButton: {fileID: 298732911}
   BlurOverlay: {fileID: 604476229}
+  abilityEquipAudioSource: {fileID: 1447478455}
   player: {fileID: 1690713646}
 --- !u!4 &801964912
 Transform:
@@ -350941,7 +350942,7 @@ Transform:
   m_GameObject: {fileID: 887897576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.535647, y: 44.24406, z: -10}
+  m_LocalPosition: {x: 7.7645664, y: 44.14133, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -360981,7 +360982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b36faca0b3442a695f5bc4e98128bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingGems: 0
+  startingGems: 1999999
 --- !u!4 &1098369466
 Transform:
   m_ObjectHideFlags: 0
@@ -507200,7 +507201,7 @@ PrefabInstance:
     - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: abilityEquipAudioSource
       value: 
-      objectReference: {fileID: 1447478455}
+      objectReference: {fileID: 0}
     - target: {fileID: 4395188340007543857, guid: ab84731c92855480997c2bcfe2cd4d30, type: 3}
       propertyPath: 'runSounds.Array.data[0]'
       value: 

@@ -15,6 +15,7 @@ public class CardUIManager : MonoBehaviour
     public GameObject replacementPanel;
     public Button rerollButton;
     public GameObject BlurOverlay;
+    [SerializeField] private AudioSource abilityEquipAudioSource;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -178,6 +179,7 @@ public class CardUIManager : MonoBehaviour
             reward.Apply(player);
         }
 
+        abilityEquipAudioSource.Play();
         rewardPanel.SetActive(false);
         BlurOverlay.SetActive(false);
         rerolls = 3;
@@ -205,6 +207,7 @@ public class CardUIManager : MonoBehaviour
         var playerActions = player.GetComponent<PlayerActions>();
 
         playerActions.ReplaceAbilitySlot(replaceQ, pendingReplacementCard);
+        abilityEquipAudioSource.Play();
 
         pendingReplacementCard = null;
         replacementPanel.SetActive(false);
