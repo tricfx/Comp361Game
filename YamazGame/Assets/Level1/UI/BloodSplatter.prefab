@@ -95,5 +95,5 @@ MonoBehaviour:
   perfectFitAtHpPercent: 0.2
   retractBelowHP: 60
   retractDelay: 8
-  expandSpeed: 1
+  expandSpeed: 1.45
   retractSpeed: 1
