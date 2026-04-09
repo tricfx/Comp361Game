@@ -547,7 +547,7 @@ MonoBehaviour:
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: Empty? No. Dead, maybe. Silent, sometimes. But never empty.
+      line: "Empty? That\u2019s exactly how it fools you."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -555,8 +555,8 @@ MonoBehaviour:
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "A prison. A trial. Depends who you ask. For you, it\u2019s the place
-        standing between you and the surface."
+      line: Some call it a prison, others call it a trial. Either way, it stands
+        between you and the surface.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -577,11 +577,11 @@ MonoBehaviour:
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "So if even one creature is left alive, I\u2019m stuck here?"
+      line: I have to ask... why me?
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: Exactly. No shortcuts. You clear the chamber, or the chamber buries you.
+      line: Because you were chosen to endure it.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -593,11 +593,11 @@ MonoBehaviour:
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "What\u2019s that supposed to mean?"
+      line: "Uhuh.. and what\u2019s that supposed to mean?"
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "There\u2019s power in you. Old power. The kind this place recognizes."
+      line: "There\u2019s power in you, the kind this place recognizes."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -614,7 +614,7 @@ MonoBehaviour:
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: Not out of kindness. Think of it as a test. Or bait.
+      line: Not out of kindness. Think of it as a test... or bait.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -622,17 +622,15 @@ MonoBehaviour:
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: Exactly. Choose well. Not every gift is worth the cost.
+      line: Exactly. Choose well. The right choice makes the difference.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: And all of this is for one thing. Get stronger, keep moving, and get
-        out.
+      line: "And what if I don\u2019t make it through a chamber?"
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "That\u2019s the point of it. Survive Hell, carve a path through it,
-        and escape."
+      line: Then you'll join everyone else this place has already taken.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -672,6 +670,10 @@ MonoBehaviour:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
       line: "So you\u2019re a merchant too?"
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: ...
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}

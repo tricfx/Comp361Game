@@ -151,6 +151,8 @@ public class pauseMenu : MonoBehaviour
 
     public void LeavingControls()
     {
+        Controls.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(true);
         inControls = false;
         inSettings = true;
     }
