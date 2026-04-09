@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Text;
 
+
 public class BossHealth : MonoBehaviour
 {
     [Header("Health")]
@@ -70,8 +71,32 @@ public class BossHealth : MonoBehaviour
         Debug.Log("Boss died!");
         // TODO: trigger death animation, rewards, cutscene etc.
         roomController.UnlockArena();
+        GameObject obj = GameObject.Find("OverworldMusic");
+        if (obj != null)
+        {
+            AudioFader fader = obj.GetComponent<AudioFader>();
+            if (fader != null)
+            {
+                fader.FadeOut(2f);
+            }
+            else
+            {
+                Debug.Log("OverworldMusic has no AudioFader");
+            }
+        }
+        else
+        {
+            Debug.Log("OverworldMusic not found");
+        }
+
         if (_enemyManager) _enemyManager.UnregisterEnemy();
         Destroy(gameObject, destroyDelay);
+       TimeManager timeManager = FindFirstObjectByType<TimeManager>();
+        if (timeManager != null)
+        {
+            timeManager.StopTimerAndSubmit();
+        } 
+        
 
     }
 
@@ -82,4 +107,7 @@ public class BossHealth : MonoBehaviour
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = Color.white;
     }
+
+    
 }
+

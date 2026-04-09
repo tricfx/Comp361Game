@@ -35,8 +35,16 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (!countTime || SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 0) return;
+         int i = SceneManager.GetActiveScene().buildIndex;
 
+        if (i == 0)
+        {
+            if (timerTextGroup != null)
+                timerTextGroup.alpha = 0f;
+        }
+
+        if (!countTime || i == 1 || i == 0 || i == 8 || i == 10 || i == 12)
+            return;
         if (timerTextGroup != null) timerTextGroup.alpha = 1f;
         time += Time.deltaTime;
 
@@ -47,9 +55,9 @@ public class TimeManager : MonoBehaviour
             timeText.text = $"{minutes:00}:{seconds:00}";
 
         if (Input.GetKeyDown(KeyCode.B))
-{
-   StopTimerAndSubmit();
-}
+        {
+        StopTimerAndSubmit();
+        }
     }
 
     public void StartNewGame()
@@ -64,7 +72,10 @@ public class TimeManager : MonoBehaviour
 
         long timeInMS = (long)(time * 1000);
 
-
+        if (BackendManager.Instance.SessionManager.AccessToken == null)
+        {
+            return;
+        }
         StartCoroutine(BackendManager.Instance.SubmitRun(timeInMS, true, () =>
         {
             Debug.Log("Run submitted successfully");

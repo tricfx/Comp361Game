@@ -15,6 +15,7 @@ public class CardUIManager : MonoBehaviour
     public GameObject replacementPanel;
     public Button rerollButton;
     public GameObject BlurOverlay;
+    [SerializeField] private AudioSource abilityEquipAudioSource;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -70,17 +71,23 @@ public class CardUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+             if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
             OpenRewardScreen();
             BlurOverlay.SetActive(true);
         }
         if(Input.GetKeyDown(KeyCode.T))
         {
+            if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
             OpenReplacementUI(new AbilityCard { cardName = "Test Ability", cardDescription = "This is a test ability.", cardID = "test_ability" });
         }
     }
 
     public void OpenRewardScreen()
     {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player"); 
@@ -172,16 +179,21 @@ public class CardUIManager : MonoBehaviour
             reward.Apply(player);
         }
 
+        abilityEquipAudioSource.Play();
         rewardPanel.SetActive(false);
         BlurOverlay.SetActive(false);
         rerolls = 3;
         rerollButton.GetComponentInChildren<TextMeshProUGUI>().text = $"Reroll  ( {rerolls} left )";
         player.GetComponent<PlayerActions>().enabled = true;
         Time.timeScale = 1f;
+        if (CursorManager.Instance != null)
+        CursorManager.Instance.HideCursor();
     }
 
     public void OpenReplacementUI(AbilityCard newCard)
     {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
         pendingReplacementCard = newCard;
         replacementSlots[0].Setup(player.GetComponent<PlayerActions>().qAbilityCard);
         replacementSlots[1].Setup(player.GetComponent<PlayerActions>().eAbilityCard);
@@ -195,11 +207,14 @@ public class CardUIManager : MonoBehaviour
         var playerActions = player.GetComponent<PlayerActions>();
 
         playerActions.ReplaceAbilitySlot(replaceQ, pendingReplacementCard);
+        abilityEquipAudioSource.Play();
 
         pendingReplacementCard = null;
         replacementPanel.SetActive(false);
         player.GetComponent<PlayerActions>().enabled = true;
         Time.timeScale = 1f;
+         if (CursorManager.Instance != null)
+         CursorManager.Instance.HideCursor();
     }
     
 }

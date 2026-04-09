@@ -11,6 +11,7 @@ public class Welcome : MonoBehaviour
 
     private void Start()
     {
+        CursorManager.Instance.ShowCursor();
          StartCoroutine(BackendManager.Instance.GetBestRuns(
             runs =>
             {
@@ -25,7 +26,7 @@ public class Welcome : MonoBehaviour
     {
         if (Input.anyKey && !notfirst)
         {
-            sfx.Play();
+            sfx.PlayDelayed(0.3f);
             notfirst = true;
             Fader.StartFade(welcome, next);
            

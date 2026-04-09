@@ -49,7 +49,7 @@ MonoBehaviour:
   boundMargin: 3
   duration: 5
   hitRadius: 3
-  damageMultiplier: 1.5
+  damageMultiplier: 1.8
   playerHealth: {fileID: 0}
   playerHurtbox: {fileID: 0}
   effectRotationEuler: {x: 33.31, y: -0.84, z: 0}

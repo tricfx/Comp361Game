@@ -113,7 +113,7 @@ public class PlayerHealth : MonoBehaviour
         AudioListener.pause = false;
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+            2
         );
     }
 

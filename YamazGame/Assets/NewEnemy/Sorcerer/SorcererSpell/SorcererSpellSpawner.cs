@@ -10,4 +10,9 @@ public class SorcererSpellSpawner : MonoBehaviour
         if (!detectionRange.PlayerInRange) return null;
         return Instantiate(spellPrefab, detectionRange.PlayerPosition, Quaternion.identity);
     }
+
+    public GameObject SpawnSpellAt(Vector2 targetPosition)
+    {
+        return Instantiate(spellPrefab, targetPosition, Quaternion.identity);
+    }
 }

@@ -18,6 +18,7 @@ public class pauseMenu : MonoBehaviour
     public bool isPaused = false;
     private bool inSettings = false;
     private bool inControls = false;
+    private float timeScaleBeforePause = 1f;
 
     [SerializeField] private LevelLoader levelloader;
 
@@ -39,10 +40,13 @@ public class pauseMenu : MonoBehaviour
         {
             if (!isPaused)
             {
+                timeScaleBeforePause = Time.timeScale;
                 isPaused = true;
                 PauseMenu.gameObject.SetActive(true);
                 openPause.Play();
                 BlurOverlay.SetActive(true);
+                 if (CursorManager.Instance != null)
+                CursorManager.Instance.ShowCursor();
 
                 ReduceTargetAudio();
                 Time.timeScale = 0f;
@@ -83,6 +87,7 @@ public class pauseMenu : MonoBehaviour
 
     public void pauseMenuScreen()
     {
+        if (!isPaused) timeScaleBeforePause = Time.timeScale;
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
         PauseMenu.gameObject.SetActive(true);
@@ -113,8 +118,10 @@ public class pauseMenu : MonoBehaviour
         BlurOverlay.SetActive(false);
 
         RestoreTargetAudio();
+         if (CursorManager.Instance != null)
+        CursorManager.Instance.HideCursor();
 
-        Time.timeScale = 1f;
+        Time.timeScale = timeScaleBeforePause;
         isPaused = false;
         inSettings = false;
         inControls = false;
@@ -124,6 +131,13 @@ public class pauseMenu : MonoBehaviour
     {
         if (DataPersistenceManager.instance != null)
             DataPersistenceManager.instance.SaveGame();
+            if (BackendManager.Instance.SessionManager.AccessToken != null)
+            {
+                StartCoroutine(BackendManager.Instance.SignOut(() =>
+                {
+                    Debug.Log("Sign out successful");
+                }));
+            }
         Destroy(DataPersistenceManager.instance);
          Time.timeScale = 1f;
        levelloader.LoadLevel(0);
@@ -137,6 +151,8 @@ public class pauseMenu : MonoBehaviour
 
     public void LeavingControls()
     {
+        Controls.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(true);
         inControls = false;
         inSettings = true;
     }

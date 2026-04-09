@@ -13,6 +13,11 @@ public class SoundManager : MonoBehaviour
     public float radius = 5f;
     public float minVolume = 0f;
 
+    [Header("Heartbeat Speed")]
+    public float level1HeartbeatPitch = 1f;
+    public float level2HeartbeatPitch = 1.15f;
+    public float level3HeartbeatPitch = 1.30f;
+
     [Header("Low Health Effect")]
     public AudioSource heartbeatSource;
     public CanvasGroup lowHealthHaze;
@@ -59,6 +64,7 @@ public class SoundManager : MonoBehaviour
             heartbeatSource.playOnAwake = false;
             heartbeatSource.loop = true;
             heartbeatSource.volume = 0f;
+            heartbeatSource.pitch = 1f;
         }
 
         if (lowHealthHaze != null)
@@ -121,6 +127,7 @@ public class SoundManager : MonoBehaviour
         if (heartbeatSource != null)
         {
             heartbeatSource.volume = 0f;
+            heartbeatSource.pitch = 1f;
             heartbeatSource.Stop();
         }
 
@@ -135,26 +142,29 @@ public class SoundManager : MonoBehaviour
         float targetMusicMultiplier = level1MusicMultiplier;
         float targetHeartbeatVolume = level1HeartbeatVolume;
         float targetHazeAlpha = level1HazeAlpha;
+        float targetHeartbeatPitch = level1HeartbeatPitch;
 
         if (level == 2)
         {
             targetMusicMultiplier = level2MusicMultiplier;
             targetHeartbeatVolume = level2HeartbeatVolume;
             targetHazeAlpha = level2HazeAlpha;
+            targetHeartbeatPitch = level2HeartbeatPitch;
         }
         else if (level == 3)
         {
             targetMusicMultiplier = level3MusicMultiplier;
             targetHeartbeatVolume = level3HeartbeatVolume;
             targetHazeAlpha = level3HazeAlpha;
+            targetHeartbeatPitch = level3HeartbeatPitch;
         }
 
         if (heartbeatSource != null && !heartbeatSource.isPlaying)
             heartbeatSource.Play();
 
-        yield return FadeLowHealth(targetMusicMultiplier, targetHeartbeatVolume, targetHazeAlpha, fadeTime);
+        yield return FadeLowHealth(targetMusicMultiplier, targetHeartbeatVolume, targetHazeAlpha, targetHeartbeatPitch, fadeTime);
         yield return new WaitForSeconds(effectDuration);
-        yield return FadeLowHealth(1f, 0f, 0f, fadeTime);
+        yield return FadeLowHealth(1f, 0f, 0f, 1f, fadeTime);
 
         if (heartbeatSource != null && heartbeatSource.volume <= 0.01f)
             heartbeatSource.Stop();
@@ -162,11 +172,12 @@ public class SoundManager : MonoBehaviour
         lowHealthRoutine = null;
     }
 
-    private IEnumerator FadeLowHealth(float musicTarget, float heartbeatTarget, float hazeTarget, float duration)
+    private IEnumerator FadeLowHealth(float musicTarget, float heartbeatTarget, float hazeTarget, float pitchTarget, float duration)
     {
         float startMusic = lowHealthMusicMultiplier;
         float startHeartbeat = heartbeatSource != null ? heartbeatSource.volume : 0f;
         float startHaze = lowHealthHaze != null ? lowHealthHaze.alpha : 0f;
+        float startPitch = heartbeatSource != null ? heartbeatSource.pitch : 1f;
 
         float time = 0f;
 
@@ -180,6 +191,9 @@ public class SoundManager : MonoBehaviour
             if (heartbeatSource != null)
                 heartbeatSource.volume = Mathf.Lerp(startHeartbeat, heartbeatTarget, t);
 
+            if (heartbeatSource != null)
+                heartbeatSource.pitch = Mathf.Lerp(startPitch, pitchTarget, t);
+
             if (lowHealthHaze != null)
                 lowHealthHaze.alpha = Mathf.Lerp(startHaze, hazeTarget, t);
 
@@ -190,6 +204,9 @@ public class SoundManager : MonoBehaviour
 
         if (heartbeatSource != null)
             heartbeatSource.volume = heartbeatTarget;
+
+        if (heartbeatSource != null)
+            heartbeatSource.pitch = pitchTarget;
 
         if (lowHealthHaze != null)
             lowHealthHaze.alpha = hazeTarget;

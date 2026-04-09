@@ -5,6 +5,7 @@ public class Shield : MonoBehaviour, IAbility
 {
     [SerializeField] private float duration = 5f;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private Vector3 shieldOffset;
     public ParticleSystem shield;
     private ParticleSystem shieldInstance;
 
@@ -13,7 +14,7 @@ public class Shield : MonoBehaviour, IAbility
         if (!playerHealth)
             playerHealth = GetComponentInParent<PlayerHealth>();
 
-        shieldInstance = Instantiate(shield, playerHealth.transform.position, Quaternion.identity);
+        shieldInstance = Instantiate(shield, playerHealth.transform.position + shieldOffset, Quaternion.identity);
     }
 
     public void Do()
@@ -42,7 +43,7 @@ public class Shield : MonoBehaviour, IAbility
         while (total < duration)
         {
             if (shieldInstance != null)
-                shieldInstance.transform.position = playerHealth.transform.position;
+                shieldInstance.transform.position = playerHealth.transform.position + shieldOffset;
 
             total += Time.deltaTime;
             yield return null;

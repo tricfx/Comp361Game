@@ -17,8 +17,8 @@ MonoBehaviour:
   cardDescription: Create a shield to take no damage for 5 seconds
   icon: {fileID: 2389193319765324094, guid: 3eb70675202beba46b54b5b014d541f9, type: 3}
   dependency: 
-  cooldownSeconds: 10
+  cooldownSeconds: 15
   type: 1
-  shopCost: 500
+  shopCost: 2000
   abilityID: Shield
   abilityPrefab: {fileID: 7007560943704542523, guid: 2e5d17610260533499c6e4d615423a7c, type: 3}

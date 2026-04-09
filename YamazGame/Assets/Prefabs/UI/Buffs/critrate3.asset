@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: critrate2
   cooldownSeconds: 0
   type: 0
-  shopCost: 150
+  shopCost: 500
   buffID: critrate3
   bonusDamage: 0
   bonusHealth: 0

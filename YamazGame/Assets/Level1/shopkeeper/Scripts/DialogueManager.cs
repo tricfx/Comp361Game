@@ -126,6 +126,8 @@ public class DialogueManager : MonoBehaviour
 
     private void BeginSession()
     {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
         Time.timeScale = 0f;
         interactPrompt.SetActive(false);
         if (!dialogueWasVisible && uiSfxSource != null && dialogueOpenSfx != null)
@@ -152,6 +154,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
         BeginSession();
         continueButton.SetActive(true);
 
@@ -223,6 +227,8 @@ public class DialogueManager : MonoBehaviour
         choicePanel.SetActive(false);
         yesAction?.Invoke();
         yesAction = noAction = null;
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
     }
 
     public void ChooseNo()
@@ -257,18 +263,22 @@ public class DialogueManager : MonoBehaviour
         }
 
         audioSource.mute = false;
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.HideCursor();
     }
 
     public void OpenShop()
     {
         if (shopOpen || openShopCo != null || closeShopCo != null) return;
         openShopCo = StartCoroutine(OpenShopRoutine());
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
     }
 
     private IEnumerator OpenShopRoutine()
     {
         bool finished = false;
-
+        
         try
         {
             shopOpen = true;
@@ -340,6 +350,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (!shopOpen || closeShopCo != null) return;
         closeShopCo = StartCoroutine(CloseShopRoutine());
+        if (CursorManager.Instance != null)
+        CursorManager.Instance.HideCursor();
     }
 
 
