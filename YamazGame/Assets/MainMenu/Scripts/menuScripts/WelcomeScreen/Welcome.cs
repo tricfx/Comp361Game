@@ -26,7 +26,7 @@ public class Welcome : MonoBehaviour
     {
         if (Input.anyKey && !notfirst)
         {
-            sfx.PlayDelayed(0.4f);
+            sfx.PlayDelayed(0.3f);
             notfirst = true;
             Fader.StartFade(welcome, next);
            

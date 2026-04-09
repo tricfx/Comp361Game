@@ -73,11 +73,11 @@ public class BloodSplatterView : MonoBehaviour
             ApplyVisuals(currentAlpha, currentScale);
 
             if (currentHealth <= retractBelowHP)
-                lastDamageTime = Time.unscaledTime;
+                lastDamageTime = Time.time;
         }
         else if (tookDamage)
         {
-            lastDamageTime = Time.unscaledTime;
+            lastDamageTime = Time.time;
 
             targetAlpha = hpAlpha;
             targetScale = hpScale;
@@ -95,7 +95,7 @@ public class BloodSplatterView : MonoBehaviour
     {
         if (currentHealth <= retractBelowHP)
         {
-            bool shouldRetract = Time.unscaledTime - lastDamageTime >= retractDelay;
+            bool shouldRetract = Time.time - lastDamageTime >= retractDelay;
 
             if (shouldRetract)
             {
@@ -115,7 +115,7 @@ public class BloodSplatterView : MonoBehaviour
 
     private void AnimateTowardsTarget()
     {
-        float dt = Time.unscaledDeltaTime;
+        float dt = Time.deltaTime;
 
         float alphaStep = (targetAlpha > currentAlpha ? expandSpeed : retractSpeed) * dt;
         float scaleStep = (targetScale < currentScale ? expandSpeed : retractSpeed) * dt;

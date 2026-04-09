@@ -1667,6 +1667,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 544600692724046114, guid: 7d6eb168d93fb49b49451a8f825ffab4, type: 3}
   m_PrefabInstance: {fileID: 2063899259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &90183735
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1689899951}
+    m_Modifications:
+    - target: {fileID: 353255387123471498, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_Name
+      value: BloodSplatter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
 --- !u!1 &90948574
 GameObject:
   m_ObjectHideFlags: 0
@@ -46716,7 +46813,7 @@ Transform:
   m_GameObject: {fileID: 887897576}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 216.14381, y: -172.95634, z: -20}
+  m_LocalPosition: {x: 216.43275, y: -173.0338, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -555281,98 +555378,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7284051918179469054, guid: 1da00b5ab19ba45ea92b9f30557e5bbd, type: 3}
   m_PrefabInstance: {fileID: 938820097}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1604158011
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1604158012}
-  - component: {fileID: 1604158014}
-  - component: {fileID: 1604158013}
-  - component: {fileID: 1604158015}
-  m_Layer: 5
-  m_Name: BloodSplatter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1604158012
+--- !u!224 &1604158012 stripped
 RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6739686747518272027, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+  m_PrefabInstance: {fileID: 90183735}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604158011}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1689899951}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1604158013
+--- !u!114 &1604158015 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 514240368320699460, guid: 592abaf6b339b384497cab5d56e64b78, type: 3}
+  m_PrefabInstance: {fileID: 90183735}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604158011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -50865781215349137, guid: 9c34b2179a88645bc87b4ffe2699bac8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1604158014
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604158011}
-  m_CullTransparentMesh: 1
---- !u!114 &1604158015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604158011}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1e5c97e3e0de4768833b880e171bbb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodImage: {fileID: 1604158013}
-  rectTransform: {fileID: 1604158012}
-  maxAlpha: 0.9
-  maxScale: 1.8
 --- !u!1001 &1607349786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560576,6 +560597,9 @@ MonoBehaviour:
   overworldMusic: {fileID: 1800814037}
   radius: 25
   minVolume: 0
+  level1HeartbeatPitch: 1
+  level2HeartbeatPitch: 1.15
+  level3HeartbeatPitch: 1.3
   heartbeatSource: {fileID: 1912410876}
   lowHealthHaze: {fileID: 96897976}
   effectDuration: 7
@@ -561673,65 +561697,92 @@ MonoBehaviour:
     - character:
         name: ???
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Well\u2026 how curious. Fancy meeting someone all the way down here."
+      line: "Well, this is a surprise. Didn\u2019t think I\u2019d see another face
+        down here."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: Huh?! Who are you?
+      line: Who are you?
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Me? I\u2019m Sherma. Just another soul bound to this place."
+      line: "Sherma. I\u2019ve been here a long time."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "\u2026\nI didn\u2019t expect to find anyone alive. I thought Hell was
-        a desolate pit\u2014nothing but suffering and silence."
+      line: "I didn\u2019t think there\u2019d be anyone here at all. I thought Hell
+        would be empty."
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Most believe that. But Hell is not empty\u2014it is awake. And it\u2019s
-        been watching you since the moment you fell."
+      line: "Empty? That\u2019s exactly how it fools you."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "Watching\u2026 me?"
+      line: Then what is this place?
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Yes. I can feel it clearly now. The Lord\u2019s power flows within you\u2014yet
-        you seem completely unaware of it."
+      line: Some call it a prison, others call it a trial. Either way, it stands
+        between you and the surface.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "The Lord\u2019s power? What are you talking about?"
+      line: Surface... so there is a way out.
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Your father. His essence still resonates within these chambers. Hell
-        recognizes it\u2026 responds to it. You are, in a way, speaking the same
-        language as this place."
+      line: "There is. But Hell doesn\u2019t let anyone walk out for free."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "That doesn\u2019t make any sense."
+      line: Then tell me what I need to do.
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: It will. It means you can harvest the powers of Hell itself.
+      line: Fight your way through each chamber. Kill every enemy in the room. Only
+        then will the exit open.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "\u2026?"
+      line: I have to ask... why me?
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "At the end of certain chambers\u2014once you survive what lies within\u2014you\u2019ll
-        feel it. A connection. Hell will offer you fragments of its strength."
+      line: Because you were chosen to endure it.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "And I can just\u2026 take them?"
+      line: Great.
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "You\u2019ll also notice something strange. Hell reacts to you."
+    - character:
+        name: Yanluo
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
+      line: "Uhuh.. and what\u2019s that supposed to mean?"
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "There\u2019s power in you, the kind this place recognizes."
+    - character:
+        name: Yanluo
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
+      line: "I don\u2019t know what you\u2019re talking about."
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: "You will soon enough. After some chambers, Hell will offer you power.
+        Take it, and you\u2019ll survive longer."
+    - character:
+        name: Yanluo
+        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
+      line: It just gives it to me?
+    - character:
+        name: Sherma
+        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
+      line: Not out of kindness. Think of it as a test... or bait.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -561739,43 +561790,41 @@ MonoBehaviour:
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Exactly. Power here is not about greed\u2014it\u2019s about restraint."
+      line: Exactly. Choose well. The right choice makes the difference.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: And why would I even need these powers?
+      line: "And what if I don\u2019t make it through a chamber?"
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "You wish to leave, don\u2019t you?"
+      line: Then you'll join everyone else this place has already taken.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "I do. I\u2019ll escape\u2026 and I\u2019ll slay the wench who cast me
-        into this place."
+      line: "I\u2019m not staying here. Whoever sent me down here is going to regret
+        it."
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Then you\u2019ll need them.\nThis realm is crawling with creatures meant
-        to ensure no one ever escapes. Every soul before you failed. Some fought.
-        Some begged. None made it out."
+      line: Then stay alive long enough to reach them. This realm is full of things
+        made to keep you here.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "But you said I\u2019m different."
+      line: But you think I can do it.
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "You are. Hell does not merely trap you\u2014it tests you."
+      line: I think Hell is interested in you. That usually means something.
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "\u2026I understand."
+      line: "...I\u2019ll take my chances."
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "One more thing, before you go.\nAs you travel, you\u2019ll find gems
-        scattered throughout the floors."
+      line: "One more thing. You\u2019ll find gems as you go."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
@@ -561783,48 +561832,20 @@ MonoBehaviour:
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Remnants of humans who fell here carrying them. Hell collects what they
-        leave behind. When you connect with a chamber\u2019s core, those gems will
-        answer to you."
+      line: "Left behind by the dead. Bring them to me when you find me again, and
+        I\u2019ll make them worth your while."
     - character:
         name: Yanluo
         icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: And what are they used for?
+      line: "So you\u2019re a merchant too?"
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "If you ever see me again, bring them. You may exchange them for\u2026
-        advantages. Knowledge. Tools. Perhaps even power\u2014of a different kind."
-    - character:
-        name: Yanluo
-        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: You speak as if you belong here.
+      line: ...
     - character:
         name: Sherma
         icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: I do. I was born from the roots of Hell itself.
-    - character:
-        name: Yanluo
-        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "\u2026Right."
-    - character:
-        name: Yanluo
-        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: And what are they used for?
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "Don\u2019t dwell on it. Now go. Survive the chambers. Choose your powers
-        wisely. And remember\u2014Hell rewards strength, but it devours the reckless."
-    - character:
-        name: Yanluo
-        icon: {fileID: 3804419739914296938, guid: 16279261e127e3b45b1e22ce2e0d4d2d, type: 3}
-      line: "Thank you\u2026 Sherma."
-    - character:
-        name: Sherma
-        icon: {fileID: 8483871856083018034, guid: 9e8fb8f9771a99e4c8494ad55fa73574, type: 3}
-      line: "May the Goddess of Luck walk beside you. You\u2019ll need her more than
-        you think."
+      line: Call me useful.
   repeat: "Hell has rewarded you\u2026 Will you claim what it offers through me?"
   noLine: Then go. The chambers will test you further.
   interactPrompt: {fileID: 2017748780}
