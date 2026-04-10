@@ -897,11 +897,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 500
-  currentHealth: 500
+  currentHealth: 1
   levelLoader: {fileID: 0}
   spriteRenderer: {fileID: 7489115577716577993}
   flashDuration: 0.15
-  destroyDelay: 1
+  roomController: {fileID: 0}
+  bossAnim: {fileID: 0}
+  deathAnimDuration: 2
+  rosePrefab: {fileID: 6205223350343136114, guid: f8088d90f2c9e465c8afcfe4e4384a54, type: 3}
+  destroyDelay: 2
 --- !u!114 &4294833000172466609
 MonoBehaviour:
   m_ObjectHideFlags: 0
