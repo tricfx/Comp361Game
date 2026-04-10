@@ -77163,7 +77163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: maxHealth
-      value: 20000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5243261647570753683, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: levelLoader
