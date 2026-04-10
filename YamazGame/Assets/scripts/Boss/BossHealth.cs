@@ -24,6 +24,9 @@ public class BossHealth : MonoBehaviour
 
     [Header("Death")]
     [SerializeField] private float destroyDelay = 1f; // time to let death animation play
+    [SerializeField] private AudioSource bossDeathSound;
+    [SerializeField] private AudioSource endingSong;
+    [SerializeField] private SkyAlphaFade skyFade;
 
     private bool isDead = false;
     private Rigidbody2D _rigidbody2D;
@@ -71,16 +74,18 @@ public class BossHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        skyFade?.StartFade();
+
         // Store position for later use
         DeathPosition = transform.position;
 
         Debug.Log($"Boss died at {DeathPosition}!");
 
-        // 1 â€” Stop all movement and physics immediately
+        // 1 — Stop all movement and physics immediately
         _rigidbody2D.linearVelocity = Vector2.zero;
         _rigidbody2D.bodyType = RigidbodyType2D.Static; // prevents any further physics movement
 
-        // 2 â€” Disable AI, attack and movement scripts so boss can't act after death
+        // 2 — Disable AI, attack and movement scripts so boss can't act after death
         BossAI ai = GetComponent<BossAI>();
         if (ai) ai.enabled = false;
 
@@ -90,16 +95,17 @@ public class BossHealth : MonoBehaviour
         BossMovement movement = GetComponent<BossMovement>();
         if (movement) movement.enabled = false;
 
-        // 3 â€” Disable all hurtboxes so boss can't deal damage after death
+        // 3 — Disable all hurtboxes so boss can't deal damage after death
         foreach (var hurtbox in GetComponentsInChildren<BossHurtbox>())
             hurtbox.enabled = false;
 
-        // 4 â€” Disable all hitboxes so boss can't receive damage after death
+        // 4 — Disable all hitboxes so boss can't receive damage after death
         foreach (var hitbox in GetComponentsInChildren<BossHitbox>())
             hitbox.enabled = false;
 
-        // 5 â€” Trigger death animation
+        // 5 — Trigger death animation
         bossAnim?.TriggerDeath();
+        bossDeathSound.PlayDelayed(0.5f);
 
         // Wait for death animation, then do everything else
         StartCoroutine(DeathSequence());
@@ -110,7 +116,7 @@ public class BossHealth : MonoBehaviour
         // Wait for the full death animation to finish
         yield return new WaitForSeconds(deathAnimDuration);
 
-        // Spawn rose at death position in Phase 2 â€” must be BEFORE Destroy
+        // Spawn rose at death position in Phase 2 — must be BEFORE Destroy
         Debug.Log($"[Rose] Scene: '{SceneManager.GetActiveScene().name}' | rosePrefab: {(rosePrefab != null ? rosePrefab.name : "NULL")} | DeathPosition: {DeathPosition}");
         if (rosePrefab != null && SceneManager.GetActiveScene().name == "Boss-Phase-2")
         {
@@ -119,7 +125,7 @@ public class BossHealth : MonoBehaviour
         }
         else
         {
-            if (rosePrefab == null) Debug.LogWarning("[Rose] rosePrefab is NULL â€” assign it in Inspector");
+            if (rosePrefab == null) Debug.LogWarning("[Rose] rosePrefab is NULL — assign it in Inspector");
             if (SceneManager.GetActiveScene().name != "Boss-Phase-2") Debug.LogWarning($"[Rose] Wrong scene: '{SceneManager.GetActiveScene().name}' expected 'Boss-Phase-2'");
         }
 
@@ -134,6 +140,11 @@ public class BossHealth : MonoBehaviour
         {
             AudioFader fader = obj.GetComponent<AudioFader>();
             if (fader != null) fader.FadeOut(2f);
+        }
+
+        if (endingSong != null)
+        {
+            endingSong.PlayDelayed(1.5f);
         }
 
         if (_enemyManager) _enemyManager.UnregisterEnemy();

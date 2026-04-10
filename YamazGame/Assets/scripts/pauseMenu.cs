@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using System.Collections.Generic;
 
 public class pauseMenu : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class pauseMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public string exposedVolumeParameter = "Music";
     public float pausedVolumeDb = -15f;
+    public string musicMixerGroupName = "Music";
+    public float pausedNonMusicVolumeMultiplier = 0.18f;
+
+    private readonly Dictionary<AudioSource, float> pausedSources = new();
+    private bool targetAudioReduced = false;
 
     public bool isPaused = false;
     private bool inSettings = false;
@@ -111,15 +117,15 @@ public class pauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        RestoreTargetAudio();
         closePause.Play();
         PauseMenu.gameObject.SetActive(false);
         Settings.gameObject.SetActive(false);
         Controls.gameObject.SetActive(false);
         BlurOverlay.SetActive(false);
 
-        RestoreTargetAudio();
-         if (CursorManager.Instance != null)
-        CursorManager.Instance.HideCursor();
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.HideCursor();
 
         Time.timeScale = timeScaleBeforePause;
         isPaused = false;
@@ -156,17 +162,44 @@ public class pauseMenu : MonoBehaviour
         inControls = false;
         inSettings = true;
     }
-
     private void ReduceTargetAudio()
     {
-        if (audioMixer == null) return;
+        if (targetAudioReduced) return;
+        targetAudioReduced = true;
 
-        float userDb = ToDb(GameSettingsStore.Load().music);
-        audioMixer.SetFloat(exposedVolumeParameter, userDb + pausedVolumeDb);
+        if (audioMixer != null)
+        {
+            float userDb = ToDb(GameSettingsStore.Load().music);
+            audioMixer.SetFloat(exposedVolumeParameter, userDb + pausedVolumeDb);
+        }
+
+        AudioSource[] allSources = FindObjectsByType<AudioSource>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+
+        foreach (AudioSource source in allSources)
+        {
+            if (source == null) continue;
+            if (!source.isPlaying) continue;
+            if (source == openPause || source == closePause) continue;
+
+            if (source.outputAudioMixerGroup != null &&
+                source.outputAudioMixerGroup.name == musicMixerGroupName)
+                continue;
+
+            pausedSources[source] = source.volume;
+            source.volume *= pausedNonMusicVolumeMultiplier;
+        }
     }
-
     private void RestoreTargetAudio()
     {
+        foreach (var pair in pausedSources)
+        {
+            if (pair.Key != null)
+                pair.Key.volume = pair.Value;
+        }
+
+        pausedSources.Clear();
+        targetAudioReduced = false;
+
         if (settingsManager != null)
         {
             settingsManager.SetMusicVolume(GameSettingsStore.Load().music);

@@ -11,6 +11,7 @@ public class BossMovement : MonoBehaviour
     [SerializeField] private float dashSpeed = 35f;
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 2f;
+    [SerializeField] private AudioSource teleportSfx;
 
     private Rigidbody2D rb;
     private Vector2 moveDir;
@@ -69,7 +70,7 @@ public class BossMovement : MonoBehaviour
         anim?.SetSpeed(moveDir.magnitude);
         anim?.SetMove(lastFacingDir);
     }
-
+        
     public void SetMoveDirection(Vector2 dir)
     {
         moveDir = dir;
@@ -86,6 +87,7 @@ public class BossMovement : MonoBehaviour
     {
         if (!CanDash || isDashing || dashCooldownTimer > 0f) return;
 
+        teleportSfx.PlayOneShot(teleportSfx.clip);
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
