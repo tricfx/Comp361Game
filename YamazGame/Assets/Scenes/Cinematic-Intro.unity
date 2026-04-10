@@ -2353,6 +2353,8 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
+  musicMixerGroupName: Music
+  pausedNonMusicVolumeMultiplier: 0.18
   isPaused: 0
   levelloader: {fileID: 0}
   settingsManager: {fileID: 214757297}
@@ -5066,10 +5068,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 586781379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 648, y: -396}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 248, y: -175.5}
+  m_SizeDelta: {x: 800, y: 449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808390859
 MonoBehaviour:

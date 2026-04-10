@@ -4163,6 +4163,8 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
+  musicMixerGroupName: Music
+  pausedNonMusicVolumeMultiplier: 0.18
   isPaused: 0
   levelloader: {fileID: 0}
   settingsManager: {fileID: 82184231}
@@ -4422,10 +4424,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 586781379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 648, y: -409}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 249, y: -175.5}
+  m_SizeDelta: {x: 800, y: 449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808390859
 MonoBehaviour:
@@ -4447,7 +4449,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press x to skip
+  m_text: Press  <size=30><b>x</b></size> to skip
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78fa57836e7908746b11f9e26e1175b0, type: 2}
   m_sharedMaterial: {fileID: -8024455288437142836, guid: 78fa57836e7908746b11f9e26e1175b0, type: 2}
