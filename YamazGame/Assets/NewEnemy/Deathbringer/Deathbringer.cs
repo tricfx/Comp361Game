@@ -5,6 +5,8 @@ public class Deathbringer : NewEnemy
     [Header("Deathbringer")]
     [SerializeField] DeathbringerSpellSpawner spellSpawner;
     [SerializeField] EnemyAttackRange meleeRange;
+    [SerializeField] protected AudioClip spellClip;
+    [SerializeField] protected float spellVolume = 1f;
 
     public override void Attack()
     {
@@ -143,5 +145,10 @@ public class Deathbringer : NewEnemy
             faceDirection.localScale = new Vector3(1, 1, 1);
             spriteRenderer.flipX = false;
         }
+    }
+
+    public void PlaySpellSound()
+    {
+        PlaySound(spellClip, spellVolume);
     }
 }

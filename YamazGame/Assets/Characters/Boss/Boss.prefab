@@ -846,6 +846,7 @@ MonoBehaviour:
   dashSpeed: 35
   dashDuration: 0.2
   dashCooldown: 2
+  teleportSfx: {fileID: 0}
   isInVertex: 0
 --- !u!114 &5838685491082654279
 MonoBehaviour:
@@ -884,6 +885,12 @@ MonoBehaviour:
   swordSpeed: 12.5
   rangedCooldown: 4
   safeZoneRadius: 5
+  dressSlapSfx: {fileID: 0}
+  swordThrowSfx: {fileID: 0}
+  swordMeleeSfx: {fileID: 0}
+  swordMeleeClip1: {fileID: 0}
+  swordMeleeClip2: {fileID: 0}
+  laserSfx: {fileID: 0}
 --- !u!114 &5243261647570753683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,12 +903,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539424ed8aa6c497eb89cf67cc46bb55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
-  currentHealth: 500
+  maxHealth: 10000
+  currentHealth: 1
   levelLoader: {fileID: 0}
   spriteRenderer: {fileID: 7489115577716577993}
   flashDuration: 0.15
-  destroyDelay: 1
+  roomController: {fileID: 0}
+  bossAnim: {fileID: 0}
+  deathAnimDuration: 2
+  rosePrefab: {fileID: 6205223350343136114, guid: f8088d90f2c9e465c8afcfe4e4384a54, type: 3}
+  destroyDelay: 2
+  bossDeathSound: {fileID: 0}
+  endingSong: {fileID: 0}
+  skyFade: {fileID: 0}
 --- !u!114 &4294833000172466609
 MonoBehaviour:
   m_ObjectHideFlags: 0

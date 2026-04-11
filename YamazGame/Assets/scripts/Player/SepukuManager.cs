@@ -10,16 +10,24 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     [SerializeField] private int AgroEnnmies = 0;
     [SerializeField] private bool SepukuEnabled = false;
     public CanvasGroup SepukuExplanation;
-    public AudioSource music;
+    public AudioSource[] musicSources;
 
-    void awake()
-    {
-        DataPersistenceManager.instance.LoadGame();
-    }
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        GameObject obj = GameObject.Find("GameOverSFX");
+
+        if (obj != null)
+        {
+            musicSources = obj.GetComponents<AudioSource>();
+            Debug.Log($"Found {musicSources.Length} AudioSources on {obj.name}");
+        }
+        else
+        {
+            Debug.Log("GameOverSFX object not found");
+        }
 
         if (DataPersistenceManager.instance != null)
         {
@@ -36,12 +44,17 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
     public void AddEnnemy()
     { 
     AgroEnnmies++;
+     Debug.Log($"ennemy added on {gameObject.name}, count = {AgroEnnmies}");
     }
     public void RemoveEnnemy()
     {
         AgroEnnmies--;
     }
 
+void upadate()
+    {
+        Debug.Log(AgroEnnmies);
+    }
 
     public void SaveData(ref GameData data)
     {
@@ -84,9 +97,16 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
         }
         yield return new WaitForSeconds(2f);
 
-        music.Play();
+        if (musicSources != null)
+{
+        foreach (AudioSource source in musicSources)
+        {
+            if (source != null)
+                source.Play();
+        }
+    }
 
-        // 2️ Show explanation UI with fade
+
         if (SepukuExplanation != null)
         {
             SepukuExplanation.gameObject.SetActive(true);
@@ -109,7 +129,6 @@ public class SepukuManager : MonoBehaviour, IDataPersistence
             SepukuExplanation.blocksRaycasts = true;
         }
 
-        // 3️ Wait 5 seconds fully visible
         yield return new WaitForSeconds(6f);
 
 

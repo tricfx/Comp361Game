@@ -47,13 +47,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 20
   charmDuration: 15
-  detectionWindow: 4
-  charmRange: 2
+  detectionWindow: 5
+  charmRange: 5
   auraScaleMultiplier: 6
   auraGrowSpeed: 4
   playerHealth: {fileID: 0}
-  rangeAura: {fileID: 8889672680373838255, guid: 1d61033b735c340b4b63478f607671db, type: 3}
+  rangeAura: {fileID: 0}
   charm: {fileID: 7910603292438892066, guid: 43d1d06cf70fcb2488255051aaae40a5, type: 3}
+  maxCharmedEnemies: 5
 --- !u!58 &3051728398418050604
 CircleCollider2D:
   m_ObjectHideFlags: 0

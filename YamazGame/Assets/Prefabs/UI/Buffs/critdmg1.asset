@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 0
   type: 0
-  shopCost: 150
+  shopCost: 450
   buffID: critdmg1
   bonusDamage: 0
   bonusHealth: 0
@@ -27,4 +27,4 @@ MonoBehaviour:
   dashCooldownDecrease: 0
   dashDistanceBonus: 0
   critRate: 0
-  critDmg: 1.2
+  critDmg: 0.2

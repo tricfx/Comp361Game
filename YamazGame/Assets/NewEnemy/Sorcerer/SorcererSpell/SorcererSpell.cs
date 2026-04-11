@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class SorcererSpell : MonoBehaviour
 {
+    [SerializeField] protected AudioSource audioSource;
+    [SerializeField] protected AudioClip clip;
+    [SerializeField] protected float volume = 1f;
+
     Collider2D hurtbox;
     bool hasHit = false;
 
@@ -33,5 +37,10 @@ public class SorcererSpell : MonoBehaviour
     void DisableHurtbox()
     {
         hurtbox.enabled = false;
+    }
+
+    void PlaySound()
+    {
+        audioSource.PlayOneShot(clip, volume);
     }
 }

@@ -16,6 +16,9 @@ public class BossAttack : MonoBehaviour
     private float lastAttackTime = -Mathf.Infinity;
     private bool stageComplete = false;
     private float stageStartTime = 0f;
+    private bool alreadyPlayedDressSlapSfx = false;
+    private bool alreadyPlayedSwordMeleeSfx = false;
+    private Coroutine swordMeleeSfxRoutine;
 
     [Header("Attack Timing")]
     [SerializeField] private float stageTimeout = 10f;
@@ -29,6 +32,14 @@ public class BossAttack : MonoBehaviour
     [SerializeField] private float swordSpeed = 25f;
     [SerializeField] private float rangedCooldown = 4f;
     [SerializeField] private float safeZoneRadius = 5f;
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource dressSlapSfx;
+    [SerializeField] private AudioSource swordThrowSfx;
+    [SerializeField] private AudioSource swordMeleeSfx;
+    [SerializeField] private AudioClip swordMeleeClip1;
+    [SerializeField] private AudioClip swordMeleeClip2;
+    [SerializeField] private AudioSource laserSfx;
 
     private float lastRangedAttackTime = -Mathf.Infinity;
     public bool IsRangedAttacking { get; private set; } = false;
@@ -60,7 +71,13 @@ public class BossAttack : MonoBehaviour
 
 
         StopAllCoroutines();
-
+        if (swordMeleeSfxRoutine != null)
+        {
+            StopCoroutine(swordMeleeSfxRoutine);
+            swordMeleeSfxRoutine = null;
+        }
+        alreadyPlayedDressSlapSfx = false;
+        alreadyPlayedSwordMeleeSfx = false;
         IsAttacking = true;
         lastAttackTime = Time.time;
         movement?.Stop();
@@ -72,9 +89,15 @@ public class BossAttack : MonoBehaviour
     {
 
         StopAllCoroutines();
+        if (swordMeleeSfxRoutine != null)
+        {
+            StopCoroutine(swordMeleeSfxRoutine);
+            swordMeleeSfxRoutine = null;
+        }
         anim.SetAttackStage(0);
         IsAttacking = false;
-
+        alreadyPlayedDressSlapSfx = false;
+        alreadyPlayedSwordMeleeSfx = false;
         lastAttackTime = -Mathf.Infinity;
     }
 
@@ -86,12 +109,13 @@ public class BossAttack : MonoBehaviour
         for (int stage = 1; stage <= totalStages; stage++)
         {
             Debug.Log($"[BossAttack] CloseRangeRoutine: entering stage {stage}/{totalStages}");
+
+            alreadyPlayedDressSlapSfx = false;
+
             anim.SetAttackStage(stage);
             stageComplete = false;
             stageStartTime = Time.time;
             yield return new WaitUntil(() => stageComplete || WaitTimeout(stageTimeout));
-
-
         }
 
         OnStageComplete();
@@ -195,6 +219,7 @@ public class BossAttack : MonoBehaviour
         Vector2 dir = ((Vector2)player.position - (Vector2)spawnFrom.position).normalized;
 
         GameObject sword = Instantiate(swordProjectilePrefab, spawnFrom.position, Quaternion.identity);
+        swordThrowSfx.PlayOneShot(swordThrowSfx.clip);
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
         sword.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -203,4 +228,33 @@ public class BossAttack : MonoBehaviour
         if (swordRb != null)
             swordRb.linearVelocity = dir * swordSpeed;
     }
+    public void PlayDressSlapSfx()
+    {
+        if (alreadyPlayedDressSlapSfx) return;
+
+        alreadyPlayedDressSlapSfx = true;
+        dressSlapSfx.PlayOneShot(dressSlapSfx.clip);
+    }
+
+    public void PlaySwordMeleeSfx()
+    {
+        if (alreadyPlayedSwordMeleeSfx) return;
+        if (swordMeleeSfxRoutine != null) return;
+
+        alreadyPlayedSwordMeleeSfx = true;
+        swordMeleeSfxRoutine = StartCoroutine(PlaySwordMeleeSfxRoutine());
+    }
+
+    private IEnumerator PlaySwordMeleeSfxRoutine()
+    {
+        swordMeleeSfx.PlayOneShot(swordMeleeClip1);
+        yield return new WaitForSeconds(swordMeleeClip1.length);
+        swordMeleeSfx.PlayOneShot(swordMeleeClip2);
+        swordMeleeSfxRoutine = null;
+    }
+    public void PlayLaserSfx()
+    {
+        laserSfx.PlayOneShot(laserSfx.clip);
+    }
+
 }

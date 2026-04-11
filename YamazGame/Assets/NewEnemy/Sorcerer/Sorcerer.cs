@@ -22,7 +22,21 @@ public class Sorcerer : NewEnemy
                 yield break;
             }
 
-            if (detectionRange.PlayerInRange)
+            if (CurrentTeam == Team.Ally && currentTarget != null)
+            {
+                NewEnemy t = currentTarget.GetComponent<NewEnemy>();
+                if (t != null && t.IsAlive)
+                {
+                    GameObject spell = spellSpawner.SpawnSpellAt(t.CurrentPosition);
+                    ApplyScalingToSpawnedObject(spell);
+                    yield return new WaitForSeconds(spellTimer);
+                }
+                else
+                {
+                    yield return null;
+                }
+            }
+            else if (detectionRange.PlayerInRange)
             {
                 GameObject spell = spellSpawner.SpawnSpell();
                 ApplyScalingToSpawnedObject(spell);

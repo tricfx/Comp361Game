@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource charging;
 
     private static readonly int MoveX = Animator.StringToHash("MoveX");
     private static readonly int MoveY = Animator.StringToHash("MoveY");
@@ -63,6 +64,18 @@ public class BossAnimatorController : MonoBehaviour
     public void SetCharging(bool value)
     {
         animator.SetBool(IsCharging, value);
+
+        if (charging == null) return;
+
+        if (value)
+        {
+            if (!charging.isPlaying)
+                charging.PlayDelayed(0.3f);
+        }
+        else
+        {
+            charging.Stop();
+        }
     }
 
     public void SetCastIdle(bool value)

@@ -10,6 +10,10 @@ public class SelectScreen : MonoBehaviour
         DataPersistenceManager.instance.gameData.sceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
         DataPersistenceManager.instance.SaveGame();
+         if (TimeManager.Instance != null)
+        {
+            TimeManager.Instance.StartNewGame();
+        }
 
         levelLoader.LoadLevel(DataPersistenceManager.instance.gameData.sceneIndex);
     }
@@ -24,8 +28,15 @@ public class SelectScreen : MonoBehaviour
             return;
         }
 
+
+        //  if (TimeManager.Instance != null)
+        // {
+        //     TimeManager.Instance.StartNewGame();
+        // }
+
         levelLoader.LoadLevel(index);
     }
+
 
    
 }

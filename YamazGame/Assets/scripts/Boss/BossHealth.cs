@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using System.Text;
+using UnityEngine.SceneManagement;
+
 
 public class BossHealth : MonoBehaviour
 {
@@ -16,12 +17,20 @@ public class BossHealth : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float flashDuration = 0.15f;
     [SerializeField] private BossRoomController roomController;
+    [SerializeField] private BossAnimatorController bossAnim;
+    [SerializeField] private float deathAnimDuration = 1.33f; // match your death clip length
+    [SerializeField] private GameObject rosePrefab; // spawned at death position in Phase 2
 
     [Header("Death")]
     [SerializeField] private float destroyDelay = 1f; // time to let death animation play
+    [SerializeField] private AudioSource bossDeathSound;
+    [SerializeField] private AudioSource endingSong;
+    [SerializeField] private SkyAlphaFade skyFade;
 
     private bool isDead = false;
-    public bool IsDead => isDead;    
+    private Rigidbody2D _rigidbody2D;
+    public bool IsDead => isDead;
+    public Vector2 DeathPosition { get; private set; } // tracks boss position on death
     private EnemyManager _enemyManager;
 
 
@@ -29,10 +38,15 @@ public class BossHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (!bossAnim) bossAnim = GetComponent<BossAnimatorController>();
         _enemyManager = FindFirstObjectByType<EnemyManager>();
         if (_enemyManager) _enemyManager.RegisterEnemy();
+        if (!roomController) roomController = FindFirstObjectByType<BossRoomController>();
+        if (!levelLoader) levelLoader = FindFirstObjectByType<LevelLoader>();
+        if (!_rigidbody2D) _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
+    [System.Obsolete]
     public void TakeDamage(int damage)
     {
         if (isDead) return;
@@ -42,18 +56,9 @@ public class BossHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 9 )
-            {
-                Time.timeScale = 0f;
-                levelLoader.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
-                Time.timeScale = 1f;
-            }
-            else
-            {
             currentHealth = 0;
-            Die();     
-            }
-           
+            _rigidbody2D.linearVelocity = Vector2.zero; // Stop movement immediately
+            Die();
         }
     }
 
@@ -67,11 +72,89 @@ public class BossHealth : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
-        Debug.Log("Boss died!");
-        // TODO: trigger death animation, rewards, cutscene etc.
-        roomController.UnlockArena();
+
+        skyFade?.StartFade();
+
+        // Store position for later use
+        DeathPosition = transform.position;
+
+        Debug.Log($"Boss died at {DeathPosition}!");
+
+        // 1 � Stop all movement and physics immediately
+        _rigidbody2D.linearVelocity = Vector2.zero;
+        _rigidbody2D.bodyType = RigidbodyType2D.Static; // prevents any further physics movement
+
+        // 2 � Disable AI, attack and movement scripts so boss can't act after death
+        BossAI ai = GetComponent<BossAI>();
+        if (ai) ai.enabled = false;
+
+        BossAttack attack = GetComponent<BossAttack>();
+        if (attack) attack.enabled = false;
+
+        BossMovement movement = GetComponent<BossMovement>();
+        if (movement) movement.enabled = false;
+
+        // 3 � Disable all hurtboxes so boss can't deal damage after death
+        foreach (var hurtbox in GetComponentsInChildren<BossHurtbox>())
+            hurtbox.enabled = false;
+
+        // 4 � Disable all hitboxes so boss can't receive damage after death
+        foreach (var hitbox in GetComponentsInChildren<BossHitbox>())
+            hitbox.enabled = false;
+
+        // 5 � Trigger death animation
+        if(SceneManager.GetActiveScene().buildIndex != 9){
+        bossAnim?.TriggerDeath();
+        bossDeathSound.PlayDelayed(0.5f);
+
+        // Wait for death animation, then do everything else
+        StartCoroutine(DeathSequence());
+        }
+         int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentIndex == 9)
+            levelLoader.LoadLevel(currentIndex + 1);
+    }
+
+    private IEnumerator DeathSequence()
+    {
+        // Wait for the full death animation to finish
+        yield return new WaitForSeconds(deathAnimDuration);
+
+        // Spawn rose at death position in Phase 2 � must be BEFORE Destroy
+        Debug.Log($"[Rose] Scene: '{SceneManager.GetActiveScene().name}' | rosePrefab: {(rosePrefab != null ? rosePrefab.name : "NULL")} | DeathPosition: {DeathPosition}");
+        if (rosePrefab != null && SceneManager.GetActiveScene().name == "Boss-Phase-2")
+        {
+            Debug.Log("[Rose] Spawning rose at " + DeathPosition);
+            Instantiate(rosePrefab, DeathPosition, Quaternion.identity);
+        }
+        else
+        {
+            if (rosePrefab == null) Debug.LogWarning("[Rose] rosePrefab is NULL � assign it in Inspector");
+            if (SceneManager.GetActiveScene().name != "Boss-Phase-2") Debug.LogWarning($"[Rose] Wrong scene: '{SceneManager.GetActiveScene().name}' expected 'Boss-Phase-2'");
+        }
+
+        // Destroy boss object immediately after animation
+        Destroy(gameObject);
+
+        // Post-death world effects
+        roomController?.UnlockArena();
+
+        GameObject obj = GameObject.Find("OverworldMusic");
+        if (obj != null)
+        {
+            AudioFader fader = obj.GetComponent<AudioFader>();
+            if (fader != null) fader.FadeOut(2f);
+        }
+
+        if (endingSong != null)
+        {
+            endingSong.PlayDelayed(1.5f);
+        }
+
         if (_enemyManager) _enemyManager.UnregisterEnemy();
-        Destroy(gameObject, destroyDelay);
+
+        TimeManager timeManager = FindFirstObjectByType<TimeManager>();
+        if (timeManager != null) timeManager.StopTimerAndSubmit();
 
     }
 
@@ -82,4 +165,6 @@ public class BossHealth : MonoBehaviour
         yield return new WaitForSeconds(flashDuration);
         spriteRenderer.color = Color.white;
     }
+
+
 }

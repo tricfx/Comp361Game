@@ -102,16 +102,16 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
                 comboBuffered = true; // Buffer the input for when canCombo becomes true
         }
 
-        if (input.QPressed && Time.time >= lastAbilityQ + abilityQCooldown)
+        if (input.QPressed && qAbilityCard != null && abilityQ != null && Time.time >= lastAbilityQ + abilityQCooldown)
         {
             lastAbilityQ = Time.time;
-            abilityQ?.Do();
+            abilityQ.Do();
         }
 
-        if (input.EPressed && Time.time >= lastAbilityE + abilityECooldown)
+        if (input.EPressed && eAbilityCard != null && abilityE != null && Time.time >= lastAbilityE + abilityECooldown)
         {
             lastAbilityE = Time.time;
-            abilityE?.Do();
+            abilityE.Do();
         }
     }
 
@@ -273,6 +273,7 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             abilityQ?.Dispose();
             if (abilityQObject) Destroy(abilityQObject);
             abilityQCooldown = card.cooldownSeconds;
+            lastAbilityQ = -Mathf.Infinity;
             qAbilityCard = card;
             abilityQ = ability;
             abilityQObject = abilityObj;
@@ -285,6 +286,7 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             abilityE?.Dispose();
             if (abilityEObject) Destroy(abilityEObject);
             abilityECooldown = card.cooldownSeconds;
+            lastAbilityE = -Mathf.Infinity;
             eAbilityCard = card;
             abilityE = ability;
             abilityEObject = abilityObj;
@@ -292,8 +294,10 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
             Debug.Log($"Equipped {card.abilityID} to E");
         }
         hud?.SetSlotIcon(toQ, card.icon);
-        abilityEquipAudioSource.Play();
-
+        if (abilityEquipAudioSource != null)
+        {
+            abilityEquipAudioSource.Play();
+        }
     }
 
     private void EquipByIdToSlot(string cardId, bool toQ)

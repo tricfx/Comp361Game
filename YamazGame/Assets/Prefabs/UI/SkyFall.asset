@@ -19,6 +19,6 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 5
   type: 1
-  shopCost: 500
+  shopCost: 1200
   abilityID: Skyfall
   abilityPrefab: {fileID: 1703236983586644648, guid: ad3481761efc5e3469640f7a541bfcdc, type: 3}
