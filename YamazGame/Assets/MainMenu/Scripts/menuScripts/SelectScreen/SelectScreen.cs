@@ -29,10 +29,10 @@ public class SelectScreen : MonoBehaviour
         }
 
 
-         if (TimeManager.Instance != null)
-        {
-            TimeManager.Instance.StartNewGame();
-        }
+        //  if (TimeManager.Instance != null)
+        // {
+        //     TimeManager.Instance.StartNewGame();
+        // }
 
         levelLoader.LoadLevel(index);
     }
