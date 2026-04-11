@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 using System.Text;
-using UnityEditor.Callbacks;
+using UnityEngine.SceneManagement;
 
 
 public class BossHealth : MonoBehaviour
@@ -81,11 +80,11 @@ public class BossHealth : MonoBehaviour
 
         Debug.Log($"Boss died at {DeathPosition}!");
 
-        // 1 — Stop all movement and physics immediately
+        // 1 ï¿½ Stop all movement and physics immediately
         _rigidbody2D.linearVelocity = Vector2.zero;
         _rigidbody2D.bodyType = RigidbodyType2D.Static; // prevents any further physics movement
 
-        // 2 — Disable AI, attack and movement scripts so boss can't act after death
+        // 2 ï¿½ Disable AI, attack and movement scripts so boss can't act after death
         BossAI ai = GetComponent<BossAI>();
         if (ai) ai.enabled = false;
 
@@ -95,15 +94,15 @@ public class BossHealth : MonoBehaviour
         BossMovement movement = GetComponent<BossMovement>();
         if (movement) movement.enabled = false;
 
-        // 3 — Disable all hurtboxes so boss can't deal damage after death
+        // 3 ï¿½ Disable all hurtboxes so boss can't deal damage after death
         foreach (var hurtbox in GetComponentsInChildren<BossHurtbox>())
             hurtbox.enabled = false;
 
-        // 4 — Disable all hitboxes so boss can't receive damage after death
+        // 4 ï¿½ Disable all hitboxes so boss can't receive damage after death
         foreach (var hitbox in GetComponentsInChildren<BossHitbox>())
             hitbox.enabled = false;
 
-        // 5 — Trigger death animation
+        // 5 ï¿½ Trigger death animation
         bossAnim?.TriggerDeath();
         bossDeathSound.PlayDelayed(0.5f);
 
@@ -116,7 +115,7 @@ public class BossHealth : MonoBehaviour
         // Wait for the full death animation to finish
         yield return new WaitForSeconds(deathAnimDuration);
 
-        // Spawn rose at death position in Phase 2 — must be BEFORE Destroy
+        // Spawn rose at death position in Phase 2 ï¿½ must be BEFORE Destroy
         Debug.Log($"[Rose] Scene: '{SceneManager.GetActiveScene().name}' | rosePrefab: {(rosePrefab != null ? rosePrefab.name : "NULL")} | DeathPosition: {DeathPosition}");
         if (rosePrefab != null && SceneManager.GetActiveScene().name == "Boss-Phase-2")
         {
@@ -125,7 +124,7 @@ public class BossHealth : MonoBehaviour
         }
         else
         {
-            if (rosePrefab == null) Debug.LogWarning("[Rose] rosePrefab is NULL — assign it in Inspector");
+            if (rosePrefab == null) Debug.LogWarning("[Rose] rosePrefab is NULL ï¿½ assign it in Inspector");
             if (SceneManager.GetActiveScene().name != "Boss-Phase-2") Debug.LogWarning($"[Rose] Wrong scene: '{SceneManager.GetActiveScene().name}' expected 'Boss-Phase-2'");
         }
 

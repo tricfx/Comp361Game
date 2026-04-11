@@ -425240,7 +425240,7 @@ MonoBehaviour:
   replacementPanel: {fileID: 656867644}
   rerollButton: {fileID: 298732911}
   BlurOverlay: {fileID: 604476229}
-  abilityEquipAudioSource: {fileID: 0}
+  abilityEquipAudioSource: {fileID: 1447478455}
   player: {fileID: 1690713646}
 --- !u!4 &801964912
 Transform:
@@ -693176,6 +693176,8 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 080d8f9538e23e04b8983096627a8c2d, type: 2}
   exposedVolumeParameter: Music
   pausedVolumeDb: -15
+  musicMixerGroupName: Music
+  pausedNonMusicVolumeMultiplier: 0.18
   isPaused: 0
   levelloader: {fileID: 0}
   settingsManager: {fileID: 0}
