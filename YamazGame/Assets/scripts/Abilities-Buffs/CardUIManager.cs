@@ -69,19 +69,19 @@ public class CardUIManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-             if (CursorManager.Instance != null)
-            CursorManager.Instance.ShowCursor();
-            OpenRewardScreen();
-            BlurOverlay.SetActive(true);
-        }
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            if (CursorManager.Instance != null)
-            CursorManager.Instance.ShowCursor();
-            OpenReplacementUI(new AbilityCard { cardName = "Test Ability", cardDescription = "This is a test ability.", cardID = "test_ability" });
-        }
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //      if (CursorManager.Instance != null)
+        //     CursorManager.Instance.ShowCursor();
+        //     OpenRewardScreen();
+        //     BlurOverlay.SetActive(true);
+        // }
+        // if(Input.GetKeyDown(KeyCode.T))
+        // {
+        //     if (CursorManager.Instance != null)
+        //     CursorManager.Instance.ShowCursor();
+        //     OpenReplacementUI(new AbilityCard { cardName = "Test Ability", cardDescription = "This is a test ability.", cardID = "test_ability" });
+        // }
     }
 
     public void OpenRewardScreen()

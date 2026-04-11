@@ -19,7 +19,7 @@ MonoBehaviour:
   dependency: critdmg2
   cooldownSeconds: 0
   type: 0
-  shopCost: 500
+  shopCost: 450
   buffID: critdmg3
   bonusDamage: 0
   bonusHealth: 0

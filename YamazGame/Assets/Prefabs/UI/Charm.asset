@@ -19,6 +19,6 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 25
   type: 1
-  shopCost: 2000
+  shopCost: 1200
   abilityID: Charm
   abilityPrefab: {fileID: 5402376539046082640, guid: 316effbdff5f78b45807ec6cf2faffb6, type: 3}

@@ -19,6 +19,6 @@ MonoBehaviour:
   dependency: 
   cooldownSeconds: 2
   type: 1
-  shopCost: 2000
+  shopCost: 1200
   abilityID: Ice
   abilityPrefab: {fileID: 5003127231297784306, guid: 9b95435dadbdb8e418402aa0b6f4ac5b, type: 3}

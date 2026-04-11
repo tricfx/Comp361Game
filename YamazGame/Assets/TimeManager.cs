@@ -54,10 +54,10 @@ public class TimeManager : MonoBehaviour
         if (timeText != null)
             timeText.text = $"{minutes:00}:{seconds:00}";
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-        StopTimerAndSubmit();
-        }
+        // if (Input.GetKeyDown(KeyCode.B))
+        // {
+        // StopTimerAndSubmit();
+        // }
     }
 
     public void StartNewGame()
