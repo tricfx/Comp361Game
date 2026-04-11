@@ -103,11 +103,16 @@ public class BossHealth : MonoBehaviour
             hitbox.enabled = false;
 
         // 5 � Trigger death animation
+        if(SceneManager.GetActiveScene().buildIndex != 9){
         bossAnim?.TriggerDeath();
         bossDeathSound.PlayDelayed(0.5f);
 
         // Wait for death animation, then do everything else
         StartCoroutine(DeathSequence());
+        }
+         int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentIndex == 9)
+            levelLoader.LoadLevel(currentIndex + 1);
     }
 
     private IEnumerator DeathSequence()
@@ -151,9 +156,6 @@ public class BossHealth : MonoBehaviour
         TimeManager timeManager = FindFirstObjectByType<TimeManager>();
         if (timeManager != null) timeManager.StopTimerAndSubmit();
 
-        int currentIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentIndex == 9)
-            levelLoader.LoadLevel(currentIndex + 1);
     }
 
     private IEnumerator HitFlash()
