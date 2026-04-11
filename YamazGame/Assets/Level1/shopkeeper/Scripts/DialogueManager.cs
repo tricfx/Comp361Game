@@ -117,6 +117,14 @@ public class DialogueManager : MonoBehaviour
         playerInput ??= FindFirstObjectByType<PlayerInput>();
         playerRb ??= playerInput.GetComponent<Rigidbody2D>();
     }
+    private void Update()
+    {
+        if (isDialogueActive)
+        {
+        if (CursorManager.Instance != null)
+            CursorManager.Instance.ShowCursor();
+        }
+    }
 
     private void SetPlayerLocked(bool locked)
     {
