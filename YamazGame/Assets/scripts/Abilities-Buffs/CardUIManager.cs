@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class CardUIManager : MonoBehaviour
     public Button rerollButton;
     public GameObject BlurOverlay;
     [SerializeField] private AudioSource abilityEquipAudioSource;
+    [SerializeField] private float buttonLockDuration = 0.7f;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -47,6 +49,7 @@ public class CardUIManager : MonoBehaviour
         }
 
         Instance = this;
+        buttonLockDuration = 0.7f;
         DontDestroyOnLoad(gameObject);
     }
     
@@ -101,6 +104,7 @@ public class CardUIManager : MonoBehaviour
 
         Roll3Rewards();
         rewardPanel.SetActive(true);
+        TemporarilyLockPanelButtons(rewardPanel);
         BlurOverlay.SetActive(true);
         var actions = player.GetComponent<PlayerActions>();
         if (actions != null) actions.enabled = false;
@@ -198,6 +202,7 @@ public class CardUIManager : MonoBehaviour
         replacementSlots[0].Setup(player.GetComponent<PlayerActions>().qAbilityCard);
         replacementSlots[1].Setup(player.GetComponent<PlayerActions>().eAbilityCard);
         replacementPanel.SetActive(true);
+        TemporarilyLockPanelButtons(replacementPanel);
         player.GetComponent<PlayerActions>().enabled = false;
         Time.timeScale = 0f;
 
@@ -216,5 +221,23 @@ public class CardUIManager : MonoBehaviour
          if (CursorManager.Instance != null)
          CursorManager.Instance.HideCursor();
     }
-    
+    private void TemporarilyLockPanelButtons(GameObject panel)
+    {
+        if (panel == null) return;
+        StartCoroutine(TemporarilyLockPanelButtonsRoutine(panel));
+    }
+
+    private IEnumerator TemporarilyLockPanelButtonsRoutine(GameObject panel)
+    {
+        Button[] buttons = panel.GetComponentsInChildren<Button>(true);
+
+        foreach (Button button in buttons)
+            button.interactable = false;
+
+        yield return new WaitForSecondsRealtime(buttonLockDuration);
+
+        foreach (Button button in buttons)
+            button.interactable = true;
+    }
+
 }
