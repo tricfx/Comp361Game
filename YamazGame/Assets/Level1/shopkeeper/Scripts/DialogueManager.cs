@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Update()
     {
-        if (isDialogueActive)
+        if (isDialogueActive || shopOpen)
         {
         if (CursorManager.Instance != null)
             CursorManager.Instance.ShowCursor();
