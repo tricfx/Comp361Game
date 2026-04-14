@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: Charm
   cardName: Fate Whisper
-  cardDescription: Charm one ennemy and turn them into an ally for 20 seconds
+  cardDescription: Charm up to 5 nearby enemies into allies for 20 seconds
   icon: {fileID: 9111962250586777772, guid: 79371de7dd3be2a429cb6e4fde7ae8d6, type: 3}
   dependency: 
   cooldownSeconds: 25

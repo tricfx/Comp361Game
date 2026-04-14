@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: Shield
   cardName: Divine Protection
-  cardDescription: Create a shield to take no damage for 5 seconds
+  cardDescription: Activate a shield that blocks all damage for 5 seconds
   icon: {fileID: 2389193319765324094, guid: 3eb70675202beba46b54b5b014d541f9, type: 3}
   dependency: 
   cooldownSeconds: 15

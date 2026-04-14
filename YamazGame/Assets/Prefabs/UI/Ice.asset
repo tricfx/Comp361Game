@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: Ice
   cardName: Oblivion Frost
-  cardDescription: Spawn a circle of icicles damaging your ennemies
+  cardDescription: Spawn a circle of icicles, damaging your enemies
   icon: {fileID: -856085545168688419, guid: 14c908647bdbd8c488d03a2509b9b830, type: 3}
   dependency: 
   cooldownSeconds: 2

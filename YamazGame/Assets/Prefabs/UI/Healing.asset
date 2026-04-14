@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: Healing
   cardName: Divine elixir
-  cardDescription: Heal 5% of total hp per second over 10 seconds
+  cardDescription: Heal 5% of your max HP each second over 10 seconds
   icon: {fileID: -1049461823314036041, guid: d5ec2912b671c2b459f06981fc4bff77, type: 3}
   dependency: 
   cooldownSeconds: 15

@@ -17,7 +17,7 @@ public class CardUIManager : MonoBehaviour
     public Button rerollButton;
     public GameObject BlurOverlay;
     [SerializeField] private AudioSource abilityEquipAudioSource;
-    [SerializeField] private float buttonLockDuration = 0.7f;
+    [SerializeField] private float buttonLockDuration = 0.5f;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -49,7 +49,7 @@ public class CardUIManager : MonoBehaviour
         }
 
         Instance = this;
-        buttonLockDuration = 0.7f;
+        buttonLockDuration = 0.5f;
         DontDestroyOnLoad(gameObject);
     }
     
