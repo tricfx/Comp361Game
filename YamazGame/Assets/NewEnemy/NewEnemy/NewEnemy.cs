@@ -46,6 +46,8 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             int prevHealth = _currentHealth;
             _currentHealth = value;
+            _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+            UpdateMiniHealthbar();
 
             if (_currentHealth < prevHealth)
             {
@@ -158,6 +160,12 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     [SerializeField] protected float hurtVolume = 1f;
     [SerializeField] protected float deathVolume = 1f;
 
+    [Header("Mini Healthbar")]
+    [SerializeField] private EnemyMiniHealthbar miniHealthbarPrefab;
+    [SerializeField] private Vector3 miniHealthbarOffset = new Vector3(0f, 1.2f, 0f);
+
+    private EnemyMiniHealthbar miniHealthbarInstance;
+
 
     public SpriteRenderer spriteRenderer { get; private set; }
     public Animator animator { get; private set; }
@@ -246,6 +254,7 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
             InitializeForLevel(1);
         }
 
+        CreateMiniHealthbar();
         animator.SetBool("alive", true);
         originalColor = spriteRenderer.color;
         _currentState = EnemyState.Idle;
@@ -265,6 +274,26 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
         {
             _enemyManager.RegisterEnemy();
         }
+    }
+
+    private void CreateMiniHealthbar()
+    {
+        if (miniHealthbarPrefab == null || miniHealthbarInstance != null)
+            return;
+
+        miniHealthbarInstance = Instantiate(miniHealthbarPrefab, transform);
+        miniHealthbarInstance.transform.localPosition = miniHealthbarOffset;
+        miniHealthbarInstance.transform.localRotation = Quaternion.identity;
+
+        UpdateMiniHealthbar();
+    }
+
+    private void UpdateMiniHealthbar()
+    {
+        if (miniHealthbarInstance == null || MaxHealth <= 0)
+            return;
+
+        miniHealthbarInstance.SetNormalized((float)CurrentHealth / MaxHealth);
     }
 
     public virtual void InitializeForLevel(int level = 1)

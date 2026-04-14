@@ -683,6 +683,8 @@ MonoBehaviour:
   attackVolume: 5
   hurtVolume: 1
   deathVolume: 1
+  miniHealthbarPrefab: {fileID: 1151794385009266574, guid: f2caf373e1644374d9d30d1a97727c79, type: 3}
+  miniHealthbarOffset: {x: -0.05, y: 0.5, z: 0}
   _searchDuration: 5
   _enableIFrames: 0
   _invincibilityLimit: 0.3
