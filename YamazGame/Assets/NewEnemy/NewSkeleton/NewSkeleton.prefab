@@ -302,7 +302,7 @@ MonoBehaviour:
   moveClip: {fileID: 0}
   attackClip: {fileID: 8300000, guid: e4888a7425f054f13ad1a3b812c1caaa, type: 3}
   hurtClip: {fileID: 8300000, guid: 473923c7679d24b3c99f7f86bb3aef82, type: 3}
-  deathClip: {fileID: 8300000, guid: b3021a2281871437eb8bec3178ee6d53, type: 3}
+  deathClip: {fileID: 8300000, guid: e24b2f9e2fc3bc74aba98b175196ce84, type: 3}
   moveVolume: 1
   attackVolume: 1
   hurtVolume: 1

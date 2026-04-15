@@ -14,6 +14,7 @@ public class ShopLogic : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gemCountText;
     [SerializeField] private AudioSource purchaseAudioSource;
     [SerializeField] private AudioSource cannotPurchaseAudioSource;
+    [SerializeField] private ShopAbilityReplacementUI shopReplacementUI;
 
     private PlayerBuffs playerBuffs;
     private PlayerActions playerActions;
@@ -163,7 +164,7 @@ public class ShopLogic : MonoBehaviour
             return;
         }
 
-        if (card is AbilityCard)
+        if (card is AbilityCard replacementAbilityCard)
         {
             bool slotsFull =
                 playerActions != null &&
@@ -172,10 +173,21 @@ public class ShopLogic : MonoBehaviour
 
             if (slotsFull)
             {
-                cannotPurchaseAudioSource.Play();
-                clickedSlot.ShowUnavailablePopup("Ability slots are full!");
+                if (playerGems.CurrentGems < card.shopCost)
+                {
+                    cannotPurchaseAudioSource.Play();
+                    clickedSlot.ShowUnavailablePopup("Not enough gems!");
+                    RefreshUI();
+                    return;
+                }
 
-                RefreshUI();
+                if (shopReplacementUI == null)
+                {
+                    Debug.LogError("Panel not assigned.");
+                    return;
+                }
+
+                shopReplacementUI.Open(this, playerActions, replacementAbilityCard, clickedSlot);
                 return;
             }
         }
@@ -333,5 +345,29 @@ public class ShopLogic : MonoBehaviour
         sessionCardIDs.AddRange(newCardIDs);
         BuildUI();
         return true;
+    }
+
+    public void CompleteAbilityReplacementPurchase(bool replaceQ, AbilityCard abilityCard, ShopCardUI clickedSlot)
+    {
+        CacheReferences();
+
+        if (abilityCard == null || playerActions == null || playerGems == null)
+            return;
+
+        if (!playerGems.TrySpendGems(abilityCard.shopCost))
+        {
+            cannotPurchaseAudioSource.Play();
+
+            if (clickedSlot != null)
+                clickedSlot.ShowUnavailablePopup("Not enough gems!");
+
+            RefreshUI();
+            return;
+        }
+
+        playerActions.ReplaceAbilitySlot(replaceQ, abilityCard);
+        purchasedCardIDs.Add(abilityCard.cardID);
+        purchaseAudioSource.Play();
+        RefreshUI();
     }
 }

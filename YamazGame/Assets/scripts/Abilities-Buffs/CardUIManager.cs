@@ -17,7 +17,8 @@ public class CardUIManager : MonoBehaviour
     public Button rerollButton;
     public GameObject BlurOverlay;
     [SerializeField] private AudioSource abilityEquipAudioSource;
-    [SerializeField] private float buttonLockDuration = 0.5f;
+    [SerializeField] private AudioSource rewardMenuOpenAudioSource;
+    [SerializeField] private float buttonLockDuration = 0.35f;
 
     public GameObject player; // Assign the player GameObject in the Inspector
     private PlayerBuffs playerBuffs;
@@ -49,7 +50,7 @@ public class CardUIManager : MonoBehaviour
         }
 
         Instance = this;
-        buttonLockDuration = 0.5f;
+        buttonLockDuration = 0.35f;
         DontDestroyOnLoad(gameObject);
     }
     
@@ -104,6 +105,7 @@ public class CardUIManager : MonoBehaviour
 
         Roll3Rewards();
         rewardPanel.SetActive(true);
+        rewardMenuOpenAudioSource.Play();
         TemporarilyLockPanelButtons(rewardPanel);
         BlurOverlay.SetActive(true);
         var actions = player.GetComponent<PlayerActions>();

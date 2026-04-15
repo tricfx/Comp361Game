@@ -15,6 +15,9 @@ public class UIFrameSequencePlayer : MonoBehaviour
     [SerializeField] private float appearSoundDelay = 1.0f;
     [SerializeField] private int disappearSoundFrame = 76;
 
+    [SerializeField] private int pauseFrame = 48;
+    [SerializeField] private float pauseDuration = 5f;
+
     private static bool hasPlayedThisSession = false;
 
     private void Start()
@@ -46,6 +49,8 @@ public class UIFrameSequencePlayer : MonoBehaviour
         for (int i = 0; i < frames.Length; i++)
         {
             targetImage.sprite = frames[i];
+            if (i == pauseFrame)
+                yield return new WaitForSeconds(pauseDuration);
 
             if (i == disappearSoundFrame)
                 disappearSFX.Play();

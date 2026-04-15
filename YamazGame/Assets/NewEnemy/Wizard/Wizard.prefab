@@ -527,7 +527,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
   moveClip: {fileID: 0}
   attackClip: {fileID: 8300000, guid: c2e1a904d388342d9915cf98f197a13d, type: 3}
   hurtClip: {fileID: 8300000, guid: 473923c7679d24b3c99f7f86bb3aef82, type: 3}
-  deathClip: {fileID: 8300000, guid: b3021a2281871437eb8bec3178ee6d53, type: 3}
+  deathClip: {fileID: 8300000, guid: b7df1d427239fd54fb10c229c62350a0, type: 3}
   moveVolume: 1
   attackVolume: 1
   hurtVolume: 1

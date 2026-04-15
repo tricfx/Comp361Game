@@ -729,7 +729,10 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
 
         Moving = false;
 
-        PlaySound(deathClip, deathVolume);
+        if (this is Wizard)
+            PlayDelayed(deathClip, deathVolume, 0.2f);
+        else
+            PlaySound(deathClip, deathVolume);
 
         if (rb != null)
         {
@@ -824,6 +827,19 @@ public abstract class NewEnemy : MonoBehaviour, INewEnemy
     {
         if (audioSource == null || clip == null) return;
         audioSource.PlayOneShot(clip, volume);
+    }
+
+    protected void PlayDelayed(AudioClip clip, float volume, float delay)
+    {
+        if (audioSource == null || clip == null) return;
+        StartCoroutine(PlayDelayedRoutine(clip, volume, delay));
+    }
+
+    private System.Collections.IEnumerator PlayDelayedRoutine(AudioClip clip, float volume, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (audioSource != null)
+            audioSource.PlayOneShot(clip, volume);
     }
 
     public void PlayAttackSound()
