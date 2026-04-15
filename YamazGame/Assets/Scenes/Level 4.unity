@@ -44754,6 +44754,7 @@ MonoBehaviour:
   rerollButton: {fileID: 298732911}
   BlurOverlay: {fileID: 604476229}
   abilityEquipAudioSource: {fileID: 1447478455}
+  buttonLockDuration: 0.5
   player: {fileID: 1690713646}
 --- !u!4 &801964912
 Transform:
@@ -588703,7 +588704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoundingShape2D: {fileID: 0}
+  BoundingShape2D: {fileID: 766745750}
   Damping: 0.5
   SlowingDistance: 5
   OversizeWindow:
