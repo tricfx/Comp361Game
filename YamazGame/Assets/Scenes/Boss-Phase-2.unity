@@ -78235,6 +78235,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1169583455}
     - target: {fileID: 8724187955840502114, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
+      propertyPath: safeZoneRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8724187955840502114, guid: a93bb85827d6e4ac6808509a5e675ada, type: 3}
       propertyPath: swordMeleeClip1
       value: 
       objectReference: {fileID: 8300000, guid: 3f96c719dfb6216428ee468bb1eb3130, type: 3}
@@ -83111,6 +83115,7 @@ MonoBehaviour:
   gemCountText: {fileID: 1527100579}
   purchaseAudioSource: {fileID: 75111149}
   cannotPurchaseAudioSource: {fileID: 1558988892}
+  shopReplacementUI: {fileID: 0}
 --- !u!114 &2100159831
 MonoBehaviour:
   m_ObjectHideFlags: 0
