@@ -72,12 +72,6 @@ public class PlayerActions : MonoBehaviour, IDataPersistence
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
             return;
 
-        if (Input.GetKeyDown(KeyCode.H))
-            GetComponent<PlayerHealth>()?.TakeDamage(10);
-
-        if (Input.GetKeyDown(KeyCode.K))
-            GetComponent<PlayerHealth>()?.TakeDamage(100);
-
         if (controller && controller.IsDashing)
         {
             // Allow attack 1 during dash — cut dash movement immediately

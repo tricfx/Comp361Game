@@ -32,7 +32,9 @@ public class BossAI : MonoBehaviour
     private enum State { Roam, Chase, Attack, Ranged }
     private bool rangedRollDone = false;
     private State currentState = State.Roam;
-    private State lastLoggedState = (State)(-1); // for logging state changes only
+    private State lastLoggedState = (State)(-1);
+    private int consecutiveIdleCount = 0;
+    private const int maxConsecutiveIdles = 1; // only allowed to go idle once in a row
 
     private Vector2 origin;
     private Vector2 roamTarget;
@@ -162,6 +164,14 @@ public class BossAI : MonoBehaviour
 
     private void EnterRoam()
     {
+        consecutiveIdleCount++;
+        if (consecutiveIdleCount > maxConsecutiveIdles)
+        {
+            // Force back to chase instead of roaming again
+            consecutiveIdleCount = 0;
+            EnterChase();
+            return;
+        }
 
         if (attack.IsAttacking) attack.CancelAttack();
         currentState = State.Roam;
@@ -170,7 +180,7 @@ public class BossAI : MonoBehaviour
 
     private void EnterChase()
     {
-
+        consecutiveIdleCount = 0; // reset idle count when chasing
         currentState = State.Chase;
     }
 
@@ -231,14 +241,7 @@ public class BossAI : MonoBehaviour
 
     private void Chase(float distToPlayer)
     {
-        if (!attack.CanAttack)
-        {
-            movement.Stop();
-            movement.CanDash = false;
-            return;
-        }
-
-        movement.CanDash = true;
+        movement.CanDash = attack.CanAttack;
 
         if (distToPlayer <= chaseStopDistance)
         {
@@ -249,7 +252,8 @@ public class BossAI : MonoBehaviour
         Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
         float dashChancePerSecond = 0.4f;
 
-        if (distToPlayer > 3f && Random.value < dashChancePerSecond * Time.deltaTime)
+        // Keep moving toward player even on cooldown — just don't dash
+        if (attack.CanAttack && distToPlayer > 3f && Random.value < dashChancePerSecond * Time.deltaTime)
             movement.Dash(dir);
         else
             movement.SetMoveDirection(dir);
